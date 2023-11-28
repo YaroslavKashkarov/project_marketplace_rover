@@ -1,7 +1,7 @@
 <div class="header">
-  <div class="header-container">
-    <div class="header-container__logo">
-      <svg fill="none" height="50" viewBox="0 0 42 50" width="42" xmlns="http://www.w3.org/2000/svg">
+  <div class="header__container">
+    <div class="header__container--logo">
+      <svg class="logo" fill="none" height="50" viewBox="0 0 42 50" width="42" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M0 0.0192043V34.5394C9.84583 16.4728 13.8293 29.4079 22.7478 43.5883C26.441 49.2693 26.3362 50.5411 42 49.8143C28.207 27.241 17.4298 19.0031 21.9253 7.71646L12.8657 21.981C13.3132 -1.47859 14.8574 0.0192043 0 0.0192043Z"
           fill="#FFD640"/>
@@ -14,19 +14,53 @@
       </svg>
     </div>
 
-  </div>
-  <div class="logo-typography">
-    <span class="logo-typography__text">
+    <div class="logo__typography">
+    <span class="logo__typography--text">
       Marketplace
     </span>
-    <span class="logo-typography__text">
+      <span class="logo__typography--text">
       KUFER
     </span>
+    </div>
+    <div class="input">
+      <label class="label__input">
+        <input class="label__input--search">
+      </label>
+    </div>
   </div>
 
-  <div class="input">
-    <label class="label-input">
-      <input class="label-input__search">
-    </label>
+  <div class="container__item--title">
+    <p class="container__item--text">
+      <svg class="item--button" fill="none" height="24" viewBox="0 0 24 24" width="24"
+           xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11.1" stroke="#00478F" stroke-width="1.8"/>
+      </svg>
+      Create an item
+    </p>
+    <div class="container__img">
+      <svg class="img--button" fill="none" height="24" viewBox="0 0 24 24" width="24"
+           xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd"
+              d="M19.5806 16.71L19.8206 17.85C20.048 18.8356 19.8235 19.8713 19.2082 20.6741C18.593 21.477 17.6514 21.9632 16.6406 22H7.36058C6.34976 21.9632 5.40815 21.477 4.79293 20.6741C4.17771 19.8713 3.95315 18.8356 4.18058 17.85L4.42058 16.71C4.69662 15.1668 6.0232 14.0327 7.59058 14H16.4106C17.978 14.0327 19.3045 15.1668 19.5806 16.71ZM16.6406 20.49C17.1484 20.4841 17.6263 20.2488 17.9406 19.85V19.86C18.3263 19.3762 18.4765 18.7458 18.3506 18.14L18.1106 17C17.9774 16.1552 17.2652 15.5226 16.4106 15.49H7.59059C6.73595 15.5226 6.02375 16.1552 5.89059 17L5.65059 18.14C5.52774 18.7426 5.67785 19.3686 6.06059 19.85C6.37492 20.2488 6.8528 20.4841 7.36059 20.49H16.6406Z"
+              fill="#00478F"
+              fill-rule="evenodd"/>
+        <path clip-rule="evenodd"
+              d="M12.5006 12H11.5006C9.29143 12 7.50057 10.2091 7.50057 7.99998V5.35998C7.4979 4.46804 7.85104 3.61186 8.48175 2.98116C9.11245 2.35046 9.96863 1.99732 10.8606 1.99998H13.1406C14.0325 1.99732 14.8887 2.35046 15.5194 2.98116C16.1501 3.61186 16.5032 4.46804 16.5006 5.35998V7.99998C16.5006 10.2091 14.7097 12 12.5006 12ZM10.8606 3.49998C9.83332 3.49998 9.00057 4.33273 9.00057 5.35998V7.99998C9.00057 9.3807 10.1199 10.5 11.5006 10.5H12.5006C13.8813 10.5 15.0006 9.3807 15.0006 7.99998V5.35998C15.0006 4.86668 14.8046 4.39358 14.4558 4.04477C14.107 3.69595 13.6339 3.49998 13.1406 3.49998H10.8606Z"
+              fill="#00478F"
+              fill-rule="evenodd"/>
+      </svg>
+    </div>
+    <div class="container__img">
+      <svg class="img--button" fill="none" height="24" viewBox="0 0 24 24" width="24"
+           xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+          fill="#00478F"/>
+      </svg>
+    </div>
+    <div>
+      <button class="container__button" type="button"><h4 class="button--text">UA</h4></button>
+    </div>
   </div>
+
 </div>
