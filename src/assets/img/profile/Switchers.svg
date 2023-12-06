@@ -1,0 +1,23 @@
+<svg width="54" height="32" viewBox="0 0 54 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Switchers" clip-path="url(#clip0_664_33886)">
+<rect id="Default" x="0.916016" y="0.25" width="52.8333" height="31.5" rx="15.75" fill="#A5CDEB" stroke="#A5CDEB" stroke-width="0.5"/>
+<g id="Knob-20" filter="url(#filter0_d_664_33886)">
+<rect x="4.66602" y="4" width="24" height="24" rx="12" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_664_33886" x="4.66602" y="4" width="26" height="26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_664_33886"/>
+<feOffset dx="1" dy="1"/>
+<feGaussianBlur stdDeviation="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_664_33886"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_664_33886" result="shape"/>
+</filter>
+<clipPath id="clip0_664_33886">
+<rect width="53.3333" height="32" fill="white" transform="translate(0.666016)"/>
+</clipPath>
+</defs>
+</svg>
