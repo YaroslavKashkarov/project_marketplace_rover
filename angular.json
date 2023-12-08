@@ -65,13 +65,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+            "configurations": {
             "production": {
               "buildTarget": "app_marketplace_kufer:build:production"
             },
             "development": {
               "buildTarget": "app_marketplace_kufer:build:development"
             }
+            
           },
           "defaultConfiguration": "development"
         },
@@ -102,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5995aee1-e4dd-49d6-9f5a-2be7ac525585"
   }
 }
