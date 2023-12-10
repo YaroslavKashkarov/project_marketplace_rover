@@ -9,10 +9,10 @@ import {CommonModule} from '@angular/common';
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  constructor(public toggleFilter: ToggleFilter) {
+  constructor() {
   }
 
   closeFilter(): void {
-    this.toggleFilter.isFilterVisible = false;
+   
   }
 }
