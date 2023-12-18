@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-create-an-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './create-an-item.component.html',
   styleUrl: './create-an-item.component.scss',
 })

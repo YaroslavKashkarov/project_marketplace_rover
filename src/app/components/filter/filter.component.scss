@@ -1,0 +1,150 @@
+.modal {
+  padding-top: 160px;
+  padding-bottom: 100px; // for fixed style
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  overflow: scroll;
+  z-index: 100;
+  background: rgba(7, 10, 15, 0.50);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.filter {
+
+  &__container {
+    margin-inline: auto;
+    padding-top: 40px;
+    width: 868px;
+    height: 557px;
+    border-radius: 16px;
+    background: #FFF;
+    z-index: 2;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    color: #00478F;
+
+    &-container {
+      margin: 0 40px 40px;
+      display: flex;
+      justify-content: space-between;
+
+      & img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    gap: 20px;
+
+    &-container {
+      padding-inline: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &-item {
+      &-filter {
+        position: relative;
+      }
+
+      &-input {
+        width: 192px;
+        height: 40px;
+        padding: 8px 4px 8px 16px;
+        border-radius: 4px;
+        border: 1px solid #00478F;
+        background: #FFF;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      &-img {
+        position: absolute;
+        top: 9px;
+        right: 4px;
+      }
+
+      &-title {
+        margin: 0 0 8px 0;
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__date {
+    &-container {
+      margin-top: 40px;
+      padding-inline: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &-item {
+      height: 40px;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #00478F;
+      background-color: #FFFFFF;
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 679px;
+      }
+    }
+  }
+}
+
+.btn {
+  width: 192px;
+  height: 54px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #00478F;
+  background: #FFF;
+  font-size: 24px;
+  color: #00478F;
+
+  &:hover,
+  &:active {
+    background: #00478F;
+    color: #FFFFFF;
+  }
+
+  &__container {
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+}

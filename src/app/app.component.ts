@@ -1,16 +1,14 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {HeaderComponent} from './components/header/header.component';
-import {CategoriesOfProductsComponent} from './components/categories-of-products/categories-of-products.component';
-import {CreateAnItemComponent} from './components/create-an-item/create-an-item.component';
-import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CreateAnItemComponent } from './components/create-an-item/create-an-item.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, HeaderComponent, CategoriesOfProductsComponent, CreateAnItemComponent, RegisterComponent, HttpClientModule, HomeComponent],
+  imports: [CommonModule, RouterOutlet, HomePageComponent, HomePageComponent, CreateAnItemComponent, FavoriteComponent, HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
