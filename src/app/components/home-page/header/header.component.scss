@@ -1,20 +1,22 @@
 .header {
   display: flex;
-  justify-content: center;
   gap: 33px;
+  padding: 0 94px;
+  justify-content: center;
   flex-shrink: 0;
 
   &-content__container {
     display: flex;
     width: 1440px;
     height: 160px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #F9F9F9;
 
-    .logo-and-typography {
+    .content {
       display: flex;
       height: 54px;
+
       align-items: center;
       gap: 4px;
 
@@ -52,6 +54,7 @@
       background: #FFF;
     }
 
+
     .search__img {
       position: absolute;
       padding: 12px;
@@ -66,13 +69,13 @@
       height: 24px;
     }
 
-    .content-item {
+    .create-item {
       width: 193px;
       padding: 4px;
       border-bottom: 2px solid #00478F;
     }
 
-    .create__item {
+    .items {
       display: flex;
       align-items: center;
       gap: 4px;
