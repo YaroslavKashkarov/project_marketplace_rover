@@ -5,7 +5,7 @@ import { ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule } fro
 @Component({
   selector: 'app-text-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,ReactiveFormsModule ],
   templateUrl: './text-input.component.html',
   styleUrl: './text-input.component.scss'
 })

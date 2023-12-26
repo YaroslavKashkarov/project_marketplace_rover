@@ -11,7 +11,7 @@ import { TextInputComponent } from "../../_forms/text-input/text-input.component
     standalone: true,
     templateUrl: './register.component.html',
     styleUrl: './register.component.scss',
-  imports: [CommonModule, TextInputComponent, ReactiveFormsModule]
+  imports: [CommonModule, TextInputComponent, ReactiveFormsModule, ]
 })
 export class RegisterComponent implements OnInit{
   @Output() cancelRegister = new EventEmitter();

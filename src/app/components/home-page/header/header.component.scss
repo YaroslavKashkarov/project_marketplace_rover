@@ -1,0 +1,130 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 33px;
+  flex-shrink: 0;
+
+  &-content__container {
+    display: flex;
+    width: 1440px;
+    height: 160px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F9F9F9;
+
+    .logo-and-typography {
+      display: flex;
+      height: 54px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+
+      .title {
+        width: 88px;
+        color: #00478F;
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+      }
+
+      .text__second {
+        display: flex;
+        width: 88px;
+        height: 22px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #00478F;
+        font-family: Poppins;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+
+    &__search {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .input__search {
+      display: flex;
+      width: 432px;
+      padding: 15px 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 4px 4px 4px 4px;
+      border: 1px solid #00478F;
+      background: #FFF;
+    }
+
+    .search__img {
+      position: absolute;
+      padding: 12px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .search__filter {
+      position: absolute;
+      width: 850px;
+      padding: 12px;
+      height: 24px;
+    }
+
+    .content-item {
+      width: 193px;
+      padding: 4px;
+      align-items: center;
+      flex-shrink: 0;
+      border-bottom: 2px solid #00478F;
+    }
+
+    .create__item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .create__add {
+      position: absolute;
+      top: 82px;
+      width: 24px;
+      height: 10px;
+    }
+
+    .item__text {
+      color: #00478F;
+      font-family: Lato;
+      font-size: 24px;
+      font-style: normal;
+      gap: 4px;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn__lgn {
+      display: flex;
+      height: 24px;
+      padding: 8px 4px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      border: 1px solid #FFD640;
+    }
+  }
+}
