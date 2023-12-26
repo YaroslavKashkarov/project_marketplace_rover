@@ -2,13 +2,18 @@
     <h2 class="text-center text-primary">Sign up</h2>
     <hr>
     <app-text-input 
-    [formControl]="$any(registerForm.controls['email'])"
-    [label]="'Email'"
-    [type]="'email'"
+        [formControl]="$any(registerForm.controls['email'])"
+        [label]="'Email'"
+        [type]="'email'"
     ></app-text-input>
-    <app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'" [type]="'password'">
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['password'])" 
+        [label]="'Password'" 
+        [type]="'password'">
     </app-text-input>
-    <app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'"
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['confirmPassword'])" 
+        [label]="'ConfirmPassword'"
         [type]="'password'">
     </app-text-input>
 

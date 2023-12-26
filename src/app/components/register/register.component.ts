@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl, NgControl,ControlValueAccessor,ReactiveFormsModule } from '@angular/forms';
 import { AccountService } from '../../_services/account.service';
 import { Router } from '@angular/router';
 import { TextInputComponent } from "../../_forms/text-input/text-input.component";
+
 
 @Component({
     selector: 'app-register',
@@ -16,7 +17,6 @@ export class RegisterComponent implements OnInit{
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup = new FormGroup({});
   validationErrors: string[] | undefined;
-  patternTypes = ['lowerLetters', 'upperLetters', 'numbers', 'symbols'];
 
   constructor(private accountService: AccountService,
     private fb: FormBuilder,
