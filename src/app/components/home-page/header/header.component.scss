@@ -1,22 +1,22 @@
 .header {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 33px;
+  padding: 0 94px;
+  justify-content: center;
   flex-shrink: 0;
 
   &-content__container {
     display: flex;
     width: 1440px;
     height: 160px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #F9F9F9;
 
-    .logo-and-typography {
+    .content {
       display: flex;
       height: 54px;
-      justify-content: space-between;
+
       align-items: center;
       gap: 4px;
 
@@ -46,23 +46,14 @@
       }
     }
 
-    &__search {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
     .input__search {
-      display: flex;
       width: 432px;
       padding: 15px 12px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
       border-radius: 4px 4px 4px 4px;
       border: 1px solid #00478F;
       background: #FFF;
     }
+
 
     .search__img {
       position: absolute;
@@ -78,15 +69,13 @@
       height: 24px;
     }
 
-    .content-item {
+    .create-item {
       width: 193px;
       padding: 4px;
-      align-items: center;
-      flex-shrink: 0;
       border-bottom: 2px solid #00478F;
     }
 
-    .create__item {
+    .items {
       display: flex;
       align-items: center;
       gap: 4px;
@@ -111,8 +100,6 @@
 
     .buttons {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 16px;
     }
 
@@ -120,7 +107,6 @@
       display: flex;
       height: 24px;
       padding: 8px 4px;
-      justify-content: center;
       align-items: center;
       gap: 8px;
       border-radius: 4px;
