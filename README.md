@@ -17,6 +17,7 @@
 *Frontend*
 
 - Yaroslav Kashkarov
+- Egor Tymchenko
 - Larysa Hradyska
 
 *Backend*
