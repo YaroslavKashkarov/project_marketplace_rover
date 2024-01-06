@@ -1,7 +1,6 @@
 .header {
   display: flex;
   gap: 33px;
-  padding: 0 94px;
   justify-content: center;
   flex-shrink: 0;
 
@@ -9,6 +8,7 @@
     display: flex;
     width: 1440px;
     height: 160px;
+    padding: 0 94px;
     justify-content: space-between;
     align-items: center;
     background-color: #F9F9F9;
@@ -53,7 +53,6 @@
       border: 1px solid #00478F;
       background: #FFF;
     }
-
 
     .search__img {
       position: absolute;
