@@ -1,12 +1,39 @@
 .navbar {
+  margin: auto;
+  display: flex;
+  width: 1440px;
+  height: 40px;
+  padding: 0px 94px;
+
+  flex-shrink: 0;
+  background-color: #00478f;
+  margin-bottom: 100px;
+
   &__items {
+    display: flex;
+    align-items: center;
   }
 }
 .items {
   &__category {
+    display: flex;
   }
 }
 .link {
+  list-style-type: none;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  border-left: 1px solid #fff;
+  gap: 4px;
 }
-.category {
+.link-last {
+  border-right: 1px solid #fff;
+}
+.category_last {
+  border-right: 1px solid #fff;
 }
