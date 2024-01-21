@@ -1,6 +1,7 @@
 .header {
   display: flex;
 }
+
 .header-content {
   margin: auto;
   display: flex;
@@ -9,6 +10,7 @@
   align-items: flex-start;
   gap: 33px;
   flex-shrink: 0;
+
   &__container {
     display: flex;
     width: 1440px;
@@ -19,12 +21,14 @@
     flex-shrink: 0;
   }
 }
+
 .contents {
   display: flex;
   height: 54px;
   align-items: center;
   gap: 4px;
 }
+
 .title {
   display: flex;
   width: 88px;
@@ -33,6 +37,7 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
 .text {
   &__first {
     color: #00478f;
@@ -42,6 +47,7 @@
     font-weight: 500;
     line-height: 100%;
   }
+
   &__second {
     color: #00478f;
     font-family: Poppins, sans-serif;
@@ -55,19 +61,24 @@
 .search {
   display: flex;
 }
+
 .img {
   padding: 15px 12px;
   display: flex;
   gap: 10px;
+
   &__search {
     position: absolute;
   }
 }
+
 .input {
   display: flex;
+
   &__btns {
     display: flex;
   }
+
   &__search {
     display: flex;
     width: 432px;
@@ -80,8 +91,10 @@
     background: #fff;
   }
 }
+
 .btn {
   display: flex;
+
   &__filter {
     display: flex;
     padding: 15px 12px;
@@ -94,6 +107,7 @@
     background: #fff;
   }
 }
+
 .action {
   display: flex;
   width: 193px;
@@ -103,12 +117,26 @@
   flex-shrink: 0;
   border-bottom: 1px solid #00478f;
 }
+
+.action:hover {
+  transition: 0.2s;
+  border-bottom: 3px solid #00478f;
+}
+
+
 .create {
+  display: flex;
+
   &__img {
     display: flex;
     align-items: flex-start;
     gap: 10px;
   }
+
+  &__img:hover {
+    transition: 0.2s;
+  }
+
   &__link {
     text-decoration: none;
     color: #00478f;
@@ -118,7 +146,13 @@
     font-weight: 700;
     line-height: normal;
   }
+
+  &__link:hover {
+    font-weight: 900;
+    transition: 0.2s;
+  }
 }
+
 .buttons {
   display: flex;
   justify-content: center;
