@@ -5,6 +5,7 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {HeaderComponent} from './components/home-page/header/header.component';
 import {MainComponent} from './components/home-page/main/main.component';
 import {FooterComponent} from './components/home-page/footer/footer.component';
+import {NavbarComponent} from './components/home-page/main/navbar/navbar.component';
 
 
 @Component({
@@ -16,7 +17,7 @@ import {FooterComponent} from './components/home-page/footer/footer.component';
       HomePageComponent,
       HeaderComponent,
       MainComponent,
-      FooterComponent],
+      FooterComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
