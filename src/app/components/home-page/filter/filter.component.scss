@@ -1,0 +1,104 @@
+.modal-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px;
+  height: 100%;
+  align-items: center;
+}
+.filter {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__container-title {
+    display: flex;
+    width: 788px;
+    background-color: #b32b2b;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+  }
+  &__arrow-left {
+    flex-shrink: 0;
+  }
+  &__title {
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #00478f;
+  }
+  &__close {
+    display: flex;
+  }
+  &__price {
+  }
+  &__price-items {
+  }
+  &__product {
+  }
+  &__date {
+  }
+  &__brand {
+  }
+  &__checkbox {
+  }
+}
+.price {
+  &__title {
+  }
+  &__item {
+  }
+  &__text {
+  }
+  &__label {
+  }
+  &__input {
+  }
+}
+.product {
+  &__title {
+  }
+}
+.btn {
+  &__products {
+  }
+  &__new {
+  }
+  &__used {
+  }
+  &__date {
+  }
+  &__cancel {
+  }
+  &__save {
+  }
+}
+.date {
+  &__title {
+  }
+}
+.buttons {
+  &__filter {
+  }
+}
+.brand {
+  &__title {
+  }
+  &__form {
+  }
+  &__label {
+  }
+  &__input {
+  }
+}
+.checkbox {
+  &__input {
+  }
+}
+.text {
+  &__checkbox {
+  }
+}
