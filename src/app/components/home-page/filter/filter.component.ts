@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core'
+import {CommonModule} from '@angular/common'
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FilterComponent],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.scss'
 })
 export class FilterComponent {
+  constructor () {}
 
+  closeFilter(): void {
+
+  }
 }
