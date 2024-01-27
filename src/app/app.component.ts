@@ -2,10 +2,9 @@ import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {HomePageComponent} from './components/home-page/home-page.component';
-import {HeaderComponent} from './components/home-page/header/header.component';
-import {MainComponent} from './components/home-page/main/main.component';
-import {FooterComponent} from './components/home-page/footer/footer.component';
-import {NavbarComponent} from './components/home-page/main/navbar/navbar.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {HeaderComponent} from './components/header/header.component';
 
 
 @Component({
@@ -15,9 +14,9 @@ import {NavbarComponent} from './components/home-page/main/navbar/navbar.compone
     [CommonModule,
       RouterOutlet,
       HomePageComponent,
-      HeaderComponent,
-      MainComponent,
-      FooterComponent, NavbarComponent],
+      FooterComponent,
+      NavbarComponent,
+      HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

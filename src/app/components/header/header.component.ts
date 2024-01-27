@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FilterComponent} from '../filter/filter.component';
+import {FilterComponent} from './filter/filter.component';
 
 @Component({
   selector: 'app-header',
