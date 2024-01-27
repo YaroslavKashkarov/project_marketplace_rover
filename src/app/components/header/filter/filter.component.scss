@@ -20,7 +20,7 @@
 .filter {
   &__container {
     margin-inline: auto;
-    padding-top: 40px;
+    padding: 40px 0px 40px 0px;
     width: 788px;
     height: 818px;
     border-radius: 16px;
@@ -173,25 +173,26 @@
 
   &__brand {
     &-container {
-      margin-top: 40px;
       padding-inline: 40px;
       display: flex;
       flex-direction: column;
 
       &-checkbox {
         display: flex;
+        align-items: center;
         justify-content: flex-start;
-        background-color: #aa1212;
+        gap: 12px;
       }
       &-input {
         width: 32px;
         height: 32px;
+        padding-bottom: 40px;
         border-radius: 4px;
         border: 2px solid #046cd4;
       }
     }
     &-title {
-      margin: 0;
+      margin-top: 40px;
       font-family: Lato;
       font-size: 24px;
       font-style: normal;
@@ -218,13 +219,17 @@
       align-items: center;
       gap: 8px;
     }
-  }
-  &-text {
-    display: flex;
-    background-color: #ce1212;
+    &-text {
+      display: flex;
+      flex-direction: column;
+      font-family: Lato;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
   }
 }
-
 .btn {
   width: 192px;
   height: 54px;
@@ -234,7 +239,6 @@
   background: #fff;
   font-size: 24px;
   color: #00478f;
-
   &:hover,
   &:active {
     background: #00478f;
@@ -242,7 +246,7 @@
   }
 
   &__container {
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     gap: 20px;
     justify-content: center;
