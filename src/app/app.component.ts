@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/home-page/header/header.component'
 import { MainComponent } from './components/home-page/main/main.component';
 import { FooterComponent } from './components/home-page/footer/footer.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { NavbarComponent } from './components/home-page/main/navbar/navbar.component';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
       HomePageComponent,
       HeaderComponent,
       MainComponent,
-      FooterComponent, ProductCardComponent],
+      FooterComponent, ProductCardComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
