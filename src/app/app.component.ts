@@ -7,6 +7,7 @@ import { MainComponent } from './components/home-page/main/main.component';
 import { FooterComponent } from './components/home-page/footer/footer.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { NavbarComponent } from './components/home-page/main/navbar/navbar.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { NavbarComponent } from './components/home-page/main/navbar/navbar.compo
       HomePageComponent,
       HeaderComponent,
       MainComponent,
-      FooterComponent, ProductCardComponent, NavbarComponent],
+      FooterComponent, ProductCardComponent, NavbarComponent, FavoriteComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
