@@ -1,16 +1,23 @@
-<div class="modal">
+<div *ngIf="!isFilterClose" class="modal">
   <div class="filter__container">
     <div class="filter__title-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg fill="none" height="24"
+           viewBox="0 0 24 24"
+           width="24"
+           xmlns="http://www.w3.org/2000/svg">
         <path
           d="M7.24918 12C7.24824 11.8009 7.32754 11.6099 7.46918 11.47L15.4692 3.47C15.7647 3.19464 16.2252 3.20277 16.5108 3.48838C16.7964 3.77399 16.8045 4.23449 16.5292 4.53L9.05918 12L16.5292 19.47C16.8045 19.7655 16.7964 20.226 16.5108 20.5116C16.2252 20.7972 15.7647 20.8054 15.4692 20.53L7.46918 12.53C7.32754 12.3901 7.24824 12.1991 7.24918 12Z"
-          fill="#070A0F" />
+          fill="#070A0F"/>
       </svg>
       <h3 class="filter__title">Filter</h3>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg (click)="closeFilter($event)" fill="none"
+           height="24"
+           viewBox="0 0 24 24"
+           width="24"
+           xmlns="http://www.w3.org/2000/svg">
         <path
           d="M13.1665 12.008L20.762 4.43822C21.0793 4.11791 21.0793 3.599 20.762 3.27868C20.4503 2.95264 19.9355 2.94285 19.6118 3.2568L12.0163 10.8266L4.51839 3.2568C4.36467 3.09288 4.15078 3 3.92702 3C3.70327 3 3.48938 3.09288 3.33566 3.2568C3.0543 3.56628 3.0543 4.04123 3.33566 4.35071L10.8335 11.9096L3.238 19.4685C2.92067 19.7888 2.92067 20.3077 3.238 20.628C3.38907 20.784 3.59685 20.871 3.81309 20.8687C4.03351 20.8867 4.25202 20.8159 4.42074 20.6718L12.0163 13.102L19.6118 20.7593C19.7629 20.9153 19.9707 21.0022 20.1869 21C20.4029 21.001 20.6102 20.9142 20.762 20.7593C21.0793 20.439 21.0793 19.9201 20.762 19.5998L13.1665 12.008Z"
-          fill="#070A0F" />
+          fill="#070A0F"/>
       </svg>
     </div>
 
@@ -20,7 +27,8 @@
         <div class="filter__price-item">
           <p class="filter__price-item-title">From</p>
           <div class="filter__price-item-filter">
-            <input class="filter__price-item-input" placeholder="100" type="text">
+            <input class="filter__price-item-input" placeholder="100"
+                   type="text">
             <p class="filter__price-item-text">$</p>
           </div>
         </div>
@@ -28,7 +36,8 @@
         <div class="filter__price-item">
           <p class="filter__price-item-title">Up to</p>
           <div class="filter__price-item-filter">
-            <input class="filter__price-item-input" placeholder="1 000" type="text">
+            <input class="filter__price-item-input" placeholder="1 000"
+                   type="text">
             <p class="filter__price-item-text">$</p>
           </div>
         </div>
@@ -49,10 +58,15 @@
       <h4 class="filter__date-title">By date</h4>
       <div class="filter__date-item-container">
         <button class="filter__date-item" data-filter="today">Today</button>
-        <button class="filter__date-item" data-filter="yesterday">Yesterday</button>
-        <button class="filter__date-item" data-filter="last7days">Last 7 days</button>
-        <button class="filter__date-item" data-filter="last30days">Last 30 days</button>
-        <button class="filter__date-item" data-filter="lastyear">Last year</button>
+        <button class="filter__date-item" data-filter="yesterday">Yesterday
+        </button>
+        <button class="filter__date-item" data-filter="last7days">Last 7 days
+        </button>
+        <button class="filter__date-item" data-filter="last30days">Last 30
+                                                                   days
+        </button>
+        <button class="filter__date-item" data-filter="lastyear">Last year
+        </button>
         <button class="filter__date-item" data-filter="ever">Ever</button>
       </div>
     </div>
@@ -60,7 +74,8 @@
     <div class="filter__brand-container">
       <h4 class="filter__brand-title">By brand</h4>
       <div class="filter__brand-search">
-        <input autocomplete="on" class="filter__brand-search-input" type="search">
+        <input autocomplete="on" class="filter__brand-search-input"
+               type="search">
       </div>
       <div class="filter__brand-container-checkbox">
         <input class="filter__brand-container-input" type="checkbox">
@@ -73,9 +88,10 @@
     </div>
 
     <div class="btn__container">
-      <button class="btn">Cancel</button>
-      <button class="btn">Save</button>
+      <button class="btn-active">Cancel</button>
+      <button class="btn-active">Save</button>
     </div>
   </div>
+
   <div class="overlay"></div>
 </div>

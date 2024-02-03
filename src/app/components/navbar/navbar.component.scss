@@ -12,11 +12,13 @@
     align-items: center;
   }
 }
+
 .items {
   &__category {
     display: flex;
   }
 }
+
 .link {
   list-style-type: none;
   padding: 10px 40px;
@@ -29,9 +31,11 @@
   border-left: 1px solid #fff;
   gap: 4px;
 }
+
 .link-last {
   border-right: 1px solid #fff;
 }
+
 .category_last {
   border-right: 1px solid #fff;
 }

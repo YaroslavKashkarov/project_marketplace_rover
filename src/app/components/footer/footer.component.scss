@@ -8,16 +8,17 @@
   gap: 30px;
   background-color: #00478f;
   color: #fff;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 .footer {
+
   &__container {
     display: flex;
     width: 1252px;
     justify-content: space-between;
     align-items: flex-start;
+
   }
 }
 

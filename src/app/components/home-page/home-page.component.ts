@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FilterComponent} from '../header/filter/filter.component';
+import {CarouselComponent} from './carousel/carousel.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, FilterComponent],
+  imports: [CommonModule, CarouselComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })

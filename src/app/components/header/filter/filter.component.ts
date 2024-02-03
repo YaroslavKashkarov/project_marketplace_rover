@@ -1,17 +1,18 @@
-import {Component} from '@angular/core'
-import {CommonModule} from '@angular/common'
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule, FilterComponent],
+  imports: [CommonModule],
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss'
+  styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  constructor () {}
+  isFilterClose: boolean = false;
 
-  closeFilter(): void {
-
+  closeFilter(event: Event): void {
+    event.preventDefault();
+    this.isFilterClose = !this.isFilterClose;
   }
 }
