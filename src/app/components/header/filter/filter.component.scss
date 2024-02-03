@@ -18,11 +18,12 @@
 }
 
 .filter {
+  display: flex;
   &__container {
     margin-inline: auto;
     padding: 40px 0px 40px 0px;
-    width: 788px;
-    height: 818px;
+    width: 868px;
+    height: 896px;
     border-radius: 16px;
     background: #fff;
     z-index: 2;
@@ -76,9 +77,11 @@
         align-items: center;
         font-family: Lato;
         font-size: 16px;
+        padding-left: 10px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        border-left: 1px solid var(--Primary-Blue, #00478f);
       }
       &-title {
         font-family: Lato;
@@ -192,17 +195,18 @@
       }
     }
     &-title {
-      margin-top: 40px;
+      padding-top: 40px;
       font-family: Lato;
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       padding-bottom: 12px;
+      margin: 0;
     }
     &-search {
-      padding-bottom: 40px;
       display: flex;
+      padding-bottom: 40px;
       &-input {
         width: 298px;
         height: 35px;
@@ -231,24 +235,26 @@
   }
 }
 .btn {
-  width: 192px;
-  height: 54px;
-  cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid #00478f;
-  background: #fff;
-  font-size: 24px;
-  color: #00478f;
-  &:hover,
-  &:active {
-    background: #00478f;
-    color: #ffffff;
-  }
-
   &__container {
-    margin-top: 60px;
+    padding-top: 60px;
     display: flex;
     gap: 20px;
     justify-content: center;
+  }
+  &-active {
+    width: 192px;
+    height: 54px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #00478f;
+    background: #fff;
+    font-size: 24px;
+    color: #00478f;
+
+    &:hover,
+    &:active {
+      background: #00478f;
+      color: #ffffff;
+    }
   }
 }

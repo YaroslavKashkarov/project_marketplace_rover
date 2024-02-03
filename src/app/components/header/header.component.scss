@@ -3,19 +3,19 @@
 }
 
 .header-content {
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 33px;
+  margin: auto;
   flex-shrink: 0;
 
   &__container {
     display: flex;
     width: 1440px;
     height: 160px;
-    padding: 0px 94px;
+    padding: 0 94px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
@@ -82,7 +82,7 @@
   &__search {
     display: flex;
     width: 432px;
-    padding: 15px 40px;
+    padding: 15px 50px;
     border-radius: 4px 0px 0px 4px;
     border-top: 1px solid #00478f;
     border-left: 1px solid #00478f;
@@ -93,8 +93,6 @@
 }
 
 .btn {
-  display: flex;
-
   &__filter {
     display: flex;
     padding: 15px 12px;

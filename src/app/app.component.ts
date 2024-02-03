@@ -5,6 +5,10 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
+import {
+  CarouselComponent,
+} from './components/home-page/carousel/carousel.component';
+import {FilterComponent} from './components/header/filter/filter.component';
 
 
 @Component({
@@ -14,12 +18,15 @@ import {HeaderComponent} from './components/header/header.component';
     [CommonModule,
       RouterOutlet,
       HomePageComponent,
+      HeaderComponent,
+      FilterComponent,
       FooterComponent,
       NavbarComponent,
-      HeaderComponent],
+      CarouselComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'app_marketplace_kufer';
+  title: string = 'project_marketplace_rover';
+
 }

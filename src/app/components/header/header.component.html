@@ -34,7 +34,8 @@
         </div>
         <div class="input__btns">
           <input class="input__search" placeholder="Search" type="search">
-          <button class="btn__filter" type="submit">
+          <button (click)="toggleFilter($event)" class="btn__filter"
+                  type="submit">
             <svg class="btn" fill="none" height="24" viewBox="0 0 25 24"
                  width="25" xmlns="http://www.w3.org/2000/svg">
               <path clip-rule="evenodd"
@@ -84,4 +85,5 @@
   </div>
 </div>
 
-<!--<app-filter></app-filter>-->
+<app-filter *ngIf="isFilterVisible"></app-filter>
+<!--<app-create-an-item></app-create-an-item>-->
