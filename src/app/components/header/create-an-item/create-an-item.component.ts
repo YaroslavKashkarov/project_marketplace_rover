@@ -10,11 +10,12 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './create-an-item.component.scss',
 })
 export class CreateAnItemComponent {
+  isCreateItemVisible: boolean = false;
   inputText: string = '';
   maxWords: number = 100;
   wordCount: number = 100;
 
-  countWords() {
+  countWords(): void {
     this.wordCount = this.inputText.length;
 
     if (this.wordCount > this.maxWords) {
