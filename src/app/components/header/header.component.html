@@ -58,7 +58,8 @@
       <div class="action">
         <img alt="img" class="create__img" crossorigin="anonymous"
              src="assets/img/add_item.png">
-        <a class="create__link" href="#">Create an item</a>
+        <a (click)="isCreateItem()" class="create__link" href="#">Create an
+                                                                  item</a>
       </div>
 
       <div class="buttons">
@@ -86,4 +87,4 @@
 </div>
 
 <app-filter *ngIf="isFilterVisible"></app-filter>
-<!--<app-create-an-item></app-create-an-item>-->
+<app-create-an-item *ngIf="isCreateItemVisible"></app-create-an-item>

@@ -11,10 +11,8 @@
     <div class="container">
       <div class="describe">
         <h1 class="describe__title">Describe the product</h1>
-
         <label class="describe__label">Briefly describe your product</label>
         <input class="describe__input" type="text">
-
         <label class="describe__label">Category</label>
         <input class="describe__input" type="text">
       </div>
@@ -25,10 +23,8 @@
     <div class="container">
       <div class="photo">
         <h2>Photo</h2>
-
         <p>Drag and drop photos to change their order<br>
            The first photo will be displayed on the cover</p>
-
         <div class="photo__item-container">
           <div class="photo__item">Add photo</div>
           <div class="photo__item">
@@ -52,11 +48,9 @@
     <div class="container">
       <div class="details">
         <h3 class="details__title">Describe the product in more detail</h3>
-
         <textarea (input)="countWords()" [(ngModel)]="inputText"
                   class="details__input"
                   type="text"></textarea>
-
         <div class="details__characters">
           <p>Write another 100 characters</p>
           <p>{{ wordCount }}/{{ maxWords }}</p>
@@ -69,19 +63,16 @@
     <div class="container">
       <div class="more">
         <h3 class="more__title">More details</h3>
-
         <div class="more__details-container">
           <div class="more__details">
             <label class="more__details-label">Price</label>
             <input class="more__details-input --first" placeholder="1 000 $"
                    type="text">
           </div>
-
           <div class="more__details">
             <label class="more__details-label">Dimensions</label>
             <input class="more__details-input" type="text">
           </div>
-
           <div class="more__details">
             <label class="more__details-label">Condition new or used</label>
             <input class="more__details-input" placeholder="Used" type="text">
@@ -89,7 +80,6 @@
                  src="assets/img/arrow-down.svg">
           </div>
         </div>
-
         <div class="more__location">
           <label class="more__details-label">Location of the product</label>
           <input class="more__details-input" type="text">
@@ -101,7 +91,6 @@
   <div class="container">
     <div class="btn-container">
       <button class="btn">Preview</button>
-
       <button class="btn">Publish</button>
     </div>
   </div>

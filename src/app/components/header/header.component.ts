@@ -12,6 +12,11 @@ import {CreateAnItemComponent} from './create-an-item/create-an-item.component';
 })
 export class HeaderComponent {
   isFilterVisible: boolean = false;
+  isCreateItemVisible: boolean = false;
+
+  isCreateItem(): void {
+    this.isCreateItemVisible = !this.isCreateItemVisible;
+  }
 
   toggleFilter(event: Event): void {
     console.log(event);
