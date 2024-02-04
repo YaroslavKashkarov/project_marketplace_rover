@@ -1,3 +1,7 @@
-<div class="carousel">
-  <img alt="img" class="carousel" src="assets/img/carousel/slide.png">
+<div *ngIf="images && images.length > 0" class="carousel-container">
+  <img *ngFor="let image of images; let i = index"
+       [alt]="image.imageAlt"
+       [ngClass]="{'image-active' : selectedIndex === i }"
+       [src]="image.imageSrc"
+  >
 </div>
