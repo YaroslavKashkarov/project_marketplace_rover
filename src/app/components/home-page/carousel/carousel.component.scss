@@ -2,7 +2,7 @@
   position: relative;
   margin: auto;
   text-align: center;
-  width: 1440px;
+  width: 1630px;
   border-radius: 10px;
   box-shadow: 0 6px 16px #F9F9F9;
 }
@@ -37,7 +37,7 @@
   width: 20px;
   height: 20px;
   margin: 0 13px;
-  background-color: #00478f;
+  background-color: #5a5a5a;
   border-radius: 50%;
   display: inline-block;
   transition: opacity 0.6s ease;
@@ -46,8 +46,8 @@
 
 .active,
 .dot:hover {
-  background-color: darkblue;
-  opacity: 0.5;
+  background-color: #00478f;
+  //opacity: 0.4; // fixing opacity
 }
 
 // image transition fade effect
@@ -90,8 +90,8 @@
 }
 
 .icon-carousel {
-  color: #fff;
-  opacity: 0.5;
+  color: #5a5a5a;
+  opacity: 0.3;
   transition: all 0.15s ease;
 }
 
@@ -105,5 +105,5 @@
 
 .icon-next,
 .icon-prev {
-  font-size: 35px;
+  font-size: 55px;
 }
