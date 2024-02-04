@@ -22,6 +22,16 @@ export class CarouselComponent implements OnInit {
   @Input() slideInterval: number = 3000; // Default of 3 seconds
 
   ngOnInit(): void {
+    if (this.autoSlide) {
+      this.autoSlideImages();
+    }
+  }
+
+// Changes slide in every 3 seconds
+  autoSlideImages(): void {
+    setInterval((): void => {
+      this.onNextClick();
+    }, this.slideInterval);
   }
 
 // sets index of image on dot/indicator click
