@@ -28,5 +28,21 @@ import {FilterComponent} from './components/header/filter/filter.component';
 })
 export class AppComponent {
   title: string = 'project_marketplace_rover';
-
+  images = [
+    {
+      imageSrc:
+        'assets/img/carousel/slide.png',
+      imageAlt: 'slide',
+    },
+    {
+      imageSrc:
+        'assets/img/carousel/slide_1.png',
+      imageAlt: 'slide1',
+    },
+    {
+      imageSrc:
+        'assets/img/carousel/slide_2.png',
+      imageAlt: 'slide2',
+    },
+  ];
 }
