@@ -15,9 +15,33 @@ interface carouselImage {
 })
 export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
-
-  selectedIndex = 0;
+  @Input() indicators: boolean = true;
+  @Input() controls: boolean = true;
+  selectedIndex: number = 0;
+  @Input() autoSlide: boolean = false;
+  @Input() slideInterval: number = 3000; // Default of 3 seconds
 
   ngOnInit(): void {
+  }
+
+// sets index of image on dot/indicator click
+  selectImage(index: number): void {
+    this.selectedIndex = index;
+  }
+
+  onPrevClick(): void {
+    if (this.selectedIndex === 0) {
+      this.selectedIndex = this.images.length - 1;
+    } else {
+      this.selectedIndex--;
+    }
+  }
+
+  onNextClick(): void {
+    if (this.selectedIndex === this.images.length - 1) {
+      this.selectedIndex = 0;
+    } else {
+      this.selectedIndex++;
+    }
   }
 }
