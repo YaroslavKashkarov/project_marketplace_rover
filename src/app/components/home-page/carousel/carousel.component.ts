@@ -6,6 +6,15 @@ interface carouselImage {
   imageAlt: string;
 }
 
+interface carouselTitle {
+  imageTitle: string,
+  imageTitle2: string
+}
+
+interface carouselButton {
+  carouselButton: string;
+}
+
 @Component({
   selector: 'app-carousel',
   standalone: true,
@@ -15,11 +24,14 @@ interface carouselImage {
 })
 export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
+  @Input() titles: carouselTitle[] = [];
+  @Input() buttons: carouselButton[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() selectedIndex: number = 0;
-  @Input() autoSlide: boolean = false;
-  @Input() slideInterval: number = 3000; // Default of 3 seconds
+  @Input() autoSlide: boolean = true;
+  @Input() slideInterval: number = 3000;
+
+  selectIndex: number = 0;
 
   ngOnInit(): void {
     if (this.autoSlide) {
@@ -27,31 +39,30 @@ export class CarouselComponent implements OnInit {
     }
   }
 
-// Changes slide in every 3 seconds
   autoSlideImages(): void {
     setInterval((): void => {
       this.onNextClick();
     }, this.slideInterval);
   }
 
-// sets index of image on dot/indicator click
+//sets index of image on dot/indicators click
   selectImage(index: number): void {
-    this.selectedIndex = index;
+    this.selectIndex = index;
   }
 
   onPrevClick(): void {
-    if (this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
+    if (this.selectIndex === 0) {
+      this.selectIndex = this.images.length - 1;
     } else {
-      this.selectedIndex--;
+      this.selectIndex--;
     }
   }
 
   onNextClick(): void {
-    if (this.selectedIndex === this.images.length - 1) {
-      this.selectedIndex = 0;
+    if (this.selectIndex === this.images.length - 1) {
+      this.selectIndex = 0;
     } else {
-      this.selectedIndex++;
+      this.selectIndex++;
     }
   }
 }

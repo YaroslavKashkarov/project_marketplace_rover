@@ -45,4 +45,29 @@ export class AppComponent {
       imageAlt: 'slide2',
     },
   ];
+  titles = [
+    {
+      imageTitle: 'Your Perfect Bicycle Awaits!',
+      imageTitle2: 'Find a Bicycle for every path. Quality and style in one place',
+    },
+    {
+      imageTitle: 'Style and Comfort on Every Ride!',
+      imageTitle2: 'Enhance your look and elevate your rides with our selection of accessories and apparel',
+    },
+    {
+      imageTitle: 'Keep Your Bicycle in Perfect Condition!',
+      imageTitle2: 'Parts, tools, and accessories for effective maintenance and repair',
+    },
+  ];
+  buttons = [
+    {
+      carouselButton: 'Explore Bicycle',
+    },
+    {
+      carouselButton: 'Browse Accessories',
+    },
+    {
+      carouselButton: 'Shop Parts',
+    },
+  ];
 }
