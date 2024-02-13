@@ -28,7 +28,7 @@ export class CarouselComponent implements OnInit {
   @Input() buttons: carouselButton[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() autoSlide: boolean = true;
+  @Input() autoSlide: boolean = false;
   @Input() slideInterval: number = 3000;
 
   selectIndex: number = 0;
