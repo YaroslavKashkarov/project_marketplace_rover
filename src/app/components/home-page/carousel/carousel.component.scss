@@ -1,6 +1,6 @@
 .carousel-container {
   position: relative;
-  width: 1440px;
+  width: 1630px;
   margin: auto;
   text-align: center;
   border-radius: 15px;
@@ -8,12 +8,12 @@
 
 .carousel-container img {
   display: none;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .carousel-container img.image-active {
   display: block;
-  width: 1440px;
+  width: 1630px;
   height: 526px;
 }
 

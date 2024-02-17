@@ -3,7 +3,11 @@
        [ngClass]="{'image-active': selectIndex === i}"
        [src]="image.imageSrc"
        class="fade">
-  <h4 *ngFor="let title of titles; let i=index" class="title"></h4>
+  <!--  <div class="carousel-container-title">-->
+  <!--    <h4></h4>-->
+  <!--    <h3></h3>-->
+  <!--    <button></button>-->
+  <!--  </div>-->
 
   <div *ngIf="indicators" class="carousel-dot-container">
     <span (click)="selectImage(i)" *ngFor="let dot of images; let i=index"

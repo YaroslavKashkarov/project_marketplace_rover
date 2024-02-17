@@ -6,15 +6,6 @@ interface carouselImage {
   imageAlt: string;
 }
 
-interface carouselTitle {
-  imageTitle: string,
-  imageTitle2: string
-}
-
-interface carouselButton {
-  carouselButton: string;
-}
-
 @Component({
   selector: 'app-carousel',
   standalone: true,
@@ -24,14 +15,14 @@ interface carouselButton {
 })
 export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
-  @Input() titles: carouselTitle[] = [];
-  @Input() buttons: carouselButton[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() autoSlide: boolean = false;
+  @Input() autoSlide: boolean = true;
   @Input() slideInterval: number = 3000;
 
   selectIndex: number = 0;
+  selectTitle: string = '';
+  selectButton: string = '';
 
   ngOnInit(): void {
     if (this.autoSlide) {
@@ -45,7 +36,7 @@ export class CarouselComponent implements OnInit {
     }, this.slideInterval);
   }
 
-//sets index of image on dot/indicators click
+  //sets index of image on dot/indicators click
   selectImage(index: number): void {
     this.selectIndex = index;
   }
