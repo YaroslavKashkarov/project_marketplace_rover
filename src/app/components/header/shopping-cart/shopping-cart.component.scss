@@ -1,0 +1,95 @@
+.item {
+  &__shopping {
+    &-container {
+    }
+
+    &-navigate {
+      &-item {
+      }
+    }
+
+    &-card {
+      &-container {
+      }
+    }
+
+    &-img {
+    }
+
+    &-description {
+    }
+
+    &-title {
+    }
+
+    &-price {
+      .price {
+      }
+    }
+
+    &-quantity {
+      .quantity {
+      }
+    }
+
+    &-amount {
+      .amount {
+      }
+    }
+
+    &-total {
+      &-container {
+      }
+    }
+
+    &-subtotal {
+      .subtotal {
+      }
+
+      .price {
+      }
+    }
+
+    &-delivery {
+      &-cost {
+      }
+
+      .price {
+      }
+    }
+
+    &-discount {
+      .discount {
+      }
+
+      .price {
+      }
+    }
+
+    &-btn {
+      .btn {
+      }
+    }
+
+    &-footer {
+      &-container {
+      }
+
+      &-description {
+        &--first {
+        }
+
+        &--second {
+        }
+      }
+
+      &-about-us {
+        &-app {
+        }
+      }
+
+      &__socials {
+      }
+    }
+  }
+}
