@@ -8,6 +8,7 @@ import { FooterComponent } from './components/home-page/footer/footer.component'
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { NavbarComponent } from './components/home-page/main/navbar/navbar.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ProfileComponent } from './components/profile/profile/profile.component';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
       HomePageComponent,
       HeaderComponent,
       MainComponent,
-      FooterComponent, ProductCardComponent, NavbarComponent, FavoriteComponent],
+      FooterComponent, ProductCardComponent, NavbarComponent, FavoriteComponent, ProfileComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

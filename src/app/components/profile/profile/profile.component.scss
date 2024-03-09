@@ -1,0 +1,132 @@
+* {
+  font-family: Lato, sans-serif;
+}
+
+.container {
+  padding-bottom: 160px;
+  background-color: #F9F9F9;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__navigate {
+    width: 1252px;
+    margin-inline: auto;
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 400;
+
+    & p {
+      margin: 0;
+    }
+
+    &-container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #F9F9F9;
+    }
+
+    &-item {
+      &:first-of-type {
+        color: #042C54;
+      }
+
+      &:last-of-type {
+        color: rgba(7, 10, 15, 0.50);
+      }
+    }
+
+    &-img {
+      width: 20px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 189px;
+    margin-bottom: 4px;
+    padding-top: 40px;
+    padding-bottom: 11px;
+    padding-left: 127px;
+    background-color: #FFFFFF;
+
+    & img {
+      cursor: pointer;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 160px;
+      border: 3px solid #00478F;
+      background: lightgray 50% / cover no-repeat;
+    }
+
+    &-name {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 32px;
+      line-height: 21px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 20px;
+
+    & span {
+      font-size: 24px;
+      color: #00478F;
+    }
+
+    &-line {
+      width: 2px;
+      height: 24px;
+      background: #00478F;
+    }
+  }
+}
+
+.settings {
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 126px;
+    display: grid;
+    justify-content: center;
+    gap: 40px;
+    background-color: #FFFFFF;
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+
+    &-container {
+      width: 800px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-text {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    &-icon {
+      cursor: pointer;
+    }
+  }
+}
