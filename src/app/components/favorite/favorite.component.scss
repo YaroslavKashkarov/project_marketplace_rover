@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: repeat(3, 400px);
   column-gap: 26px;
-  row-gap: 40px;
+  row-gap: 43px;
   justify-content: center;
 
   &__navigate {
@@ -41,7 +41,7 @@
   }
 
   &__container {
-    padding-bottom: 160px;
+    padding-bottom: 122px;
     background-color: #F9F9F9;
 
     & p {
@@ -51,7 +51,8 @@
 
   &__item {
     position: relative;
-    background-color: #FFFFFF; //for fixed style
+    overflow: hidden;
+    background-color: #FFFFFF;
 
     &:first-of-type {
       & .favorite__item-img {
@@ -91,8 +92,31 @@
 
     &-favorite {
       position: absolute;
-      top: 24px;
+      top: 15px;
       right: 24px;
+    }
+
+    &-condition {
+      position: absolute;
+      top: 24px;
+      left: -7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 72.5px;
+      height: 29px;
+      transform: skew(-26deg);
+      background-color: #00478f;
+
+      &-text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+
+        transform: skew(20deg);
+      }
     }
 
     &-img {
@@ -104,21 +128,36 @@
     &-description {
       width: 360px;
       display: flex;
+      gap: 4px;
       flex-direction: column;
       margin-inline: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
 
       &-title {
-        color: #070A0F;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 21px;
+        display: flex;
+        align-items: center;
+        height: 27px;
+
+        &-text {
+          color: #070A0F;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 21px;
+        }
       }
 
       &-price {
-        color: #070A0F;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 21px;
+        display: flex;
+        align-items: center;
+        height: 27px;
+
+        &-text {
+          color: #070A0F;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 21px;
+        }
       }
 
       &-wheels {
@@ -129,14 +168,21 @@
       }
 
       &-about {
-        color: #070A0F;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 110%;
+        display: flex;
+        align-items: center;
+        height: 54px;
+
+        &-text {
+          color: #070A0F;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 110%;
+        }
       }
 
       &-more {
         display: flex;
+        gap: 4px;
         flex-direction: column;
 
         &-item {
