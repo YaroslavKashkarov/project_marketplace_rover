@@ -17,9 +17,10 @@ export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() selectedIndex: number = 0;
   @Input() autoSlide: boolean = false;
-  @Input() slideInterval: number = 3000; // Default of 3 seconds
+  @Input() slideInterval: number = 3000;
+
+  selectedIndex: number = 0;
 
   ngOnInit(): void {
     if (this.autoSlide) {
@@ -27,14 +28,13 @@ export class CarouselComponent implements OnInit {
     }
   }
 
-// Changes slide in every 3 seconds
   autoSlideImages(): void {
     setInterval((): void => {
       this.onNextClick();
     }, this.slideInterval);
   }
 
-// sets index of image on dot/indicator click
+  //sets index of image on dot/indicators click
   selectImage(index: number): void {
     this.selectedIndex = index;
   }
