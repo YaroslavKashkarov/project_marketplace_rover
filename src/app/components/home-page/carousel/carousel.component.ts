@@ -17,12 +17,10 @@ export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() autoSlide: boolean = true;
+  @Input() autoSlide: boolean = false;
   @Input() slideInterval: number = 3000;
 
-  selectIndex: number = 0;
-  selectTitle: string = '';
-  selectButton: string = '';
+  selectedIndex: number = 0;
 
   ngOnInit(): void {
     if (this.autoSlide) {
@@ -38,22 +36,22 @@ export class CarouselComponent implements OnInit {
 
   //sets index of image on dot/indicators click
   selectImage(index: number): void {
-    this.selectIndex = index;
+    this.selectedIndex = index;
   }
 
   onPrevClick(): void {
-    if (this.selectIndex === 0) {
-      this.selectIndex = this.images.length - 1;
+    if (this.selectedIndex === 0) {
+      this.selectedIndex = this.images.length - 1;
     } else {
-      this.selectIndex--;
+      this.selectedIndex--;
     }
   }
 
   onNextClick(): void {
-    if (this.selectIndex === this.images.length - 1) {
-      this.selectIndex = 0;
+    if (this.selectedIndex === this.images.length - 1) {
+      this.selectedIndex = 0;
     } else {
-      this.selectIndex++;
+      this.selectedIndex++;
     }
   }
 }
