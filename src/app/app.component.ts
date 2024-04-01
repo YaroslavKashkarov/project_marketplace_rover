@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { HeaderComponent } from './components/home-page/header/header.component';
-import { MainComponent } from './components/home-page/main/main.component';
-import { FooterComponent } from './components/home-page/footer/footer.component';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+import {HomePageComponent} from './components/home-page/home-page.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FilterComponent} from './components/header/filter/filter.component';
+import {CarouselComponent,} from './components/home-page/carousel/carousel.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { NavbarComponent } from './components/home-page/main/navbar/navbar.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
+// import {CarouselComponent,} from './components/home-page/carousel/carousel.component';
+
+
 
 
 @Component({
@@ -19,11 +23,44 @@ import { ProfileComponent } from './components/profile/profile/profile.component
       RouterOutlet,
       HomePageComponent,
       HeaderComponent,
-      MainComponent,
-      FooterComponent, ProductCardComponent, NavbarComponent, FavoriteComponent, ProfileComponent],
+      FilterComponent,
+      FooterComponent,
+      NavbarComponent,
+      CarouselComponent,
+      FooterComponent,
+      ProductCardComponent,
+      NavbarComponent,
+      FavoriteComponent,
+      ProfileComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'app_marketplace_kufer';
+  images = [
+    {
+      imageSrc:
+        'assets/img/carousel/slide.png',
+      imageAlt: 'slide',
+      description: 'Your Perfect Bicycle Awaits!' + 'Find a bicycle for every' +
+        'path. Quality and style in one place',
+      titleButton: 'Explore Bicycle',
+    },
+    {
+      imageSrc:
+        'assets/img/carousel/slide_1.png',
+      imageAlt: 'slide1',
+      description: 'Style and Comfort on Every Ride!' + 'Enhance your look' +
+        ' and + elevate your rides with our selection of accessories and' +
+        'apparel',
+      titleButton: 'Browse Accessories',
+    },
+    {
+      imageSrc:
+        'assets/img/carousel/slide_2.png',
+      imageAlt: 'slide2',
+      title: 'Keep Your Bicycle in Perfect Condition!' + 'Parts, tools,' +
+        'and accessories for effective maintenance and repair',
+      titleButton: 'Shop Parts',
+    },
+  ];
 }

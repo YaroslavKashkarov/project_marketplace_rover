@@ -1,12 +1,11 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HeaderComponent} from './header/header.component';
-import {MainComponent} from './main/main.component';
+import {Component} from '@angular/core'
+import {CommonModule} from '@angular/common'
+import {CarouselComponent} from './carousel/carousel.component'
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, MainComponent],
+  imports: [CommonModule, CarouselComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
