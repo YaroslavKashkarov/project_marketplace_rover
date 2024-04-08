@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FORM_LABEL, PASS_ERRORS } from '../../../data/form-data';
 import { TogglePasswordEditing } from '../../../servises/toggle-profile';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Observable, Subject } from 'rxjs';
-
-// import { samePassword } from '../../../servises/same-password';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-password-editing',
@@ -18,43 +15,38 @@ export class PasswordEditingComponent implements OnInit {
   label = FORM_LABEL;
   passErrors = PASS_ERRORS;
   passForm!: FormGroup;
-  passValue$!: Observable<string>;
-  confValue$!: Observable<string>;
-  passValue!: any;
-  confValue!: any;
-
-  private inputValue = new Subject<any>();
 
   constructor(public togglePasswordEditing: TogglePasswordEditing, private fb: FormBuilder) {
   }
 
-  get password(): AbstractControl {
-    return this.passForm.controls['password'];
-  }
-
-  get confirmPassword(): AbstractControl {
-    return this.passForm.controls['confirmPassword'];
-  }
-
-  onInputPass(value: any) {
-    this.passValue = value;
-  }
-
-  onInputConfPass(value: any) {
-    this.confValue = value;
-  }
-
-  PassConfPassValidation() {
-
-  }
-
   ngOnInit() {
     this.initializeForm();
-    // samePassword(this.passValue, this.confValue);
+    this.setupMatchingPasswordValidator();
   }
 
   closeEditing(): void {
     this.togglePasswordEditing.isPasswordEditingVisible = false;
+  }
+
+  setupMatchingPasswordValidator(): void {
+    const confirmPasswordControl = this.passForm.get('confirmPassword');
+    if (confirmPasswordControl) {
+      confirmPasswordControl.setValidators([Validators.required, this.matchingPasswordValidator()]);
+      confirmPasswordControl.updateValueAndValidity();
+    }
+  }
+
+  matchingPasswordValidator(): any {
+    return (control: { value: any }) => {
+      const password = this.passForm.get('password')?.value;
+      const confirmPassword = control.value;
+
+      if (password !== confirmPassword) {
+        return {mismatch: true};
+      } else {
+        return null;
+      }
+    };
   }
 
   private initializeForm(): void {
