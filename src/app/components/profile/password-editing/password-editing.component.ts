@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FORM_LABEL, PASS_ERRORS } from '../../../data/form-data';
+import { FORM_LABEL } from '../../../data/form-data';
 import { TogglePasswordEditing } from '../../../servises/toggle-profile';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -13,7 +13,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class PasswordEditingComponent implements OnInit {
   label = FORM_LABEL;
-  passErrors = PASS_ERRORS;
+  showPassword: boolean = false;
+  visibleIconDisplay = 'block';
+  invisibleIconDisplay = 'none';
   passForm!: FormGroup;
 
   constructor(public togglePasswordEditing: TogglePasswordEditing, private fb: FormBuilder) {
@@ -47,6 +49,12 @@ export class PasswordEditingComponent implements OnInit {
         return null;
       }
     };
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+    this.visibleIconDisplay = this.showPassword ? 'none' : 'block';
+    this.invisibleIconDisplay = this.showPassword ? 'block' : 'none';
   }
 
   private initializeForm(): void {
