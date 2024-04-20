@@ -12,6 +12,16 @@ export const FORM_LABEL = {
   lastName: 'Last name',
   email: 'E-mail',
   phone: 'Phone',
+  city: 'Ternopil city',
   password: 'Password',
-  confirm: 'Password',
+  confirm: 'Confirm password',
 };
+
+export const PASS_ERRORS = {
+  passwordEnglish: {
+    minLength: 'Password length min 6 symbols',
+    maxLength: 'Password length max 25 symbols',
+    notSame: 'Your password does not match',
+  },
+};
+
