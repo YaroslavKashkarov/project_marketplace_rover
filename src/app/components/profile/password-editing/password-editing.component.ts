@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FORM_LABEL } from '../../../data/form-data';
 import { TogglePasswordEditing } from '../../../servises/toggle-profile';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { passwordValidator } from '../../../servises/pass-validator';
 
 @Component({
   selector: 'app-password-editing',
@@ -59,8 +60,8 @@ export class PasswordEditingComponent implements OnInit {
 
   private initializeForm(): void {
     this.passForm = this.fb.group({
-      password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
-      confirmPassword: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
+      password: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(25), passwordValidator]],
+      confirmPassword: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
     });
   }
 
