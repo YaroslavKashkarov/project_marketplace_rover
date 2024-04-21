@@ -11,6 +11,11 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 
+// ------------------------------------------------------------
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
+import { SocialLoginComponent } from './components/social-login/social-login.component';
+// ------------------------------------------------------------
+
 // import {CarouselComponent,} from './components/home-page/carousel/carousel.component';
 
 
@@ -20,6 +25,7 @@ import { ProfileComponent } from './components/profile/profile/profile.component
   imports:
     [CommonModule,
       RouterOutlet,
+      SocialLoginModule,
       HomePageComponent,
       HeaderComponent,
       FilterComponent,
@@ -30,7 +36,7 @@ import { ProfileComponent } from './components/profile/profile/profile.component
       ProductCardComponent,
       NavbarComponent,
       FavoriteComponent,
-      ProfileComponent],
+      ProfileComponent, SocialLoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
