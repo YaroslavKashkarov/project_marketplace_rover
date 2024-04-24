@@ -3,11 +3,12 @@ import {CommonModule} from '@angular/common';
 import {FilterComponent} from './filter/filter.component';
 import {CreateAnItemComponent} from './create-an-item/create-an-item.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
+import {RouterLink} from "@angular/router";
 
 @Component({
 	selector: 'app-header',
 	standalone: true,
-	imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent],
+  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink],
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss',
 })
