@@ -1,9 +1,37 @@
+<div class="container">
+  <div class="title">
+    <h2 class="title__text">{{category| uppercase}}</h2>
+  </div>
+  <!--  <label class="dropdown">
+      <div class="dd-button" [(ngModel)]="selectedSortOption" name="sortOption">
+        Sort by {{selectedSortOption}}
+      </div>
+      <input type="checkbox" class="dd-input" id="test">
+      <ul class="dd-menu">
+        <li (click)="selectOption('Popular')">Popular</li>
+        <li (click)="selectOption('Recent')">Recent</li>
+        &lt;!&ndash;<li (click)="selectOption('Price Up')">Price Up &#8593;</li>&ndash;&gt;
+        <li (click)="sortProductsDesc()">Price Up &#8593;</li>
+        &lt;!&ndash;<li (click)="selectOption('Price Down')">Price Down &#8595;</li>&ndash;&gt;
+        <li (click)="sortProductsAsc()">Price Down &#8595;</li>
+      </ul>
+    </label>-->
+  <div class="dropdown-container">
+    <!-- Sort by text -->
+    <span class="sort-text">Sort by:</span>
+    <label class="dropdown">
+      <select class="dd-button" (change)="onSortChange($event)">
+        <option value="Popular" selected>Popular</option>
+        <option value="Recent">Recent</option>
+        <option value="Price Down">Price Down &#8595; </option>
+        <option value="Price Up">Price Up &#8593; </option>
+      </select>
+    </label>
+  </div>
+</div>
 <div class="main">
   <div class="main-content__container">
     <div class="contents">
-      <div class="title">
-        <h2 class="title__text">{{category| uppercase}}</h2>
-      </div>
       <div class="category__products">
         <app-product class="category__products"
                      *ngFor="let product of products | slice:0:productsToDisplay" [product]="product">

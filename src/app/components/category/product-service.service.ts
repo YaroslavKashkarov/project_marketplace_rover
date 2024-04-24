@@ -141,7 +141,7 @@ export class ProductServiceService {
       case 'clothes':
         return this.clothes;
       default:
-        return null;
+        return this.bicycles;
     }
 
   }
