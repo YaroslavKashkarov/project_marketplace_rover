@@ -55,6 +55,8 @@ export class CategoryComponent implements OnInit {
 
   public sortProductsAsc() {
     this.products = this.products.sort((a, b) => b.price - a.price);
+  }  public sortProductDate() {
+    this.products = this.products.sort((a, b) => b.date_publication.getDate() - a.date_publication.getDate());
   }
 
   onSortChange($event: Event) {
@@ -64,6 +66,8 @@ export class CategoryComponent implements OnInit {
       this.sortProductsDesc();
     } else if (selectedValue === 'Price Down') {
       this.sortProductsAsc();
+    }else if(selectedValue === 'Recent'){
+      this.sortProductDate()
     }
   }
 }
