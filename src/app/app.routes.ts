@@ -8,7 +8,6 @@ import {FilterComponent} from './components/header/filter/filter.component';
 import {ShoppingCartComponent} from './components/header/shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
-  {path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'home/:category', component: CategoryComponent},
   {

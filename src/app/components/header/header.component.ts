@@ -6,23 +6,30 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {RouterLink} from "@angular/router";
 
 @Component({
-	selector: 'app-header',
-	standalone: true,
+  selector: 'app-header',
+  standalone: true,
   imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink],
-	templateUrl: './header.component.html',
-	styleUrl: './header.component.scss',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-	isFilterVisible: boolean = false;
-	isCreateItemVisible: boolean = false;
+  isFilterVisible: boolean = false;
+  isCreateItemVisible: boolean = false;
+  isShoppingCartVisible: boolean = false;
 
-	isCreateItem(): void {
-		this.isCreateItemVisible = !this.isCreateItemVisible;
-	}
+  isCreateItem(): void {
+    this.isCreateItemVisible = !this.isCreateItemVisible;
+  }
 
-	toggleFilter(event: Event): void {
-		console.log(event);
-		event.preventDefault();
-		this.isFilterVisible = !this.isFilterVisible;
-	}
+  toggleFilter(event: Event): void {
+    console.log(event);
+    event.preventDefault();
+    this.isFilterVisible = !this.isFilterVisible;
+  }
+
+  toogleTrash(event: Event): void {
+    console.log(event);
+    event.preventDefault();
+    this.isShoppingCartVisible = !this.isShoppingCartVisible;
+  }
 }
