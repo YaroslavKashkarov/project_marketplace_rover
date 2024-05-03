@@ -7,6 +7,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FilterComponent} from './components/header/filter/filter.component';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
 
 
 
@@ -21,7 +22,8 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 				HeaderComponent,
 				FilterComponent,
 				FooterComponent,
-				NavbarComponent
+				NavbarComponent,
+				SocialLoginModule,
 			],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',

@@ -5,11 +5,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { AuthenticationService } from '../../../services/authentication.service';
+
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, GoogleSigninButtonModule],
+  providers: [AuthenticationService],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })
@@ -18,11 +22,19 @@ export class LoginFormComponent {
   loginForm: FormGroup;
   hide: boolean = true;
 
+  constructor( private authService: AuthenticationService){}
+
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     })
+
+    this.authService.loginWithGoogle()
+  }
+
+  googleLogin(){
+    this.authService.loginWithGoogle()
   }
 
   onLoginFormSubmit() {
@@ -31,7 +43,12 @@ export class LoginFormComponent {
     })
 
     if (this.loginForm.valid) {
-      console.log('Login success')
+      this.authService.manualLoginUser(this.loginForm.getRawValue()).subscribe(
+        {
+          next: () => {},
+          error: (err) => console.log(err)
+        }
+      )
     }
   }
 
