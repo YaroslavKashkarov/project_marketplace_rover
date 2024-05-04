@@ -1,8 +1,8 @@
 export const FORM_PLACEHOLDERS = {
-  name: 'Your first name',
+  firstName: 'Your first name',
   lastName: 'Your last name',
   email: 'Your e-mail',
-  phone: 'Your phone',
+  mobilePhone: 'Your phone',
   password: 'Password',
   confirm: 'Confirm password',
 };

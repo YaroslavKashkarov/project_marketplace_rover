@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FilterComponent } from './components/header/filter/filter.component';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+import {HomePageComponent} from './components/home-page/home-page.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FilterComponent} from './components/header/filter/filter.component';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
 import { CarouselComponent } from './components/home-page/carousel/carousel.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 
 // ------------------------------------------------------------
-import { SocialLoginModule } from '@abacritt/angularx-social-login';
 import { SocialLoginComponent } from './components/social-login/social-login.component';
 // ------------------------------------------------------------
 
@@ -25,22 +26,26 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
   imports:
     [CommonModule,
       RouterOutlet,
-      SocialLoginModule,
       HomePageComponent,
       HeaderComponent,
       FilterComponent,
       FooterComponent,
       NavbarComponent,
       CarouselComponent,
-      FooterComponent,
       ProductCardComponent,
-      NavbarComponent,
       FavoriteComponent,
-      ProfileComponent, SocialLoginComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+      ProfileComponent,
+      SocialLoginComponent,
+				MatIconModule,
+				SocialLoginModule,
+			],
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  constructor(iconRegistry: MatIconRegistry) {
+    iconRegistry.setDefaultFontSetClass("fa-regular");
+  }
   images = [
     {
       imageSrc:

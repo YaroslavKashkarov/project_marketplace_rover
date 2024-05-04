@@ -1,0 +1,96 @@
+.container{
+    padding: 16px 40px;
+    .header{
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+
+        .logo{
+            display: flex;
+            align-items: center;
+            height: 54px;
+            gap: 4px;
+
+            .title {
+                display: flex;
+                flex-direction: column;
+                flex-shrink: 0;
+                justify-content: center;
+                width: 88px;
+                height: 22px;
+                text-align: start;
+
+                .text {
+                    &__first {
+                      font-size: 14px;
+                      font-weight: 500;
+                      font-style: normal;
+                      line-height: 100%;
+                      color: #00478f;
+                    }
+                  
+                    &__second {
+                      font-family: Poppins, sans-serif;
+                      font-size: 22px;
+                      font-weight: 700;
+                      font-style: normal;
+                      line-height: normal;
+                      color: #00478f;
+                    }
+                }
+            }
+        }J
+
+        .close{
+            margin: 5px 8px;
+        }
+
+
+    }
+    .title{
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 43.2px;
+        color: #070A0F;
+        margin: 8px 0;
+    }
+
+    .subtitle{
+        font-size: 16px;
+        line-height: 19.2px;
+        color: #070A0F;
+        opacity: 50%;
+        margin-bottom: 20px;
+    }
+
+    .tabs{
+        display: flex;
+        margin: 16px 22px;
+        gap: 20px;
+
+        .button{
+            width: 192px;
+            height: 28px;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            color: #070A0F;
+            opacity: 25%;
+            background-color: transparent;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover, &.active{
+                opacity: 1;
+                background: linear-gradient(rgba(255, 214, 64, 0), rgba(255, 214, 64, 0.35));
+                color: #00478F;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+
+
+    
+}

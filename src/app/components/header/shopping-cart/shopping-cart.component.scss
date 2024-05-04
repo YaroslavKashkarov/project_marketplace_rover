@@ -1,94 +1,160 @@
-.item {
-  &__shopping {
-    &-container {
-    }
-
+* {
+  margin: 0;
+  padding: 0;
+}
+.shopping-cart {
+  display: flex;
+  justify-content: center;
+  &__container {
+    max-width: 1440px;
+    padding: 0 94px 0 94px;
     &-navigate {
-      &-item {
+      display: flex;
+      align-items: center;
+      padding-bottom: 40px;
+      &-title {
+        color: rgb(4, 44, 84);
+        font-size: 18px;
+        font-weight: 400;
+
+        &:last-of-type {
+          color: rgba(7, 10, 15, 0.5);
+          font-size: 18px;
+          font-weight: 400;
+        }
       }
     }
 
-    &-card {
-      &-container {
-      }
+    &-img-arrow {
+      padding: 0 4px 0 4px;
     }
-
-    &-img {
-    }
-
-    &-description {
-    }
-
-    &-title {
-    }
-
-    &-price {
-      .price {
-      }
-    }
-
-    &-quantity {
-      .quantity {
-      }
-    }
-
-    &-amount {
-      .amount {
-      }
-    }
-
-    &-total {
-      &-container {
-      }
-    }
-
-    &-subtotal {
-      .subtotal {
-      }
-
-      .price {
-      }
-    }
-
-    &-delivery {
-      &-cost {
-      }
-
-      .price {
-      }
-    }
-
-    &-discount {
-      .discount {
-      }
-
-      .price {
-      }
-    }
-
-    &-btn {
-      .btn {
-      }
-    }
-
-    &-footer {
-      &-container {
-      }
-
+    &-sellers {
       &-description {
-        &--first {
+        display: flex;
+        max-width: 1440px;
+        padding: 12px 0 12px 0;
+        align-items: flex-start;
+        gap: 8px;
+        .seller {
+          color: #000;
+          font-size: 24px;
+          line-height: 28px;
         }
-
-        &--second {
+        .seller-name {
+          color: #000;
+          font-size: 24px;
+          line-height: 28px;
         }
       }
+    }
+    &-products {
+      display: flex;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      align-items: center;
+      justify-content: space-around;
+      gap: 0 68px;
+      flex-wrap: wrap;
 
-      &-about-us {
-        &-app {
-        }
+      .img-product {
+        width: 144px;
+        height: 130px;
+        flex-shrink: 0;
       }
+    }
+    &-item-description {
+      width: 416px;
+      .description-product {
+        color: #070a0f;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 21px;
+        padding-bottom: 10px;
+      }
+      .description-product-second {
+        color: #070a0f;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 21px;
+      }
+    }
+    &-item-price {
+      display: flex;
+      width: 100px;
+      padding: 4px;
+      justify-content: flex-end;
+      align-items: center;
 
-      &__socials {
+      .price {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+    &-quantity {
+      width: 128px;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .less {
+        padding-right: 20px;
+      }
+      .img-number {
+        color: #070a0f;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .more {
+        padding-left: 20px;
+      }
+    }
+    .total-price {
+      display: flex;
+      width: 100px;
+      padding: 4px;
+      justify-content: flex-end;
+      align-items: center;
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: normal;
+    }
+    &-btns {
+      display: flex;
+      max-width: 1440px;
+      padding: 12px 0 12px 0;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 20px;
+      .btn-inner-sellers {
+        width: 336px;
+        height: 54px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        color: #00478f;
+        border: 1px solid #00478f;
+
+        font-size: 24px;
+        font-family: Lato, sans-serif;
+      }
+      .btn-checkout {
+        width: 336px;
+        height: 54px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        color: #00478f;
+        border: 1px solid #00478f;
+
+        font-size: 24px;
+        font-family: Lato, sans-serif;
+        &:last-of-type {
+          background: #00478f;
+          color: #ffffff;
+        }
       }
     }
   }
