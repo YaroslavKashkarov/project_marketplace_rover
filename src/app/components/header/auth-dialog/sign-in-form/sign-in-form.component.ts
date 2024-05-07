@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { environment } from '../../../../../environments/environment.prod';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -25,7 +26,9 @@ export class SignInFormComponent implements OnInit{
 
   signInForm: FormGroup;
   hide: boolean = true;
-  isSuccessfull: boolean = false;
+
+  @Output()
+  isSuccessful = new EventEmitter<void>();
 
   constructor(private authService: AuthenticationService){}
 
@@ -35,10 +38,9 @@ export class SignInFormComponent implements OnInit{
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      // confirmPassword: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
     });
 
-    console.log(environment.apiEndoint)
   }
 
   onSignInFormSubmit() {
@@ -50,7 +52,7 @@ export class SignInFormComponent implements OnInit{
       this.authService.registerUser(this.signInForm.getRawValue()).subscribe(
         {
           next: () => {
-            this.isSuccessfull = true;
+            this.isSuccessful.emit();
           },
           error: (err) => console.log(err)
         }

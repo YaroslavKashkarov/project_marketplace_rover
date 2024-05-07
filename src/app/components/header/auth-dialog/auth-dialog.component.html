@@ -1,4 +1,5 @@
-<div class="container">
+<ng-container *ngIf="!isSuccess; else success">
+  <div class="container">
     <div class="header">
         <div class="logo">
             <svg fill="none" height="50" viewBox="0 0 46 50" width="46" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +38,16 @@
         >Login</div>
     </div>
     <div class="content">
-        <app-sign-in-form *ngIf="dialogContent == dialogContentEnum.SignIn"></app-sign-in-form>
+        <app-sign-in-form 
+          *ngIf="dialogContent == dialogContentEnum.SignIn"
+          (isSuccessful)="openCongratulations()"
+        ></app-sign-in-form>
         <app-login-form *ngIf="dialogContent == dialogContentEnum.Login"></app-login-form>
     </div>
 </div> 
+</ng-container>
+
+
+<ng-template #success>
+  <app-congratulations (closeDialogClicked)="closeDialog()"></app-congratulations>
+</ng-template>
