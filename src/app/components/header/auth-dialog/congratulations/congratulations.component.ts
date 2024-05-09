@@ -1,19 +1,24 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { IUser } from '../../../../../core/interfaces/user.interface';
+
 
 
 @Component({
   selector: 'app-congratulations',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatDialogModule],
   templateUrl: './congratulations.component.html',
   styleUrl: './congratulations.component.scss'
 })
 export class CongratulationsComponent {
-  @Output()
-  closeDialogClicked = new EventEmitter<void>();
+
+  user: IUser | null
+
+  constructor(public dialogRef: MatDialogRef<CongratulationsComponent>){}
 
   closeDialog(){
-    this.closeDialogClicked.emit();
+    this.dialogRef.close({})
   }
 }

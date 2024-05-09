@@ -6,11 +6,14 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from '../environments/environment';
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
-    provideClientHydration(), 
+    provideClientHydration(),
+    provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideAnimations(),
     {
       provide: 'SocialAuthServiceConfig',
@@ -27,6 +30,11 @@ export const appConfig: ApplicationConfig = {
           console.log(err);
         },
       } as SocialAuthServiceConfig,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
     },
   ]
 };

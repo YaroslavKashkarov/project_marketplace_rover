@@ -3,7 +3,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-import { CongratulationsComponent } from './congratulations/congratulations.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export enum DialogContentEnum{
@@ -14,13 +14,13 @@ export enum DialogContentEnum{
 @Component({
   selector: 'app-auth-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, SignInFormComponent, LoginFormComponent, CongratulationsComponent],
+  imports: [CommonModule, MatDialogModule, SignInFormComponent, LoginFormComponent],
   templateUrl: './auth-dialog.component.html',
   styleUrl: './auth-dialog.component.scss'
 })
 export class AuthDialogComponent {
 
-  isSuccess: boolean = false;
+  componentToOpen: 'Congratulations' | 'ForgotPassword' | null;
 
   dialogContent: DialogContentEnum = DialogContentEnum.SignIn;
   dialogContentEnum = DialogContentEnum
@@ -36,10 +36,18 @@ export class AuthDialogComponent {
   }
 
   closeDialog(){
-    this.dialogRef.close()
+    this.dialogRef.close({
+      openComponent: this.componentToOpen
+    })
   }
 
   openCongratulations(){
-    this.isSuccess = true;
+    this.componentToOpen = 'Congratulations';
+    this.closeDialog();
+  }
+
+  openForgotPassword(){
+    this.componentToOpen = 'ForgotPassword';
+    this.closeDialog();
   }
 }

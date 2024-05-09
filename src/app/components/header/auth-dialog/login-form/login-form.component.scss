@@ -7,6 +7,16 @@
         flex-direction: column;
         align-items: center;
 
+        .forgot{
+            color: #00478F;
+            cursor: pointer;
+            z-index: 2;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
         .submit{
             display: block;
             width: 400px;
@@ -23,7 +33,6 @@
 
             &:hover{
                 -webkit-text-stroke: 0.4px #FFFFFF;
-
             }
 
             &:active{

@@ -52,14 +52,19 @@
             line-height: 28px;
             margin-top: 16px;
 
-            &:hover{
+            &:hover {
                 -webkit-text-stroke: 0.4px #FFFFFF;
 
             }
 
-            &:active{
+            &:active {
                 background-color: #042C54;
                 -webkit-text-stroke: 0.4px #FFFFFF;
+            }
+
+            &:disabled{
+                background-color: rgba(7, 10, 15, 0.5);
+                -webkit-text-stroke: 0px;
             }
         }
     }
