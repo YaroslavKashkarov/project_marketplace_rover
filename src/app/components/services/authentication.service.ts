@@ -68,7 +68,6 @@ export class AuthenticationService extends BaseService{
 
   loginWithGoogle(){
     this.socialAuthService.authState.subscribe((res) => {
-      console.log(res)
       const body = {
         credential: res.idToken,
       }

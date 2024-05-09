@@ -14,8 +14,6 @@ import { IUser } from '../../../../../core/interfaces/user.interface';
 })
 export class CongratulationsComponent {
 
-  user: IUser | null
-
   constructor(public dialogRef: MatDialogRef<CongratulationsComponent>){}
 
   closeDialog(){
