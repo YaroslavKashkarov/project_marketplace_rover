@@ -47,6 +47,7 @@
     font-style: normal;
     line-height: 100%;
     color: #00478f;
+    text-decoration: none;
   }
 
   &__second {
@@ -56,6 +57,7 @@
     font-style: normal;
     line-height: normal;
     color: #00478f;
+    text-decoration: none;
   }
 }
 
@@ -88,7 +90,7 @@
     border-right: none;
     border-bottom: 1px solid #00478f;
     border-left: 1px solid #00478f;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 8px 0px 0px 8px;
     background: #fff;
   }
 }
@@ -102,7 +104,7 @@
     border-right: 1px solid #00478f;
     border-bottom: 1px solid #00478f;
     border-left: 1px solid #00478f;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px 8px 8px 0px;
     background: #fff;
     cursor: pointer;
   }
