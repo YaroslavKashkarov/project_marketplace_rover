@@ -5,6 +5,7 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
+import { LoyaltyprogComponent } from './components/loyaltyprog/loyaltyprog.component';
 // import {
 //   CarouselComponent,
 // } from './components/home-page/carousel/carousel.component';
@@ -25,7 +26,8 @@ import {
       FilterComponent,
       FooterComponent,
       NavbarComponent,
-      CarouselComponent],
+      CarouselComponent,
+      LoyaltyprogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
