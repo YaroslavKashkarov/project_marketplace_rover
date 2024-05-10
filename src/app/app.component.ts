@@ -6,23 +6,30 @@ import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FilterComponent} from './components/header/filter/filter.component';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
 
 
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports:
-			[CommonModule,
+	imports: [
+				CommonModule,
+				MatIconModule,
 				RouterOutlet,
 				HomePageComponent,
 				HeaderComponent,
 				FilterComponent,
 				FooterComponent,
-				NavbarComponent],
+				NavbarComponent,
+				SocialLoginModule,
+			],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
 })
 export class AppComponent {
-
+	constructor(iconRegistry: MatIconRegistry) {
+		iconRegistry.setDefaultFontSetClass("fa-regular");
+	}
 }

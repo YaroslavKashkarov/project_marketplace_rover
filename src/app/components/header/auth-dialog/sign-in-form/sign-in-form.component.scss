@@ -1,0 +1,73 @@
+:host{
+    display: block;
+
+    .registration{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .name{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mat-mdc-form-field {
+            display: block;
+            height: 56px;
+            margin: 8px 0;
+            width: 100%;
+            font-family: Lato, sans-serif;
+
+
+            &.half{
+                display: inline-flex;
+                width: 218px;
+                
+                &.first{
+                    margin-right: 12px;
+                }
+            }
+        }
+
+        .mat-icon{
+            width: 26px;
+            height: 26px;
+        }
+
+        .mat-mdc-icon-button{
+            font-size: 22px;
+        }
+
+        .submit{
+            display: block;
+            width: 400px;
+            height: 56px;
+            border-radius: 16px;
+            border: none;
+            background-color: #00478F;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            color: #FFFFFF;
+            line-height: 28px;
+            margin-top: 16px;
+
+            &:hover {
+                -webkit-text-stroke: 0.4px #FFFFFF;
+
+            }
+
+            &:active {
+                background-color: #042C54;
+                -webkit-text-stroke: 0.4px #FFFFFF;
+            }
+
+            &:disabled{
+                background-color: rgba(7, 10, 15, 0.5);
+                -webkit-text-stroke: 0px;
+            }
+        }
+    }
+
+
+}
