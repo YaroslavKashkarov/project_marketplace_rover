@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart-buy',
@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './shopping-cart-buy.component.scss'
 })
 export class ShoppingCartBuyComponent {
-
+  isVisibleShoppingCartBuy: boolean = false;
 }

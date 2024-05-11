@@ -16,15 +16,7 @@ export const routes: Routes = [
     path: '', runGuardsAndResolvers: 'always',
     canActivate: [],
     children: [
-      {path: 'home/:filter', component: FilterComponent},
-      {
-        path: 'home/shopping-cart', component: ShoppingCartComponent,
-        children: [
-          {
-            path: 'shopping-cart/:buy-product', component: ShoppingCartBuyComponent
-          },
-        ],
-      },
+      {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
       {path: 'navbar/:category-product', component: NavbarComponent},
     ],

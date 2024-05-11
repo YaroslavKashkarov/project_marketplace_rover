@@ -14,6 +14,7 @@
       align-items: center;
       padding-bottom: 40px;
       &-title {
+        cursor: pointer;
         text-decoration: none;
         color: rgb(4, 44, 84);
         font-size: 18px;
@@ -25,6 +26,11 @@
           font-weight: 400;
         }
       }
+    }
+    &-description {
+      font-size: 22px;
+      line-height: 28px;
+      padding-bottom: 8px;
     }
 
     &-img-arrow {

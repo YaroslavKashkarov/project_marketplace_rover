@@ -5,9 +5,9 @@ import {CreateAnItemComponent} from './create-an-item/create-an-item.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {RouterLink} from "@angular/router";
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
-import { ForgotPasswordComponent } from './auth-dialog/forgot-password/forgot-password.component';
-import { CongratulationsComponent } from './auth-dialog/congratulations/congratulations.component';
+import {AuthDialogComponent} from './auth-dialog/auth-dialog.component';
+import {ForgotPasswordComponent} from './auth-dialog/forgot-password/forgot-password.component';
+import {CongratulationsComponent} from './auth-dialog/congratulations/congratulations.component';
 
 @Component({
   selector: 'app-header',
@@ -21,19 +21,19 @@ export class HeaderComponent {
   isCreateItemVisible: boolean = false;
   isShoppingCartVisible: boolean = false;
 
-  constructor(public dialog: MatDialog){}
+  constructor (public dialog: MatDialog) {}
 
   isCreateItem(): void {
     this.isCreateItemVisible = !this.isCreateItemVisible;
   }
 
-  toggleFilter(event: Event): void {
+  openFilter(event: Event): void {
     console.log(event);
     event.preventDefault();
     this.isFilterVisible = !this.isFilterVisible;
   }
 
-  toogleTrash(event: Event): void {
+  openShoppingCart(event: Event): void {
     console.log(event);
     event.preventDefault();
     this.isShoppingCartVisible = !this.isShoppingCartVisible;
@@ -46,30 +46,30 @@ export class HeaderComponent {
     });
 
     authDialogRef.afterClosed().subscribe(res => {
-      switch(res?.openComponent){
+      switch (res?.openComponent) {
         case 'ForgotPassword':
           this.openForgotPasswordDialog();
           break;
         case 'Congratulations':
           this.openCongratulationsDialog();
           break;
-        default: 
+        default:
           break;
-        }
-    })
+      }
+    });
   }
 
   openForgotPasswordDialog(): void {
     const forgotDialogRef = this.dialog.open(ForgotPasswordComponent, {
       height: '650px',
       width: '530px'
-    })
+    });
   }
 
   openCongratulationsDialog(): void {
     const congratDialogRef = this.dialog.open(CongratulationsComponent, {
       height: '650px',
       width: '530px'
-    })
+    });
   }
 }
