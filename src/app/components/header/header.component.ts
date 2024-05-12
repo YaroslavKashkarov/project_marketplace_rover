@@ -6,6 +6,8 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {RouterLink} from "@angular/router";
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { ForgotPasswordComponent } from './auth-dialog/forgot-password/forgot-password.component';
+import { CongratulationsComponent } from './auth-dialog/congratulations/congratulations.component';
 
 @Component({
   selector: 'app-header',
@@ -38,9 +40,36 @@ export class HeaderComponent {
   }
 
   openAuthDialog(): void {
-    const dialogRef = this.dialog.open(AuthDialogComponent, {
+    const authDialogRef = this.dialog.open(AuthDialogComponent, {
       height: '650px',
       width: '530px'
     });
+
+    authDialogRef.afterClosed().subscribe(res => {
+      switch(res?.openComponent){
+        case 'ForgotPassword':
+          this.openForgotPasswordDialog();
+          break;
+        case 'Congratulations':
+          this.openCongratulationsDialog();
+          break;
+        default: 
+          break;
+        }
+    })
+  }
+
+  openForgotPasswordDialog(): void {
+    const forgotDialogRef = this.dialog.open(ForgotPasswordComponent, {
+      height: '650px',
+      width: '530px'
+    })
+  }
+
+  openCongratulationsDialog(): void {
+    const congratDialogRef = this.dialog.open(CongratulationsComponent, {
+      height: '650px',
+      width: '530px'
+    })
   }
 }

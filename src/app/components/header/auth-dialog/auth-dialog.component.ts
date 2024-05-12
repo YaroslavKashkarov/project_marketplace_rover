@@ -3,6 +3,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export enum DialogContentEnum{
@@ -19,6 +20,8 @@ export enum DialogContentEnum{
 })
 export class AuthDialogComponent {
 
+  componentToOpen: 'Congratulations' | 'ForgotPassword' | null;
+
   dialogContent: DialogContentEnum = DialogContentEnum.SignIn;
   dialogContentEnum = DialogContentEnum
 
@@ -33,6 +36,18 @@ export class AuthDialogComponent {
   }
 
   closeDialog(){
-    this.dialogRef.close()
+    this.dialogRef.close({
+      openComponent: this.componentToOpen
+    })
+  }
+
+  openCongratulations(){
+    this.componentToOpen = 'Congratulations';
+    this.closeDialog();
+  }
+
+  openForgotPassword(){
+    this.componentToOpen = 'ForgotPassword';
+    this.closeDialog();
   }
 }
