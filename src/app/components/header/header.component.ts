@@ -20,9 +20,6 @@ export class HeaderComponent {
   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
-  // isShoppingCartVisible: boolean = false;
-
-
   constructor(public dialog: MatDialog) {
   }
 
@@ -35,12 +32,6 @@ export class HeaderComponent {
     event.preventDefault();
     this.isFilterVisible = !this.isFilterVisible;
   }
-
-  // openShoppingCart(event: Event): void {
-  //   console.log(event);
-  //   event.preventDefault();
-  //   this.isShoppingCartVisible = !this.isShoppingCartVisible;
-  // }
 
   openAuthDialog(): void {
     const authDialogRef = this.dialog.open(AuthDialogComponent, {
@@ -74,5 +65,19 @@ export class HeaderComponent {
       height: '650px',
       width: '530px',
     });
+  }
+
+  authOrProfile() {
+    const userToken = localStorage.getItem('userToken');
+
+    if (userToken) {
+      // this.profileComponent.openProfile(userToken);
+    } else {
+      this.openAuthDialog();
+    }
+  }
+
+  btn() {
+    console.log(localStorage.getItem('userToken'));
   }
 }

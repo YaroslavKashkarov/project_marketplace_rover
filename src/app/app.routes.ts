@@ -5,12 +5,22 @@ import { CreateAnItemComponent } from './components/header/create-an-item/create
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterComponent } from './components/header/filter/filter.component';
 import { ShoppingCartComponent } from './components/header/shopping-cart/shopping-cart.component';
+import {
+  ShoppingCartBuyComponent,
+} from './components/header/shopping-cart/shopping-cart-buy/shopping-cart-buy.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'home/:category', component: CategoryComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
+  // {
+  //   path: 'shopping-cart', component: ShoppingCartComponent,
+  //   children: [
+  //     {path: 'seller', component: ShoppingCartBuyComponent},
+  //   ],
+  // },
   {
     path: '', runGuardsAndResolvers: 'always',
     canActivate: [],
