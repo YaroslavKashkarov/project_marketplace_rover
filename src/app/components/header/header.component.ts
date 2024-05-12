@@ -19,7 +19,7 @@ import {CongratulationsComponent} from './auth-dialog/congratulations/congratula
 export class HeaderComponent {
   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
-  isShoppingCartVisible: boolean = false;
+  // isShoppingCartVisible: boolean = false;
 
   constructor (public dialog: MatDialog) {}
 
@@ -33,11 +33,11 @@ export class HeaderComponent {
     this.isFilterVisible = !this.isFilterVisible;
   }
 
-  openShoppingCart(event: Event): void {
-    console.log(event);
-    event.preventDefault();
-    this.isShoppingCartVisible = !this.isShoppingCartVisible;
-  }
+  // openShoppingCart(event: Event): void {
+  //   console.log(event);
+  //   event.preventDefault();
+  //   this.isShoppingCartVisible = !this.isShoppingCartVisible;
+  // }
 
   openAuthDialog(): void {
     const authDialogRef = this.dialog.open(AuthDialogComponent, {

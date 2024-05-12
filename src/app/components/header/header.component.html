@@ -78,8 +78,8 @@
         <button class="header-content__container-btn-lgn-select" type="button">
           <img alt="img" src="assets/img/arrow.png">UA
         </button>
-        <svg (click)="openShoppingCart($event)" class="header-content__container-btns-shopping-cart" fill="none"
-          height="16.750000" viewBox="0 0 18.5957 16.75" width="18.595703" xmlns="http://www.w3.org/2000/svg">
+        <svg class="header-content__container-btns-shopping-cart" fill="none" height="16.750000"
+          viewBox="0 0 18.5957 16.75" width="18.595703" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.75 0L1.75 0L1.80078 0.00999832C3.18555 0.0368881 4.39648 0.953342 4.80078 2.28L5 2.97L15.4297 2.97C16.3516 2.97419 17.2246 3.37503 17.8301 4.07C18.4336 4.76937 18.6992 5.69735 18.5605 6.61L17.9609 10.75C17.7598 12.3369 16.4199 13.5325 14.8203 13.55L8.93945 13.55C7.53516 13.5448 6.29883 12.6241 5.89062 11.28L3.35938 2.75C3.16602 2.01818 2.50781 1.50633 1.75 1.5L0.75 1.5C0.335938 1.5 0 1.16422 0 0.75C0 0.335785 0.335938 0 0.75 0ZM7.33008 10.8C7.54297 11.512 8.19727 12 8.93945 12L14.8203 12C15.6484 11.991 16.3477 11.3872 16.4805 10.57L17.0801 6.42C17.1621 5.93694 17.0293 5.44227 16.7148 5.06558C16.4023 4.68889 15.9395 4.46772 15.4492 4.46L5.44922 4.46L7.33008 10.8ZM8.71094 14.75C8.1582 14.75 7.71094 15.1977 7.71094 15.75C7.71094 16.3023 8.1582 16.75 8.71094 16.75C9.26172 16.75 9.71094 16.3023 9.71094 15.75C9.71094 15.1977 9.26172 14.75 8.71094 14.75ZM13.7109 15.75C13.7109 15.1977 14.1582 14.75 14.7109 14.75C15.2617 14.75 15.7109 15.1977 15.7109 15.75C15.7109 16.3023 15.2617 16.75 14.7109 16.75C14.1582 16.75 13.7109 16.3023 13.7109 15.75Z"
             fill="#00478F" fill-opacity="1.000000" fill-rule="evenodd" id="Icon" />
@@ -91,4 +91,4 @@
 
 <app-filter *ngIf="isFilterVisible"></app-filter>
 <app-create-an-item *ngIf="isCreateItemVisible"></app-create-an-item>
-<app-shopping-cart *ngIf="isShoppingCartVisible"></app-shopping-cart>
+<app-shopping-cart></app-shopping-cart>

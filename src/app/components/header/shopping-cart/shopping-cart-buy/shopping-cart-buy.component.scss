@@ -167,5 +167,64 @@
         }
       }
     }
+    &-shopping-result {
+      display: flex;
+      max-width: 1440px;
+      padding-top: 20px;
+      align-items: flex-end;
+      flex-direction: column;
+
+      &--total {
+        display: flex;
+        width: 336px;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        &__price-title {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: normal;
+        }
+        &__price {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      &--discount {
+        display: flex;
+        width: 336px;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        &__title {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: normal;
+        }
+        &__price {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      &--subtotal {
+        display: flex;
+        width: 336px;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        &__title {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: normal;
+        }
+        &__price {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+    }
   }
 }
