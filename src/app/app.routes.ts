@@ -8,6 +8,8 @@ import { ShoppingCartComponent } from './components/header/shopping-cart/shoppin
 import {
   ShoppingCartBuyComponent,
 } from './components/header/shopping-cart/shopping-cart-buy/shopping-cart-buy.component';
+import { ProfileComponent } from './components/profile/profile/profile.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -28,6 +30,8 @@ export const routes: Routes = [
       {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
       {path: 'navbar/category-product', component: NavbarComponent},
+      {path: 'profile', component: ProfileComponent},
+      {path: 'favorite', component: FavoriteComponent},
     ],
   },
 ];
