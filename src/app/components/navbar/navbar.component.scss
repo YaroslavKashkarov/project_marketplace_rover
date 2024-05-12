@@ -1,10 +1,10 @@
 .navbar {
-  margin: auto;
   display: flex;
-  width: 1440px;
-  height: 40px;
-  padding: 0px 94px;
   flex-shrink: 0;
+  max-width: 1440px;
+  height: 40px;
+  margin: auto;
+  padding: 0px 94px;
   background-color: #00478f;
 
   &__items {
@@ -20,14 +20,14 @@
 }
 
 .link {
-  list-style-type: none;
-  padding: 10px 40px;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
+  font-style: normal;
+  padding: 10px 40px;
+  list-style-type: none;
+  text-decoration: none;
+  color: #fff;
   border-left: 1px solid #fff;
   gap: 4px;
 }
