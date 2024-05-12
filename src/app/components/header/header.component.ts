@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
 import { CreateAnItemComponent } from './create-an-item/create-an-item.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { ForgotPasswordComponent } from './auth-dialog/forgot-password/forgot-password.component';
@@ -20,10 +20,7 @@ export class HeaderComponent {
   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
-  // isShoppingCartVisible: boolean = false;
-
-
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private router: Router) {
   }
 
   isCreateItem(): void {
@@ -35,12 +32,6 @@ export class HeaderComponent {
     event.preventDefault();
     this.isFilterVisible = !this.isFilterVisible;
   }
-
-  // openShoppingCart(event: Event): void {
-  //   console.log(event);
-  //   event.preventDefault();
-  //   this.isShoppingCartVisible = !this.isShoppingCartVisible;
-  // }
 
   openAuthDialog(): void {
     const authDialogRef = this.dialog.open(AuthDialogComponent, {
@@ -74,5 +65,19 @@ export class HeaderComponent {
       height: '650px',
       width: '530px',
     });
+  }
+
+  authOrProfile() {
+    const userToken = localStorage.getItem('userToken');
+
+    if (userToken) {
+      this.router.navigateByUrl('profile');
+    } else {
+      this.openAuthDialog();
+    }
+  }
+
+  btn() {
+    console.log(localStorage.getItem('userToken'));
   }
 }

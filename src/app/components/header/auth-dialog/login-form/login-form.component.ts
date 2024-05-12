@@ -14,7 +14,7 @@ import { AuthenticationService } from '../../../services/authentication.service'
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, GoogleSigninButtonModule],
   templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.scss'
+  styleUrl: './login-form.component.scss',
 })
 export class LoginFormComponent {
 
@@ -28,42 +28,43 @@ export class LoginFormComponent {
   @Output()
   forgotPassword = new EventEmitter;
 
-  constructor( private authService: AuthenticationService){}
+  constructor(private authService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-    })
+    });
 
-    this.authService.loginWithGoogle()
+    this.authService.loginWithGoogle();
   }
 
-  googleLogin(){
-    this.authService.loginWithGoogle()
+  googleLogin() {
+    this.authService.loginWithGoogle();
   }
 
   onLoginFormSubmit() {
     Object.keys(this.loginForm.controls).forEach(key => {
       this.loginForm.get(key)?.markAsDirty();
-    })
+    });
 
     if (this.loginForm.valid) {
       this.disabled = false;
       this.authService.manualLoginUser(this.loginForm.getRawValue()).subscribe(
         {
-          next: () => { 
-            this.isSuccessful.emit(); 
+          next: () => {
+            this.isSuccessful.emit();
           },
-          error: (err) => console.log(err)
-        }
-      )
+          error: (err) => console.log(err),
+        },
+      );
     } else {
       this.disabled = true;
     }
   }
 
-  forgotPasswordClicked(){
+  forgotPasswordClicked() {
     this.forgotPassword.emit();
   }
 
