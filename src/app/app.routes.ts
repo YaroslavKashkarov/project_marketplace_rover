@@ -16,7 +16,7 @@ export const routes: Routes = [
     children: [
       {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
-      {path: 'navbar/category-product', component: NavbarComponent},
+      {path: 'navbar/:category-product', component: NavbarComponent},
     ],
   },
 ];
