@@ -10,6 +10,7 @@
   z-index: 100;
   background: #070a0f80;
 }
+
 .overlay {
   position: absolute;
   width: 100%;
@@ -19,6 +20,7 @@
 
 .filter {
   display: flex;
+
   &__container {
     margin-inline: auto;
     padding: 40px 0px 40px 0px;
@@ -28,6 +30,7 @@
     background: #fff;
     z-index: 2;
   }
+
   &__title {
     margin: 0;
     font-family: Lato;
@@ -53,11 +56,13 @@
   &__price {
     display: flex;
     gap: 20px;
+
     &-container {
       padding-inline: 40px;
       display: flex;
       flex-direction: column;
     }
+
     &-title {
       margin: 0;
       font-family: Lato;
@@ -66,10 +71,12 @@
       font-weight: 700;
       line-height: normal;
     }
+
     &-item {
       &-filter {
         position: relative;
       }
+
       &-text {
         position: absolute;
         top: 4px;
@@ -83,6 +90,7 @@
         line-height: normal;
         border-left: 1px solid var(--Primary-Blue, #00478f);
       }
+
       &-title {
         font-family: Lato;
         font-size: 20px;
@@ -91,6 +99,7 @@
         line-height: normal;
         color: #070a0f;
       }
+
       &-input {
         width: 192px;
         height: 40px;
@@ -112,6 +121,7 @@
       flex-direction: column;
       gap: 12px;
     }
+
     &-title {
       font-family: Lato;
       font-size: 24px;
@@ -120,11 +130,13 @@
       line-height: normal;
       margin: 0;
     }
+
     &-buttons {
       display: flex;
       gap: 20px;
       align-items: flex-start;
     }
+
     &-btn {
       width: 68px;
       height: 40px;
@@ -150,6 +162,7 @@
       flex-direction: column;
       gap: 12px;
     }
+
     &-title {
       font-family: Lato;
       font-size: 24px;
@@ -158,6 +171,7 @@
       line-height: normal;
       margin: 0;
     }
+
     &-item {
       height: 40px;
       padding: 8px 16px;
@@ -186,6 +200,7 @@
         justify-content: flex-start;
         gap: 12px;
       }
+
       &-input {
         width: 32px;
         height: 32px;
@@ -194,6 +209,7 @@
         border: 2px solid #046cd4;
       }
     }
+
     &-title {
       padding-top: 40px;
       font-family: Lato;
@@ -204,9 +220,11 @@
       padding-bottom: 12px;
       margin: 0;
     }
+
     &-search {
       display: flex;
       padding-bottom: 40px;
+
       &-input {
         width: 298px;
         height: 35px;
@@ -215,6 +233,7 @@
         background: #fff;
       }
     }
+
     &-input {
       display: flex;
       width: 32px;
@@ -223,6 +242,7 @@
       align-items: center;
       gap: 8px;
     }
+
     &-text {
       display: flex;
       flex-direction: column;
@@ -234,6 +254,7 @@
     }
   }
 }
+
 .btn {
   &__container {
     padding-top: 60px;
@@ -241,6 +262,7 @@
     gap: 20px;
     justify-content: center;
   }
+
   &-active {
     width: 192px;
     height: 54px;
