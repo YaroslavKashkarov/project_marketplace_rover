@@ -18,15 +18,15 @@ export const routes: Routes = [
     children: [
       {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
-      {path: 'navbar/:category-product', component: NavbarComponent},
+      {path: 'navbar/category-product', component: NavbarComponent},
     ],
   },
-  // {path:"**", component: ErrorComponent}
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+
+export const routes: Routes = [
+  {path: '', component: HomePageComponent},
+  {path: '', component: NotFoundPageComponent},
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule, RouterOutlet, RouterLink],
-})
 export class AppRoutingModule {
 }
