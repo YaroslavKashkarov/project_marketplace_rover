@@ -21,12 +21,6 @@ export const routes: Routes = [
     ],
   },
 ];
-// import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-//
-// export const routes: Routes = [
-//   {path: '', component: HomePageComponent},
-//   {path: '', component: NotFoundPageComponent},
-// ];
 
 export class AppRoutingModule {
 }
