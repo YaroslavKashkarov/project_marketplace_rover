@@ -5,11 +5,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { GoogleSigninButtonModule, SocialAuthService } from '@abacritt/angularx-social-login';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { CustomValidators } from '../../../../validation/custom-validators';
 import { ErrorMessagesComponent } from '../../../../validation/error-messages/error-messages.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { error } from 'console';
 
 
 @Component({
@@ -30,7 +31,9 @@ export class LoginFormComponent {
   @Output()
   forgotPassword = new EventEmitter;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(
+    private authService: AuthenticationService,
+    private socialAuthService: SocialAuthService) {
   }
 
   ngOnInit(): void {
@@ -39,12 +42,29 @@ export class LoginFormComponent {
       password: new FormControl('', Validators.required),
     }, CustomValidators.validateConfirmPassword);
 
-    this.authService.loginWithGoogle();
+    this.socialAuthService.authState.subscribe((res) => {
+      this.authService.loginWithGoogle(res.idToken)
+        .subscribe(
+          {
+            next: () => {
+              this.isSuccessful.emit();
+            },
+            error: (errorResponse: HttpErrorResponse) => {
+              const errorsArray: Array<any> = errorResponse.error.message;
+              errorsArray.forEach(x=> this.loginForm.get(x.field)?.setErrors({
+                'serverError': x.error
+              }));
+              this.loginForm.markAsUntouched();
+            }
+          },
+        )
+    })
+
   }
 
-  googleLogin() {
-    this.authService.loginWithGoogle();
-  }
+  // googleLogin() {
+  //   this.authService.loginWithGoogle();
+  // }
 
   onLoginFormSubmit() {
     Object.keys(this.loginForm.controls).forEach(key => {

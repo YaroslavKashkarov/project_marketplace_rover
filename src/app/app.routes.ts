@@ -12,11 +12,15 @@ import { ProfileComponent } from './components/profile/profile/profile.component
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ResetPasswordPageComponent } from './components/header/auth-dialog/reset-password/reset-password-page/reset-password-page.component';
 import { resetPasswordGuard } from './guards/reset-password.guard';
+import { authenticatedUserGuard } from './guards/authenticated-user.guard';
 
 export const routes: Routes = [
-  {path: '', component: HomePageComponent},
+  {path: '', component: HomePageComponent,
+  children: [
+    {path: 'reset-password', canActivate: [resetPasswordGuard], component: ResetPasswordPageComponent},
+  ]},
   {path: 'home', component: HomePageComponent},
-  {path: 'reset-password', canActivate: [resetPasswordGuard], component: ResetPasswordPageComponent},
+  
   {path: 'home/:category', component: CategoryComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
@@ -33,7 +37,7 @@ export const routes: Routes = [
       {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
       {path: 'navbar/category-product', component: NavbarComponent},
-      {path: 'profile', component: ProfileComponent},
+      {path: 'profile', canActivate: [authenticatedUserGuard], component: ProfileComponent},
       {path: 'favorite', component: FavoriteComponent},
       
     ],

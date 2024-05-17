@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
 import { CreateAnItemComponent } from './create-an-item/create-an-item.component';
@@ -11,21 +11,30 @@ import { CongratulationsComponent } from './auth-dialog/congratulations/congratu
 import { AuthenticationService } from '../services/authentication.service';
 import { DialogComponentsOptions } from '../../../core/interfaces/dialog-components-options';
 import { DialogService } from '../services/dialog.service';
+import { IUser } from '../../../core/interfaces/user.interface';
+import { Subscription } from 'rxjs';
+import { UserIconComponent } from './user-icon/user-icon.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink, MatDialogModule],
+  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink, MatDialogModule, UserIconComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy{
+  
+  currentUser: IUser | null;
+  userSubscription: Subscription;
+  
   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
-  constructor(public dialog: MatDialog, private router: Router, private dialogService: DialogService) {
+  constructor(public dialog: MatDialog, private router: Router, private dialogService: DialogService, private authService: AuthenticationService) {
+    this.userSubscription = this.authService.$currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
   }
-
 
   isCreateItem(): void {
     this.isCreateItemVisible = !this.isCreateItemVisible;
@@ -41,17 +50,7 @@ export class HeaderComponent {
     this.dialogService.openAuthDialog();
   }
 
-  authOrProfile() {
-    const userToken = localStorage.getItem('userToken');
-
-    if (userToken) {
-      this.router.navigateByUrl('profile');
-    } else {
-      this.openAuthDialog();
-    }
-  }
-
-  btn() {
-    console.log(localStorage.getItem('userToken'));
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
   }
 }
