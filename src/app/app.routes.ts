@@ -1,29 +1,22 @@
-<<<<<<< HEAD
-import {RouterLink, RouterModule, RouterOutlet, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 import {HomePageComponent} from './components/home-page/home-page.component';
-import {NgModule} from '@angular/core';
 import {CategoryComponent} from "./components/category/category.component";
 import {CreateAnItemComponent} from './components/header/create-an-item/create-an-item.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {FilterComponent} from './components/header/filter/filter.component';
-=======
-import { Routes } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { CategoryComponent } from './components/category/category.component';
-import { CreateAnItemComponent } from './components/header/create-an-item/create-an-item.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FilterComponent } from './components/header/filter/filter.component';
 import { ShoppingCartComponent } from './components/header/shopping-cart/shopping-cart.component';
 import {
   ShoppingCartBuyComponent,
 } from './components/header/shopping-cart/shopping-cart-buy/shopping-cart-buy.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
->>>>>>> 738e47dbbe885c4b389833bf78da1347da00867c
+import { ResetPasswordPageComponent } from './components/header/auth-dialog/reset-password/reset-password-page/reset-password-page.component';
+import { resetPasswordGuard } from './guards/reset-password.guard';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
+  {path: 'reset-password', canActivate: [resetPasswordGuard], component: ResetPasswordPageComponent},
   {path: 'home/:category', component: CategoryComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
@@ -39,13 +32,10 @@ export const routes: Routes = [
     children: [
       {path: 'home/filter', component: FilterComponent},
       {path: 'create-an-item', component: CreateAnItemComponent},
-<<<<<<< HEAD
-      {path: 'navbar/:category-product', component: NavbarComponent},
-=======
       {path: 'navbar/category-product', component: NavbarComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'favorite', component: FavoriteComponent},
->>>>>>> 738e47dbbe885c4b389833bf78da1347da00867c
+      
     ],
   },
 ];

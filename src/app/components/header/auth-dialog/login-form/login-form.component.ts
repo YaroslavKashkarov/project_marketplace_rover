@@ -7,12 +7,15 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { AuthenticationService } from '../../../services/authentication.service';
+import { CustomValidators } from '../../../../validation/custom-validators';
+import { ErrorMessagesComponent } from '../../../../validation/error-messages/error-messages.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, GoogleSigninButtonModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, GoogleSigninButtonModule, ErrorMessagesComponent],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
 })
@@ -20,7 +23,6 @@ export class LoginFormComponent {
 
   loginForm: FormGroup;
   hide: boolean = true;
-  disabled: boolean = false;
 
   @Output()
   isSuccessful = new EventEmitter<void>();
@@ -33,9 +35,9 @@ export class LoginFormComponent {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
-    });
+    }, CustomValidators.validateConfirmPassword);
 
     this.authService.loginWithGoogle();
   }
@@ -50,17 +52,20 @@ export class LoginFormComponent {
     });
 
     if (this.loginForm.valid) {
-      this.disabled = false;
       this.authService.manualLoginUser(this.loginForm.getRawValue()).subscribe(
         {
           next: () => {
             this.isSuccessful.emit();
           },
-          error: (err) => console.log(err),
+          error: (errorResponse: HttpErrorResponse) => {
+            const errorsArray: Array<any> = errorResponse.error.message;
+            errorsArray.forEach(x=> this.loginForm.get(x.field)?.setErrors({
+              'serverError': x.error
+            }));
+            this.loginForm.markAsUntouched();
+          }
         },
       );
-    } else {
-      this.disabled = true;
     }
   }
 

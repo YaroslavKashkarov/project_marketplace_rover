@@ -4,6 +4,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponentsOptions } from '../../../../core/interfaces/dialog-components-options';
 
 
 export enum DialogContentEnum{
@@ -20,7 +21,7 @@ export enum DialogContentEnum{
 })
 export class AuthDialogComponent {
 
-  componentToOpen: 'Congratulations' | 'ForgotPassword' | null;
+  componentToOpen?: DialogComponentsOptions;
 
   dialogContent: DialogContentEnum = DialogContentEnum.SignIn;
   dialogContentEnum = DialogContentEnum
