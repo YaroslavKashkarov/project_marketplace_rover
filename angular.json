@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app_marketplace_kufer": {
+    "app_marketplace_rover": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app_marketplace_kufer",
+            "outputPath": "dist/app_marketplace_rover",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app_marketplace_kufer:build:production"
+              "buildTarget": "app_marketplace_rover:build:production"
             },
             "development": {
-              "buildTarget": "app_marketplace_kufer:build:development"
+              "buildTarget": "app_marketplace_rover:build:development"
             }
           },
           "defaultConfiguration": "development"
