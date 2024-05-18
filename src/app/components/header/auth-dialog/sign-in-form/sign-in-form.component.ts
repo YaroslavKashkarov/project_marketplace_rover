@@ -7,12 +7,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { debounce, interval } from 'rxjs';
+import { ErrorMessagesComponent } from '../../../../validation/error-messages/error-messages.component';
+import { CustomValidators } from '../../../../validation/custom-validators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-sign-in-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ErrorMessagesComponent],
   templateUrl: './sign-in-form.component.html',
   styleUrl: './sign-in-form.component.scss'
 })
@@ -34,7 +37,7 @@ export class SignInFormComponent implements OnInit{
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
-    });
+    }, CustomValidators.validateConfirmPassword);
 
     this.signInForm.valueChanges
     .pipe(
@@ -59,10 +62,11 @@ export class SignInFormComponent implements OnInit{
           next: () => {
             this.isSuccessful.emit();
           },
-          error: (err) => {
-            this.signInForm.setErrors({
-              serverError: 'test'
-            });
+          error: (errorResponse: HttpErrorResponse) => {
+            const errorsArray: Array<any> = errorResponse.error.message;
+            errorsArray.forEach(x=> this.signInForm.get(x.field)?.setErrors({
+              'serverError': x.error
+            }));
             this.signInForm.markAsUntouched();
           }
         }
