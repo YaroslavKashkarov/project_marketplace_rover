@@ -12,7 +12,7 @@ import { CarouselComponent } from './components/home-page/carousel/carousel.comp
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
-
+import { LoyaltyprogComponent } from './components/loyaltyprog/loyaltyprog.component';
 // ------------------------------------------------------------
 import { SocialLoginComponent } from './components/social-login/social-login.component';
 // ------------------------------------------------------------
@@ -38,6 +38,7 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
       SocialLoginComponent,
 				MatIconModule,
 				SocialLoginModule,
+      LoyaltyprogComponent,
 			],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',

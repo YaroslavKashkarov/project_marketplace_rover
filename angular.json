@@ -113,4 +113,7 @@
   "cli": {
     "analytics": false
   }
+//  "cli": {
+//    "analytics": "1f0f3a89-54f0-4dd4-b20e-b1efa084edae"
+//  }
 }
