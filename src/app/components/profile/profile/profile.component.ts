@@ -5,6 +5,7 @@ import { PasswordEditingComponent } from '../password-editing/password-editing.c
 import { TogglePasswordEditing, ToggleProfileEditing } from '../../../servises/toggle-profile';
 import { ProfileService } from '../../services/profile.service';
 import { RouterLink } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ import { RouterLink } from '@angular/router';
 export class ProfileComponent implements OnInit {
   constructor(public toggleProfileEditing: ToggleProfileEditing,
               public togglePasswordEditing: TogglePasswordEditing,
-              private profileService: ProfileService) {
+              private profileService: ProfileService,
+              public authService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -35,4 +37,6 @@ export class ProfileComponent implements OnInit {
         },
       );
   }
+
+
 }

@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
-import {HomePageComponent} from './components/home-page/home-page.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {NavbarComponent} from './components/navbar/navbar.component';
-import {HeaderComponent} from './components/header/header.component';
-import {FilterComponent} from './components/header/filter/filter.component';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FilterComponent } from './components/header/filter/filter.component';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { SocialLoginModule } from '@abacritt/angularx-social-login';
 import { CarouselComponent } from './components/home-page/carousel/carousel.component';
@@ -15,6 +15,7 @@ import { ProfileComponent } from './components/profile/profile/profile.component
 import { LoyaltyprogComponent } from './components/loyaltyprog/loyaltyprog.component';
 // ------------------------------------------------------------
 import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { ProfileEditingComponent } from './components/profile/profile-editing/profile-editing.component';
 // ------------------------------------------------------------
 
 // import {CarouselComponent,} from './components/home-page/carousel/carousel.component';
@@ -36,17 +37,14 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
       FavoriteComponent,
       ProfileComponent,
       SocialLoginComponent,
-				MatIconModule,
-				SocialLoginModule,
-      LoyaltyprogComponent,
-			],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.scss',
+      MatIconModule,
+      SocialLoginModule,
+      LoyaltyprogComponent, ProfileEditingComponent,
+    ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(iconRegistry: MatIconRegistry) {
-    iconRegistry.setDefaultFontSetClass("fa-regular");
-  }
   images = [
     {
       imageSrc:
@@ -74,4 +72,8 @@ export class AppComponent {
       titleButton: 'Shop Parts',
     },
   ];
+
+  constructor(iconRegistry: MatIconRegistry) {
+    iconRegistry.setDefaultFontSetClass('fa-regular');
+  }
 }

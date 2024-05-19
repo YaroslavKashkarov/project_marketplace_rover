@@ -10,8 +10,9 @@
   justify-content: center;
 
   &__navigate {
-    width: 1252px;
+    max-width: 1440px;
     margin-inline: auto;
+    padding-left: 90px;
     display: flex;
     gap: 4px;
     font-size: 24px;
@@ -28,6 +29,7 @@
     }
 
     &-item {
+      cursor: pointer;
       color: #042C54;
 
       &:last-of-type {

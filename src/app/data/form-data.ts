@@ -12,7 +12,7 @@ export const FORM_LABEL = {
   lastName: 'Last name',
   email: 'E-mail',
   phone: 'Phone',
-  city: 'Ternopil city',
+  city: 'City',
   password: 'Password',
   confirm: 'Confirm password',
 };

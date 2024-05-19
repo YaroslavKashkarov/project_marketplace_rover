@@ -118,6 +118,10 @@
     display: flex;
     gap: 12px;
 
+    &:last-of-type {
+      cursor: pointer;
+    }
+    
     &-container {
       width: 800px;
       display: flex;
