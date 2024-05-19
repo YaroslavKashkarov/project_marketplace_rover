@@ -4,13 +4,14 @@ import { ProfileEditingComponent } from '../profile-editing/profile-editing.comp
 import { PasswordEditingComponent } from '../password-editing/password-editing.component';
 import { TogglePasswordEditing, ToggleProfileEditing } from '../../../servises/toggle-profile';
 import { ProfileService } from '../../services/profile.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   providers: [ToggleProfileEditing, TogglePasswordEditing],
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, ProfileEditingComponent, PasswordEditingComponent],
+  imports: [CommonModule, ProfileEditingComponent, PasswordEditingComponent, RouterLink],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
