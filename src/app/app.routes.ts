@@ -19,11 +19,10 @@ export const routes: Routes = [
   children: [
     {path: 'reset-password', canActivate: [resetPasswordGuard], component: ResetPasswordPageComponent},
   ]},
-  {path: 'home', component: HomePageComponent},
-  
-  {path: 'home/:category', component: CategoryComponent},
-  {path: 'shopping-cart', component: ShoppingCartComponent},
-  {path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
+	{path: 'home', component: HomePageComponent},
+	{path: 'home/:category', component: CategoryComponent},
+	{path: 'shopping-cart', component: ShoppingCartComponent},
+	{path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
   // {
   //   path: 'shopping-cart', component: ShoppingCartComponent,
   //   children: [
@@ -43,5 +42,6 @@ export const routes: Routes = [
     ],
   },
 ];
+
 export class AppRoutingModule {
 }
