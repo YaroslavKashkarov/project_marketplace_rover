@@ -109,9 +109,6 @@
 				border-radius: 16px;
 				background: #00478f;
 
-				&__img {
-
-				}
 
 				&__link {
 					font-size: 24px;
@@ -152,5 +149,35 @@
 				gap: 8px;
 			}
 		}
-	}
+
+        &-user {
+          cursor: pointer;
+        }
+
+        .isuser{
+          height: 24px;
+          width: 24px;
+        }
+
+        &-favorite {
+          cursor: pointer;
+        }
+        &-shopping-cart {
+          cursor: pointer;
+        }
+      }
+
+      &-btn-lgn-select {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        padding: 8px 4px;
+        border: 1px solid #ffd640;
+        border-radius: 4px;
+        gap: 8px;
+      }
 }
+    
+  
+

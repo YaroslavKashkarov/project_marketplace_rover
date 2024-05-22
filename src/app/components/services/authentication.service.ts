@@ -1,41 +1,47 @@
 import { SocialAuthService } from '@abacritt/angularx-social-login';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BaseService } from '../../../core/base.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ISignInRequest } from '../../../core/interfaces/signin-request.interface';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IAuthResult } from '../../../core/interfaces/auth-result.interface';
 import { ILoginRequest } from '../../../core/interfaces/login-request.interface';
 import { IUser } from '../../../core/interfaces/user.interface';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService extends BaseService {
 
-  public $isSignedIn: Observable<boolean>;
-  private readonly localStorageKey = 'userToken';
-  private userTokenSubject = new BehaviorSubject<string | null>(null);
+  public $currentUser: Observable<IUser | null>;
+  private readonly localStorageKey = 'currentUser';
+  private currentUserSubject = new BehaviorSubject<IUser | null>(null);
   private isSignedInSubject = new BehaviorSubject<boolean>(false);
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private socialAuthService: SocialAuthService,
     httpClient: HttpClient,
   ) {
     super(httpClient);
-    this.$isSignedIn = this.isSignedInSubject.asObservable();
+    this.$currentUser = this.currentUserSubject.asObservable();
 
-    const userDataJson = localStorage.getItem('userToken');
+    if (isPlatformBrowser(this.platformId)) {
+      const userDataJson = localStorage.getItem(this.localStorageKey);
 
-    if (userDataJson != null) {
-      this.userTokenSubject.next(JSON.parse(userDataJson));
-    } else {
-      this.userTokenSubject.next(null);
+      if (userDataJson != null) {
+        this.currentUserSubject.next(JSON.parse(userDataJson))
+      } else {
+        this.currentUserSubject.next(null);
+      }
     }
+    
   }
 
-  public get userToken(): string | null {
-    return this.userTokenSubject.value;
+  public get currentUserValue(): IUser | null {
+    return this.currentUserSubject.value;
   }
 
   public get isSignedIn(): boolean {
@@ -46,9 +52,18 @@ export class AuthenticationService extends BaseService {
     return this.post<IAuthResult>('api/auth/signup', registrationRequest)
       .pipe(
         tap((res) => {
-          localStorage.setItem(this.localStorageKey, JSON.stringify(res.token));
-          this.userTokenSubject.next(res.token);
-          this.isSignedInSubject.next(true);
+          const user: IUser = {
+            id: res.id,
+            email: res.email,
+            firstName: res.firstName,
+            lastName: res.lastName,
+            photo: res.photo,
+            city: res.city,
+            role: res.role,
+            token: res.token,
+          }
+          localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+          this.currentUserSubject.next(user);
         }),
       );
   }
@@ -57,38 +72,44 @@ export class AuthenticationService extends BaseService {
     return this.post<IAuthResult>('api/auth/login', loginRequest)
       .pipe(
         tap((res) => {
-          localStorage.setItem(this.localStorageKey, JSON.stringify(res.token));
-          this.userTokenSubject.next(res.token);
-          this.isSignedInSubject.next(true);
-          console.log(res.token);
+          const user: IUser = {
+            id: res.id,
+            email: res.email,
+            firstName: res.firstName,
+            lastName: res.lastName,
+            photo: res.photo,
+            city: res.city,
+            role: res.role,
+            token: res.token,
+          }
+          localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+          this.currentUserSubject.next(user);
         }),
       );
   }
 
-  loginWithGoogle() {
-    this.socialAuthService.authState.subscribe((res) => {
+  loginWithGoogle(googleToken: string): Observable<IAuthResult> {
       const body = {
-        credential: res.idToken,
+        credential: googleToken,
       };
 
-      this.post<IAuthResult>('api/auth/google', body)
+      return this.post<IAuthResult>('api/auth/google', body)
         .pipe(
           tap((res) => {
-            localStorage.setItem(this.localStorageKey, JSON.stringify(res.token));
-            this.userTokenSubject.next(res.token);
-            this.isSignedInSubject.next(true);
+            const user: IUser = {
+              id: res.id,
+              email: res.email,
+              firstName: res.firstName,
+              lastName: res.lastName,
+              photo: res.photo,
+              city: res.city,
+              role: res.role,
+              token: res.token,
+            }
+            localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+            this.currentUserSubject.next(user);
           }),
-        )
-        .subscribe({
-          next: (response) => {
-            console.log('Authentication successful:', response);
-          },
-          error: (error) => {
-            console.error('Authentication failed:', error);
-          },
-        });
-
-    });
+        );
   }
 
   logOutUser(): Observable<string> {
@@ -96,13 +117,31 @@ export class AuthenticationService extends BaseService {
       .pipe(
         tap(() => {
           localStorage.removeItem(this.localStorageKey);
-          this.isSignedInSubject.next(false);
+          this.currentUserSubject.next(null);
         }),
       );
   }
 
   getUserInfo(): Observable<IUser> {
     return this.get<IUser>('api/auth/current');
+  }
+
+  sendRecoveryToken(userEmail: string): Observable<string> {
+    const body = {
+      email: userEmail
+    }
+    return this.post<string>('api/auth/send-recovery-token', body)
+  }
+
+  resetPassword(token: string, password: string): Observable<string> {
+    const body = {
+      password: password
+    }
+
+    const headers = {
+      "Authorization": `Bearer ${token}`
+    }
+    return this.postWithHeaders<string>('api/auth/reset-password', body, headers)
   }
 
 }
