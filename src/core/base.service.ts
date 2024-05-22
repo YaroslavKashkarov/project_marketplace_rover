@@ -16,6 +16,10 @@ export class BaseService {
     return this.httpClient.post<T>(`${this.apiUrl}/${url}`, body)
   }
 
+  protected postWithHeaders<T>(url:string, body: any, headers: any):Observable<T> {
+    return this.httpClient.post<T>(`${this.apiUrl}/${url}`, body, {headers})
+  }
+
   protected put<T>(url:string, body: any):Observable<T> {
     return this.httpClient.put<T>(`${this.apiUrl}/${url}`, body)
   }

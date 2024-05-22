@@ -44,7 +44,7 @@ export class CategoryComponent implements OnInit {
   }
 
   selectOption(sortOption: string) {
-    console.log(sortOption);
+    // console.log(sortOption);
     this.selectedSortOption = sortOption;
   }
 
