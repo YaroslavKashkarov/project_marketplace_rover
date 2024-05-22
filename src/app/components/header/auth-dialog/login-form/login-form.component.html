@@ -4,6 +4,7 @@
         <mat-label>E-mail</mat-label>
         <input matInput formControlName="email">
     </mat-form-field>
+    <app-error-messages [control]="loginForm.get('email')"></app-error-messages>
 
     <mat-form-field appearance="outline" hideRequiredMarker>
         <mat-label>Password</mat-label>
@@ -21,6 +22,7 @@
             ></mat-icon>
         </button>
     </mat-form-field>
+    <app-error-messages [control]="loginForm.get('password')"></app-error-messages>
     <div class="forgot" (click)="forgotPasswordClicked()">Forgot password?</div>
 
     <button type="submit" class="submit">Login</button>

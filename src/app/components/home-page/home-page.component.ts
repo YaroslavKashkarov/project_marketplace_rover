@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CarouselComponent} from './carousel/carousel.component';
 import {NavbarComponent} from "../navbar/navbar.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
 	selector: 'app-home-page',
@@ -9,7 +10,8 @@ import {NavbarComponent} from "../navbar/navbar.component";
 	standalone: true,
 	templateUrl: './home-page.component.html',
 	styleUrl: './home-page.component.scss',
-	imports: [CommonModule, CarouselComponent, NavbarComponent]
+	imports: [      RouterOutlet,
+		CommonModule, CarouselComponent, NavbarComponent]
 })
 
 
