@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Product} from "./product";
 import {ProductServiceService} from "./product-service.service";
 import {ProductComponent} from "./product/product.component";
-import {DropdownDirective} from "../../shared/dropdown.directive";
+// import {DropdownDirective} from "../../shared/dropdown.directive"; original
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
@@ -12,7 +12,8 @@ import {FormsModule} from "@angular/forms";
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, ProductComponent, DropdownDirective, MatInputModule, MatSelectModule, FormsModule],
+  imports: [CommonModule, ProductComponent, MatInputModule, MatSelectModule, FormsModule],
+  // imports: [CommonModule, ProductComponent, DropdownDirective, MatInputModule, MatSelectModule, FormsModule], original
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
@@ -27,6 +28,7 @@ export class CategoryComponent implements OnInit {
   products: Product []
   productsToDisplay: number = 8;
   selectedSortOption: string = '';
+  // showSortOptions = true; я додавав
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
