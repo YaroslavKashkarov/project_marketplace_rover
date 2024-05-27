@@ -4,7 +4,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Product} from "./product";
 import {ProductServiceService} from "./product-service.service";
 import {ProductComponent} from "./product/product.component";
-import {DropdownDirective} from "../../shared/dropdown.directive";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
@@ -12,19 +11,19 @@ import {FormsModule} from "@angular/forms";
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, ProductComponent, DropdownDirective, MatInputModule, MatSelectModule, FormsModule],
+  imports: [CommonModule, ProductComponent, MatInputModule, MatSelectModule, FormsModule],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit {
-  constructor(
+  constructor (
     private route: ActivatedRoute,
     private productService: ProductServiceService
   ) {
   }
 
   category: string;
-  products: Product []
+  products: Product[];
   productsToDisplay: number = 8;
   selectedSortOption: string = '';
 
@@ -32,9 +31,9 @@ export class CategoryComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const category = params.get('category');
       if (category) {
-        this.category = category
+        this.category = category;
       }
-      this.products = this.productService.getProductsByCategory(this.category)
+      this.products = this.productService.getProductsByCategory(this.category);
     });
 
   }
@@ -45,8 +44,8 @@ export class CategoryComponent implements OnInit {
   }
 
   selectOption(sortOption: string) {
-    console.log(sortOption)
-    this.selectedSortOption = sortOption
+    // console.log(sortOption);
+    this.selectedSortOption = sortOption;
   }
 
   public sortProductsDesc(): void {

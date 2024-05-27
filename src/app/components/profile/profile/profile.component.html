@@ -1,0 +1,91 @@
+<!--<app-password-editing></app-password-editing>-->
+
+<div class="personal__navigate-container">
+  <div class="personal__navigate">
+    <p class="personal__navigate-item">Home</p>
+    <img alt="" class="personal__navigate-img" src="assets/img/arrow-right.svg">
+    <p class="personal__navigate-item">Profile</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="personal__container">
+    <div class="personal">
+      <div class="personal__profile">
+        <img alt="profile-img" class="personal__profile-img" src="assets/img/profile/profile-img.png">
+
+        <h3 class="personal__profile-name">Jessica Hanson</h3>
+      </div>
+
+      <div class="personal__info">
+        <span>example&#64;gmail.com</span>
+        <div class="personal__info-line"></div>
+        <span>+380 406 555 120</span>
+        <div class="personal__info-line"></div>
+        <span>Ternopil city</span>
+      </div>
+    </div>
+
+    <img (click)="toggleProfileEditing.toggleProfileEditing($event)" alt="setting" src="assets/img/profile/Setting.svg">
+  </div>
+
+  <div class="settings__container">
+    <div class="settings__item-container">
+      <div class="settings__item">
+        <img alt="locking" class="settings__item-img" src="assets/img/profile/Locking.svg">
+
+        <p class="settings__item-text">Reset Password</p>
+      </div>
+
+      <img (click)="togglePasswordEditing.togglePasswordEditing($event)" alt="setting" class="settings__item-icon"
+           src="assets/img/profile/Setting.svg">
+    </div>
+
+    <div class="settings__item-container">
+      <div class="settings__item">
+        <img alt="notification" class="settings__item-img" src="assets/img/profile/Notifications.svg">
+
+        <p class="settings__item-text">Notifications</p>
+      </div>
+
+      <label class="switch">
+        <input checked type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="settings__item-container">
+      <div class="settings__item">
+        <img alt="favorites" class="settings__item-img" src="assets/img/profile/Favorite.svg">
+
+        <p class="settings__item-text">Favorites</p>
+      </div>
+
+      <img alt="arrow" class="settings__item-icon" src="assets/img/profile/Arrow.svg">
+    </div>
+
+    <div class="settings__item-container">
+      <div class="settings__item">
+        <img alt="ads" class="settings__item-img" src="assets/img/profile/Ads.svg">
+
+        <p class="settings__item-text">Created item</p>
+      </div>
+
+      <img alt="arrow" class="settings__item-icon" src="assets/img/profile/Arrow.svg">
+    </div>
+
+    <div class="settings__item-container">
+      <div class="settings__item">
+        <img alt="ads" class="settings__item-img" src="assets/img/profile/Star.svg">
+
+        <p class="settings__item-text">Loyalty program</p>
+      </div>
+
+      <img alt="arrow" class="settings__item-icon" src="assets/img/profile/Arrow.svg">
+    </div>
+  </div>
+</div>
+
+<app-profile-editing *ngIf="toggleProfileEditing.isProfileEditingVisible"></app-profile-editing>
+
+<app-password-editing *ngIf="togglePasswordEditing.isPasswordEditingVisible"></app-password-editing>

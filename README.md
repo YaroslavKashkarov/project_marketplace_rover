@@ -18,12 +18,12 @@
 
 - Yaroslav Kashkarov
 - Egor Tymchenko
-- Larysa Hradyska
+- Mark Bulavin
+- Leon Blyschyk
 
 *Backend*
-
-- Larysa Hradyska
-- Oleh Popovych
+- Valera Shevchuk
+- Nazar Ivaniuk
 
 # Marketplace ROVER
 
