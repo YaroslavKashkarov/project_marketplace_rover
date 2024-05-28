@@ -1,49 +1,48 @@
-import {Component, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ActivatedRoute} from "@angular/router";
-import {IProduct} from "./product.interface";
-import {ProductServiceService} from "./product-service.service";
-import {ProductComponent} from "./product/product.component";
-import {MatInputModule} from "@angular/material/input";
-import {MatSelectModule} from "@angular/material/select";
-import {FormsModule} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ProductComponent } from '../product/product.component';
+import { ActivatedRoute } from '@angular/router';
+import { ProductServiceService } from '../product-service.service';
+import { IProduct } from '../product.interface';
+import { IFilters } from '../../../../core/interfaces/filters.interface';
 
 @Component({
-  selector: 'app-category',
+  selector: 'app-search-result',
   standalone: true,
   imports: [CommonModule, ProductComponent],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.scss'
+  templateUrl: './search-result.component.html',
+  styleUrl: './search-result.component.scss'
 })
-export class CategoryComponent implements OnInit {
+export class SearchResultComponent implements OnInit{
+
+  category: 'Search result';
+  products: IProduct[];
+  productsToDisplay: number = 8;
+  selectedSortOption: string = '';
+  filters: any = {};
+
   constructor (
     private route: ActivatedRoute,
     private productService: ProductServiceService
   ) {}
 
-  category: string;
-  products: IProduct[];
-  productsToDisplay: number = 8;
-  selectedSortOption: string = '';
-
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
-      const category = params.get('category');
-      if (category) {
-        this.category = category;
-      }
+      this.filters = {};
+      
+      params.keys.forEach(key => {
+        this.filters[key] = params.get(key);
+      });
 
-      const filter = {
-        category: this.category
-      }
-
-      this.productService.getFilteredProducts(filter).subscribe(
+      this.productService.getFilteredProducts(this.filters).subscribe(
         res => {
           this.products = res
         }
       );
-    });
-
+    })
   }
 
   onMoreClick(): void {

@@ -10,7 +10,7 @@
           fill="#070A0F"/>
       </svg>
       <h3 class="filter__title">Filter</h3>
-      <svg (click)="closeFilter($event)" fill="none"
+      <svg (click)="closeFilter()" fill="none"
            height="24"
            viewBox="0 0 24 24"
            width="24"
@@ -89,7 +89,7 @@
 
     <div class="btn__container">
       <button class="btn-active">Cancel</button>
-      <button class="btn-active">Save</button>
+      <button class="btn-active" (click)="applyFilters()">Save</button>
     </div>
   </div>
 

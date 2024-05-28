@@ -27,7 +27,7 @@ export class HeaderComponent implements OnDestroy{
   currentUser: IUser | null;
   userSubscription: Subscription;
   
-  isFilterVisible: boolean = false;
+//   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
   constructor(public dialog: MatDialog, private router: Router, private dialogService: DialogService, private authService: AuthenticationService) {
@@ -41,9 +41,7 @@ export class HeaderComponent implements OnDestroy{
   }
 
   openFilter(event: Event): void {
-    console.log(event);
-    event.preventDefault();
-    this.isFilterVisible = !this.isFilterVisible;
+	this.dialogService.openFilterDialog()
   }
 
   openAuthDialog(): void {
