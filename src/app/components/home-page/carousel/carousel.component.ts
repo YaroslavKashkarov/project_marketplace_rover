@@ -18,7 +18,7 @@ export class CarouselComponent implements OnInit {
 	@Input() images: carouselImage[] = [];
 	@Input() indicators: boolean = true;
 	@Input() controls: boolean = true;
-	@Input() autoSlide: boolean = false;
+	@Input() autoSlide: boolean = true;
 	@Input() slideInterval: number = 3000;
 
 	selectedIndex: number = 0;
@@ -30,9 +30,7 @@ export class CarouselComponent implements OnInit {
 	}
 
 	autoSlideImages(): void {
-		setTimeout((): void => {
-			this.onNextClick();
-		}, this.slideInterval);
+		setTimeout( this.onNextClick, this.slideInterval );
 	}
 
 	selectImage(index: number): void {
