@@ -56,6 +56,9 @@
             padding-inline: 12px;
             border-radius: 8px;
             border: 1px solid #00478f;
+            color: #00478f;
+            font-family: Lato;
+            font-size: 24px;
           }
         }
       }
@@ -73,6 +76,7 @@
         &-select {
           padding-top: 12px;
           max-width: 1280px;
+          padding-bottom: 40px;
           &-options {
             width: 1280px;
             height: 56px;
@@ -91,61 +95,183 @@
         }
       }
       &-section {
-        &-details {
-          &-add-photo {
-          }
-          &-add-title {
-          }
-          &-item-photo {
-          }
-          &-img {
-          }
+        display: flex;
+        flex-direction: column;
+        max-width: 1300px;
+        padding-top: 40px;
+        &-title {
+          max-width: 480px;
+        }
+        &-text {
+          font-size: 24px;
+          padding-bottom: 40px;
         }
         &-description {
+          font-size: 24px;
         }
-        &-form {
-          &-details {
-            &-title {
-            }
+        &-details-add-photo {
+          padding-top: 20px;
+          max-width: 1252px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          row-gap: 22px;
+          text-align: center;
+          flex-wrap: wrap;
+          padding-bottom: 80px;
+        }
+        &-details-add-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #00478f;
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 110%;
+          width: 250px;
+          height: 250px;
+          flex-shrink: 0;
+          border-radius: 16px;
+          border: 4px solid #ffd640;
+          background: #ffd640;
+        }
+        &-details-item-photo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 250px;
+          height: 250px;
+          border-radius: 16px;
+          border: 4px solid #ffd640;
+          background: #f9f9f9;
+        }
+      }
+
+      &-more {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        &-details {
+          &-title {
+            font-size: 24px;
+            padding-bottom: 40px;
           }
           &-textarea {
           }
-          &-item {
-          }
           &-input {
-          }
-          &-label {
-          }
-          &-product-state {
-            &-new {
-            }
-            &-used {
-            }
-          }
-          &-product-bicycle {
-            &-brand {
-            }
-          }
-          &-others {
-            &-special {
-            }
-            &-location {
-            }
-            &-checkbox {
-            }
-          }
-        }
-      }
-      &-more {
-        &-details {
-          &-title {
+            border-radius: 8px;
+            border: 1px solid #00478f;
+            padding: 12px 20px;
+            width: 1252px;
+            color: #00478f;
+            font-family: Lato;
+            font-size: 24px;
           }
         }
         &-text {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
           &-holder {
+            padding-top: 12px;
+            padding-bottom: 40px;
+            font-size: 16px;
           }
         }
       }
+      &-section-form {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        &-details {
+          &-title {
+            font-size: 24px;
+            padding-bottom: 40px;
+          }
+        }
+        &-textarea {
+          width: 1300px;
+        }
+        &-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        &-inputs {
+          display: flex;
+          flex-direction: column;
+        }
+        &-label {
+          padding-bottom: 12px;
+          font-size: 24px;
+        }
+        &-input {
+          padding: 12px 20px;
+          align-items: center;
+          color: #00478f;
+          font-family: Lato;
+          font-size: 24px;
+          width: 258px;
+          border-radius: 8px;
+          border: 1px solid #00478f;
+          background: #fff;
+        }
+        &-product {
+          display: flex;
+          flex-direction: column;
+          &-title {
+            padding-bottom: 12px;
+            font-size: 24px;
+          }
+          &-state {
+            height: 56px;
+            padding-inline: 12px;
+            border-radius: 8px;
+            width: 258px;
+            border: 1px solid #00478f;
+            color: #00478f;
+            font-family: Lato;
+            font-size: 24px;
+          }
+        }
+        &-product {
+          display: flex;
+          &-bicycle {
+            &-title {
+              padding-bottom: 12px;
+              font-size: 24px;
+            }
+            &-category {
+              height: 56px;
+              padding-inline: 12px;
+              border-radius: 8px;
+              width: 258px;
+              border: 1px solid #00478f;
+              color: #00478f;
+              font-family: Lato;
+              font-size: 24px;
+            }
+            &-brand {
+              color: #00478f;
+              font-family: Lato;
+              font-size: 24px;
+            }
+          }
+        }
+        &-others {
+          background-color: red;
+          font-size: 25px;
+          &-special {
+          }
+          &-location {
+          }
+          &-checkbox {
+          }
+        }
+      }
+
       &-btns {
         &-btn {
         }
