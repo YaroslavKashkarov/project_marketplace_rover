@@ -9,6 +9,7 @@
       display: flex;
       max-width: 1440px;
       padding: 40px 94px;
+      margin: auto;
       flex-direction: column;
       justify-content: center;
       &-breadcrumbs {
@@ -17,7 +18,6 @@
       }
       &-link {
         color: #042c54;
-        font-family: Lato;
         font-size: 18px;
         text-decoration: none;
       }
@@ -97,7 +97,7 @@
       &-section {
         display: flex;
         flex-direction: column;
-        max-width: 1300px;
+        max-width: 1440px;
         padding-top: 40px;
         &-title {
           max-width: 480px;
@@ -183,7 +183,8 @@
         padding-top: 40px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
         &-details {
           &-title {
             font-size: 24px;
@@ -191,7 +192,7 @@
           }
         }
         &-textarea {
-          width: 1300px;
+          width: 1440px;
         }
         &-item {
           display: flex;
@@ -260,20 +261,61 @@
             }
           }
         }
-        &-others {
-          background-color: red;
-          font-size: 25px;
-          &-special {
+      }
+      // TODO !!!!!!!!
+      &-options {
+        display: flex;
+        gap: 30px;
+        &-other {
+          display: flex;
+          flex-direction: column;
+          &-label {
+            font-size: 24px;
           }
-          &-location {
+          &-input {
+            width: 616px;
+            height: 32px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #00478f;
+          }
+        }
+        &-more-details {
+          padding-top: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &-label {
+            width: 298px;
+            padding-left: 12px;
+            font-size: 24px;
           }
           &-checkbox {
+            width: 32px;
+            height: 32px;
           }
         }
       }
-
       &-btns {
+        display: inline-flex;
+        justify-content: flex-end;
+        gap: 10px;
+
         &-btn {
+          text-align: center;
+          font-size: 24px;
+          width: 192px;
+          height: 54px;
+          padding: 15px 20px;
+          border-radius: 16px;
+          color: rgba(7, 10, 15, 0.5);
+          border: 1px solid rgba(7, 10, 15, 0.5);
+          background: #fff;
+        }
+        &-btn:nth-last-child(1) {
+          color: #fff;
+          background: rgba(7, 10, 15, 0.5);
         }
       }
     }
