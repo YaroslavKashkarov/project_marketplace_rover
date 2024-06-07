@@ -6,14 +6,10 @@
 .item {
   &__navigate {
     &-container {
-      display: flex;
       max-width: 1440px;
-      padding: 40px 94px;
-      margin: auto;
-      flex-direction: column;
-      justify-content: center;
+      padding-top: 40px;
+      margin-inline: 94px;
       &-breadcrumbs {
-        display: block;
         padding-bottom: 80px;
       }
       &-link {
@@ -35,25 +31,22 @@
           align-items: flex-start;
           &-title {
             padding-bottom: 40px;
-            color: #070a0f;
-            font-family: Lato;
             font-size: 24px;
-            font-weight: 700;
           }
           &-textarea {
             display: flex;
             flex-direction: column;
           }
           &-label {
-            color: #070a0f;
-            font-family: Lato;
             font-size: 24px;
             padding-bottom: 12px;
           }
           &-input {
-            width: 1252px;
+            width: 1212px;
             height: 56px;
-            padding-inline: 12px;
+            // TODO NEXT!!!!!!!
+
+            padding-inline: 20px;
             border-radius: 8px;
             border: 1px solid #00478f;
             color: #00478f;
@@ -64,43 +57,31 @@
       }
       &-category {
         display: flex;
-        max-width: 1280px;
         &-title {
-          color: #070a0f;
-          font-family: Lato;
           font-size: 24px;
           font-weight: 400;
-          line-height: normal;
           padding-top: 40px;
         }
         &-select {
           padding-top: 12px;
-          max-width: 1280px;
+          background-color: red;
           padding-bottom: 40px;
           &-options {
-            width: 1280px;
+            width: 1440px;
             height: 56px;
-            padding-inline: 12px;
+            padding-inline: 20px;
             border-radius: 8px;
             border: 1px solid #00478f;
             color: #00478f;
             font-family: Lato;
             font-size: 24px;
-            &-input {
-              color: #00478f;
-              font-family: Lato;
-              font-size: 24px;
-            }
           }
         }
       }
       &-section {
-        display: flex;
-        flex-direction: column;
-        max-width: 1440px;
         padding-top: 40px;
         &-title {
-          max-width: 480px;
+          max-width: 470px;
         }
         &-text {
           font-size: 24px;
@@ -111,13 +92,8 @@
         }
         &-details-add-photo {
           padding-top: 20px;
-          max-width: 1252px;
           display: flex;
           justify-content: space-between;
-          align-items: flex-start;
-          row-gap: 22px;
-          text-align: center;
-          flex-wrap: wrap;
           padding-bottom: 80px;
         }
         &-details-add-title {
@@ -129,8 +105,6 @@
           font-weight: 700;
           line-height: 110%;
           width: 250px;
-          height: 250px;
-          flex-shrink: 0;
           border-radius: 16px;
           border: 4px solid #ffd640;
           background: #ffd640;
@@ -148,27 +122,23 @@
       }
 
       &-more {
-        display: flex;
-        flex-direction: column;
-        max-width: 1440px;
         &-details {
           &-title {
             font-size: 24px;
             padding-bottom: 40px;
           }
-          &-textarea {
-          }
           &-input {
             border-radius: 8px;
             border: 1px solid #00478f;
             padding: 12px 20px;
-            width: 1252px;
+            width: 1440px;
             color: #00478f;
             font-family: Lato;
             font-size: 24px;
           }
         }
         &-text {
+          background-color: red;
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
@@ -262,7 +232,7 @@
           }
         }
       }
-      // TODO !!!!!!!!
+
       &-options {
         display: flex;
         gap: 30px;
