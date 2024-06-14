@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, Renderer2, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -28,11 +28,18 @@ export class DropdownComponent {
   onChange: any = () => {};
   onTouch: any = () => {};
 
-  constructor() { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+    this.renderer.listen('document', 'click', (event: Event) => {
+      if (!this.el.nativeElement.contains(event.target)) {
+        this.isOpen = false;
+      }
+    });
+   }
 
   writeValue(value: any) {
     if (value !== undefined) {
-      this.selectedOption = value;
+      const selectedOption = this.options.find(x=> x === value);
+      this.selectedOption = selectedOption;
     }
   }
 
@@ -46,7 +53,6 @@ export class DropdownComponent {
 
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
-    // Implement this if you want to support disabling the control
   }
 
   selectOption(event: any) {
@@ -63,4 +69,10 @@ export class DropdownComponent {
     this.isOpen = !this.isOpen;
   }
 
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.isOpen = false;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { BrandsService } from './../../services/brands.service';
 import {Component,  EventEmitter,  Input, OnInit, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {  MatDialogModule } from '@angular/material/dialog';
@@ -61,30 +62,59 @@ export class FilterComponent implements OnInit {
     'Bicycle', 'Parts', 'Accessories', 'Service', 'Clothes'
   ]
 
+  brandOptions: string[] = [];
+
   currentFilters: any = {}
 
   appliedFilters: IFilters
 
-  constructor(){
+  constructor(private brandsService: BrandsService){
     this.filterForm = new FormGroup({
       priceFrom: new FormControl(''),
       priceTo: new FormControl(''),
       state: new FormControl(''),
       byDate: new FormControl(''),
       category: new FormControl(''),
+      brand: new FormControl(''),
       negotiable: new FormControl(false),
     });
   }
   
   ngOnInit(): void {
+    this.filterForm.get('category')!.valueChanges.subscribe(category => {
+      this.processCategoryField(category);
+    });
+
     if (this.filters){
+      if (this.filters.category) {
+        this.fetchBrands(this.filters.category);
+      }
       this.filterForm.patchValue(this.filters);
-    }
+    }    
   }
 
   applyFilters(){
     this.appliedFilters = this.currentFilters;
     this.sendFilters.emit(this.appliedFilters);
+  }
+
+  fetchBrands(category: string){
+    this.brandsService.getBrandsByCategory(category.toLowerCase()).subscribe(brands => {
+      this.brandOptions = brands;
+      this.filterForm.get('brand')!.enable();
+    })
+  }
+
+  processCategoryField(category: string) {
+    const brandControl = this.filterForm.get('brand');
+
+    if (category) {
+      this.fetchBrands(category);
+      brandControl!.reset();
+    } else {
+      brandControl!.disable();
+      this.brandOptions = [];
+    }
   }
 
 

@@ -40,6 +40,18 @@
     </div>
 
     <div class="filter__control">
+      <div class="filter__control__title__custom">By brand</div>
+        <app-dropdown 
+          *ngIf="brandOptions.length"
+          [options]="brandOptions" 
+          formControlName="brand" 
+          placeholder="Brands"
+        ></app-dropdown>
+
+        {{filterForm.get('brand')?.value}}
+    </div>
+
+    <div class="filter__control">
       <mat-checkbox class="example-margin" formControlName="negotiable">Negotiable price</mat-checkbox>
     </div>
   
