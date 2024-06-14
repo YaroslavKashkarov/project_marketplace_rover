@@ -4,23 +4,19 @@
 }
 
 .header {
-  .header-content {
-    align-items: flex-start;
-    flex-direction: column;
-    flex-shrink: 0;
-    justify-content: flex-start;
-    margin: auto;
-    gap: 33px;
+	.header-content {
+		align-items: flex-start;
+		flex-direction: column;
+		flex-shrink: 0;
+		justify-content: flex-start;
+		gap: 33px;
 
-    &__container {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      justify-content: space-between;
-      width: 1440px;
-      height: 160px;
-      margin: auto;
-      padding: 0 94px;
+		&__container {
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			justify-content: space-between;
+			height: 160px;
 
       &-contents {
         display: flex;

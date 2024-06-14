@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Product} from "../product";
+import {IProduct} from "../product.interface";
 
 @Component({
   selector: 'app-product',
@@ -11,5 +11,6 @@ import {Product} from "../product";
 })
 export class ProductComponent {
 
-  @Input()product: Product
+  @Input()
+  product: IProduct
 }

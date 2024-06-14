@@ -1,18 +1,22 @@
 <div class="container">
+  <div class="filter">
+    <div class="title">
+      Filter
+    </div>
+
+    <app-filter [isMinimized]="true" [filters]="filters" (sendFilters)="applyFilters($event)"></app-filter>
+    
+  </div>
   <div class="content">
     <div class="header">
       <div class="title">
-        {{category| uppercase}}
+        Search results
       </div>
     </div>
-    <div class="items">
+    <div class="results">
       <app-product
         *ngFor="let product of products" [product]="product">
       </app-product>
-    </div>
-
-    <div class="category-footer">
-      <button class="btn load-more" (click)="onMoreClick()">More</button>
     </div>
   </div>
 
