@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { ProductComponent } from '../product/product.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductServiceService } from '../product-service.service';
 import { IProduct } from '../product.interface';
 import { IFilters } from '../../../../core/interfaces/filters.interface';
+import { FilterComponent } from '../../header/filter/filter.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-result',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [CommonModule, ProductComponent, FilterComponent],
   templateUrl: './search-result.component.html',
   styleUrl: './search-result.component.scss'
 })
@@ -21,28 +23,33 @@ export class SearchResultComponent implements OnInit{
   category: 'Search result';
   products: IProduct[];
   productsToDisplay: number = 8;
-  selectedSortOption: string = '';
+  selectedSortOption: string = ''; 
   filters: any = {};
 
   constructor (
     private route: ActivatedRoute,
-    private productService: ProductServiceService
+    private productService: ProductServiceService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
       this.filters = {};
-      
+
       params.keys.forEach(key => {
         this.filters[key] = params.get(key);
       });
 
       this.productService.getFilteredProducts(this.filters).subscribe(
         res => {
-          this.products = res
+          this.products = res.products
         }
       );
     })
+  }
+
+  applyFilters(filters: IFilters) {
+    this.router.navigate(['home/search-result'], {queryParams: filters})
   }
 
   onMoreClick(): void {

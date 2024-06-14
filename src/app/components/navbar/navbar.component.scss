@@ -1,11 +1,13 @@
+@import '../../../styles/variables';
+
+:host {
+  background-color: $primary;
+}
+
 .navbar {
   display: flex;
   flex-shrink: 0;
-  max-width: 1440px;
   height: 40px;
-  margin: auto;
-  padding: 0px 94px;
-  background-color: #00478f;
 
   &__items {
     display: flex;

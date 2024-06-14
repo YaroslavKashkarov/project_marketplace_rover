@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {Component, Inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
+import {CommonModule, isPlatformBrowser} from '@angular/common';
 
 interface carouselImage {
 	imageSrc: string;
@@ -19,19 +19,27 @@ export class CarouselComponent implements OnInit {
 	@Input() indicators: boolean = true;
 	@Input() controls: boolean = true;
 	@Input() autoSlide: boolean = false;
-	@Input() slideInterval: number = 3000;
+	@Input() slideInterval: number = 500;
 
 	selectedIndex: number = 0;
 
+	constructor(
+		@Inject(PLATFORM_ID) private platformId: Object,
+	){}
+
 	ngOnInit(): void {
-		if (this.autoSlide) {
-			this.autoSlideImages();
+		if (isPlatformBrowser(this.platformId)){
+			if (this.autoSlide) {
+				this.autoSlideImages();
+			}
 		}
+
 	}
 
 	autoSlideImages(): void {
 		setTimeout((): void => {
 			this.onNextClick();
+			this.autoSlideImages();
 		}, this.slideInterval);
 	}
 
@@ -42,7 +50,6 @@ export class CarouselComponent implements OnInit {
 	onNextClick(): void {
 		if (this.selectedIndex === this.images.length - 1) {
 			this.selectedIndex = 0;
-			console.log(this.selectedIndex);
 		} else {
 			this.selectedIndex++;
 		}

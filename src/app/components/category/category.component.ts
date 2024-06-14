@@ -39,7 +39,7 @@ export class CategoryComponent implements OnInit {
 
       this.productService.getFilteredProducts(filter).subscribe(
         res => {
-          this.products = res
+          this.products = res.products
         }
       );
     });

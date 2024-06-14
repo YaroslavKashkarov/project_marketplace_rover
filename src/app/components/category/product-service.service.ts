@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import { BaseService } from '../../../core/base.service';
 import { Observable } from 'rxjs';
 import { IProduct } from './product.interface';
+import { IProductsResult } from '../../../core/interfaces/products-result.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,9 @@ export class ProductServiceService extends BaseService{
     super(httpClient)
   }
 
-  getFilteredProducts(filters: any): Observable<IProduct[]>{
+  getFilteredProducts(filters: any): Observable<IProductsResult>{
     const params = new URLSearchParams(filters).toString();
-    return this.get<IProduct[]>(`api/products?${params}`)
+    return this.get<IProductsResult>(`api/products?${params}`)
   }
 
 

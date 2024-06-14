@@ -7,6 +7,8 @@ import { CongratulationsComponent } from '../header/auth-dialog/congratulations/
 import { DialogComponentsOptions } from '../../../core/interfaces/dialog-components-options';
 import { FilterComponent } from '../header/filter/filter.component';
 import { Router } from '@angular/router';
+import { IFilters } from '../../../core/interfaces/filters.interface';
+import { FilterDialogComponent } from '../header/filter/filter-dialog/filter-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -71,10 +73,13 @@ export class DialogService {
     })
   }
 
-  openFilterDialog(): void {
-    const filterDialogRef = this.dialog.open(FilterComponent, {
+  openFilterDialog(filters: IFilters | null): void {
+    const filterDialogRef = this.dialog.open(FilterDialogComponent, {
       height: '768px',
-      width: '868px'
+      width: '868px',
+      data: {
+        filters: filters
+      }
     });
 
     filterDialogRef.afterClosed().subscribe(res => {

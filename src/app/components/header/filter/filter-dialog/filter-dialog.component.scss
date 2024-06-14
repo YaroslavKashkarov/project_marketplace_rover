@@ -1,0 +1,25 @@
+.filter {
+    padding: 32px 40px;
+  
+    &__header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      &__title{
+        font-size: 24px;
+        font-weight: 700;
+        color: #00478F;
+        margin-bottom: 8px;
+      }
+  
+      svg{
+        cursor: pointer;
+      }
+    }
+
+    &__body {
+        width: 680px;
+        margin: 24px auto 0 auto;
+    }
+}

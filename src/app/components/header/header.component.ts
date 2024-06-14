@@ -3,17 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
 import { CreateAnItemComponent } from './create-an-item/create-an-item.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
-import { ForgotPasswordComponent } from './auth-dialog/forgot-password/forgot-password.component';
-import { CongratulationsComponent } from './auth-dialog/congratulations/congratulations.component';
 import { AuthenticationService } from '../services/authentication.service';
-import { DialogComponentsOptions } from '../../../core/interfaces/dialog-components-options';
 import { DialogService } from '../services/dialog.service';
 import { IUser } from '../../../core/interfaces/user.interface';
 import { Subscription } from 'rxjs';
 import { UserIconComponent } from './user-icon/user-icon.component';
+import { IFilters } from '../../../core/interfaces/filters.interface';
 
 @Component({
   selector: 'app-header',
@@ -22,18 +19,32 @@ import { UserIconComponent } from './user-icon/user-icon.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnDestroy{
+export class HeaderComponent implements OnInit, OnDestroy{
   
   currentUser: IUser | null;
   userSubscription: Subscription;
+
+  filters: any = {}
   
 //   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
-  constructor(public dialog: MatDialog, private router: Router, private dialogService: DialogService, private authService: AuthenticationService) {
+  constructor(public dialog: MatDialog, private dialogService: DialogService, private authService: AuthenticationService, private route: ActivatedRoute) {
     this.userSubscription = this.authService.$currentUser.subscribe(user => {
       this.currentUser = user;
     });
+  }
+
+  ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params => {
+      this.filters = {};
+
+      if (params.keys){
+        params.keys.forEach(key => {
+          this.filters[key] = key === 'negotiable' ? Boolean(params.get(key)) : params.get(key);
+        });
+      }
+    })
   }
 
   isCreateItem(): void {
@@ -41,7 +52,7 @@ export class HeaderComponent implements OnDestroy{
   }
 
   openFilter(event: Event): void {
-	this.dialogService.openFilterDialog()
+	  this.dialogService.openFilterDialog(this.filters);
   }
 
   openAuthDialog(): void {

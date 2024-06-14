@@ -9,7 +9,6 @@
 		flex-direction: column;
 		flex-shrink: 0;
 		justify-content: flex-start;
-		margin: auto;
 		gap: 33px;
 
 		&__container {
@@ -17,10 +16,7 @@
 			align-items: center;
 			flex-shrink: 0;
 			justify-content: space-between;
-			width: 1440px;
 			height: 160px;
-			margin: auto;
-			padding: 0 94px;
 
 			&-contents {
 				display: flex;
