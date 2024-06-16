@@ -11,6 +11,12 @@ interface carouselImage {
   imageSrc: string;
   imageAlt: string;
 }
+interface carouselText {
+  titleText: string;
+}
+interface carouselButton {
+  titleButton: string;
+}
 
 @Component({
   selector: 'app-carousel',
@@ -22,6 +28,8 @@ interface carouselImage {
 
 export class CarouselComponent implements OnInit {
   @Input() images: carouselImage[] = [];
+  @Input() text: carouselText[] = [];
+  @Input() button: carouselButton[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
   @Input() autoSlide: boolean = true;
@@ -52,7 +60,7 @@ export class CarouselComponent implements OnInit {
   }
 
   onNextClick(): void {
-    if (this.selectedIndex === this.images.length - 1) {
+    if (this.selectedIndex === this.images.length + 1) {
       this.selectedIndex = 0;
       console.log(this.selectedIndex);
     } else {

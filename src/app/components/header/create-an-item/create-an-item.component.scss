@@ -8,7 +8,7 @@
     &-container {
       max-width: 1440px;
       padding-top: 40px;
-      margin-inline: 94px;
+      margin: auto;
       &-breadcrumbs {
         padding-bottom: 80px;
       }
@@ -42,10 +42,8 @@
             padding-bottom: 12px;
           }
           &-input {
-            width: 1212px;
+            width: 1400px;
             height: 56px;
-            // TODO NEXT!!!!!!!
-
             padding-inline: 20px;
             border-radius: 8px;
             border: 1px solid #00478f;
@@ -64,7 +62,6 @@
         }
         &-select {
           padding-top: 12px;
-          background-color: red;
           padding-bottom: 40px;
           &-options {
             width: 1440px;
@@ -131,17 +128,16 @@
             border-radius: 8px;
             border: 1px solid #00478f;
             padding: 12px 20px;
-            width: 1440px;
+            width: 1400px;
             color: #00478f;
             font-family: Lato;
             font-size: 24px;
           }
         }
         &-text {
-          background-color: red;
+          width: 1440px;
           display: flex;
           justify-content: space-between;
-          align-items: flex-start;
           &-holder {
             padding-top: 12px;
             padding-bottom: 40px;
@@ -162,13 +158,12 @@
           }
         }
         &-textarea {
-          width: 1440px;
+          max-width: 1440px; // Fixed !!!!! TODO
         }
         &-item {
           display: flex;
           justify-content: space-between;
-          align-items: flex-start;
-          gap: 20px;
+          gap: 40px;
         }
         &-inputs {
           display: flex;
@@ -208,7 +203,6 @@
           }
         }
         &-product {
-          display: flex;
           &-bicycle {
             &-title {
               padding-bottom: 12px;
@@ -226,7 +220,6 @@
             }
             &-brand {
               color: #00478f;
-              font-family: Lato;
               font-size: 24px;
             }
           }
@@ -235,29 +228,47 @@
 
       &-options {
         display: flex;
-        gap: 30px;
+        justify-content: space-between; // !!!!!!!!!!!!!!!!!
+        gap: 20px;
         &-other {
           display: flex;
           flex-direction: column;
           &-label {
+            padding-top: 40px;
             font-size: 24px;
           }
           &-input {
-            width: 616px;
+            color: #00478f;
+            font-size: 24px;
+            width: 656px;
+            height: 32px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #00478f;
+          }
+          &-location {
+            color: #00478f;
+            font-size: 24px;
+            width: 576px;
             height: 32px;
             padding: 12px 20px;
             border-radius: 8px;
             border: 1px solid #00478f;
           }
         }
+      }
+
+      &-optional {
+        display: flex;
+        text-align: center;
+        align-items: center;
         &-more-details {
-          padding-top: 40px;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          padding-top: 40px;
 
           &-label {
-            width: 298px;
+            padding-right: 80px;
+            align-items: center;
             padding-left: 12px;
             font-size: 24px;
           }
@@ -267,10 +278,12 @@
           }
         }
       }
+
       &-btns {
         display: inline-flex;
         justify-content: flex-end;
-        gap: 10px;
+        gap: 20px;
+        padding-bottom: 60px;
 
         &-btn {
           text-align: center;
@@ -285,6 +298,7 @@
         }
         &-btn:nth-last-child(1) {
           color: #fff;
+          border: 1px solid rgba(7, 10, 15, 0.5);
           background: rgba(7, 10, 15, 0.5);
         }
       }
@@ -494,7 +508,6 @@
 //   display: flex;
 //   flex-direction: column;
 //   gap: 40px;
-//   background-color: rgb(54, 54, 214);
 
 //   &__container {
 //     background-color: #ffffff;
