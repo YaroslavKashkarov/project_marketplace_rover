@@ -1,15 +1,16 @@
 <div class="container" *ngIf="basket">
-    <div class="basket">
-        <div class="info">
-            BasketId: {{basket[0].basketId}}
-        </div>
-        <div class="product">
-            Product
-            <img [src]="basket[0].photos[0].secure_url">
-            <div class="title">{{basket[0].title}}</div>
-            <div class="desc">{{basket[0].description}}</div>
-            <div class="price">{{basket[0].price}} $</div>
-        </div>
-        <div class="btn" (click)="onPaymentClick()">Go to payment</div>
+  <div class="basket">
+    <div class="info">
+      BasketId: {{ basket[0].basketId }}
     </div>
+    <div class="product">
+      Product
+      <img [src]="basket[0].photos[0].secure_url" alt="Product Image">
+      <div class="title">{{ basket[0].title }}</div>
+      <div class="desc">{{ basket[0].description }}</div>
+      <div class="price">{{ basket[0].price }} $</div>
+    </div>
+    <div class="btn" (click)="onPaymentClick()">Go to payment</div>
+  </div>
 </div>
+
