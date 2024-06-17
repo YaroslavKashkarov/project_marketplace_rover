@@ -1,0 +1,20 @@
+export interface IPaymentResult {
+    merchantAccount: string,
+    merchantAuthType: string,
+    merchantDomainName: string,
+    orderReference: string,
+    orderDate: string,
+    amount: string,
+    currency: string,
+    orderTimeout: string,
+    productName: string[],
+    productPrice: string[],
+    productCount: string[],
+    clientFirstName: string,
+    clientLastName: string,
+    clientAddress: string,
+    clientCity: string,
+    clientEmail: string,
+    defaultPaymentSystem: string,
+    merchantSignature: string
+}

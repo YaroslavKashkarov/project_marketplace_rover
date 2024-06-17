@@ -14,6 +14,7 @@ import { ResetPasswordPageComponent } from './components/header/auth-dialog/rese
 import { resetPasswordGuard } from './guards/reset-password.guard';
 import { authenticatedUserGuard } from './guards/authenticated-user.guard';
 import { SearchResultComponent } from './components/category/search-result/search-result.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent,
@@ -23,6 +24,7 @@ export const routes: Routes = [
   ]},
 	{path: 'home', component: HomePageComponent},
 	{path: 'home/category', component: CategoryComponent},
+  {path: 'home/payment', component: PaymentPageComponent},
   {path: 'home/search-result', component: SearchResultComponent},
 	{path: 'shopping-cart', component: ShoppingCartComponent},
 	{path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},

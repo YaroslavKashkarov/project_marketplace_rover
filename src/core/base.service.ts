@@ -20,6 +20,10 @@ export class BaseService {
     return this.httpClient.post<T>(`${this.apiUrl}/${url}`, body, {headers})
   }
 
+  protected postOnExternalResource<T>(url:string, body: any):Observable<T> {
+    return this.httpClient.post<T>(url, body)
+  }
+
   protected put<T>(url:string, body: any):Observable<T> {
     return this.httpClient.put<T>(`${this.apiUrl}/${url}`, body)
   }
