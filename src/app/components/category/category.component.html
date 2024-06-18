@@ -4,12 +4,17 @@
       <div class="title">
         {{category| uppercase}}
       </div>
+      <div class="sorting" >
+        <app-dropdown (ngModelChange)="sortProducts($event)" [(ngModel)]="selectedSortOption" [options]="sortingOptions" [placeholder]="'Sort by'" [outlined]="false"></app-dropdown>
+      </div>
     </div>
-    <div class="items">
+    <div class="items" *ngIf="!isLoading">
       <app-product
         *ngFor="let product of products" [product]="product">
       </app-product>
     </div>
+
+    <app-loader *ngIf="isLoading"></app-loader>
 
     <div class="category-footer">
       <button class="btn load-more" (click)="onMoreClick()">More</button>
@@ -17,4 +22,6 @@
   </div>
 
 </div>
+
+
   

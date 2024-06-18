@@ -1,30 +1,40 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {IProduct} from "./product.interface";
 import {ProductServiceService} from "./product-service.service";
 import {ProductComponent} from "./product/product.component";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
+import { DropdownComponent } from '../common-components/dropdown/dropdown.component';
+import { LoaderComponent } from '../common-components/loader/loader.component';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [CommonModule, FormsModule, ProductComponent, DropdownComponent, LoaderComponent],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit {
   constructor (
     private route: ActivatedRoute,
+    private router: Router,
     private productService: ProductServiceService
   ) {}
 
   category: string;
   products: IProduct[];
   productsToDisplay: number = 8;
-  selectedSortOption: string = '';
+  selectedSortOption: string = 'by_newest';
+  isLoading: boolean = false;
+
+  sortingOptions: any[] = [
+    { key: 'Recent', value: 'by_newest' },
+    { key: 'Price up', value: 'by_price_asc' },
+    { key: 'Price down', value: 'by_price_desc' },
+  ]
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
@@ -33,17 +43,32 @@ export class CategoryComponent implements OnInit {
         this.category = category;
       }
 
-      const filter = {
-        category: this.category
+      const sortOption = params.get('sort');
+      if (sortOption) {
+        this.selectedSortOption = sortOption;
       }
 
-      this.productService.getFilteredProducts(filter).subscribe(
-        res => {
-          this.products = res.products
-        }
-      );
+      this.processData();
     });
 
+  }
+
+  private processData() {
+    this.isLoading = true;
+
+    const filters = {
+      category: this.category,
+      sort: this.selectedSortOption,
+    }
+
+    this.router.navigate(['home/category'], {queryParams: filters})
+
+    this.productService.getFilteredProducts(filters).subscribe(
+      res => {
+        this.products = res.products;
+        this.isLoading = false;
+      }
+    );
   }
 
   onMoreClick(): void {
@@ -56,7 +81,9 @@ export class CategoryComponent implements OnInit {
     // this.selectedSortOption = sortOption;
   }
 
-  public sortProductsDesc(): void {
+  public sortProducts(sortOption: string): void {
+    this.selectedSortOption = sortOption;
+    this.processData();
     // this.products = this.products.sort((a, b) => a.price - b.price);
   }
 

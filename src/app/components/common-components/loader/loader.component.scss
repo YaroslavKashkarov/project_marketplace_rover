@@ -1,0 +1,30 @@
+
+.spinner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner {
+    width: 268px;
+    height: 268px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%, #00478F);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 20px),#000 0);
+    animation: spinner-zp9dbg 1s infinite linear;
+  }
+
+  .loading-text{
+    color: #00478F;
+    font-size: 18px;
+    position: absolute;
+  }
+}
+
+
+
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
+}

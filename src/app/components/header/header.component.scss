@@ -56,47 +56,6 @@
         }
       }
 
-      &-search {
-        display: flex;
-        max-width: 480px;
-        max-height: 54px;
-
-        &__img {
-          position: absolute;
-          padding: 15px 12px;
-        }
-      }
-
-      &-input {
-        &__filter {
-          display: flex;
-
-          &-search {
-            display: flex;
-            width: 432px;
-            padding: 15px 45px;
-            border-top: 1px solid #00478f;
-            border-right: none;
-            border-bottom: 1px solid #00478f;
-            border-left: 1px solid #00478f;
-            border-radius: 8px 0px 0px 8px;
-            background: #fff;
-          }
-        }
-      }
-
-      &-btn {
-        &__filter {
-          padding: 15px 12px;
-          cursor: pointer;
-          border-top: 1px solid #00478f;
-          border-right: 1px solid #00478f;
-          border-bottom: 1px solid #00478f;
-          border-left: 1px solid #00478f;
-          border-radius: 0px 8px 8px 0px;
-        }
-      }
-
       &-place-ads {
         display: flex;
         align-items: center;
@@ -177,5 +136,9 @@
     border: 1px solid #ffd640;
     border-radius: 4px;
     gap: 8px;
+  }
+
+  .search{
+    width: 480px;
   }
 }

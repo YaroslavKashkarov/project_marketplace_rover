@@ -11,11 +11,12 @@ import { IUser } from '../../../core/interfaces/user.interface';
 import { Subscription } from 'rxjs';
 import { UserIconComponent } from './user-icon/user-icon.component';
 import { IFilters } from '../../../core/interfaces/filters.interface';
+import { SearchFieldComponent } from './search-field/search-field.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink, MatDialogModule, UserIconComponent],
+  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink, MatDialogModule, UserIconComponent, SearchFieldComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

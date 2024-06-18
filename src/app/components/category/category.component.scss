@@ -1,9 +1,13 @@
 @import '../../../styles/variables';
 
+:host{
+  background-color: #F9F9F9;
+}
 
 .container {
   margin-top: 40px;
   padding: $site-1440-padding;
+
 
   .content {
     .header {
@@ -16,6 +20,10 @@
         color: #000;
         font-size: 24px;
         font-weight: 700;
+      }
+
+      .sorting{
+        width: 180px;
       }
     }
 
