@@ -14,11 +14,11 @@ export class PaymentService extends BaseService{
     super(httpClient)
   }
 
-  getBasketInfo(): Observable<IBasketResult[]>{ 
+  getBasketInfo(): Observable<IBasketResult[]>{
     return this.get<IBasketResult[]>('api/basket')
   }
 
-  getPaymentInfo(basketId: string): Observable<IPaymentResult>{ 
+  getPaymentInfo(basketId: string): Observable<IPaymentResult>{
     return this.post<IPaymentResult>('api/payments/pay', {basketIds: [basketId]})
   }
 

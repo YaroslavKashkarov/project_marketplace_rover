@@ -41,6 +41,7 @@ export class PaymentPageComponent implements OnInit {
         this.paymentService
           .getPaymentInfo(this.basket[0].basketId)
           .subscribe((res) => {
+            console.log('rrreeesss')
             this.paymentInfo = res;
           });
       });
@@ -48,36 +49,38 @@ export class PaymentPageComponent implements OnInit {
   }
 
   onPaymentClick(): void {
+    console.log(this.paymentInfo, 'payment info onPaymentClick');
     const form = document.createElement('form');
     form.method = 'POST';
     form.action = 'https://secure.wayforpay.com/pay';
     form.acceptCharset = 'utf-8';
 
-    const formFields = {
-      merchantAccount: 'test_merch_n1',
-      merchantAuthType: 'SimpleSignature',
-      merchantDomainName: 'www.market.ua',
-      orderReference: 'DH1718626750',
-      orderDate: '1415379863',
-      amount: '1547.36',
-      currency: 'UAH',
-      orderTimeout: '49000',
-      productName: [
-        'Процессор Intel Core i5-4670 3.4GHz',
-        'Память Kingston DDR3-1600 4096MB PC3-12800',
-      ],
-      productPrice: ['1000', '547.36'],
-      productCount: ['1', '1'],
-      clientFirstName: 'Вася',
-      clientLastName: 'Пупкин',
-      clientAddress: 'пр. Гагарина, 12',
-      clientCity: 'Днепропетровск',
-      clientEmail: 'some@mail.com',
-      defaultPaymentSystem: 'card',
-      merchantSignature: 'f73f326811aca16b946fd1b53a1303e7',
-    };
+    // const formFields = {
+    //   merchantAccount: 'test_merch_n1',
+    //   merchantAuthType: 'SimpleSignature',
+    //   merchantDomainName: 'www.market.ua',
+    //   orderReference: 'DH1718626750',
+    //   orderDate: '1415379863',
+    //   amount: '1547.36',
+    //   currency: 'UAH',
+    //   orderTimeout: '49000',
+    //   productName: [
+    //     'Процессор Intel Core i5-4670 3.4GHz',
+    //     'Память Kingston DDR3-1600 4096MB PC3-12800',
+    //   ],
+    //   productPrice: ['1000', '547.36'],
+    //   productCount: ['1', '1'],
+    //   clientFirstName: 'Вася',
+    //   clientLastName: 'Пупкин',
+    //   clientAddress: 'пр. Гагарина, 12',
+    //   clientCity: 'Днепропетровск',
+    //   clientEmail: 'some@mail.com',
+    //   defaultPaymentSystem: 'card',
+    //   merchantSignature: 'f73f326811aca16b946fd1b53a1303e7',
+    // };
 
-    for (const [key, value] of Object.entries(formFields)) {
+    // for (const [key, value] of Object.entries(formFields)) {
+    for (const [key, value] of Object.entries(this.paymentInfo)) {
       if (Array.isArray(value)) {
         value.forEach((v) => {
           const input = document.createElement('input');
