@@ -11,40 +11,42 @@
 
 <div class="favorite__container">
   <div class="favorite">
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
+
+    <div class="favorite__item" *ngFor="let rover of roverInfo">
+      <img class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
 
       <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">New</p>
+        <p class="favorite__item-condition-text">{{rover?.state}}</p>
       </div>
 
-      <div class="favorite__item-img"></div>
+      <div class="favorite__item-img" *ngIf="roverPhotos && roverPhotos.length > 0">
+        <img [src]="roverPhotos[0].secure_url" alt="Rover Photo">
+      </div>
 
       <div class="favorite__item-description">
         <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">Universal MTB marvel bicycle Discovery</p>
+          <p class="favorite__item-description-title-text">{{rover?.title}}</p>
         </div>
 
         <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">1 000 $</p>
+          <p class="favorite__item-description-price-text">{{rover?.price}} $ </p>
         </div>
 
         <p class="favorite__item-description-wheels">24-inch</p>
 
         <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">Used bicycle for sale. The condition is normal, without
-            breakdowns.</p>
+          <p class="favorite__item-description-about-text">{{rover?.description}}</p>
         </div>
 
         <div class="favorite__item-description-more">
           <div class="favorite__item-description-more-item">
             <p>Bicycle brand</p>
-            <p>Discovery</p>
+            <p>{{rover?.brand}}</p>
           </div>
 
           <div class="favorite__item-description-more-item">
             <p>Negotiable price</p>
-            <p>No</p>
+            <p>{{rover?.negotiable}}</p>
           </div>
 
           <div class="favorite__item-description-more-item">
@@ -54,255 +56,7 @@
 
           <div class="favorite__item-description-more-item">
             <p>Location</p>
-            <p>Ternopil city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
-
-      <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">Used</p>
-      </div>
-
-      <div class="favorite__item-img"></div>
-
-      <div class="favorite__item-description">
-        <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">All-terrain adventure bicycle Leon </p>
-        </div>
-
-        <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">600 $</p>
-        </div>
-
-        <p class="favorite__item-description-wheels">26-inch</p>
-
-        <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">Speedy road bicycle. Performance road bike for speed
-            enthusiasts. Lightweight and aerodynamic design</p>
-        </div>
-
-        <div class="favorite__item-description-more">
-          <div class="favorite__item-description-more-item">
-            <p>Bicycle brand</p>
-            <p>Leon</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Negotiable price</p>
-            <p>No</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Exchange available</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Location</p>
-            <p>Lviv city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
-
-      <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">Used</p>
-      </div>
-
-      <div class="favorite__item-img"></div>
-
-      <div class="favorite__item-description">
-        <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">Terrain adventure bicycle Leon </p>
-        </div>
-
-        <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">850 $</p>
-        </div>
-
-        <p class="favorite__item-description-wheels">26-inch</p>
-
-        <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">Selling a cool mountain bicycle. Durable, reliable and ideal
-            for any
-            terrain.</p>
-        </div>
-
-        <div class="favorite__item-description-more">
-          <div class="favorite__item-description-more-item">
-            <p>Bicycle brand</p>
-            <p>Leon</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Negotiable price</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Exchange available</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Location</p>
-            <p>Kyiv city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
-
-      <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">Used</p>
-      </div>
-
-      <div class="favorite__item-img"></div>
-
-      <div class="favorite__item-description">
-        <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">Wellmaintained bicycle Discovery</p>
-        </div>
-
-        <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">750 $</p>
-        </div>
-
-        <p class="favorite__item-description-wheels">24-inch</p>
-
-        <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">Wellmaintained mountain bike,great for off-road
-            adventures.Excellent
-            condition,ready for a new rider</p>
-        </div>
-
-        <div class="favorite__item-description-more">
-          <div class="favorite__item-description-more-item">
-            <p>Bicycle brand</p>
-            <p>Discovery</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Negotiable price</p>
-            <p>No</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Exchange available</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Location</p>
-            <p>Ternopil city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
-
-      <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">New</p>
-      </div>
-
-      <div class="favorite__item-img"></div>
-
-      <div class="favorite__item-description">
-        <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">Hybrid bicycle Premier</p>
-        </div>
-
-        <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">1 200 $</p>
-        </div>
-
-        <p class="favorite__item-description-wheels">22-inch</p>
-
-        <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">Comfortable hybrid bicycle for city and off-road trails.
-            Well-cared-for and versatile.</p>
-        </div>
-
-        <div class="favorite__item-description-more">
-          <div class="favorite__item-description-more-item">
-            <p>Bicycle brand</p>
-            <p>Premier</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Negotiable price</p>
-            <p>No</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Exchange available</p>
-            <p>No</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Location</p>
-            <p>Lviv city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="favorite__item">
-      <img alt="" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
-
-      <div class="favorite__item-condition">
-        <p class="favorite__item-condition-text">Used</p>
-      </div>
-
-      <div class="favorite__item-img"></div>
-
-      <div class="favorite__item-description">
-        <div class="favorite__item-description-title">
-          <p class="favorite__item-description-title-text">City commuter bicycle Formula</p>
-        </div>
-
-        <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">900 $</p>
-        </div>
-
-        <p class="favorite__item-description-wheels">28-inch</p>
-
-        <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">City commuter bicycle. Stylish city bike for daily commuting.
-            Smooth
-            ride, in excellent condition.</p>
-        </div>
-
-        <div class="favorite__item-description-more">
-          <div class="favorite__item-description-more-item">
-            <p>Bicycle brand</p>
-            <p>Formula</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Negotiable price</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Exchange available</p>
-            <p>Yes</p>
-          </div>
-
-          <div class="favorite__item-description-more-item">
-            <p>Location</p>
-            <p>Kyiv city</p>
+            <p>{{rover?.locationProduct}}</p>
           </div>
         </div>
       </div>
