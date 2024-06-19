@@ -16,8 +16,6 @@
 
     &.open {
       z-index: 3000;
-
-
     }
 
     .search {
@@ -59,18 +57,28 @@
 .options-list {
   background-color: #fff;
   padding: 16px;
-  // position: absolute;
-  // z-index: 1;
-  // top: calc(100% - 1px);
-  // left: -0.5px;
-  // right: -1px;
   border-radius: 8px;
-  width: 100%;
+  width: 480px;
+  box-sizing: border-box;
+  margin-top: -15px;
 
 
   .option {
     padding: 8px 16px;
     color: #070A0F80;
     font-weight: 500;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover{
+      border-bottom: 1px solid #00478F;
+    }
+  }
+
+}
+
+::ng-deep {
+  .highlight {
+      color: #00478F;
   }
 }

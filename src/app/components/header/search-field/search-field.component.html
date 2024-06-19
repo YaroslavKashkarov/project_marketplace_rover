@@ -9,9 +9,9 @@
               fill="#070A0F" fill-opacity="0.5" fill-rule="evenodd"/>
         </svg>
       </div>
-      <input type="text" (blur)="isExpanded = false"  (focus)="isExpanded = !isExpanded" placeholder="Search">
+      <input type="text" (blur)="onBlur()"  (focus)="isExpanded = !isExpanded" placeholder="Search" [formControl]="searchInput">
     </div>
-    <div class="filter">
+    <div class="filter" (click)="openFilter($event)">
       <div class="icon">
         <svg fill="none" height="24" viewBox="0 0 25 24" width="25"
         xmlns="http://www.w3.org/2000/svg">
@@ -32,17 +32,21 @@
     </div>
   </div>
 
-  <ng-template
+  <ng-template 
       cdkConnectedOverlay
       [cdkConnectedOverlayOrigin]="trigger"
       [cdkConnectedOverlayHasBackdrop]="true"
       [cdkConnectedOverlayOpen]="isExpanded"
       [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
+
   >
-    <ul class="options-list">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+    <ul class="options-list" *ngIf="options?.length">
+      <li class="option" 
+        *ngFor="let option of options"
+        (click)="onOptionSelect(option)"
+        [innerHTML]="option | highlightKeywords: keywords"
+      ></li>
+
     </ul>
   </ng-template>
 </div>

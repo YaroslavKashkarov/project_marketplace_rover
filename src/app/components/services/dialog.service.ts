@@ -75,7 +75,7 @@ export class DialogService {
 
   openFilterDialog(filters: IFilters | null): void {
     const filterDialogRef = this.dialog.open(FilterDialogComponent, {
-      height: '768px',
+      // minHeight: '768px',
       width: '868px',
       data: {
         filters: filters

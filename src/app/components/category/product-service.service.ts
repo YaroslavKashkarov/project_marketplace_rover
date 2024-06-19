@@ -19,5 +19,7 @@ export class ProductServiceService extends BaseService{
     return this.get<IProductsResult>(`api/products?${params}`)
   }
 
-
+  getProductTitlesByKeyword(keyword: string): Observable<string[]>{
+    return this.get<string[]>(`api/products/titles?title=${keyword}`)
+  }
 }
