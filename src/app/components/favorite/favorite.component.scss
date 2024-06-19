@@ -55,6 +55,7 @@
     background-color: #FFFFFF;
 
     &-favorite {
+      cursor: pointer;
       position: absolute;
       top: 15px;
       right: 24px;
@@ -87,6 +88,11 @@
       width: 400px;
       height: 360px;
       border-radius: 4px;
+
+      img {
+        width: inherit;
+        height: inherit;
+      }
     }
 
     &-description {

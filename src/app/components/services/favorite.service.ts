@@ -17,8 +17,12 @@ export class FavoritesService {
   }
 
   addFavorite(productId: number) {
-    const requestData = {productId: productId}
+    const requestData = {productId: productId};
     return this.http.post(`${this.apiEndoint}/api/favorites`, requestData);
+  }
+
+  removeFavorite(productId: number) {
+    return this.http.delete(`${this.apiEndoint}/api/favorites/${productId}`);
   }
 
 }

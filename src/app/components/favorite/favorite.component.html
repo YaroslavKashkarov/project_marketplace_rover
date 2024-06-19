@@ -13,7 +13,7 @@
   <div class="favorite">
 
     <div class="favorite__item" *ngFor="let rover of roverInfo">
-      <img class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
+      <img (click)="removeFavorite(rover?._id)" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
 
       <div class="favorite__item-condition">
         <p class="favorite__item-condition-text">{{rover?.state}}</p>
