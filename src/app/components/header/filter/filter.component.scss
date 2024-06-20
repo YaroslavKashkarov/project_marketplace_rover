@@ -1,282 +1,151 @@
-.modal {
-  padding-top: 160px;
-  padding-bottom: 100px;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  overflow: scroll;
-  z-index: 100;
-  background: #070a0f80;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
 .filter {
-  display: flex;
+  // &__controls {
+  //   width: 680px;
+  //   margin: 24px auto 0 auto;
+  // }
 
-  &__container {
-    margin-inline: auto;
-    padding: 40px 0px 40px 0px;
-    width: 868px;
-    height: 896px;
-    border-radius: 16px;
-    background: #fff;
-    z-index: 2;
-  }
+  &__control {
+    margin: 16px 0;
 
-  &__title {
-    margin: 0;
-    font-family: Lato;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    color: #00478f;
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #070A0F;
 
-    &-container {
-      margin: 0 40px 40px;
-      display: flex;
-      justify-content: space-between;
-
-      & svg {
-        cursor: pointer;
-        justify-content: space-between;
-        align-items: flex-start;
+      &__custom {
+        margin-bottom: 8px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #070A0F;
       }
     }
+
+    .price {
+      display: flex;
+      margin-top: 8px;
+      margin-bottom: -22px;
+      gap: 20px;
+
+      .control {
+        .subtitle {
+          margin-bottom: 4px;
+          font-size: 20px;
+          color: #070A0F;
+        }
+
+        .price-input {
+          ::ng-deep {
+            .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+              padding-right: 7px;
+            }
+          }
+        }
+
+        .mat-mdc-form-field {
+          display: block;
+          width: 192px;
+          font-family: Lato, sans-serif;
+        }
+
+        input[type=number] {
+          border-right: 1px solid #00478F !important;
+          padding-right: 7px;
+          text-align: right;
+          box-sizing: border-box;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            display: none;
+          }
+        }
+      }
+    }
+
+
   }
 
-  &__price {
+  &__btn__container {
     display: flex;
+    justify-content: center;
+    align-items: 0;
     gap: 20px;
 
-    &-container {
-      padding-inline: 40px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &-title {
-      margin: 0;
-      font-family: Lato;
+    .btn {
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-sizing: border-box;
       font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-
-    &-item {
-      &-filter {
-        position: relative;
-      }
-
-      &-text {
-        position: absolute;
-        top: 4px;
-        right: 10px;
-        align-items: center;
-        font-family: Lato;
-        font-size: 16px;
-        padding-left: 10px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        border-left: 1px solid var(--Primary-Blue, #00478f);
-      }
-
-      &-title {
-        font-family: Lato;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        color: #070a0f;
-      }
-
-      &-input {
-        width: 192px;
-        height: 40px;
-        padding: 8px 4px 8px 16px;
-        border-radius: 4px;
-        border: 1px solid #00478f;
-        background: #fff;
-        font-size: 16px;
-        font-weight: 500;
-      }
-    }
-  }
-
-  &__product {
-    &-container {
-      margin-top: 40px;
-      padding-inline: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    &-title {
-      font-family: Lato;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin: 0;
-    }
-
-    &-buttons {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    &-btn {
-      width: 68px;
-      height: 40px;
-      align-items: center;
-      gap: 8px;
-      border-radius: 4px;
-      border: 1px solid #00478f;
-      background: #fff;
-      font-family: Lato;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
       cursor: pointer;
+
+      &.cancel {
+        border: 1px solid #00478F;
+        color: #00478F;
+
+
+        &:hover,
+        &:active {
+          border: 2px solid #00478F;
+          -webkit-text-stroke: 0.65px #00478F;
+        }
+      }
+
+      &.save {
+        background-color: #00478F;
+        color: #fff;
+
+        &:hover,
+        &:active {
+          -webkit-text-stroke: 0.65px #fff;
+        }
+      }
     }
   }
 
-  &__date {
-    &-container {
-      margin-top: 40px;
-      padding-inline: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+  app-dropdown {
+    width: 340px;
+    height: 40px;
+  }
+
+  &.left-panel {
+    .mat-mdc-form-field {
+      width: 128px!important;
     }
 
-    &-title {
-      font-family: Lato;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin: 0;
-    }
-
-    &-item {
+    app-dropdown {
+      width: 100%;
       height: 40px;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-radius: 4px;
-      border: 1px solid #00478f;
-      background-color: #fff;
+    }
 
-      &-container {
-        display: flex;
-        justify-content: space-between;
-        width: 679px;
+    ::ng-deep {
+      app-radiobuttons-input-group {
+        .container {
+          .buttons {
+            display: flex;
+            gap: 6.5px;
+
+            .option {
+              font-size: 15px;
+            }
+          }
+        }
       }
-    }
-  }
-
-  &__brand {
-    &-container {
-      padding-inline: 40px;
-      display: flex;
-      flex-direction: column;
-
-      &-checkbox {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 12px;
-      }
-
-      &-input {
-        width: 32px;
-        height: 32px;
-        padding-bottom: 40px;
-        border-radius: 4px;
-        border: 2px solid #046cd4;
-      }
-    }
-
-    &-title {
-      padding-top: 40px;
-      font-family: Lato;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      padding-bottom: 12px;
-      margin: 0;
-    }
-
-    &-search {
-      display: flex;
-      padding-bottom: 40px;
-
-      &-input {
-        width: 298px;
-        height: 35px;
-        border-radius: 4px;
-        border: 1px solid #00478f;
-        background: #fff;
-      }
-    }
-
-    &-input {
-      display: flex;
-      width: 32px;
-      height: 32px;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-    }
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      font-family: Lato;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
     }
   }
 }
 
-.btn {
-  &__container {
-    padding-top: 60px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+  border-color: #00478F;
+}
+
+::ng-deep {
+  .mat-mdc-text-field-wrapper {
+    padding: 0px 11px !important;
   }
 
-  &-active {
-    width: 192px;
-    height: 54px;
-    cursor: pointer;
-    border-radius: 4px;
-    border: 1px solid #00478f;
-    background: #fff;
-    font-size: 24px;
-    color: #00478f;
-
-    &:hover,
-    &:active {
-      background: #00478f;
-      color: #ffffff;
-    }
+  .mat-mdc-form-field-infix {
+    padding-right: 7px;
+    min-height: auto !important;
+    padding-top: 10.5px !important;
+    padding-bottom: 10.5px !important;
   }
 }

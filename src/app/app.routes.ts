@@ -13,14 +13,17 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ResetPasswordPageComponent } from './components/header/auth-dialog/reset-password/reset-password-page/reset-password-page.component';
 import { resetPasswordGuard } from './guards/reset-password.guard';
 import { authenticatedUserGuard } from './guards/authenticated-user.guard';
+import { SearchResultComponent } from './components/category/search-result/search-result.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent,
   children: [
     {path: 'reset-password', canActivate: [resetPasswordGuard], component: ResetPasswordPageComponent},
+    // {path: 'home/filter', component: FilterComponent},
   ]},
 	{path: 'home', component: HomePageComponent},
-	{path: 'home/:category', component: CategoryComponent},
+	{path: 'home/category', component: CategoryComponent},
+  {path: 'home/search-result', component: SearchResultComponent},
 	{path: 'shopping-cart', component: ShoppingCartComponent},
 	{path: 'shopping-cart/seller', component: ShoppingCartBuyComponent},
   // {
@@ -33,7 +36,7 @@ export const routes: Routes = [
     path: '', runGuardsAndResolvers: 'always',
     canActivate: [],
     children: [
-      {path: 'home/filter', component: FilterComponent},
+      
       {path: 'create-an-item', component: CreateAnItemComponent},
       {path: 'navbar/category-product', component: NavbarComponent},
       {path: 'profile', canActivate: [authenticatedUserGuard], component: ProfileComponent},

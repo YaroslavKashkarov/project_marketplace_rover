@@ -1,0 +1,45 @@
+@import '../../../../styles/variables';
+
+.container {
+  margin-top: 40px;
+  padding: $site-1440-padding;
+
+  display: flex;
+  gap: 20px;
+
+  .filter {
+    width: 300px;
+
+    .title {
+      color: #00478F;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 45px;
+    }
+
+  }
+
+  .content {
+    flex: 1;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 45px;
+
+      .title {
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+    }
+  }
+}

@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiEndoint: "https://bicycle-marketplace-api.yurgo.fun",
+    apiEndoint: "https://rover-marketplace.yurgo.site",
 };

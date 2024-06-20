@@ -1,16 +1,21 @@
+import { filter } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthDialogComponent } from '../header/auth-dialog/auth-dialog.component';
 import { ForgotPasswordComponent } from '../header/auth-dialog/forgot-password/forgot-password.component';
 import { CongratulationsComponent } from '../header/auth-dialog/congratulations/congratulations.component';
 import { DialogComponentsOptions } from '../../../core/interfaces/dialog-components-options';
+import { FilterComponent } from '../header/filter/filter.component';
+import { Router } from '@angular/router';
+import { IFilters } from '../../../core/interfaces/filters.interface';
+import { FilterDialogComponent } from '../header/filter/filter-dialog/filter-dialog.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DialogService {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   openAuthDialog(): void {
     const authDialogRef = this.dialog.open(AuthDialogComponent, {
@@ -64,6 +69,22 @@ export class DialogService {
           break;
         default: 
           break;  
+      }
+    })
+  }
+
+  openFilterDialog(filters: IFilters | null): void {
+    const filterDialogRef = this.dialog.open(FilterDialogComponent, {
+      height: '768px',
+      width: '868px',
+      data: {
+        filters: filters
+      }
+    });
+
+    filterDialogRef.afterClosed().subscribe(res => {
+      if (res?.filters){
+        this.router.navigate(['home/search-result'], {queryParams: res.filters})
       }
     })
   }

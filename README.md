@@ -8,22 +8,24 @@
 *Quality Assurance*
 
 - Amina Oliinyk
+- Kseniia Vinnik
 
 *Designers*
 
 - Iryna Fedunyshyn
 - Olena Rybina
+- Tetiana Yaremenko
 
 *Frontend*
 
 - Yaroslav Kashkarov
 - Egor Tymchenko
-- Mark Bulavin
+- Angelina Shkolna
 - Leon Blyschyk
 
 *Backend*
-- Valera Shevchuk
-- Nazar Ivaniuk
+- Yuriy Yurgov
+- Viktoriia Kozema
 
 # Marketplace ROVER
 
