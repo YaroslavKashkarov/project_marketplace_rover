@@ -1,0 +1,36 @@
+<form class="registration" [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
+
+    <mat-form-field appearance="outline" hideRequiredMarker>
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+    <app-error-messages [control]="loginForm.get('email')"></app-error-messages>
+
+    <mat-form-field appearance="outline" hideRequiredMarker>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+        >
+            <mat-icon
+                fontSet="fa-regular"
+                [fontIcon]="hide ? 'fa-eye' : 'fa-eye-slash'"
+            ></mat-icon>
+        </button>
+    </mat-form-field>
+    <app-error-messages [control]="loginForm.get('password')"></app-error-messages>
+    <div class="forgot" (click)="forgotPasswordClicked()">Forgot password?</div>
+
+    <button type="submit" class="submit">Login</button>
+
+  </form>
+
+  <div class="footer">
+    <div class="title">Or continue with Google</div>
+    <asl-google-signin-button size='medium' type='standard'>
+    </asl-google-signin-button>
+  </div>

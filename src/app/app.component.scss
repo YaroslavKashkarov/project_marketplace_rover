@@ -1,0 +1,10 @@
+@import '../styles/variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  &>* {
+    padding: $site-1440-padding;
+  }
+}
