@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { debounce, interval, tap } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { debounce, filter, interval, tap } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { HighlightKeywordsPipe } from '../../../pipes/highlight-keywords.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '../../services/dialog.service';
@@ -26,6 +26,7 @@ export class SearchFieldComponent implements OnInit{
   keywords: string;
   isExpanded: boolean = false;
   options: string[];
+  isSearchResultPage: boolean = false;
 
   constructor(
     private readonly sso: ScrollStrategyOptions, 
@@ -42,25 +43,19 @@ export class SearchFieldComponent implements OnInit{
     this.searchInput.valueChanges
     .pipe(
       tap(() => this.isExpanded = false),
-      debounce((v) => interval(1000))
-    )
-    
-    .subscribe(value => {
-      
-      const keywords = value?.toString();
-
-      if (keywords){
-        this.keywords = keywords;
-        this.productService.getProductTitlesByKeyword(this.keywords).subscribe(
-          res => {
-            this.options = res;
-            this.isExpanded = true;
-          }
-        )
-      } else {
-        this.options = []
-      }
+      debounce((v) => interval(500))
+    )    
+    .subscribe(() => {      
+      this.processData();
     });
+
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.isSearchResultPage = event.url.startsWith('/home/search-result');
+      });
 
     this.route.queryParamMap.subscribe(params => {
       this.filters = {};
@@ -73,14 +68,38 @@ export class SearchFieldComponent implements OnInit{
     })
   }
 
+  processData(isExpandedAfter = true) {
+    const keywords = this.searchInput.value;
+
+    if (keywords){
+      this.keywords = keywords;
+      this.productService.getProductTitlesByKeyword(this.keywords).subscribe(
+        res => {
+          this.options = res;
+          this.isExpanded = isExpandedAfter;
+        }
+      )
+    } else {
+      this.options = []
+    }
+  }
+
   onOptionSelect(option: string){
     this.filters = {
       title: option,
       sort: 'by_newest'
     }
-    this.searchInput.patchValue(option);
+    this.searchInput.patchValue(option, {
+      emitEvent: false
+    });
+    this.processData(false);
     this.router.navigate(['home/search-result'], {queryParams: this.filters});
     this.isExpanded = false;
+  }
+
+  onFocus() {
+    console.log('test');
+    this.isExpanded = !this.isExpanded
   }
 
   onBlur() {
@@ -91,6 +110,10 @@ export class SearchFieldComponent implements OnInit{
 
   openFilter(event: Event): void {
 	  this.dialogService.openFilterDialog(this.filters);
+  }
+
+  clearInput(): void{
+    this.onOptionSelect('')
   }
 
 }

@@ -41,14 +41,14 @@
       }
     }
 
-    .filter {
+    .filter, .close {
       display: flex;
       align-items: center;
       justify-content: center;
       background: #ffffff;
       border: 1px solid #00478F;
       border-left: none;
-      padding: 15px 12px;
+      width: 48px;
       border-radius: 0 8px 8px 0;
     }
   }
@@ -57,6 +57,7 @@
 .options-list {
   background-color: #fff;
   padding: 16px;
+  padding-top: 23px;
   border-radius: 8px;
   width: 480px;
   box-sizing: border-box;
@@ -67,11 +68,10 @@
     padding: 8px 16px;
     color: #070A0F80;
     font-weight: 500;
-    border-bottom: 1px solid transparent;
     cursor: pointer;
 
     &:hover{
-      border-bottom: 1px solid #00478F;
+      background-color: #A5CDEB59;
     }
   }
 

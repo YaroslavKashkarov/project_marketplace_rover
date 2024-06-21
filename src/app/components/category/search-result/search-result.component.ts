@@ -28,6 +28,7 @@ export class SearchResultComponent implements OnInit{
   selectedSortOption: string = 'by_newest';
   filters: any = {};
   isLoading: boolean = false;
+  isSearchResultPage = false;
 
   sortingOptions: any[] = [
     { key: 'Recent', value: 'by_newest' },

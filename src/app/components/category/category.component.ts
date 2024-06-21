@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute, Router} from "@angular/router";
 import {IProduct} from "./product.interface";
@@ -18,17 +18,30 @@ import { LoaderComponent } from '../common-components/loader/loader.component';
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit {
+
   constructor (
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductServiceService
-  ) {}
+    private productService: ProductServiceService,
+    private renderer: Renderer2
+  ) {
+    this.filters = {
+      category: this.route.snapshot.queryParams['category'],
+      sort: 'by_newest'
+    };
+  }
 
-  category: string;
-  products: IProduct[];
+  filters: {
+    category: string,
+    sort: string
+  };
+  products: IProduct[] = [];
+  totalCount: number;
   productsToDisplay: number = 8;
-  selectedSortOption: string = 'by_newest';
+  page: number = 1;
   isLoading: boolean = false;
+  showMoreButton: boolean = true;
+  scrollPosition: number = 0;
 
   sortingOptions: any[] = [
     { key: 'Recent', value: 'by_newest' },
@@ -37,43 +50,74 @@ export class CategoryComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params => {
-      const category = params.get('category');
+    
+    this.router.navigate(['home/category'], {queryParams: this.filters})
+    
+
+    this.route.queryParams.subscribe(params => {
+      const category = params['category'];
       if (category) {
-        this.category = category;
+        this.products = [];
+        this.page = 1;
+        this.filters.category = category;
+      
       }
 
-      const sortOption = params.get('sort');
+      const sortOption = params['sort'];
       if (sortOption) {
-        this.selectedSortOption = sortOption;
+        this.filters.sort = sortOption;
       }
 
-      this.processData();
+      this.processData(true);
     });
 
   }
 
-  private processData() {
+  private processData(initialLoad = false) {
+
+
     this.isLoading = true;
 
-    const filters = {
-      category: this.category,
-      sort: this.selectedSortOption,
-    }
+    this.filters = {... this.filters, ...{
+      pageSize: this.productsToDisplay,
+      page: this.page
+    }}
 
-    this.router.navigate(['home/category'], {queryParams: filters})
-
-    this.productService.getFilteredProducts(filters).subscribe(
+    this.productService.getFilteredProducts(this.filters).subscribe(
       res => {
-        this.products = res.products;
+        console.log(this.scrollPosition)
+
+        this.products.push(...res.products);
+        this.totalCount = res.totalCount;
         this.isLoading = false;
-      }
+
+        this.showMoreButton = this.totalCount > this.products.length;
+
+        if (!initialLoad) {
+          console.log(this.scrollPosition)
+          setTimeout(() => {
+            window.scrollTo({
+              top: this.scrollPosition,
+              left: 0
+            });
+          }, 0);
+
+        }
+      },
     );
   }
 
+  // @HostListener('window:scroll', ['$event'])
+  // onWindowScroll($event: any) {
+  //   console.log(window.scrollY);
+  //   this.scrollPosition = window.scrollY;
+  // }
+
   onMoreClick(): void {
-    // Increase the number of items to display by a certain amount (e.g., 3 more items)
-    // this.productsToDisplay += 4;
+    this.scrollPosition = window.scrollY;
+
+    this.page ++;
+    this.processData()
   }
 
   selectOption(sortOption: string) {
@@ -82,8 +126,8 @@ export class CategoryComponent implements OnInit {
   }
 
   public sortProducts(sortOption: string): void {
-    this.selectedSortOption = sortOption;
-    this.processData();
+    this.filters.sort = sortOption;
+    this.processData(true);
     // this.products = this.products.sort((a, b) => a.price - b.price);
   }
 
