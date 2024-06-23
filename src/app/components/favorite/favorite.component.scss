@@ -54,43 +54,8 @@
     overflow: hidden;
     background-color: #FFFFFF;
 
-    &:first-of-type {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-1.jpg") 50% / cover no-repeat, #FFF;
-      }
-    }
-
-    &:nth-of-type(2) {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-2.jpg") 50% / cover no-repeat, #FFF;
-      }
-    }
-
-    &:nth-of-type(3) {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-3.jpg") 50% / cover no-repeat, #FFF;
-      }
-    }
-
-    &:nth-of-type(4) {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-4.jpg") 50% / cover no-repeat, #FFF;
-      }
-    }
-
-    &:nth-of-type(5) {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-5.jpg") 50% 100% / cover no-repeat, #FFF;
-      }
-    }
-
-    &:last-of-type {
-      & .favorite__item-img {
-        background: url("/assets/img/favorite/img-6.jpg") 50% / cover no-repeat, #FFF;
-      }
-    }
-
     &-favorite {
+      cursor: pointer;
       position: absolute;
       top: 15px;
       right: 24px;
@@ -123,6 +88,11 @@
       width: 400px;
       height: 360px;
       border-radius: 4px;
+
+      img {
+        width: inherit;
+        height: inherit;
+      }
     }
 
     &-description {
