@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid #00478F;
+    
     border-radius: 8px;
     box-sizing: border-box;
 
@@ -20,6 +20,24 @@
       // background: rgba(128, 128, 128, 0.7);
       opacity: 0.3;
     }
+
+    &.outlined{
+      border: 1px solid #00478F;
+
+      .label-container {
+        padding: 4px 10px;
+
+        .placeholder{
+          color: #070A0F80;
+        }
+      }
+
+      .options-list{
+        border: 1px solid #00478F;
+        background-color: #F9F9F9;
+        padding: 8px 20px;
+      }
+    }
   }
   
   .label-container {
@@ -29,8 +47,9 @@
     cursor: pointer;
     height: 100%;
     width: 100%;
-    padding: 4px 10px;
+    padding: 4px 6px;
     box-sizing: border-box;
+    
 
     
     .option {
@@ -39,7 +58,7 @@
     }
     
     .placeholder {
-      color: #070A0F80;
+      color: #00478F;
       font-size: 24px;
 
     }
@@ -55,10 +74,9 @@
   
   .options-list {
     list-style-type: none;
-    padding: 8px 20px;
-    border: 1px solid #00478F;
-    background-color: #F9F9F9;
+    padding: 8px 6px;
     position: absolute;
+    background-color: #ffffff;
     left: -0.5px;
     right: -1px;
     box-sizing: border-box;

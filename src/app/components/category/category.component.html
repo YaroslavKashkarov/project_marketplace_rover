@@ -53,18 +53,25 @@
   <div class="content">
     <div class="header">
       <div class="title">
-        {{category| uppercase}}
+        {{filters.category| uppercase}}
+      </div>
+      <div class="sorting" >
+        <app-dropdown (ngModelChange)="sortProducts($event)" [(ngModel)]="filters.sort" [options]="sortingOptions" [placeholder]="'Sort by'" [outlined]="false"></app-dropdown>
       </div>
     </div>
-    <div class="items">
+    <div class="items" #itemsContainer *ngIf="!isLoading">
       <app-product
         *ngFor="let product of products" [product]="product">
       </app-product>
     </div>
 
-    <div class="category-footer">
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <div class="category-footer" *ngIf="showMoreButton">
       <button class="btn load-more" (click)="onMoreClick()">More</button>
     </div>
   </div>
 </div>
+
+
   

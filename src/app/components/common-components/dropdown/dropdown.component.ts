@@ -20,6 +20,7 @@ export class DropdownComponent {
 
   @Input() options: any[];
   @Input() placeholder: string = 'Select an option'; 
+  @Input() outlined: boolean = true;
 
   selectedOption: any;
   isOpen: boolean = false;
@@ -38,7 +39,7 @@ export class DropdownComponent {
 
   writeValue(value: any) {
     if (value !== undefined) {
-      const selectedOption = this.options.find(x=> x === value);
+      const selectedOption = this.options.find(x=> x.value === value);
       this.selectedOption = selectedOption;
     }
   }
@@ -59,7 +60,7 @@ export class DropdownComponent {
     const option = event;
     if (option !== null && option !== undefined) {
       this.selectedOption = option;
-      this.onChange(option);
+      this.onChange(option.value);
       this.onTouch();
       this.isOpen = false; 
     }

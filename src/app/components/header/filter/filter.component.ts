@@ -10,7 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ErrorMessagesComponent } from '../../../validation/error-messages/error-messages.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownComponent } from '../../common-components/dropdown/dropdown.component';
 
 
 @Component({
@@ -58,11 +58,15 @@ export class FilterComponent implements OnInit {
     }
   ]
 
-  categoriesOptions: string[] = [
-    'Bicycle', 'Parts', 'Accessories', 'Service', 'Clothes'
+  categoriesOptions: any[] = [
+    { key: 'Bicycle', value: 'bicycle' },
+    { key: 'Parts', value: 'parts' },
+    { key: 'Accessories', value: 'accessories' },
+    { key: 'Service', value: 'service' },
+    { key: 'Clothes', value: 'clothes' },
   ]
 
-  brandOptions: string[] = [];
+  brandOptions: any[] = [];
 
   currentFilters: any = {}
 
@@ -99,8 +103,10 @@ export class FilterComponent implements OnInit {
   }
 
   fetchBrands(category: string){
-    this.brandsService.getBrandsByCategory(category.toLowerCase()).subscribe(brands => {
-      this.brandOptions = brands;
+    this.brandsService.getBrandsByCategory(category.toLowerCase()).subscribe(res => {
+      res.forEach(brand => {
+        this.brandOptions.push({key: brand, value: brand})
+      });
       this.filterForm.get('brand')!.enable();
     })
   }
