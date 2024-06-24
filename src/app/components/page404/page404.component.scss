@@ -1,0 +1,179 @@
+// @import "~@angular/common";
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 692px;
+    background: url('/assets/img/404/404BG.png') 100% 100% no-repeat;
+    background-size: cover;
+
+    .container {
+        width: 1440px;
+        height: 100%;
+
+        .container_header {
+            margin-top: 60px;
+            margin-left: 94px;
+            width: 539px;
+            height: 226px;
+            font-family: 'Philosopher';
+            font-weight: 700;
+            font-size: 260px;
+            line-height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00478F;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .container_content {
+            width: 460px;
+            margin-left: 94px;
+            margin-top: 60px;
+
+            .container_content_text {
+                width: 100%;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 43px;
+                /* Primary2 */
+                color: #042C54;
+
+            }
+
+            .first-line {
+                text-transform: uppercase;
+                margin-top: 60px;
+            }
+
+            .second-line {
+                margin-top: 20px;
+            }
+
+            .container_content_button {
+                margin-top: 60px;
+                cursor: pointer;
+                width: 404px;
+                height: 54px;
+                box-sizing: border-box;
+                border: 1px solid #042C54;
+                border-radius: 16px;
+                // /* Primary2 */
+                color: #042C54;
+                font-size: 24px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    /* Primary Blue */
+                    color: #00478F;
+                    border: 2px solid #00478F;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .wrapper {
+        background: url('/assets/img/404/404BGdesctop.png') 100% 100% no-repeat;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        height: 400px;
+        background: url('/assets/img/404/404BGtablet.png') 100% 100% no-repeat;
+        background-size: cover;
+
+        .container {
+            width: 100%;
+            height: 100%;
+
+            .container_header {
+                margin-top: 40px;
+                margin-left: 24px;
+                width: 211px;
+                height: 97px;
+                font-size: 120px;
+            }
+
+            .container_content {
+                margin-left: 24px;
+                margin-top: 40px;
+
+                .container_content_text {
+                    font-size: 28px;
+                    line-height: 110%;
+                }
+
+                .first-line {
+                    margin-top: 40px;
+                }
+
+                .second-line {
+                    margin-top: 12px;
+                }
+
+                .container_content_button {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .wrapper {
+        width: 100%;
+        height: 381px;
+        background: url('/assets/img/404/404BGmobile.png') 100% 100% no-repeat;
+        background-size: cover;
+    
+        .container {
+            width: 375px;
+            height: 381px;
+    
+            .container_header {
+                margin-top: 32px;
+                width: 141px;
+                height: 58px;
+                font-size: 80px;
+
+            }
+    
+            .container_content {
+                width: 307px;
+                margin-top: 32px;
+    
+                .container_content_text {
+                    width: 204px;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 29px;
+                    /* Primary2 */
+                    color: #042C54;
+    
+                }
+    
+                .first-line {
+                    text-transform: uppercase;
+                    margin-top: 60px;
+                }
+    
+                .container_content_button {
+                    margin-top: 32px;
+                    width: 328px;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

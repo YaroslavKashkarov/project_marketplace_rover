@@ -6,11 +6,13 @@ import {CreateAnItemComponent} from './components/header/create-an-item/create-a
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {FilterComponent} from './components/header/filter/filter.component';
 import {ShoppingCartComponent} from './components/header/shopping-cart/shopping-cart.component';
+import { Page404Component } from './components/page404/page404.component';
 
 export const routes: Routes = [
 	{path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'home/:category', component: CategoryComponent},
+  {path: '**', component: Page404Component},
 	{
 		path: '', runGuardsAndResolvers: 'always',
 		canActivate: [],

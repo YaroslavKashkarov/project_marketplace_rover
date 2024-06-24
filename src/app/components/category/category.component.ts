@@ -26,7 +26,7 @@ export class CategoryComponent implements OnInit {
 
   category: string;
   products: Product []
-  productsToDisplay: number = 8;
+  productsToDisplay: number = 4;
   selectedSortOption: string = '';
   // showSortOptions = true; я додавав
 
@@ -37,6 +37,11 @@ export class CategoryComponent implements OnInit {
         this.category = category
       }
       this.products = this.productService.getProductsByCategory(this.category)
+      console.log(this.products.length)
+      console.log(this.productsToDisplay)
+      if (this.productsToDisplay>=this.products.length) {
+        console.log('Hello')
+      }
     });
 
   }
@@ -44,6 +49,10 @@ export class CategoryComponent implements OnInit {
   onMoreClick(): void {
     // Increase the number of items to display by a certain amount (e.g., 3 more items)
     this.productsToDisplay += 4;
+    if (this.productsToDisplay>=this.products.length) {
+      console.log('Hello')
+    }
+    // console.log(this.productsToDisplay)
   }
 
   selectOption(sortOption: string) {

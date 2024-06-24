@@ -6,6 +6,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FilterComponent} from './components/header/filter/filter.component';
+import { Page404Component } from './components/page404/page404.component';
 
 
 
@@ -19,7 +20,8 @@ import {FilterComponent} from './components/header/filter/filter.component';
 				HeaderComponent,
 				FilterComponent,
 				FooterComponent,
-				NavbarComponent],
+				NavbarComponent,
+				Page404Component],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
 })
