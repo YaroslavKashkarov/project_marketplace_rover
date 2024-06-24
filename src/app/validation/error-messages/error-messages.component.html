@@ -1,0 +1,17 @@
+
+<div *ngIf="control?.dirty || control?.touched">
+    <p *ngIf="control?.errors?.['required'] ?? false">
+        This field is required
+    </p>
+    <p *ngIf="control?.errors?.['invalidConfirmPassword'] ?? false">
+        Passwords are not the same
+    </p>
+    <p *ngIf="control?.errors?.['email'] ?? false">
+        Please, enter valid email
+    </p>
+    <p *ngIf="control?.errors?.['serverError'] ?? false">
+        {{control?.errors?.['serverError']}}
+    </p>
+</div>
+
+

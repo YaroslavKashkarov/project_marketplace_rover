@@ -1,0 +1,176 @@
+    <div class="main-content">
+        <!-- секція з гіперпосиланнями -->
+        <div class="content-section-urls">
+            <div class="urls-line">
+                <div class="urls-line-block">Home</div>
+                <div class="urls-line-block">
+                    <app-graph-arrow-right></app-graph-arrow-right>
+                </div>
+                <div class="urls-line-block">Profile</div>
+                <div class="urls-line-block">
+                    <app-graph-arrow-right></app-graph-arrow-right>
+                </div>
+                <div class="urls-line-block activepage">Loyalty program profile</div>
+            </div>
+        </div>
+        <!-- секція з прогресбаром -->
+        <div class="content-section-scale">
+            <div class="scale-section">
+                <div class="scale-section-header">Your level in the loyalty program</div>
+                <div class="scale-section-content">
+                    <div class="scale-section-content-levels">
+                        <div class="scale-section-content-levels-head">Levels</div>
+                        <div>
+                            <div class="scale-section-content-levels-items activelevel">
+                            <!-- іконка зірочки в кружку -->
+                            <app-graph-circle-star-active class="scale-section-content-levels-items-figure"></app-graph-circle-star-active>
+                            Beginner</div>
+                        <div class="scale-section-content-levels-items">
+                            <!-- іконка зірочки в кружку -->
+                            <app-graph-circle-star class="scale-section-content-levels-items-figure"></app-graph-circle-star>
+                            Advanced user</div>
+                        <div class="scale-section-content-levels-items">
+                            <!-- іконка зірочки в кружку -->
+                            <app-graph-circle-star class="scale-section-content-levels-items-figure"></app-graph-circle-star>
+                            Professional</div>
+                    </div>
+                        </div>
+                        
+                    <div class="scale-section-content-progress">
+                        <app-progressbar></app-progressbar>
+                    </div>
+                    <div class="scale-section-content-description">
+                        <div class="scale-section-content-description-content">
+                            <span>Get 100</span> more points to become a Advanced user member
+                        </div>
+                        <div class="scale-section-content-description-content-hint">Step 20 points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- секція з нарахованими балами -->
+        <div class="content-section-reward">
+            <div class="reward-section">
+                <div class="content-section-reward-header">Your reward in the loyalty program</div>
+                <div class="content-section-reward-content">
+                    <div class="content-section-reward-content-blocks">
+                        <div class="content-section-reward-content-blocks-header">
+                            <div class="content-section-reward-content-blocks-header-number">4</div>
+                            <div class="content-section-reward-content-blocks-header-arrow">
+                                <app-graph-arrow-forward></app-graph-arrow-forward>
+                            </div>
+                        </div>
+                        <div class="content-section-reward-content-blocks-footer">Points for successful purchases</div>
+                    </div>
+                    <div class="content-section-reward-content-blocks">
+                    <div class="content-section-reward-content-blocks-header">
+                        <div class="content-section-reward-content-blocks-header-number">2</div>
+                        <div class="content-section-reward-content-blocks-header-arrow">
+                            <app-graph-arrow-forward></app-graph-arrow-forward>
+                        </div>
+                    </div>
+                    <div class="content-section-reward-content-blocks-footer">Points for purchases on the double points days</div>
+                    </div>
+                    <div class="content-section-reward-content-blocks">
+                    <div class="content-section-reward-content-blocks-header">
+                        <div class="content-section-reward-content-blocks-header-number">4</div>
+                        <div class="content-section-reward-content-blocks-header-arrow">
+                            <app-graph-arrow-forward></app-graph-arrow-forward>
+                        </div>
+                    </div>
+                    <div class="content-section-reward-content-blocks-footer">Bonuses for purchases on your birthday</div>
+                    </div>
+                    <div class="content-section-reward-content-blocks">
+                    <div class="content-section-reward-content-blocks-header">
+                        <div class="content-section-reward-content-blocks-header-number">0</div>
+                        <div class="content-section-reward-content-blocks-header-arrow">
+                            <app-graph-arrow-forward></app-graph-arrow-forward>
+                        </div>
+                    </div>
+                    <div class="content-section-reward-content-blocks-footer">Other bonuses</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- секція з таблицею -->
+        <div class="content-section-avaible">
+            <div class="avaible-section">
+                <div class="avaible-section-header">Available loyalty programs</div>
+                <div class="avaible-section-content">
+                    <div class="avaible-section-content-text">
+                        For each purchase on our marketplace, you get loyalty points according to the expenses: 1 point for every $10.</div>
+                    <div class="avaible-section-content-blocktable">
+                        <table class="avaible-section-content-table">
+                            <thead class="tablehead">
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <div class="tablehead-block">
+                                            <div class="tablehead-block-header">
+                                                Beginner
+                                            </div>
+                                            <div class="tablehead-block-footer">
+                                                up to 100 points
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="tablehead-block">
+                                            <div class="tablehead-block-header">
+                                                Advanced user
+                                            </div>
+                                            <div class="tablehead-block-footer">
+                                                from 101 to 300 points
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="tablehead-block">
+                                            <div class="tablehead-block-header">
+                                                Professional
+                                            </div>
+                                            <div class="tablehead-block-footer">
+                                                from 301 points
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Double points days</td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                            </tr>
+                            <tr>
+                                <td>Birthday bonus</td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                            </tr>
+                            <tr>
+                                <td>Discount 5%  on your next purchase when you reach 200 points</td>
+                                <td><app-gpaph-minus></app-gpaph-minus></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                            </tr>
+                            <tr>
+                                <td>Free delivery for orders from $1 000</td>
+                                <td><app-gpaph-minus></app-gpaph-minus></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                            </tr>
+                            <tr>
+                                <td>Exclusive access to the pre-sale of new bycicle models</td>
+                                <td><app-gpaph-minus></app-gpaph-minus></td>
+                                <td><app-gpaph-minus></app-gpaph-minus></td>
+                                <td><app-gpaph-check></app-gpaph-check></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- зона перед футером -->
+        <div class="content-section-prefoter"></div>
+    </div>

@@ -1,0 +1,23 @@
+:host{
+    height: 100%;
+}
+
+.container{
+    border-radius: 50%;
+    border: 1px solid #00478F;
+    color: #FFD640;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    overflow: hidden;
+
+    img, .photo{
+        width: 100%;
+        height: 100%;
+    }
+}

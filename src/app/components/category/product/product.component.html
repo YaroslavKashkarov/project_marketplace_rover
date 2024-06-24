@@ -9,7 +9,7 @@
       fill="#00478F" />
   </svg>
   <div class="img">
-    <img alt="img" class="product__img" src="{{product.image}}">
+    <img alt="img" class="product__img" [src]="product.photos[0].secure_url">
   </div>
   <div class="card">
     <div class="product__firstline">

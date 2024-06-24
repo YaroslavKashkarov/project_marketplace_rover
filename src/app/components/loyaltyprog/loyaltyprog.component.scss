@@ -1,0 +1,457 @@
+// однотипні змінні
+$main-white-background:#F9F9F9;
+$main-primary:#042C54;
+$main-black50persent:rgba(7, 10, 15, 0.5);
+$main-white:#FFFFFF;
+$main-black:#070A0F;
+$main-secondary-yellow:#FFD640;
+$main-primary1:#042C54;
+$main-primary-blue:#00478F;
+$main-BG-Sign-up-yellow: linear-gradient(180deg, rgba(255, 214, 64, 0.00) 0%, rgba(255, 214, 64, 0.35) 100%), #FFF;
+
+
+
+//центрування всього контенту
+*{
+    margin: 0 auto;
+}
+
+.main-content {
+    width: 100%;
+    background: $main-white-background;
+}
+//секція з гіперпосиланнями
+.content-section-urls {
+    height: 109px;
+    width: 100%;
+}
+.urls-line {
+    padding-top: 40px;
+    padding-left: 94px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: $main-white-background;
+}
+.urls-line-block{
+    margin: 0;
+    color: $main-primary;
+    font-family: Lato;
+    font-size: 24px;
+    text-align: left;
+    background: $main-white-background;
+}
+.urls-line-block:not(:first-child){
+    margin: 0 0 0 4px;
+}
+//підсвічування поточної сторінки
+.activepage{
+    color: $main-black50persent; 
+}
+//секція з шкалою
+.content-section-scale, .content-section-reward, .content-section-avaible {
+    padding: 40px 94px;
+    background: $main-white;
+}
+//лінія під 2 та 3ю секціями
+.content-section-scale, .content-section-reward {
+    margin-bottom: 4px;
+}
+.scale-section{
+    width: 100%;
+}
+.scale-section-header, .content-section-reward-header, .avaible-section-header{
+    color: $main-black;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+}
+.scale-section-content,
+.content-section-reward-content,
+.avaible-section-content-text,
+.avaible-section-content-blocktable{
+    margin-top: 40px;
+}
+.scale-section-content-levels{
+    margin-left: 0;
+}
+.scale-section-content-levels {
+    display: flex;
+}
+.scale-section-content-levels-head {
+    color: $main-black;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 40px;
+}
+.scale-section-content-levels>div{
+    display: flex;
+    margin-left: 0;
+}
+.scale-section-content-levels-items{
+    margin-left: 36px;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    color: $main-black50persent;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+}
+.scale-section-content-levels-items-figure  {
+    padding-right: 8px;
+    display: flex;
+}
+//підсвічування активного рівня користувача
+.activelevel{
+    color: $main-secondary-yellow;
+}
+//область шкали
+.scale-section-content-progress{
+    height: 38px;
+    width: 100%;
+    margin: 24px 0;
+}
+// напис під progressBar
+.scale-section-content-description-content{
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 24px;
+}
+.scale-section-content-description-content span{
+    font-weight: 700;
+}
+// рядок підказки під progressBar
+.scale-section-content-description-content-hint {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+}
+//Блок reward loyalty program 
+.content-section-reward-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.content-section-reward-content-blocks{
+    border: 1px solid $main-black50persent;
+    border-radius: 8px;
+    background: $main-BG-Sign-up-yellow;
+    width: 298px;
+    height: 168px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+.content-section-reward-content-blocks-header{
+    width: 100%;
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    gap: 20px;
+    margin: 0;
+}
+.content-section-reward-content-blocks-header-number{
+    margin: 0;
+    color: $main-black;
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 110%;
+}
+.content-section-reward-content-blocks-header-arrow{
+    width: 44px;
+    height: 44px;
+    margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-section-reward-content-blocks-footer{
+    color: $main-black;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+}
+// блок з таблицею
+
+.avaible-section-content-text{
+    color: $main-black;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    line-height: 120%;
+}
+.avaible-section-content-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.avaible-section-content-table tr td{
+    box-sizing: border-box;
+    border-top: 2px solid $main-primary;
+    padding: 22px 0 12px 0;
+}
+.avaible-section-content-table tr td:first-child{
+    color: $main-primary-blue;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    width: 616px;
+}
+.avaible-section-content-table tr td:nth-child(n+2){
+    text-align: center;
+}
+.tablehead-block{
+    padding: 12px;
+    margin-bottom: 20px;
+}
+.tablehead-block-header{
+    color: $main-primary1;
+    text-align: center;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 500;
+}
+.tablehead-block-footer{
+    color: $main-primary1;
+    text-align: center;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+.content-section-prefoter {
+    height: 120px;
+    width: 100%;
+}
+
+// медіазапити для tablet max768px
+@media (max-width: 768px) {
+    .content-section-urls {
+        height: 93px;
+    }
+    .urls-line {
+        padding-top: 32px;
+        padding-left: 24px;
+    }
+    .content-section-scale, .content-section-reward, .content-section-avaible {
+        padding: 40px 24px;
+    }
+    .scale-section-content, .content-section-reward-content,
+    .avaible-section-content-text, .avaible-section-content-blocktable {
+        margin-top: 32px;
+    }
+    .scale-section-content-levels-head {
+        font-size: 20px;
+    }
+
+    .scale-section-content-levels-items{
+        font-size: 20px;
+    }
+    .scale-section-content-progress{
+        height: 20px;
+    }
+    // напис під progressBar
+    .scale-section-content-description-content{
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    // рядок підказки під progressBar
+    .scale-section-content-description-content-hint {
+        font-size: 18px;
+        line-height: 120%;
+    }
+    .content-section-reward-content {
+        gap: 12px;
+    }
+    .content-section-reward-content-blocks{
+        width: 171px;
+        height: 126px;
+        // padding: 12px;
+        gap: 12px;
+    }
+    .content-section-reward-content-blocks-header{
+        width: 100%;
+        height: 44px;
+    }
+    .content-section-reward-content-blocks-header-number{
+        line-height: 110%;
+    }
+    .content-section-reward-content-blocks-header-arrow{
+        width: 44px;
+        height: 44px;
+        // margin: 11px;
+    }
+    .content-section-reward-content-blocks-footer{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    // блок з таблицею
+    .avaible-section-content-text{
+        font-size: 18px;
+        text-align: left;
+        line-height: 120%;
+    }
+    .avaible-section-content-table tr td{
+        padding: 20px 0 10px 0;
+    }
+    .avaible-section-content-table tr td:first-child{
+        font-size: 16px;
+        width: 280px;
+    }
+    .tablehead-block{
+        padding: 4px;
+        // margin-bottom: 20px;
+    }
+    .tablehead-block-header{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .tablehead-block-footer{
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 4px;
+    }
+    .content-section-prefoter {
+        height: 80px;
+    }
+}
+// медіазапити для mobile max375px
+@media (max-width: 375px) {
+    .content-section-urls {
+        height: 47px;
+    }
+    .urls-line {
+        padding-top: 16px;
+        padding-left: 24px;
+    }
+    .urls-line-block{
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 110%;
+    }
+    .content-section-scale, .content-section-reward, .content-section-avaible {
+        padding: 20px 24px;
+    }
+    .scale-section-header, .content-section-reward-header, .avaible-section-header{
+        font-size: 20px;
+    }
+    .scale-section-content,
+    .content-section-reward-content,
+    .avaible-section-content-text,
+    .avaible-section-content-blocktable {
+        margin-top: 20px;
+    }
+    .scale-section-content-levels{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .scale-section-content-levels-head {
+        font-size: 18px;
+        margin-left: 0;
+        margin-right: 40px;
+    }
+    .scale-section-content-levels>div{
+        display: flex;
+        margin-left: 0;
+    }
+    .scale-section-content-levels-items{
+        margin-left: 12px;
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .scale-section-content-levels-items:first-child{
+        margin-left: 0;
+    }
+    .scale-section-content-levels-items-figure  {
+        padding-right: 2px;
+    }
+    .scale-section-content-progress{
+        margin: 16px 0;
+    }
+    .scale-section-content-description-content{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+    .scale-section-content-description-content-hint {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .content-section-reward-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4px;
+        width: 100%;
+    }
+    .content-section-reward-content-blocks{
+        width: 135px;
+        height: 102px;
+        padding: 8px;
+        gap: 12px;
+    }
+    .content-section-reward-content-blocks-header{
+        height: 40px;
+        gap: 12px;
+    }
+    .content-section-reward-content-blocks-header-arrow{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+    .content-section-reward-content-blocks-footer{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .avaible-section-content-text{
+        font-size: 16px;
+        line-height: normal;
+    }
+    .avaible-section-content-table tr td{
+        padding: 20px 0 10px 0;
+    }
+    .avaible-section-content-table tr td:first-child{
+        font-size: 14px;
+        width: 120px;
+    }
+    .tablehead-block{
+        padding: 4px 0;
+        margin-bottom: 20px;
+    }
+    .tablehead-block-header{
+        font-size: 12px;
+    }
+    .tablehead-block-footer{
+        font-size: 11px;
+        font-weight: 400;
+        margin-top: 4px;
+    }
+    .content-section-prefoter {
+        height: 32px;
+    }
+}

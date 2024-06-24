@@ -1,0 +1,33 @@
+// body {
+// 	background-color: #0b0e0d;
+// }
+
+// .bars-container {
+// 	display: flex;
+// 	gap: var(--barsGap);
+// 	width: 100%;
+// 	max-width: 1200px;
+// }
+
+// .loading-bar {
+// 	--bar-height: 10px;
+// 	position: relative;
+// 	width: calc(100% / var(--barsCount));
+// 	height: var(--bar-height);
+// 	overflow: hidden;
+//     transition: width 1s linear;
+// }
+// .loading-bar:first-child{
+// 	border-radius: calc(var(--bar-height) / 2) 0 0 calc(var(--bar-height) / 2);
+// }
+// .loading-bar:last-child{
+// 	border-radius: 0 calc(var(--bar-height) / 2) calc(var(--bar-height) / 2) 0;
+// }
+
+// .loading-bar::before {
+// 	content: "";
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	background: var(--background);
+// }

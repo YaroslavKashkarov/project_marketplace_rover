@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="filter">
+    <div class="title">
+      Filter
+    </div>
+
+    <app-filter [isMinimized]="true" [filters]="filters" (sendFilters)="applyFilters($event)"></app-filter>
+    
+  </div>
+  <div class="content">
+    <div class="header">
+      <div class="title">
+        Search results
+      </div>
+    </div>
+    <div class="results">
+      <app-product
+        *ngFor="let product of products" [product]="product">
+      </app-product>
+    </div>
+  </div>
+
+</div>
+  

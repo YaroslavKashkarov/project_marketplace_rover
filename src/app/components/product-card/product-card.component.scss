@@ -1,0 +1,247 @@
+* {
+  font-family: Lato, sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #7c98a4;
+}
+
+.product {
+  width: 1269px;
+  margin-inline: auto;
+  padding-top: 40px;
+  //background-color: #FFFFFF;
+
+  &__navigate {
+    width: 1252px;
+    margin-inline: auto;
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 400;
+
+    & p {
+      margin: 0;
+    }
+
+    &-container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #F9F9F9;
+    }
+
+    &-item {
+      color: #042C54;
+
+      &:last-of-type {
+        color: rgba(7, 10, 15, 0.50);
+      }
+    }
+
+    &-img {
+      width: 20px;
+    }
+  }
+
+  &__container {
+    background-color: #F9F9F9;
+    //padding-bottom: 160px;
+  }
+
+  &__title {
+    margin: 0;
+    //width: 498px;
+    height: 43px;
+    font-size: 36px;
+    font-weight: 700;
+
+    &-container {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+
+    &-img {
+      position: relative;
+      width: 510px;
+      height: 471px;
+      border-radius: 4px;
+      background: url("../../../assets/img/product-card/img-1.jpg") -98.761px 0.267px/138.408% 100% no-repeat;
+    }
+
+    &-nofavorite {
+      position: absolute;
+      top: 25px;
+      left: 454px;
+    }
+
+    &-more {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &-img {
+        width: 200px;
+        height: 149px;
+        //background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), lightgray -323px -102.049px / 276.872% 236.066% no-repeat;
+
+        &:first-of-type {
+          background: url("../../../assets/img/product-card/img-1.jpg") -302.761px -150.733px/279.408% 232% no-repeat;
+        }
+
+        &:nth-of-type(2) {
+          background: url("../../../assets/img/product-card/img-1.jpg") -409.761px -117.733px/409.408% 348% no-repeat;
+        }
+
+        &:last-of-type {
+          background: url("../../../assets/img/product-card/img-1.jpg") -183.761px -234.733px/393.408% 337% no-repeat;
+        }
+      }
+    }
+  }
+
+  &__about {
+    display: flex;
+    gap: 14px;
+    height: 43px;
+
+    & p {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+
+      &:first-of-type {
+        width: 305px;
+        color: rgba(7, 10, 15, 0.50);
+      }
+    }
+
+    &-container {
+      margin-left: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-btn {
+      width: 510px;
+      height: 54px;
+      display: flex;
+      justify-content: center;
+      border-radius: 4px;
+      border: 1px solid #00478F;
+      background-color: #00478F;
+
+      & p {
+        margin: 15px 0 15px 10px;
+        color: white;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+
+    //&-title {
+    //  margin: 0;
+    //  width: 498px;
+    //  height: 93px;
+    //  font-size: 36px;
+    //  font-weight: 700;
+    //}
+  }
+
+  &__description {
+    &-container {
+      width: 1242px;
+      margin-top: 40px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 37px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &-title {
+        margin: 0;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      &-text {
+        margin: 3px 0 0 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+
+        &-location {
+          margin: 3px 0 0 0;
+          font-size: 24px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.profile {
+  &__container {
+    margin-top: 0;
+    padding: 45px 0 123px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    align-items: center;
+    background-color: #F9F9F9;
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__img {
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+    border: 3px solid #00478F;
+    background: lightgray 50% / cover no-repeat;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    &-name {
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  &__description {
+    display: flex;
+    gap: 14px;
+    font-size: 24px;
+    font-weight: 400;
+
+    & p:last-child {
+      cursor: pointer;
+      color: #00478F;
+    }
+  }
+}

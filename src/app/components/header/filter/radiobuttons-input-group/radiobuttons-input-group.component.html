@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="title">{{setting.title}}</div>
+    <div class="buttons">
+        <div class="option" 
+            *ngFor="let option of setting.options"
+            [class.selected]="option.selected"
+            (click)="selectOption(option)"
+        >{{option.key}}</div>
+    </div>
+</div>

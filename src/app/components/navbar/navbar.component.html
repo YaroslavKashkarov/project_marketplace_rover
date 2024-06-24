@@ -1,19 +1,19 @@
 <div class="navbar">
   <div class="navbar__items">
     <ul class="items__category">
-      <a class="link" routerLink="home/bicycle">
+      <a class="link" [routerLink]="['home/category']" [queryParams]="{category: 'bicycle'}">
         <li>Bicycle</li>
       </a>
-      <a class="link" routerLink="home/parts">
+      <a class="link" [routerLink]="['home/category']" [queryParams]="{category: 'parts'}">
         <li>Parts</li>
       </a>
-      <a class="link" routerLink="home/accessories">
+      <a class="link" [routerLink]="['home/category']" [queryParams]="{category: 'accessories'}">
         <li>Accessories</li>
       </a>
-      <a class="link" routerLink="home/service">
+      <a class="link" [routerLink]="['home/category']" [queryParams]="{category: 'service'}">
         <li>Service</li>
       </a>
-      <a class="link link-last" routerLink="home/clothes">
+      <a class="link link-last" [routerLink]="['home/category']" [queryParams]="{category: 'clothes'}">
         <li>Clothes</li>
       </a>
     </ul>

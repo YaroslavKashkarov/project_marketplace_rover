@@ -1,0 +1,80 @@
+:host{
+    display: block;
+
+    form{
+        margin-bottom: 44px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        app-error-messages{
+            margin-top: -8px;
+        }
+
+        .forgot{
+            color: #00478F;
+            cursor: pointer;
+            z-index: 2;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .submit{
+            display: block;
+            width: 400px;
+            height: 56px;
+            border-radius: 16px;
+            border: none;
+            background-color: #00478F;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            color: #FFFFFF;
+            line-height: 28px;
+            margin-top: 16px;
+
+            &:hover{
+                -webkit-text-stroke: 0.4px #FFFFFF;
+            }
+
+            &:active{
+                background-color: #042C54;
+                -webkit-text-stroke: 0.4px #FFFFFF;
+            }
+        }
+
+        .mat-mdc-form-field {
+            display: block;
+            height: 56px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        .mat-icon{
+            width: 26px;
+            height: 26px;
+        }
+
+        .mat-mdc-icon-button{
+            font-size: 22px;
+        }
+    }
+
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title{
+            color: #070A0F;
+            opacity: 50%;
+            font-size: 16px;
+            line-height: 19.2px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+    }
+}
