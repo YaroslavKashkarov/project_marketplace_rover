@@ -1,73 +1,16 @@
-<div class="maincontainer">
-  <div class="top">
-    <div class="top__navigate-container">
-      <div class="top__navigate-items">
-        <p class="top__navigate-item">Home</p>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-               viewBox="0 0 12 12" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M3 1.78959C3 1.9917 3.07684 2.1938 3.23105 2.34802L6.88369 6.00013L3.23105 9.65224C2.92316 9.96066 2.92316 10.4607 3.23105 10.7691C3.53947 11.077 4.03947 11.077 4.3479 10.7691L8.55843 6.55855C8.86632 6.25013 8.86632 5.75013 8.55843 5.4417L4.3479 1.23117C4.03947 0.923278 3.53947 0.923278 3.23105 1.23117C3.07684 1.38538 3 1.58749 3 1.78959Z"
-                  fill="#042C54"/>
-          </svg>
-        </div>
-        <p class="top__navigate-item">{{category}}</p>
-      </div>
-    </div>
-    <div class="top__header-container">
-      <div class="top__header">
-        <div class="top__header-title">
-          <h2>{{category | uppercase}}</h2>
-        </div>
-        <div class="top__header-dropdowncontainer">
-          <select class="dropdowncontainer__selectmenu"
-                  (change)="onSortChange($event)">
-            <option class="1" value="0" selected hidden="">Sort by</option>
-            <option class="1" value="Popular">Popular</option>
-            <option class="1" value="Recent">Recent</option>
-            <option class="1" value="Price Up">Price 🡩</option>
-            <option class="1" value="Price Down">Price 🡫</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="main">
-    <div class="main__container">
-      <div class="main__container__products">
-        <app-product class="category__products"
-                     *ngFor="let product of products | slice:0:productsToDisplay"
-                     [product]="product">
-        </app-product>
-      </div>
-      <div class="main__container__footer">
-        <div class="main__container__footer__more">
-          <button class="btn-more" (click)="onMoreClick()">More</button>
-        </div>
-        <div class="main__container__footer__pagination">
-          Page <input type="number" value="1" max="100"> of 100
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="content">
     <div class="header">
       <div class="title">
         {{filters.category| uppercase}}
       </div>
-      <div class="sorting">
-        <app-dropdown (ngModelChange)="sortProducts($event)"
-                      [(ngModel)]="filters.sort" [options]="sortingOptions"
-                      [placeholder]="'Sort by'"
-                      [outlined]="false"></app-dropdown>
+      <div class="sorting" >
+        <app-dropdown (ngModelChange)="sortProducts($event)" [(ngModel)]="filters.sort" [options]="sortingOptions" [placeholder]="'Sort by'" [outlined]="false"></app-dropdown>
       </div>
     </div>
     <div class="items" #itemsContainer *ngIf="!isLoading">
       <app-product
-		      *ngFor="let product of products" [product]="product">
+        *ngFor="let product of products" [product]="product">
       </app-product>
     </div>
 
@@ -80,3 +23,4 @@
 </div>
 
 
+  

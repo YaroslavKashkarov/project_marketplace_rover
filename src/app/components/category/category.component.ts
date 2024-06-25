@@ -1,12 +1,9 @@
-import {Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute, Router} from "@angular/router";
 import {IProduct} from "./product.interface";
 import {ProductServiceService} from "./product-service.service";
 import {ProductComponent} from "./product/product.component";
-// import {DropdownDirective} from "../../shared/dropdown.directive"; original
-import {MatInputModule} from "@angular/material/input";
-import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import { DropdownComponent } from '../common-components/dropdown/dropdown.component';
 import { LoaderComponent } from '../common-components/loader/loader.component';
@@ -15,9 +12,6 @@ import { LoaderComponent } from '../common-components/loader/loader.component';
   selector: 'app-category',
   standalone: true,
   imports: [CommonModule, FormsModule, ProductComponent, DropdownComponent, LoaderComponent],
-  imports: [CommonModule, ProductComponent, MatInputModule, MatSelectModule, FormsModule],
-  // imports: [CommonModule, ProductComponent, DropdownDirective, MatInputModule, MatSelectModule, FormsModule], original
-  imports: [CommonModule, ProductComponent],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
@@ -53,7 +47,6 @@ export class CategoryComponent implements OnInit {
     { key: 'Price down', value: 'by_price_desc' },
   ]
   selectedSortOption: string = '';
-  // showSortOptions = true; я додавав
 
 
   ngOnInit(): void {
@@ -101,7 +94,6 @@ export class CategoryComponent implements OnInit {
         this.showMoreButton = this.totalCount > this.products.length;
 
         if (!initialLoad) {
-          console.log(this.scrollPosition)
           setTimeout(() => {
             window.scrollTo({
               top: this.scrollPosition,
@@ -127,32 +119,13 @@ export class CategoryComponent implements OnInit {
     this.processData()
   }
 
-  selectOption(sortOption: string) {
-    // console.log(sortOption);
-    // this.selectedSortOption = sortOption;
-  }
 
   public sortProducts(sortOption: string): void {
     this.filters.sort = sortOption;
+    this.products = [];
+    this.page = 1;
     this.processData(true);
-    // this.products = this.products.sort((a, b) => a.price - b.price);
+   
   }
 
-  public sortProductsAsc() {
-  //   this.products = this.products.sort((a, b) => b.price - a.price);
-  // }  public sortProductDate() {
-  //   this.products = this.products.sort((a, b) => b.date_publication.getDate() - a.date_publication.getDate());
-  }
-
-  onSortChange($event: Event) {
-    // const selectedValue = ($event.target as HTMLSelectElement).value;
-
-    // if (selectedValue === 'Price Up') {
-    //   this.sortProductsDesc();
-    // } else if (selectedValue === 'Price Down') {
-    //   this.sortProductsAsc();
-    // }else if(selectedValue === 'Recent'){
-    //   this.sortProductDate()
-    // }
-  }
 }
