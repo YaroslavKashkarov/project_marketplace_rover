@@ -19,6 +19,7 @@ export class CarouselComponent implements OnInit {
 	@Input() indicators: boolean = true;
 	@Input() controls: boolean = true;
 	@Input() autoSlide: boolean = true;
+	@Input() slideInterval: number = 3000;
   @Input() slideInterval: number = 3000;
 
   selectedIndex: number = 0;
@@ -37,6 +38,7 @@ export class CarouselComponent implements OnInit {
 	}
 
 	autoSlideImages(): void {
+		setTimeout( this.onNextClick, this.slideInterval );
 		setTimeout((): void => {
 			this.onNextClick();
 			this.autoSlideImages();
