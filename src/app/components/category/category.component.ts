@@ -94,7 +94,6 @@ export class CategoryComponent implements OnInit {
         this.showMoreButton = this.totalCount > this.products.length;
 
         if (!initialLoad) {
-          console.log(this.scrollPosition)
           setTimeout(() => {
             window.scrollTo({
               top: this.scrollPosition,
@@ -120,32 +119,13 @@ export class CategoryComponent implements OnInit {
     this.processData()
   }
 
-  selectOption(sortOption: string) {
-    // console.log(sortOption);
-    // this.selectedSortOption = sortOption;
-  }
 
   public sortProducts(sortOption: string): void {
     this.filters.sort = sortOption;
+    this.products = [];
+    this.page = 1;
     this.processData(true);
-    // this.products = this.products.sort((a, b) => a.price - b.price);
+   
   }
 
-  public sortProductsAsc() {
-  //   this.products = this.products.sort((a, b) => b.price - a.price);
-  // }  public sortProductDate() {
-  //   this.products = this.products.sort((a, b) => b.date_publication.getDate() - a.date_publication.getDate());
-  }
-
-  onSortChange($event: Event) {
-    // const selectedValue = ($event.target as HTMLSelectElement).value;
-
-    // if (selectedValue === 'Price Up') {
-    //   this.sortProductsDesc();
-    // } else if (selectedValue === 'Price Down') {
-    //   this.sortProductsAsc();
-    // }else if(selectedValue === 'Recent'){
-    //   this.sortProductDate()
-    // }
-  }
 }
