@@ -6,23 +6,27 @@ import { IBasketResult } from './payment-page.component';
 import { IPaymentResult } from './payment-result';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class PaymentService extends BaseService{
-
+export class PaymentService extends BaseService {
   constructor(httpClient: HttpClient) {
-    super(httpClient)
+    super(httpClient);
   }
 
-  getBasketInfo(): Observable<IBasketResult[]>{
-    return this.get<IBasketResult[]>('api/basket')
+  getBasketInfo(): Observable<IBasketResult[]> {
+    return this.get<IBasketResult[]>('api/basket');
   }
 
-  getPaymentInfo(basketId: string): Observable<IPaymentResult>{
-    return this.post<IPaymentResult>('api/payments/pay', {basketIds: [basketId]})
+  getPaymentInfo(productIds: string[]): Observable<IPaymentResult> {
+    return this.post<IPaymentResult>('api/payments/pay', {
+      productIds: productIds,
+    });
   }
 
-  sendPaymentInfo(info: IPaymentResult): Observable<any>{
-    return this.postOnExternalResource('https://secure.wayforpay.com/pay', info)
+  sendPaymentInfo(info: IPaymentResult): Observable<any> {
+    return this.postOnExternalResource(
+      'https://secure.wayforpay.com/pay',
+      info,
+    );
   }
 }

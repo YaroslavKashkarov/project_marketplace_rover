@@ -38,10 +38,10 @@ export class PaymentPageComponent implements OnInit {
     if (this.authService.$currentUser) {
       this.paymentService.getBasketInfo().subscribe((res) => {
         this.basket = res;
+        const basketProductIds = this.basket.map((product) => product._id);
         this.paymentService
-          .getPaymentInfo(this.basket[0].basketId)
+          .getPaymentInfo(basketProductIds)
           .subscribe((res) => {
-            console.log('rrreeesss')
             this.paymentInfo = res;
           });
       });
@@ -49,7 +49,6 @@ export class PaymentPageComponent implements OnInit {
   }
 
   onPaymentClick(): void {
-    console.log(this.paymentInfo, 'payment info onPaymentClick');
     const form = document.createElement('form');
     form.method = 'POST';
     form.action = 'https://secure.wayforpay.com/pay';
