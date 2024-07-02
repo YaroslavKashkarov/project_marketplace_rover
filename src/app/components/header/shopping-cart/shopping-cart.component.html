@@ -1,4 +1,26 @@
-<div class="shopping-cart">
+<div class="container">
+  <div class="order" *ngFor="let sellerOrder of groupedProducts">
+    <div class="header">
+        <div class="seller">Seller: {{sellerOrder.sellerId}}</div>
+    </div>
+    <div class="products">
+        <app-order-product 
+          *ngFor="let product of sellerOrder.products" 
+          [product]="product"
+          (productChanged)="processData()"
+        ></app-order-product>
+    </div>
+    <div class="footer">
+        <div class="btns">
+            <button class="btn other" >View seller's other items</button>
+            <button class="btn checkout" (click)="navigateWithState(sellerOrder.sellerId)">Checkout</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- <div class="shopping-cart">
   <div class="shopping-cart__container">
     <div class="shopping-cart__container-navigate">
       <a class="shopping-cart__container-navigate-title" routerLink="home">Home</a>
@@ -148,4 +170,4 @@
   </div>
 </div>
 
-<!--<app-shopping-cart-buy></app-shopping-cart-buy>-->
+<app-shopping-cart-buy></app-shopping-cart-buy> -->

@@ -1,0 +1,100 @@
+.container {
+    padding: 32px 40px;
+  
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .title{
+        font-size: 24px;
+        font-weight: 700;
+        color: #00478F;
+        margin-bottom: 8px;
+      }
+  
+      svg{
+        cursor: pointer;
+      }
+    }
+
+    .body{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      form{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .subtitle{
+          font-size: 20px;
+          color: #00478F;
+        }
+      }
+    }
+    
+    .mat-mdc-form-field {
+      display: block;
+      height: 56px;
+      width: 100%;
+      font-family: Lato, sans-serif;
+    }
+
+    .mat-horizontal-stepper-header {
+      padding: 0 60px;
+    }
+
+    .custom-step-circle {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: #3f51b5; /* Circle color */
+      border-radius: 50%;
+    }
+    
+    .mat-step-icon {
+      display: none; /* Hide the default icon */
+    }
+    
+    .mat-horizontal-stepper-header .mat-step-label {
+      display: none; /* Hide the step label text */
+    }
+    
+    .mat-horizontal-stepper-header .mat-step-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .mat-horizontal-stepper-header .mat-step-header .mat-step-number {
+      display: none; /* Hide step numbers */
+    }
+
+    mat-radio-group{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    mat-radio-button{
+      border-bottom: 0.5px solid #070A0F80;
+      padding: 12px 8px;
+    }
+
+    mat-radio-button.mat-accent .mat-radio-inner-circle {
+      background-color: #00478F !important; /* Radio button inner circle color */
+    }
+
+    mat-radio-button.mat-accent .mat-radio-outer-circle {
+      border-color: #00478F !important; /* Radio button outer circle color */
+    }
+
+    mat-radio-button .mat-radio-label-content {
+      color: #00478F !important; /* Radio button text color */
+    }
+
+
+}

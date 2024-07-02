@@ -1,165 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
+@import '../../../../styles/variables';
+
+:host{
+  background-color: #F9F9F9;  
+  
+  display: block;
 }
-.shopping-cart {
+
+.container{
   display: flex;
-  justify-content: center;
-  padding-bottom: 60px;
-  &__container {
-    max-width: 1440px;
-    padding: 0 94px 0 94px;
-    &-navigate {
+  flex-direction: column;
+  margin-bottom: 120px;
+  margin-top: 100px;
+  gap: 4px;
+
+  .order{
+    background-color: #ffffff;
+    padding: $site-1440-padding;
+
+    .header{ 
+      font-size: 24px;
+      font-weight: 700;
+      padding: 12px 0;
+    }
+
+    .footer{
       display: flex;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      &-title {
-        text-decoration: none;
-        color: rgb(4, 44, 84);
-        font-size: 18px;
-        font-weight: 400;
+      justify-content: end;
+      padding: 12px 0;
 
-        &:last-of-type {
-          color: rgba(7, 10, 15, 0.5);
-          font-size: 18px;
-          font-weight: 400;
-        }
-      }
-    }
-
-    &-img-arrow {
-      padding: 0 4px 0 4px;
-    }
-    &-sellers {
-      &-description {
+      .btns{
         display: flex;
-        max-width: 1440px;
-        padding: 12px 0 12px 0;
-        align-items: flex-start;
-        gap: 8px;
-        .seller {
-          color: #000;
+        gap: 10px;
+
+        .btn{
+          width: 336px;
+          padding: 15px 20px;
           font-size: 24px;
-          line-height: 28px;
+          font-weight: 700;
+          text-align: center;
+          border-radius: 16px;
+          cursor: pointer;
+
+          &.other{
+            border: 1px solid $primary;
+            background-color: #ffffff;
+            color: $primary;
+          }
+
+          &.checkout{
+            background-color: $primary;
+            color: white;
+            border: none;
+          }
         }
-        .seller-name {
-          color: #000;
-          font-size: 24px;
-          line-height: 28px;
-        }
-      }
-    }
-    &-products {
-      display: flex;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      align-items: center;
-      justify-content: space-around;
-      gap: 0 68px;
-      flex-wrap: wrap;
 
-      .img-product {
-        width: 144px;
-        height: 130px;
-        flex-shrink: 0;
-      }
-    }
-    &-item-description {
-      width: 416px;
-      .description-product {
-        color: #070a0f;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 21px;
-        padding-bottom: 10px;
-      }
-      .description-product-second {
-        color: #070a0f;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 21px;
-      }
-    }
-    &-item-price {
-      display: flex;
-      width: 100px;
-      padding: 4px;
-      justify-content: flex-end;
-      align-items: center;
-
-      .price {
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 500;
-        line-height: normal;
-      }
-    }
-    &-quantity {
-      width: 128px;
-      height: 46px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .less {
-        padding-right: 20px;
-      }
-      .img-number {
-        color: #070a0f;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: normal;
-      }
-      .more {
-        padding-left: 20px;
-      }
-    }
-    .total-price {
-      display: flex;
-      width: 100px;
-      padding: 4px;
-      justify-content: flex-end;
-      align-items: center;
-      color: rgb(0, 0, 0);
-      font-size: 20px;
-      font-weight: 500;
-      line-height: normal;
-    }
-    &-btns {
-      display: flex;
-      max-width: 1440px;
-      padding: 12px 0 12px 0;
-      justify-content: flex-end;
-      align-items: flex-start;
-      gap: 20px;
-      .btn-inner-sellers {
-        cursor: pointer;
-        width: 336px;
-        height: 54px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        color: #00478f;
-        border: 1px solid #00478f;
-
-        font-size: 24px;
-        font-family: Lato, sans-serif;
-      }
-      .btn-checkout {
-        cursor: pointer;
-        width: 336px;
-        height: 54px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        color: #00478f;
-        border: 1px solid #00478f;
-
-        font-size: 24px;
-        font-family: Lato, sans-serif;
-        &:last-of-type {
-          background: #00478f;
-          color: #ffffff;
-        }
       }
     }
   }
