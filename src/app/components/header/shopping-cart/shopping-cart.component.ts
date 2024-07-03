@@ -6,6 +6,7 @@ import { IProduct } from '../../category/product.interface';
 import { IOrderProduct } from '../../../../core/interfaces/order-product';
 import { DialogService } from '../../services/dialog.service';
 import { OrderProductComponent } from './order-product/order-product.component';
+import { LoaderComponent } from '../../common-components/loader/loader.component';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { OrderProductComponent } from './order-product/order-product.component';
   standalone: true,
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss',
-  imports: [CommonModule, RouterLink, OrderProductComponent]
+  imports: [CommonModule, RouterLink, OrderProductComponent, LoaderComponent]
 })
 export class ShoppingCartComponent implements OnInit {
 
@@ -35,6 +36,7 @@ export class ShoppingCartComponent implements OnInit {
 
     this.basketService.getBasketProducts().subscribe(
       res => {
+        if (res)
         this.groupedProducts = this.groupBySeller(res);
         this.isLoading = false;
       }

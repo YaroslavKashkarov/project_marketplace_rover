@@ -3,4 +3,5 @@ export interface IOrder {
     products: {},
     paymentMethod: string,
     deliveryMethod: string
+    userPhone: string
 }

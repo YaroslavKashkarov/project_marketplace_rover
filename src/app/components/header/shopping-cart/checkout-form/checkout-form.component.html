@@ -15,16 +15,15 @@
     </div>
     <div class="body">
       <form [formGroup]="firstFormGroup">
-        <mat-horizontal-stepper linear #stepper class="custom-stepper">
-
+        <mat-horizontal-stepper  #stepper class="custom-stepper">
           <mat-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
-              <ng-template matStepLabel>
+              <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
-              </ng-template>
+              </ng-template> -->
               <div class="subtitle">Enter your contact details</div>
               <mat-form-field appearance="outline">
-                <input matInput placeholder="Phone" formControlName="phoneNumber" required>
+                <input matInput placeholder="Phone" formControlName="phoneNumber" >
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <input matInput placeholder="First name" formControlName="firstName" required>
@@ -40,9 +39,9 @@
       
           <mat-step [stepControl]="secondFormGroup">
             <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>
+              <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
-              </ng-template>
+              </ng-template> -->
               <div class="subtitle">Choose a delivery method</div>
               <mat-radio-group formControlName="deliveryMethod">
                 <mat-radio-button *ngFor="let method of deliveryMethods" [value]="method.value">{{method.key}}</mat-radio-button>
@@ -56,9 +55,9 @@
       
           <mat-step [stepControl]="thirdFormGroup">
             <form [formGroup]="thirdFormGroup">
-              <ng-template matStepLabel>
+              <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
-              </ng-template>
+              </ng-template> -->
               <div class="subtitle">Choose a payment method</div>
                 <mat-radio-group formControlName="paymentMethod">
                   <mat-radio-button *ngFor="let method of peymentMethods" [value]="method.value">{{method.key}}</mat-radio-button>

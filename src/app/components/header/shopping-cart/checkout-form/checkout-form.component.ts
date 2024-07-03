@@ -13,6 +13,7 @@ import { IUser } from '../../../../../core/interfaces/user.interface';
 import { Subscription } from 'rxjs';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-checkout-form',
   standalone: true,
@@ -22,13 +23,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class CheckoutFormComponent implements OnInit, OnDestroy{
 
-  closeDialog(){}
-
   currentUser: IUser | null;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   userSubscription: Subscription;
+
 
   deliveryMethods = [
     {key: 'Self-pickup', value: 'self_pickup'},
@@ -54,7 +54,11 @@ export class CheckoutFormComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', [
+        Validators.required, 
+        Validators.max(15), 
+        Validators.min(7),
+      ]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
     });
@@ -80,6 +84,10 @@ export class CheckoutFormComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {
     this.userSubscription.unsubscribe();
+  }
+
+  closeDialog(){
+    this.dialogRef.close()
   }
 
 }

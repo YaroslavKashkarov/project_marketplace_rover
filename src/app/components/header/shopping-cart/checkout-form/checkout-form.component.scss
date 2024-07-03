@@ -35,6 +35,13 @@
         }
       }
     }
+
+    input[type=number] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
     
     .mat-mdc-form-field {
       display: block;
@@ -84,17 +91,6 @@
       padding: 12px 8px;
     }
 
-    mat-radio-button.mat-accent .mat-radio-inner-circle {
-      background-color: #00478F !important; /* Radio button inner circle color */
-    }
-
-    mat-radio-button.mat-accent .mat-radio-outer-circle {
-      border-color: #00478F !important; /* Radio button outer circle color */
-    }
-
-    mat-radio-button .mat-radio-label-content {
-      color: #00478F !important; /* Radio button text color */
-    }
 
 
 }
