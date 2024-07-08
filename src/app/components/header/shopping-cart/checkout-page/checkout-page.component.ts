@@ -97,6 +97,8 @@ export class CheckoutPageComponent implements OnInit{
                     this.createAndSubmitPaymentForm()
                   }
                 )
+              } else {
+                this.openConfirmDialog(this.orderDetails.orderReference)
               }
             }
           )
@@ -132,6 +134,14 @@ export class CheckoutPageComponent implements OnInit{
     input.name = name;
     input.value = value;
     form.appendChild(input);
+  }
+
+  openConfirmDialog(orderNumber: string){
+    this.dialogService.openOrderConfirmationDialog(orderNumber);
+  }
+
+  checkPaymentStatus(orderReference: string){
+    
   }
 
 }  

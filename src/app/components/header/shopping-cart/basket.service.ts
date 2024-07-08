@@ -39,4 +39,8 @@ export class BasketService extends BaseService{
   placeOrder(order: IOrder){ 
     return this.post('api/orders', order)
   }
+
+  getOrderByReference(orderReference: number): Observable<any>{
+    return this.get(`api/orders/${orderReference}`)
+  }
 }

@@ -12,6 +12,7 @@ import { resetPasswordGuard } from './guards/reset-password.guard';
 import { authenticatedUserGuard } from './guards/authenticated-user.guard';
 import { SearchResultComponent } from './components/category/search-result/search-result.component';
 import { CheckoutPageComponent } from './components/header/shopping-cart/checkout-page/checkout-page.component';
+import { OrderPageComponent } from './components/header/shopping-cart/order-page/order-page.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent,
@@ -24,6 +25,7 @@ export const routes: Routes = [
   {path: 'home/search-result', component: SearchResultComponent},
 	{path: 'shopping-cart', component: ShoppingCartComponent},
 	{path: 'shopping-cart/checkout', component: CheckoutPageComponent},
+  {path: 'order', component: OrderPageComponent},
   // {
   //   path: 'shopping-cart', component: ShoppingCartComponent,
   //   children: [

@@ -11,6 +11,7 @@ import { IFilters } from '../../../core/interfaces/filters.interface';
 import { FilterDialogComponent } from '../header/filter/filter-dialog/filter-dialog.component';
 import { CheckoutFormComponent } from '../header/shopping-cart/checkout-form/checkout-form.component';
 import { IOrder } from '../../../core/interfaces/order.interface';
+import { OrderConfirmationDialogComponent } from '../header/shopping-cart/order-confirmation-dialog/order-confirmation-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -98,5 +99,20 @@ export class DialogService {
     });
 
     return checkoutDialogRef.afterClosed()
+  }
+
+  openOrderConfirmationDialog(orderNumber: string): void {
+    const orderConfirmDialogRef = this.dialog.open(OrderConfirmationDialogComponent, {
+      width: '868px',
+      data: {
+        orderNumber: orderNumber
+      }
+    })
+
+    orderConfirmDialogRef.afterClosed().subscribe(
+      () => {
+        this.router.navigate([''])
+      }
+    )
   }
 }

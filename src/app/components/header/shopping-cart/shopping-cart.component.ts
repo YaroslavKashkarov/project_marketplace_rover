@@ -36,7 +36,6 @@ export class ShoppingCartComponent implements OnInit {
 
     this.basketService.getBasketProducts().subscribe(
       res => {
-        if (res)
         this.groupedProducts = this.groupBySeller(res);
         this.isLoading = false;
       }
