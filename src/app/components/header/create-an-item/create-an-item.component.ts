@@ -12,8 +12,8 @@ import {FormsModule} from '@angular/forms';
 export class CreateAnItemComponent {
 	isCreateItemVisible: boolean = false;
 	inputText: string = '';
-	maxWords: number = 100;
-	wordCount: number = 100;
+	maxWords: number = 1000;
+	wordCount: number = 1;
 
 	countWords(): void {
 		this.wordCount = this.inputText.length;

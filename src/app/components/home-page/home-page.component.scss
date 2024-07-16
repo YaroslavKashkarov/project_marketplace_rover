@@ -1,9 +1,8 @@
 .main {
   display: flex;
-  width: 1440px;
+  max-width: 1440px;
   margin: auto;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .main-content {

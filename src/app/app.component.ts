@@ -6,15 +6,15 @@ import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FilterComponent} from './components/header/filter/filter.component';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { SocialLoginModule } from '@abacritt/angularx-social-login';
-import { CarouselComponent } from './components/home-page/carousel/carousel.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { FavoriteComponent } from './components/favorite/favorite.component';
-import { ProfileComponent } from './components/profile/profile/profile.component';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
+import {SocialLoginModule} from '@abacritt/angularx-social-login';
+import {CarouselComponent} from './components/home-page/carousel/carousel.component';
+import {ProductCardComponent} from './components/product-card/product-card.component';
+import {FavoriteComponent} from './components/favorite/favorite.component';
+import {ProfileComponent} from './components/profile/profile/profile.component';
 
 // ------------------------------------------------------------
-import { SocialLoginComponent } from './components/social-login/social-login.component';
+import {SocialLoginComponent} from './components/social-login/social-login.component';
 // ------------------------------------------------------------
 
 // import {CarouselComponent,} from './components/home-page/carousel/carousel.component';
@@ -36,14 +36,14 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
       FavoriteComponent,
       ProfileComponent,
       SocialLoginComponent,
-				MatIconModule,
-				SocialLoginModule,
-			],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.scss',
+      MatIconModule,
+      SocialLoginModule,
+    ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(iconRegistry: MatIconRegistry) {
+  constructor (iconRegistry: MatIconRegistry) {
     iconRegistry.setDefaultFontSetClass("fa-regular");
   }
   images = [
@@ -51,7 +51,7 @@ export class AppComponent {
       imageSrc:
         'assets/img/carousel/slide.png',
       imageAlt: 'slide',
-      description: 'Your Perfect Bicycle Awaits!' + 'Find a bicycle for every' +
+      titleText: 'Your Perfect Bicycle Awaits!' + 'Find a bicycle for every' +
         'path. Quality and style in one place',
       titleButton: 'Explore Bicycle',
     },
@@ -59,7 +59,7 @@ export class AppComponent {
       imageSrc:
         'assets/img/carousel/slide_1.png',
       imageAlt: 'slide1',
-      description: 'Style and Comfort on Every Ride!' + 'Enhance your look' +
+      titleText: 'Style and Comfort on Every Ride!' + 'Enhance your look' +
         ' and + elevate your rides with our selection of accessories and' +
         'apparel',
       titleButton: 'Browse Accessories',
@@ -68,7 +68,7 @@ export class AppComponent {
       imageSrc:
         'assets/img/carousel/slide_2.png',
       imageAlt: 'slide2',
-      title: 'Keep Your Bicycle in Perfect Condition!' + 'Parts, tools,' +
+      titleText: 'Keep Your Bicycle in Perfect Condition!' + 'Parts, tools,' +
         'and accessories for effective maintenance and repair',
       titleButton: 'Shop Parts',
     },
