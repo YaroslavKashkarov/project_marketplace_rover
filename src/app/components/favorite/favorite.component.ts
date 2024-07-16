@@ -17,6 +17,8 @@ export class FavoriteComponent implements OnInit {
   roverInfo: any;
   roverPhotos: any;
 
+  message: string = '';
+
   ngOnInit(): void {
     this.getFavorite();
   }
@@ -30,9 +32,23 @@ export class FavoriteComponent implements OnInit {
 
   removeFavorite(productId: number) {
     this.favoriteService.removeFavorite(productId).subscribe((response: any) => {
-      console.log(response);
-      // I'll leave this cause remove method on backend work incorrectly
+      if (!response) {
+        this.isFavorite = false;
+        this.message = 'Product successfully removed from favorites';
+
+        console.log(this.message);
+      }
     })
   }
 
+  addFavorite(productId: number) {
+    this.favoriteService.addFavorite(productId).subscribe((response: any) => {
+      if (response) {
+        this.isFavorite = true;
+        this.message = 'Products successfully added to favorites'
+
+        console.log(this.message);
+      }
+    })
+  }
 }

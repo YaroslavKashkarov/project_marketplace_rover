@@ -13,7 +13,9 @@
   <div class="favorite">
 
     <div class="favorite__item" *ngFor="let rover of roverInfo">
-      <img (click)="removeFavorite(rover?._id)" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
+
+      <img (click)="isFavorite ? removeFavorite(rover?._id) : addFavorite(rover?._id)" class="favorite__item-favorite"
+        [src]="isFavorite ? 'assets/img/favorite/Favorite.svg' : 'assets/img/Unfavourite.svg'">
 
       <div class="favorite__item-condition">
         <p class="favorite__item-condition-text">{{rover?.state}}</p>
