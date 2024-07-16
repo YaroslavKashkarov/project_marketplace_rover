@@ -21,19 +21,10 @@ interface carouselButton {
 })
 
 export class CarouselComponent implements OnInit {
-<<<<<<< HEAD
   @Input() images: carouselImage[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
   @Input() autoSlide: boolean = true;
-=======
-  @Input() images: carouselImage[] = [];
-  @Input() text: carouselText[] = [];
-  @Input() button: carouselButton[] = [];
-  @Input() indicators: boolean = true;
-  @Input() controls: boolean = true;
-  @Input() autoSlide: boolean = true;
->>>>>>> dev
   @Input() slideInterval: number = 3000;
 
   selectedIndex: number = 0;
