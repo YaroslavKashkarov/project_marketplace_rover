@@ -45,8 +45,8 @@ export class SearchFieldComponent implements OnInit{
       tap(() => this.isExpanded = false),
       debounce((v) => interval(500))
     )    
-    .subscribe(() => {      
-      this.processData();
+    .subscribe((value) => {    
+      this.processData(value as string);
     });
 
     this.router.events
@@ -68,11 +68,9 @@ export class SearchFieldComponent implements OnInit{
     })
   }
 
-  processData(isExpandedAfter = true) {
-    const keywords = this.searchInput.value;
-
-    if (keywords){
-      this.keywords = keywords;
+  processData(value: string, isExpandedAfter = true) {
+    if (value){
+      this.keywords = value;
       this.productService.getProductTitlesByKeyword(this.keywords).subscribe(
         res => {
           this.options = res;
@@ -85,6 +83,7 @@ export class SearchFieldComponent implements OnInit{
   }
 
   onOptionSelect(option: string){
+    console.log(option, 'option in search')
     this.filters = {
       title: option,
       sort: 'by_newest'

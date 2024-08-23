@@ -49,13 +49,15 @@
       [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
 
   >
-    <ul class="options-list" *ngIf="options?.length">
+    <ul class="options-list" *ngIf="options?.length; else notFoundSearchBlock">
       <li class="option" 
         *ngFor="let option of options"
         (click)="onOptionSelect(option)"
         [innerHTML]="option | highlightKeywords: keywords"
       ></li>
-
     </ul>
+    <ng-template #notFoundSearchBlock>
+      <li class="option">Results not found</li>
+    </ng-template>
   </ng-template>
 </div>
