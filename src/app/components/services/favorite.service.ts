@@ -1,29 +1,29 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class FavoritesService {
 
-  constructor(private http: HttpClient) { }
+	apiEndPoint: string = environment.apiEndPoint;
 
-  apiEndoint: string = environment.apiEndoint;
+	constructor(private http: HttpClient) {
+	}
 
-  getFavorite() {
-    return this.http.get(`${this.apiEndoint}/api/favorites`); 
-  }
+	getFavorite() {
+		return this.http.get(`${this.apiEndPoint}/api/favorites`);
+	}
 
-  addFavorite(productId: number) {
-    const requestData = {productId: productId};
-    return this.http.post(`${this.apiEndoint}/api/favorites`, requestData);
-  }
+	addFavorite(productId: number) {
+		const requestData = {productId: productId};
+		return this.http.post(`${this.apiEndPoint}/api/favorites`, requestData);
+	}
 
-  removeFavorite(productId: number) {
-    return this.http.delete(`${this.apiEndoint}/api/favorites/${productId}`);
-  }
+	removeFavorite(productId: number) {
+		return this.http.delete(`${this.apiEndPoint}/api/favorites/${productId}`);
+	}
 
 }
 
