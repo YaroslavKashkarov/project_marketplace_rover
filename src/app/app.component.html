@@ -1,7 +1,21 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<div class="arrow-up">
+	<svg (click)="scrollToTop()" [ngClass]="{show: isAScrollButtonVisible}"
+	     class="arrow-up__btn"
+	     xmlns="http://www.w3.org/2000/svg" width="36"
+	     height="36"
+	     viewBox="0 0 36 36" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M30.6312 32.368C30.0249 32.368 29.4186 32.1375 28.956 31.6749L17.9996 20.717L7.04329 31.6749C6.11803 32.5986 4.61803 32.5986 3.69276 31.6749C2.76908 30.7496 2.76908 29.2496 3.69276 28.3244L16.3244 15.6928C17.2496 14.7691 18.7496 14.7691 19.6749 15.6928L32.3065 28.3244C33.2302 29.2496 33.2302 30.7496 32.3065 31.6749C31.8439 32.1375 31.2375 32.368 30.6312 32.368Z"
+        fill="#00478F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M30.6312 20.9681C30.0249 20.9681 29.4186 20.7376 28.956 20.275L17.9996 9.31708L7.04329 20.275C6.11803 21.1987 4.61803 21.1987 3.69276 20.275C2.76908 19.3497 2.76908 17.8497 3.69276 16.9245L16.3244 4.29286C17.2496 3.36918 18.7496 3.36918 19.6749 4.29286L32.3065 16.9245C33.2302 17.8497 33.2302 19.3497 32.3065 20.275C31.8439 20.7376 31.2375 20.9681 30.6312 20.9681Z"
+        fill="#00478F"/>
+</svg>
+</div>
 <!--<app-product-card></app-product-card>-->
 <!--<app-favorite></app-favorite>-->
 <!--<app-profile></app-profile>-->
-<router-outlet></router-outlet>
 <app-footer></app-footer>
