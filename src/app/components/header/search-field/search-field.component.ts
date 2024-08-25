@@ -46,7 +46,7 @@ export class SearchFieldComponent implements OnInit{
       debounce((v) => interval(500))
     )    
     .subscribe((value) => {    
-      this.processData(value as string);
+      this.processData(true, value as string);
     });
 
     this.router.events
@@ -68,7 +68,7 @@ export class SearchFieldComponent implements OnInit{
     })
   }
 
-  processData(value: string, isExpandedAfter = true) {
+  processData(isExpandedAfter = true, value?: string) {
     if (value){
       this.keywords = value;
       this.productService.getProductTitlesByKeyword(this.keywords).subscribe(
