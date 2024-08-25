@@ -1,4 +1,5 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { CheckoutStepperComponent } from './checkout-stepper/checkout-stepper.component';
+import { Component, Inject, OnDestroy, OnInit, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatStepperModule} from '@angular/material/stepper';
 import {CdkStepperModule} from '@angular/cdk/stepper';
@@ -17,7 +18,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-checkout-form',
   standalone: true,
-  imports: [CommonModule, MatStepperModule, CdkStepperModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatRadioModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatRadioModule, forwardRef(() => CheckoutStepperComponent), CdkStepperModule],
   templateUrl: './checkout-form.component.html',
   styleUrl: './checkout-form.component.scss',
 })

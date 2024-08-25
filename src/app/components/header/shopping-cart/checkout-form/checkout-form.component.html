@@ -15,8 +15,8 @@
     </div>
     <div class="body">
       <form [formGroup]="firstFormGroup">
-        <mat-horizontal-stepper  #stepper class="custom-stepper">
-          <mat-step [stepControl]="firstFormGroup">
+        <app-checkout-stepper class="steps">
+          <cdk-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
               <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
@@ -31,13 +31,14 @@
               <mat-form-field appearance="outline">
                 <input matInput placeholder="Last name" formControlName="lastName" required>
               </mat-form-field>
-              <div>
-                <button mat-button matStepperNext>Next</button>
+              <div class="btns">
+                <button class="btn cancel" (click)="closeDialog()">Cancel</button>
+                <button cdkStepperNext class="btn next">Next</button>
               </div>
             </form>
-          </mat-step>
+          </cdk-step>
       
-          <mat-step [stepControl]="secondFormGroup">
+          <cdk-step [stepControl]="secondFormGroup">
             <form [formGroup]="secondFormGroup">
               <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
@@ -46,14 +47,14 @@
               <mat-radio-group formControlName="deliveryMethod">
                 <mat-radio-button *ngFor="let method of deliveryMethods" [value]="method.value">{{method.key}}</mat-radio-button>
               </mat-radio-group>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+              <div class="btns">
+                <button class="btn cancel" (click)="closeDialog()">Cancel</button>
+                <button cdkStepperNext class="btn next">Next</button>
               </div>
             </form>
-          </mat-step>
+          </cdk-step>
       
-          <mat-step [stepControl]="thirdFormGroup">
+          <cdk-step [stepControl]="thirdFormGroup">
             <form [formGroup]="thirdFormGroup">
               <!-- <ng-template matStepLabel>
                 <span class="custom-step-circle"></span>
@@ -62,13 +63,13 @@
                 <mat-radio-group formControlName="paymentMethod">
                   <mat-radio-button *ngFor="let method of peymentMethods" [value]="method.value">{{method.key}}</mat-radio-button>
                 </mat-radio-group>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="placeOrder()">Pay</button>
-              </div>
+                <div class="btns">
+                  <button class="btn cancel" (click)="closeDialog()">Cancel</button>
+                  <button cdkStepperNext class="btn next" (click)="placeOrder()">Pay</button>
+                </div>
             </form>
-          </mat-step>
-        </mat-horizontal-stepper>
+          </cdk-step>
+        </app-checkout-stepper>
       </form>
     </div>
 </div>

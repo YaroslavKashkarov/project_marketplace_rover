@@ -20,6 +20,7 @@ export class ShoppingCartComponent implements OnInit {
 
   isLoading: boolean = false;
   groupedProducts: { sellerId: string, products: any[] }[] = [];
+  sellers: Map<string, string>;
 
   constructor(
     private basketService: BasketService,
@@ -36,6 +37,7 @@ export class ShoppingCartComponent implements OnInit {
 
     this.basketService.getBasketProducts().subscribe(
       res => {
+        this.sellers = this.getSellerNamesBySellerId(res);
         this.groupedProducts = this.groupBySeller(res);
         this.isLoading = false;
       }
@@ -56,8 +58,19 @@ export class ShoppingCartComponent implements OnInit {
     return Array.from(map, ([sellerId, products]) => ({ sellerId, products }));
   }
 
+  getSellerNamesBySellerId(data: any[]): Map<string, string> {
+    const map = new Map<string, string>();
+
+    data.forEach(product => {
+      const sellerId = product.sellerId;
+      map.set(sellerId, product.sellerName);
+    });
+
+    return map;
+  }
+
   navigateWithState(sellerId: string) {
-    this.router.navigate(['shopping-cart/checkout'], { state: { sellerId: sellerId } });
+    this.router.navigate(['shopping-cart/checkout'], { state: { sellerId: sellerId, seller: this.sellers.get(sellerId) } });
   }
 
 

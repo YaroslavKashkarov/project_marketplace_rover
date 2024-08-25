@@ -1,31 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { LoaderComponent } from '../../../common-components/loader/loader.component';
 import { CommonModule } from '@angular/common';
-import { BasketService } from '../basket.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { OrderProductComponent } from '../order-product/order-product.component';
 import { IOrderProduct } from '../../../../../core/interfaces/order-product';
+import { BasketService } from '../basket.service';
 import { DialogService } from '../../../services/dialog.service';
-import { IOrder } from '../../../../../core/interfaces/order.interface';
 import { PaymentService } from '../../../services/payment.service';
-import { LoaderComponent } from '../../../common-components/loader/loader.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IOrder } from '../../../../../core/interfaces/order.interface';
+
 
 type TransformedProducts = { [key: string]: number };
 
-
 @Component({
-  selector: 'app-checkout-page',
+  selector: 'app-order-page',
   standalone: true,
-  imports: [CommonModule, OrderProductComponent, LoaderComponent, RouterLink],
-  templateUrl: './checkout-page.component.html',
-  styleUrl: './checkout-page.component.scss'
+  imports: [LoaderComponent, CommonModule, OrderProductComponent],
+  templateUrl: './order-page.component.html',
+  styleUrl: './order-page.component.scss'
 })
-export class CheckoutPageComponent implements OnInit{
+export class OrderPageComponent {
   isLoading: boolean = false;
 
   private sellerId: string = '';
-  seller: string = '';
   products: IOrderProduct[];
   totalSum: number;
+  orderReference: number
 
   paymentMethod: string;
   orderDetails: any;
@@ -36,17 +36,11 @@ export class CheckoutPageComponent implements OnInit{
   constructor(
     private basketService: BasketService, 
     private router: Router, 
+    private route: ActivatedRoute,
     private dialogService: DialogService,
     private paymentService: PaymentService
   ) {
-    const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state && state['seller']) {
-      this.seller = state['seller'];
-    }
-
-    if (state && state['sellerId']) {
-      this.sellerId = state['sellerId'];
-    }
+      this.orderReference = Number(this.route.snapshot.queryParams['orderReference'])
   }
 
   ngOnInit(): void {
@@ -55,9 +49,10 @@ export class CheckoutPageComponent implements OnInit{
 
   processData(){
     this.isLoading = true;
-    this.basketService.getBasketProductsBySeller(this.sellerId).subscribe(
+    this.basketService.getOrderByReference(this.orderReference).subscribe(
       res => {
-        this.products = res;
+        this.orderDetails = res;
+        this.products = res.products;
         this.calculateTotal();
         this.isLoading = false;
       }
@@ -73,8 +68,7 @@ export class CheckoutPageComponent implements OnInit{
 
   calculateTotal(){
     this.totalSum = 0;
-    console.log(this.products)
-    this.products.forEach((item)=> this.totalSum += item.basketQuantity * item.price);
+    this.products.forEach((item)=> this.totalSum += item.quantity * item.price);
   }
 
   openDialog() {
@@ -100,7 +94,6 @@ export class CheckoutPageComponent implements OnInit{
                 this.paymentService.getPaymentInfo(this.orderDetails.orderReference).subscribe(
                   res => {
                     this.paymentInfo = res;
-                    console.log(res);
                     this.createAndSubmitPaymentForm()
                   }
                 )
@@ -151,4 +144,5 @@ export class CheckoutPageComponent implements OnInit{
     
   }
 
-}  
+
+}
