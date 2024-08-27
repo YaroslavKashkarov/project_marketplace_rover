@@ -6,7 +6,6 @@ import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FilterComponent} from './components/header/filter/filter.component';
-<<<<<<< HEAD
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {SocialLoginModule} from '@abacritt/angularx-social-login';
 import {
@@ -18,14 +17,6 @@ import {
 import {FavoriteComponent} from './components/favorite/favorite.component';
 import {ProfileComponent} from './components/profile/profile/profile.component';
 
-=======
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { SocialLoginModule } from '@abacritt/angularx-social-login';
-import { CarouselComponent } from './components/home-page/carousel/carousel.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { FavoriteComponent } from './components/favorite/favorite.component';
-import { ProfileComponent } from './components/profile/profile/profile.component';
->>>>>>> 2441c6cf21dc79d5dbd11685478a01c43f044d1d
 // ------------------------------------------------------------
 import {
 	SocialLoginComponent,
