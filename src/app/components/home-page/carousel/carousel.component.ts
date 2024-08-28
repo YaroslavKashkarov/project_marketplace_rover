@@ -1,17 +1,12 @@
 import {Component, Inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
 import {CommonModule, isPlatformBrowser} from '@angular/common';
 
-interface carouselImage {
+interface carouselSlide {
 	imageSrc: string;
 	imageAlt: string;
-}
-
-interface carouselText {
-	titleText: string;
-}
-
-interface carouselButton {
-	titleButton: string;
+	description1: string;
+	description2: string;
+	button: string;
 }
 
 @Component({
@@ -23,14 +18,16 @@ interface carouselButton {
 })
 
 export class CarouselComponent implements OnInit {
-	@Input() images: carouselImage[] = [];
-	@Input() text: carouselText[] = [];
-	@Input() button: carouselButton[] = [];
+	@Input() slides: carouselSlide[] = [];
 	@Input() indicators: boolean = true;
 	@Input() controls: boolean = true;
+	@Input() buttons: string;
+	@Input() description1: string;
+	@Input() description2: string;
 	@Input() autoSlide: boolean = true;
 	@Input() slideInterval: number = 3000;
 	selectedIndex: number = 0;
+
 
 	constructor(
 			@Inject(PLATFORM_ID) private platformId: Object,
@@ -57,7 +54,7 @@ export class CarouselComponent implements OnInit {
 	}
 
 	onNextClick(): void {
-		if (this.selectedIndex === this.images.length - 1) {
+		if (this.selectedIndex === this.slides.length - 1) {
 			this.selectedIndex = 0;
 		} else {
 			this.selectedIndex++;
@@ -66,7 +63,7 @@ export class CarouselComponent implements OnInit {
 
 	onPrevClick(): void {
 		if (this.selectedIndex === 0) {
-			this.selectedIndex = this.images.length - 1;
+			this.selectedIndex = this.slides.length - 1;
 		} else {
 			this.selectedIndex--;
 		}
