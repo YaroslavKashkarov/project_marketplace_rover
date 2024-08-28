@@ -5,6 +5,7 @@ import { IOrderProduct } from '../../../../../core/interfaces/order-product';
 import { QuantityInputComponent } from '../../../common-components/quantity-input/quantity-input.component';
 import { BasketService } from '../basket.service';
 
+
 @Component({
   selector: 'app-order-product',
   standalone: true,
@@ -19,12 +20,23 @@ export class OrderProductComponent {
 
   @Output()
   productChanged = new EventEmitter<boolean>();
+  public errorMessage: string;
 
   constructor(private basketService: BasketService){}
 
   productQuantityChanged(productId: string, quantity: number){
-    this.basketService.updateBasket(productId, quantity).subscribe(
-      res => this.productChanged.emit(true)
+    console.log(productId, quantity,'pr id anf quant')
+    this.basketService.updateBasket(productId, quantity).subscribe({
+      next:(res) => {
+        this.productChanged.emit(true)
+      },
+      error: (error) => {
+        if (error.error && error.error.message) {
+          this.errorMessage = error.error.message;
+        }
+      }
+    }
+  
     )
   }
 

@@ -34,7 +34,7 @@ export class CheckoutFormComponent implements OnInit, OnDestroy{
   deliveryMethods = [
     {key: 'Self-pickup', value: 'self_pickup'},
     {key: 'Ukrposhta', value: 'ukr'},
-    {key: 'Nova Poshta', value: 'nova'},
+    {key: 'Nova Poshta', value: 'nova_poshta'},
   ]
 
   peymentMethods = [
