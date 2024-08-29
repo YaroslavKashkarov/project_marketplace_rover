@@ -5,7 +5,8 @@
 				  [ngClass]="{'image-active': selectedIndex === i}"
 				  [src]="slide.imageSrc"
 				  class="fade"/>
-		<div class="container-description">
+		<div class="container-overlay" *ngIf="selectedIndex===i"
+		     [ngClass]="{'show':selectedIndex===i}">
 			<h4 class="container-title">{{slides[i].description1}}</h4>
 			<p class="container-text">{{slides[i].description2}}</p>
 			<button class="container-btns">{{slides[i].button}}</button>

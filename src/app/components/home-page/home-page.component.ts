@@ -30,18 +30,18 @@ export class HomePageComponent implements OnInit {
 			imageSrc:
 					'assets/img/carousel/slide_1.png',
 			imageAlt: 'slide1',
-			description1: 'Style and Comfort on Every Ride!',
-			description2: 'Enhance your look and elevate your rides with our selection of accessories and apparel',
-			button: 'Browse Accessories',
+			// description1: 'Style and Comfort on Every Ride!',
+			// description2: 'Enhance your look and elevate your rides with our selection of accessories and apparel',
+			// button: 'Browse Accessories',
 
 		},
 		{
 			imageSrc:
 					'assets/img/carousel/slide_2.png',
 			imageAlt: 'slide2',
-			description1: 'Keep Your Bicycle in Perfect Condition!',
-			description2: 'Parts, tools, and accessories for effective maintenance and repair',
-			button: 'Shop Parts',
+			// description1: 'Keep Your Bicycle in Perfect Condition!',
+			// description2: 'Parts, tools, and accessories for effective maintenance and repair',
+			// button: 'Shop Parts',
 		},
 	];
 

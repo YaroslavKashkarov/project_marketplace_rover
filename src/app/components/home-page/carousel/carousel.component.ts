@@ -25,7 +25,7 @@ export class CarouselComponent implements OnInit {
 	@Input() description1: string;
 	@Input() description2: string;
 	@Input() autoSlide: boolean = true;
-	@Input() slideInterval: number = 3000;
+	@Input() slideInterval: number = 5000;
 	selectedIndex: number = 0;
 
 
@@ -37,7 +37,7 @@ export class CarouselComponent implements OnInit {
 	ngOnInit(): void {
 		if (isPlatformBrowser(this.platformId)) {
 			if (this.autoSlide) {
-				this.autoSlideImages();
+				// this.autoSlideImages();
 			}
 		}
 	}

@@ -1,25 +1,65 @@
 .carousel-container {
 	position: relative;
+	overflow: hidden;
+	//margin: auto;
+	//text-align: center;
 	width: 100%;
-	margin: auto;
-	text-align: center;
-
 }
 
-.container-description {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-	background-color: #EA2727;
+.container-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.container-overlay {
+	position: absolute;
+	top: 47%;
+	left: 28%;
+	max-width: 635px;
+	padding: 20px;
+	transform: translate(-50%, -50%);
+	//text-align: center;
+	color: white;
+	border-radius: 10px;
+}
+
+.container-overlay.show {
+	display: block;
 }
 
 .container-title {
+	font-size: 88px;
+	line-height: 110%;
+	margin: 0 0 10px;
+	color: #00478F;
+}
 
+.container-text {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 110%;
+	max-width: 468px;
+	margin: 0 0 32px;
+	color: #00478F;
 }
 
 .container-btns {
-	display: block;
+	font-size: 1.5em;
+	width: 300px;
+	height: 60px;
+	padding: 15px 20px;
+	cursor: pointer;
+
+
+	transition: background 0.3s, color 0.3s;
+	color: #00478F;
+	border: 1px solid #00478F;
+	border-radius: 16px;
+}
+
+.container-btns:hover {
+	color: #FFF;
+	background: #00478F;
 }
 
 .carousel-container img {
@@ -27,13 +67,11 @@
 
 }
 
-.container-wrapper {
-}
 
 .carousel-container img.image-active {
-	//display: block;
-	//width: 100%;
-	//height: 526px;
+	display: block;
+	width: 100%;
+	height: 526px;
 }
 
 // dots/indicators
@@ -68,8 +106,11 @@
 
 // image transition fade effect
 .fade {
-	animation-name: fade;
-	animation-duration: 1.5s;
+	display: block;
+	width: 100%;
+	height: auto;
+	//animation-name: fade;
+	//animation-duration: 1.5s;
 }
 
 @keyframes fade {
