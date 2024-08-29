@@ -1,31 +1,35 @@
 .carousel-container {
 	position: relative;
 	overflow: hidden;
-	//margin: auto;
-	//text-align: center;
 	width: 100%;
-}
 
-.container-wrapper {
-	position: relative;
-	width: 100%;
+	&-wrapper {
+		position: relative;
+		width: 100%;
+	}
+
 }
 
 .container-overlay {
 	position: absolute;
 	top: 47%;
 	left: 28%;
-	max-width: 635px;
-	padding: 20px;
+	width: 635px;
 	transform: translate(-50%, -50%);
-	//text-align: center;
-	color: white;
-	border-radius: 10px;
+
+	&-right {
+		top: 47%;
+		left: 70%;
+		width: 742px;
+	}
+
+	&-left {
+		top: 47%;
+		left: 32%;
+		width: 853px;
+	}
 }
 
-.container-overlay.show {
-	display: block;
-}
 
 .container-title {
 	font-size: 88px;
@@ -38,35 +42,46 @@
 	font-size: 32px;
 	font-weight: 700;
 	line-height: 110%;
-	max-width: 468px;
+	width: 468px;
 	margin: 0 0 32px;
 	color: #00478F;
+
+	&-right {
+		width: 640px;
+	}
+
+	&-left {
+		width: 517px;
+	}
 }
 
-.container-btns {
+
+.container-btn {
 	font-size: 1.5em;
 	width: 300px;
 	height: 60px;
 	padding: 15px 20px;
 	cursor: pointer;
-
-
 	transition: background 0.3s, color 0.3s;
 	color: #00478F;
 	border: 1px solid #00478F;
 	border-radius: 16px;
+
+	&-left {
+		background: rgba(255, 255, 255, 0.50);
+	}
 }
 
-.container-btns:hover {
+
+.container-btn:hover {
 	color: #FFF;
+	border: 1px solid #fff;
 	background: #00478F;
 }
 
 .carousel-container img {
 	display: none;
-
 }
-
 
 .carousel-container img.image-active {
 	display: block;
@@ -109,8 +124,8 @@
 	display: block;
 	width: 100%;
 	height: auto;
-	//animation-name: fade;
-	//animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 @keyframes fade {
