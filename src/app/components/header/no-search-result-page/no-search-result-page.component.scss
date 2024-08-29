@@ -1,0 +1,24 @@
+:host{
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 94px 120px 94px;
+
+        img{
+            width: 240px;
+            height: 210px;
+            margin-bottom: 60px;
+            display: block;
+        }
+        h1{
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            color: #042C54;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+}
