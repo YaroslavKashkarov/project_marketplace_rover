@@ -1,0 +1,28 @@
+<div class="personal__container">
+    <div class="wrapper">
+        <div class="personal__container-profile">
+            <img alt="profile-img" class="personal__profile-img" src="assets/img/profile/profile-img.png">
+        </div>
+        <div class="personal__container-info">
+            <h3 class="personal__profile-name">Jessica Hanson</h3>
+            <div>
+                <img src="/assets/img/call-icon.png" alt="">
+                <span>Phone number</span>
+                <span class="data">+380 406 555 120</span>
+            </div>
+            <div>
+                <img src="/assets/img/calendar-icon.png" alt="">
+                <span>Last Active</span>
+                <span class="data">June 27, 2024, 3:45 PM</span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="product-wrapper">
+        <app-product *ngFor="let product of products" [product]="product">
+        </app-product>
+    </div>
+    </div>
+
+ 

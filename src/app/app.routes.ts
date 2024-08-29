@@ -12,6 +12,7 @@ import {SearchResultComponent} from './components/category/search-result/search-
 import { ShoppingCartComponent } from './components/header/shopping-cart/shopping-cart.component';
 import { CheckoutPageComponent } from './components/header/shopping-cart/checkout-page/checkout-page.component';
 import { OrderPageComponent } from './components/header/shopping-cart/order-page/order-page.component';
+import { ViewSellerItemComponent } from './components/header/shopping-cart/view-seller-item/view-seller-item.component';
 
 
 export const routes: Routes = [
@@ -27,6 +28,7 @@ export const routes: Routes = [
   {path: 'home/search-result', component: SearchResultComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
 	{path: 'shopping-cart/checkout', component: CheckoutPageComponent},
+  {path: 'shopping-cart/view-seller-item', component: ViewSellerItemComponent},
   {path: 'order', component: OrderPageComponent},
   {
     path: '', runGuardsAndResolvers: 'always',

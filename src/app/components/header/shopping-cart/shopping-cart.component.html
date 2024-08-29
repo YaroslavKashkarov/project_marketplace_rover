@@ -24,9 +24,9 @@
       </div>
       <div class="footer">
           <div class="btns">
-              <button class="btn other" >View seller's other items</button>
+              <button class="btn other" (click)="navigateToSellerOtherItem(sellerOrder.sellerId)">View seller's other items</button>
               <button class="btn checkout" (click)="navigateWithState(sellerOrder.sellerId)">Checkout</button>
-          </div>
+          </div>)
       </div>
     </div>
   </div>

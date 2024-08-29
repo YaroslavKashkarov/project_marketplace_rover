@@ -73,6 +73,10 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['shopping-cart/checkout'], { state: { sellerId: sellerId, seller: this.sellers.get(sellerId) } });
   }
 
+  navigateToSellerOtherItem(sellerId: string): void{
+    this.router.navigate(['shopping-cart/view-seller-item'], { state: { sellerId: sellerId, seller: this.sellers.get(sellerId) } });
+  }
+
 
 
 }
