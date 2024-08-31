@@ -81,7 +81,21 @@
       line-height: 21px;
     }
   }
-}
+    &__subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 17.6px;
+      text-align: left;
+      margin: 13px 0;
+    }
+    &__text{
+      margin-bottom: 4px;
+      &-title{
+        font-weight: bold;
+        margin-right: 20px;
+      }
+    }
+  }
 
 .card {
   display: flex;

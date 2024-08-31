@@ -16,13 +16,11 @@
                 <span class="data">June 27, 2024, 3:45 PM</span>
             </div>
         </div>
-
-
     </div>
     <div class="product-wrapper">
-        <app-product *ngFor="let product of products" [product]="product">
+        <app-product *ngFor="let product of products" [product]="product" [isShowDetail]="true">
         </app-product>
     </div>
-    </div>
+</div>
 
  

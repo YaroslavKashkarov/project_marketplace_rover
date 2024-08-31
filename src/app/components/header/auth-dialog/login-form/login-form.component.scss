@@ -15,6 +15,7 @@
             color: #00478F;
             cursor: pointer;
             z-index: 2;
+            margin-top: 20px;
             
             &:hover{
                 text-decoration: underline;
@@ -23,7 +24,7 @@
 
         .submit{
             display: block;
-            width: 400px;
+            width: 450px;
             height: 56px;
             border-radius: 16px;
             border: none;

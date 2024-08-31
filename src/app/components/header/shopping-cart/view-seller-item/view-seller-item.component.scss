@@ -10,12 +10,22 @@
         justify-content: flex-start;
         align-items: center;
         display: flex;
-        padding: 40px;
+        padding-bottom: 40px;
     }
     .product-wrapper{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        app-product{
+            width: auto;
+            flex: 0 0 30%;
+            margin-bottom: 50px;
+
+            div{
+                width: auto;
+            }
+        }
     }
 
     &-profile{
