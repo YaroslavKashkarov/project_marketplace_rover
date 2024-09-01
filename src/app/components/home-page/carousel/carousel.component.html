@@ -1,23 +1,44 @@
-<div *ngIf="images && images.length > 0" class="carousel-container">
-  <img *ngFor="let image of images; let i=index" [alt]="image.imageAlt"
-       [ngClass]="{'image-active': selectedIndex === i}" [src]="image.imageSrc"
-       class="fade">
+<div *ngIf="slides && slides.length > 0" class="carousel-container">
+	<div *ngFor="let slide of slides; let i=index" class="carousel-wrapper">
+		  <img
+				  [alt]="slide.imageAlt"
+				  [ngClass]="{'image-active': selectedIndex === i}"
+				  [src]="slide.imageSrc"
+				  class="fade"/>
+		<div class="container-overlay"
+		     *ngIf="selectedIndex===i" [ngClass]="{'container-overlay': true,
+		     'container-overlay-right':i===1, 'container-overlay-left':i===2}">
+			<h4 class="container-title"
+			    [ngClass]="{'container-title': true,
+			    'container-title-right':i===1,'container-title-left':i===2}">{{
+					slides[i].description1
+				}}</h4>
+			<p class="container-text"
+			   [ngClass]="{'container-text': true, 'container-text-right': i===1,
+			   'container-text-left': i===2}">{{slides[i].description2}}</p>
+			<button class="container-btn"
+			        [ngClass]="{'container-btn':true, 'container-btn-right':i===1,
+			        'container-btn-left':i===2
+			        }">{{slides[i].button}}</button>
+		</div>
+	</div>
 
-  <div *ngIf="indicators" class="carousel-dot-container">
-    <span (click)="selectImage(i)" *ngFor="let dot of images; let i=index"
-          [ngClass]="{'active':
-          selectedIndex===i}" class="dot">
-    </span>
-  </div>
 
-  <button *ngIf="controls" class="btn-carousel btn-prev">
-    <i (click)="onPrevClick()"
-       class="fa-solid fa-angles-left icon-carousel icon-prev">
-    </i>
-  </button>
-  <button *ngIf="controls" class="btn-carousel btn-next">
-    <i (click)="onNextClick()"
-       class="fa-solid fa-angles-right icon-carousel icon-next">
-    </i>
-  </button>
+	  <div *ngIf="indicators" class="carousel-dot-container">
+	    <span (click)="selectImage(i)" *ngFor="let dot of slides; let i=index"
+	          [ngClass]="{'active':
+	          selectedIndex===i}" class="dot">
+	    </span>
+	  </div>
+
+	  <button *ngIf="controls" class="btn-carousel btn-prev">
+	    <i (click)="onPrevClick()"
+	       class="fa-solid fa-angles-left icon-carousel icon-prev">
+	    </i>
+	  </button>
+	  <button *ngIf="controls" class="btn-carousel btn-next">
+	    <i (click)="onNextClick()"
+	       class="fa-solid fa-angles-right icon-carousel icon-next">
+	    </i>
+	  </button>
 </div>

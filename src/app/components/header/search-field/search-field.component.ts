@@ -76,7 +76,11 @@ export class SearchFieldComponent implements OnInit{
       this.productService.getProductTitlesByKeyword(this.keywords).subscribe(
         res => {
           this.options = res;
-          this.isExpanded = isExpandedAfter;
+          if (this.options?.length > 0) {
+            this.isExpanded = isExpandedAfter;
+          } else {
+            this.router.navigate(['home/no-search-results']);
+          }
         }
       )
     } else {

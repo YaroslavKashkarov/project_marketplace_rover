@@ -58,7 +58,7 @@ export class AppComponent {
 
 	@HostListener('window:scroll', [])
 
-	onWindowScroll() {
+	onWindowScroll(): void {
 		this.isAScrollButtonVisible = window.scrollY > 200;
 	}
 

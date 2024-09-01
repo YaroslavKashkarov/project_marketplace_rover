@@ -13,7 +13,7 @@ import { ShoppingCartComponent } from './components/header/shopping-cart/shoppin
 import { CheckoutPageComponent } from './components/header/shopping-cart/checkout-page/checkout-page.component';
 import { OrderPageComponent } from './components/header/shopping-cart/order-page/order-page.component';
 import { ViewSellerItemComponent } from './components/header/shopping-cart/view-seller-item/view-seller-item.component';
-
+import { NoSearchResultPageComponent } from './components/header/no-search-result-page/no-search-result-page.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +26,7 @@ export const routes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'home/category', component: CategoryComponent},
   {path: 'home/search-result', component: SearchResultComponent},
+  {path: 'home/no-search-results', component: NoSearchResultPageComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
 	{path: 'shopping-cart/checkout', component: CheckoutPageComponent},
   {path: 'shopping-cart/view-seller-item', component: ViewSellerItemComponent},

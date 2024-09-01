@@ -4,6 +4,7 @@ import {CarouselComponent} from './carousel/carousel.component';
 import {NavbarComponent} from '../navbar/navbar.component';
 import {RouterOutlet} from '@angular/router';
 
+
 @Component({
 	selector: 'app-home-page',
 	providers: [CarouselComponent],
@@ -16,31 +17,31 @@ import {RouterOutlet} from '@angular/router';
 
 export class HomePageComponent implements OnInit {
 
-	images: any = [
+	slides: any = [
 		{
 			imageSrc:
 					'assets/img/carousel/slide.png',
 			imageAlt: 'slide',
-			description: 'Your Perfect Bicycle Awaits!' + 'Find a bicycle for every' +
-					'path. Quality and style in one place',
-			titleButton: 'Explore Bicycle',
+			description1: 'Your Perfect Bicycle Awaits!',
+			description2: 'Find a bicycle for every path. Quality and style in one place',
+			button: 'Explore Bicycle',
 		},
 		{
 			imageSrc:
 					'assets/img/carousel/slide_1.png',
 			imageAlt: 'slide1',
-			description: 'Style and Comfort on Every Ride!' + 'Enhance your look' +
-					' and + elevate your rides with our selection of accessories and' +
-					'apparel',
-			titleButton: 'Browse Accessories',
+			description1: 'Style and Comfort on Every Ride!',
+			description2: 'Enhance your look and elevate your rides with our selection of accessories and apparel',
+			button: 'Browse Accessories',
+
 		},
 		{
 			imageSrc:
 					'assets/img/carousel/slide_2.png',
 			imageAlt: 'slide2',
-			title: 'Keep Your Bicycle in Perfect Condition!' + 'Parts, tools,' +
-					'and accessories for effective maintenance and repair',
-			titleButton: 'Shop Parts',
+			description1: 'Keep Your Bicycle in Perfect Condition!',
+			description2: 'Parts, tools, and accessories for effective maintenance and repair',
+			button: 'Shop Parts',
 		},
 	];
 
