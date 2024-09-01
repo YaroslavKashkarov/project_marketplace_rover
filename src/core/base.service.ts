@@ -25,8 +25,12 @@ export class BaseService {
 		return this.httpClient.put<T>(`${this.apiUrl}/${url}`, body);
 	}
 
-	protected delete<T>(url: string): Observable<T> {
-		return this.httpClient.delete<T>(`${this.apiUrl}/${url}`);
-	}
+  protected patch<T>(url:string, body: any):Observable<T> {
+    return this.httpClient.patch<T>(`${this.apiUrl}/${url}`, body)
+  }
+
+  protected delete<T>(url:string): Observable<T> {
+    return this.httpClient.delete<T>(`${this.apiUrl}/${url}`);
+  }
 
 }

@@ -1,4 +1,5 @@
 export interface IProduct {
+  _id: string,
   title: string,
   category: string,
   photos: any,

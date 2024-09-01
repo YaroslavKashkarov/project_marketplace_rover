@@ -12,5 +12,6 @@ import {IProduct} from "../product.interface";
 export class ProductComponent {
 
   @Input()
-  product: IProduct
+  product: IProduct;
+  @Input() isShowDetail: boolean = false;
 }

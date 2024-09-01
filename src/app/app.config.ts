@@ -8,11 +8,16 @@ import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx
 import { environment } from '../environments/environment';
 import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
+    provideLottieOptions({
+      player: () => player,
+    }),
     provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideAnimations(),
     {

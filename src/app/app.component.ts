@@ -44,6 +44,7 @@ import {
 				SocialLoginComponent,
 				MatIconModule,
 				SocialLoginModule,
+        
 			],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
