@@ -1,10 +1,11 @@
-<script src="favorite.component.ts"></script>
 <div class="favorite__navigate-container">
   <div class="favorite__navigate">
     <p class="favorite__navigate-item">Home</p>
-    <img alt="" class="favorite__navigate-img" src="assets/img/arrow-right.svg">
+    <img alt="img" class="favorite__navigate-img"
+         src="assets/img/arrow-right.svg">
     <p class="favorite__navigate-item">Profile</p>
-    <img alt="" class="favorite__navigate-img" src="assets/img/arrow-right.svg">
+    <img alt="img" class="favorite__navigate-img"
+         src="assets/img/arrow-right.svg">
     <p class="favorite__navigate-item">Favorite</p>
   </div>
 </div>
@@ -13,13 +14,15 @@
   <div class="favorite">
 
     <div class="favorite__item" *ngFor="let rover of roverInfo">
-      <img (click)="removeFavorite(rover?._id)" class="favorite__item-favorite" src="assets/img/favorite/Favorite.svg">
+      <img (click)="removeFavorite(rover?._id)" class="favorite__item-favorite"
+           src="assets/img/favorite/Favorite.svg">
 
       <div class="favorite__item-condition">
         <p class="favorite__item-condition-text">{{rover?.state}}</p>
       </div>
 
-      <div class="favorite__item-img" *ngIf="roverPhotos && roverPhotos.length > 0">
+      <div class="favorite__item-img"
+           *ngIf="roverPhotos && roverPhotos.length > 0">
         <img [src]="roverPhotos[0].secure_url" alt="Rover Photo">
       </div>
 
@@ -29,13 +32,16 @@
         </div>
 
         <div class="favorite__item-description-price">
-          <p class="favorite__item-description-price-text">{{rover?.price}} $ </p>
+          <p class="favorite__item-description-price-text">{{rover?.price}}
+	          $ </p>
         </div>
 
         <p class="favorite__item-description-wheels">24-inch</p>
 
         <div class="favorite__item-description-about">
-          <p class="favorite__item-description-about-text">{{rover?.description}}</p>
+          <p class="favorite__item-description-about-text">{{
+		          rover?.description
+	          }}</p>
         </div>
 
         <div class="favorite__item-description-more">

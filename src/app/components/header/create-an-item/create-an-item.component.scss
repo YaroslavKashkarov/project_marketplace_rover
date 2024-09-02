@@ -7,113 +7,133 @@
   &__navigate {
     &-container {
       max-width: 1440px;
-      padding-top: 40px;
       margin: auto;
+      padding-top: 40px;
+
       &-breadcrumbs {
         padding-bottom: 80px;
       }
+
       &-link {
-        color: #042c54;
         font-size: 18px;
         text-decoration: none;
+        color: #042c54;
       }
+
       &-link:last-of-type {
         color: rgba(7, 10, 15, 0.5);
       }
+
       svg {
-        padding-left: 4px;
         padding-right: 4px;
+        padding-left: 4px;
       }
+
       &-product {
         &-describe {
           display: flex;
-          flex-direction: column;
           align-items: flex-start;
+          flex-direction: column;
+
           &-title {
-            padding-bottom: 40px;
             font-size: 24px;
+            padding-bottom: 40px;
           }
+
           &-textarea {
             display: flex;
             flex-direction: column;
           }
+
           &-label {
             font-size: 24px;
             padding-bottom: 12px;
           }
+
           &-input {
-            width: 1400px;
-            height: 56px;
-            padding-inline: 20px;
-            border-radius: 8px;
-            border: 1px solid #00478f;
-            color: #00478f;
             font-family: Lato;
             font-size: 24px;
+            width: 1400px;
+            height: 56px;
+            color: #00478f;
+            border: 1px solid #00478f;
+            border-radius: 8px;
+            padding-inline: 20px;
           }
         }
       }
+
       &-category {
         display: flex;
+
         &-title {
           font-size: 24px;
           font-weight: 400;
           padding-top: 40px;
         }
+
         &-select {
           padding-top: 12px;
           padding-bottom: 40px;
+
           &-options {
-            width: 1440px;
-            height: 56px;
-            padding-inline: 20px;
-            border-radius: 8px;
-            border: 1px solid #00478f;
-            color: #00478f;
             font-family: Lato;
             font-size: 24px;
+            width: 1440px;
+            height: 56px;
+            color: #00478f;
+            border: 1px solid #00478f;
+            border-radius: 8px;
+            padding-inline: 20px;
           }
         }
       }
+
       &-section {
         padding-top: 40px;
+
         &-title {
           max-width: 470px;
         }
+
         &-text {
           font-size: 24px;
           padding-bottom: 40px;
         }
+
         &-description {
           font-size: 24px;
         }
+
         &-details-add-photo {
-          padding-top: 20px;
           display: flex;
           justify-content: space-between;
+          padding-top: 20px;
           padding-bottom: 80px;
         }
+
         &-details-add-title {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #00478f;
           font-size: 32px;
           font-weight: 700;
           line-height: 110%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 250px;
-          border-radius: 16px;
+          color: #00478f;
           border: 4px solid #ffd640;
+          border-radius: 16px;
           background: #ffd640;
         }
+
         &-details-item-photo {
           display: flex;
-          justify-content: center;
           align-items: center;
+          justify-content: center;
           width: 250px;
           height: 250px;
-          border-radius: 16px;
           border: 4px solid #ffd640;
+          border-radius: 16px;
           background: #f9f9f9;
         }
       }
@@ -124,103 +144,118 @@
             font-size: 24px;
             padding-bottom: 40px;
           }
+
           &-input {
-            border-radius: 8px;
-            border: 1px solid #00478f;
-            padding: 12px 20px;
-            width: 1400px;
-            color: #00478f;
             font-family: Lato;
             font-size: 24px;
+            width: 1400px;
+            padding: 12px 20px;
+            color: #00478f;
+            border: 1px solid #00478f;
+            border-radius: 8px;
           }
         }
+
         &-text {
-          width: 1440px;
           display: flex;
           justify-content: space-between;
+          width: 1440px;
+
           &-holder {
+            font-size: 16px;
             padding-top: 12px;
             padding-bottom: 40px;
-            font-size: 16px;
           }
         }
       }
+
       &-section-form {
-        padding-top: 40px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding-top: 40px;
         text-align: left;
+
         &-details {
           &-title {
             font-size: 24px;
             padding-bottom: 40px;
           }
         }
+
         &-textarea {
           max-width: 1440px; // Fixed !!!!! TODO
         }
+
         &-item {
           display: flex;
           justify-content: space-between;
           gap: 40px;
         }
+
         &-inputs {
           display: flex;
           flex-direction: column;
         }
+
         &-label {
-          padding-bottom: 12px;
           font-size: 24px;
+          padding-bottom: 12px;
         }
+
         &-input {
-          padding: 12px 20px;
-          align-items: center;
-          color: #00478f;
-          font-family: Lato;
+          font-family: Lato, sans-serif;
           font-size: 24px;
           width: 258px;
-          border-radius: 8px;
+          padding: 12px 20px;
+          color: #00478f;
           border: 1px solid #00478f;
-          background: #fff;
+          border-radius: 8px;
+          direction: rtl;
         }
+
         &-product {
           display: flex;
           flex-direction: column;
+
           &-title {
-            padding-bottom: 12px;
             font-size: 24px;
+            padding-bottom: 12px;
           }
+
           &-state {
-            height: 56px;
-            padding-inline: 12px;
-            border-radius: 8px;
-            width: 258px;
-            border: 1px solid #00478f;
-            color: #00478f;
             font-family: Lato;
             font-size: 24px;
+            width: 258px;
+            height: 56px;
+            color: #00478f;
+            border: 1px solid #00478f;
+            border-radius: 8px;
+            padding-inline: 12px;
           }
         }
+
         &-product {
           &-bicycle {
             &-title {
-              padding-bottom: 12px;
               font-size: 24px;
+              padding-bottom: 12px;
             }
+
             &-category {
-              height: 56px;
-              padding-inline: 12px;
-              border-radius: 8px;
-              width: 258px;
-              border: 1px solid #00478f;
-              color: #00478f;
               font-family: Lato;
               font-size: 24px;
-            }
-            &-brand {
+              width: 258px;
+              height: 56px;
               color: #00478f;
+              border: 1px solid #00478f;
+              border-radius: 8px;
+              padding-inline: 12px;
+            }
+
+            &-brand {
               font-size: 24px;
+              color: #00478f;
             }
           }
         }
@@ -230,48 +265,54 @@
         display: flex;
         justify-content: space-between; // !!!!!!!!!!!!!!!!!
         gap: 20px;
+
         &-other {
           display: flex;
           flex-direction: column;
+
           &-label {
-            padding-top: 40px;
             font-size: 24px;
+            padding-top: 40px;
           }
+
           &-input {
-            color: #00478f;
             font-size: 24px;
             width: 656px;
             height: 32px;
             padding: 12px 20px;
-            border-radius: 8px;
-            border: 1px solid #00478f;
-          }
-          &-location {
             color: #00478f;
+            border: 1px solid #00478f;
+            border-radius: 8px;
+          }
+
+          &-location {
             font-size: 24px;
             width: 576px;
             height: 32px;
             padding: 12px 20px;
-            border-radius: 8px;
+            color: #00478f;
             border: 1px solid #00478f;
+            border-radius: 8px;
           }
         }
       }
 
       &-optional {
         display: flex;
-        text-align: center;
         align-items: center;
+        text-align: center;
+
         &-more-details {
           display: flex;
           padding-top: 40px;
 
           &-label {
-            padding-right: 80px;
-            align-items: center;
-            padding-left: 12px;
             font-size: 24px;
+            align-items: center;
+            padding-right: 80px;
+            padding-left: 12px;
           }
+
           &-checkbox {
             width: 32px;
             height: 32px;
@@ -282,20 +323,21 @@
       &-btns {
         display: inline-flex;
         justify-content: flex-end;
-        gap: 20px;
         padding-bottom: 60px;
+        gap: 20px;
 
         &-btn {
-          text-align: center;
           font-size: 24px;
           width: 192px;
           height: 54px;
           padding: 15px 20px;
-          border-radius: 16px;
+          text-align: center;
           color: rgba(7, 10, 15, 0.5);
           border: 1px solid rgba(7, 10, 15, 0.5);
+          border-radius: 16px;
           background: #fff;
         }
+
         &-btn:nth-last-child(1) {
           color: #fff;
           border: 1px solid rgba(7, 10, 15, 0.5);
