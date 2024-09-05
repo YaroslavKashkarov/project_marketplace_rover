@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {CarouselComponent} from './carousel/carousel.component';
 import {NavbarComponent} from '../navbar/navbar.component';
 import {RouterOutlet} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -12,10 +13,16 @@ import {RouterOutlet} from '@angular/router';
 	templateUrl: './home-page.component.html',
 	styleUrl: './home-page.component.scss',
 	imports: [RouterOutlet,
-		CommonModule, CarouselComponent, NavbarComponent],
+		CommonModule, CarouselComponent, NavbarComponent, MatPaginatorModule],
 })
 
 export class HomePageComponent implements OnInit {
+pageEvent: PageEvent | undefined;
+	
+onPageChange(event: any) {
+	this.pageEvent = event;
+	console.log(this.pageEvent)
+}
 
 	slides: any = [
 		{
