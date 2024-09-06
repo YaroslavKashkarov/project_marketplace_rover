@@ -4,6 +4,7 @@ import {NavbarComponent} from '../navbar/navbar.component';
 import {RouterOutlet} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { HoverDetailDirective } from '../../directives/hover-detail.directive';
 
 
 @Component({
@@ -13,16 +14,14 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 	templateUrl: './home-page.component.html',
 	styleUrl: './home-page.component.scss',
 	imports: [RouterOutlet,
-		CommonModule, CarouselComponent, NavbarComponent, MatPaginatorModule],
+		CommonModule, CarouselComponent, NavbarComponent, MatPaginatorModule, HoverDetailDirective],
 })
 
 export class HomePageComponent implements OnInit {
-pageEvent: PageEvent | undefined;
-	
-onPageChange(event: any) {
-	this.pageEvent = event;
-	console.log(this.pageEvent)
-}
+numberPopularPage: number = 1;
+pagePopularQuantity: number = 100;
+numberLastPage: number = 1;
+pageLastQuantity: number = 100;
 
 	slides: any = [
 		{
@@ -57,5 +56,19 @@ onPageChange(event: any) {
 
 	ngOnInit(): void {
 		this.carousel.autoSlide = true;
+	}
+
+	public loadPopularItems(){
+		this.numberPopularPage++;
+		this.loadNextPage(this.numberPopularPage)
+	}
+
+	public loadLatestItems(){
+		this.numberLastPage++;
+		this.loadNextPage(this.numberLastPage)
+	}
+
+	loadNextPage(pageNumber: number){
+
 	}
 }
