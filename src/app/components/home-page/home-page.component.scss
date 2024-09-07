@@ -57,6 +57,9 @@
 	&__img {
 		display: flex;
 	}
+	&__details{
+		padding-left: 12px;
+	}
 
 	&__description {
 		font-family: Lato, sans-serif;
@@ -73,7 +76,22 @@
 		text-overflow: ellipsis;
 		color: #070a0f;
 	}
-}
+	&__subtitle {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 17.6px;
+		text-align: left;
+		margin: 13px 0;
+	  }
+	  &__text{
+		margin-bottom: 4px;
+		&-title{
+		  font-weight: bold;
+		  margin-right: 20px;
+		}
+	  }
+	}
+
 
 .img {
 	display: flex;
