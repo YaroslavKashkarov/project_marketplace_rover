@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MinusComponent } from './minus.component';
+import { GraphMinusComponent } from './minus.component';
 
 describe('MinusComponent', () => {
-  let component: MinusComponent;
-  let fixture: ComponentFixture<MinusComponent>;
+  let component: GraphMinusComponent;
+  let fixture: ComponentFixture<GraphMinusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MinusComponent]
+      imports: [GraphMinusComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MinusComponent);
+    fixture = TestBed.createComponent(GraphMinusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

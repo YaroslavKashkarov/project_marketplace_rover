@@ -24,7 +24,6 @@ export class HoverDetailDirective {
     const details = this.el.nativeElement.querySelector('.product__details');
     if (details) {
       this.renderer.setStyle(details, 'display', show ? 'block' : 'none');
-      //think how to add shadow
     }
   }
 }
