@@ -7,8 +7,51 @@
       <div class="title">
         <h2 class="title__text">POPULAR ITEMS</h2>
       </div>
-     <div class="category__products">
-        <div class="product"  appHoverDetail>
+
+      <div class="category__products">
+        <div *ngFor="let product of fakePopularItems" class="product" appHoverDetail>
+          <svg class="product__ticket" fill="none" height="29"
+          viewBox="0 0 72 29" width="72"
+          xmlns="http://www.w3.org/2000/svg">
+       <path
+           d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+           fill="#00478F"/>
+       <text fill="white" font-family="Lato" font-size="16"
+             font-style="normal" font-weight="400"
+             letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+       </text>
+     </svg>
+          <div class="img">
+            <img [src]="product.img" alt="img" class="product__img">
+          </div>
+          <div class="product-card">
+            <h3 class="price">{{product.price}}</h3>
+          </div>
+          <div class="description">
+            <h4 class="product__description">{{product.description}}</h4>
+          </div>
+          <div class="product__details" style="display: none">
+            <div class="product__text">
+              <span class="product__text-title">Bicycle brand</span>
+              <span class="product__text-text">{{product.brand}}</span>
+            </div>
+            <div class="product__text">
+              <span class="product__text-title">Negotiable price</span>
+              <span class="product__text-text">{{product.negotiable}}</span>
+            </div>
+            <div class="product__text">
+              <span class="product__text-title">Exchange available</span>
+              <span class="product__text-text">{{product.exchange}}</span>
+            </div>
+            <div class="product__text">
+              <span class="product__text-title">Location</span>
+              <span class="product__text-text">{{product.location}}</span>
+            </div>
+          </div>
+        </div>
+      </div>   
+     <!--div class="category__products">
+        < <div class="product"  appHoverDetail>
           <svg class="product__ticket" fill="none" height="29"
                viewBox="0 0 72 29" width="72"
                xmlns="http://www.w3.org/2000/svg">
@@ -431,8 +474,8 @@
               <span class="product__text-text">Kyiv city</span>
             </div>
           </div>
-        </div>
-      </div> 
+        </div>>
+      </div--> 
     </div>
     <div class="btn">
       <button class="btn-more" (click)="loadPopularItems()">Next page</button>
