@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
 	numberLastPage: number = 1;
 	pageLastQuantity: number = 100;
 
-	fakePopularItems =
+	popularItems =
 		[
 			{
 				img: "assets/img/popular-items/img.png",
@@ -99,7 +99,7 @@ export class HomePageComponent implements OnInit {
 			}
 		];
 
-	mockPopularItems =
+	mockPopularItemsOdd =
 		[
 			{
 				img: "assets/img/popular-items/img.png",
@@ -175,7 +175,83 @@ export class HomePageComponent implements OnInit {
 			}
 		];
 
-		popularItems =
+	mockPopularItemsEven =
+		[
+			{
+				img: "assets/img/popular-items/img_1.png",
+				price: "900 $",
+				description: "Speedy road bicycle. 28d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img.png",
+				price: "1 000 $",
+				description: "A popular model of a modern bicycle 24d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_3.png",
+				price: "1 300 $",
+				description: "Mountain bicycle for sale",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img.png",
+				price: "1 000 $",
+				description: "A popular model of a modern bicycle 24d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_1.png",
+				price: "1 300 $",
+				description: "Mountain bicycle for sale. Well-maintained mountain bike, 26d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img.png",
+				price: "5 000 $",
+				description: "A popular model of a modern bicycle 24d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_2.png",
+				price: "1 800 $",
+				description: "Mountain bicycle for sale. Well-maintained mountain bike, 26d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_1.png",
+				price: "1 950 $",
+				description: "City commuter bicycle. 28d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+		];
+
+	popularLatestItems =
 		[
 			{
 				img: "assets/img/popular-items/img.png",
@@ -215,7 +291,7 @@ export class HomePageComponent implements OnInit {
 			},
 		];
 
-		mock2PopularItems =
+	popularLatestItemsOdd =
 		[
 			{
 				img: "assets/img/popular-items/img.png",
@@ -253,6 +329,46 @@ export class HomePageComponent implements OnInit {
 				exchange: "Yes",
 				location: "Kyiv city",
 			},
+		];
+
+	popularLatestItemsEven =
+		[
+			{
+				img: "assets/img/popular-items/img_1.png",
+				price: "1 950 $",
+				description: "City commuter bicycle. 28d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_1.png",
+				price: "900 $",
+				description: "Speedy road bicycle. 28d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img.png",
+				price: "5 000 $",
+				description: "A popular model of a modern bicycle 24d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			},
+			{
+				img: "assets/img/popular-items/img_2.png",
+				price: "1 800 $",
+				description: "Mountain bicycle for sale. Well-maintained mountain bike, 26d",
+				brand: "Leon",
+				negotiable: "Yes",
+				exchange: "Yes",
+				location: "Kyiv city",
+			}
 		];
 
 
@@ -303,10 +419,19 @@ export class HomePageComponent implements OnInit {
 	}
 
 	loadNextPage(pageNumber: number) {
-		this.fakePopularItems = this.mockPopularItems;
+		if(pageNumber % 2 === 0){
+			this.popularItems = this.mockPopularItemsEven;
+		} else {
+			this.popularItems = this.mockPopularItemsOdd;
+		}
+		
 	}
 	
 	loadLatestPage(pageNumber: number) {
-		this.popularItems = this.mock2PopularItems;
+		if(pageNumber % 2 === 0){
+			this.popularLatestItems = this.popularLatestItemsEven;
+		} else {
+			this.popularLatestItems = this.popularLatestItemsOdd;
+		}
 	}
 }

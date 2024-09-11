@@ -9,7 +9,7 @@
       </div>
 
       <div class="category__products">
-        <div *ngFor="let product of fakePopularItems" class="product" appHoverDetail>
+        <div *ngFor="let product of popularItems" class="product" appHoverDetail>
           <svg class="product__ticket" fill="none" height="29"
           viewBox="0 0 72 29" width="72"
           xmlns="http://www.w3.org/2000/svg">
@@ -491,7 +491,7 @@
       <h2 class="title__text">LATEST ITEMS</h2>
     </div>
     <div class="category__products">
-      <div *ngFor="let product of popularItems" class="product" appHoverDetail>
+      <div *ngFor="let product of popularLatestItems" class="product" appHoverDetail>
         <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
         width="72"
         xmlns="http://www.w3.org/2000/svg">
