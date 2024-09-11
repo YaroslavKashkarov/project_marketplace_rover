@@ -1,0 +1,43 @@
+// -----start for svg sprites
+.sprite {
+  &__logo {
+    width: 46px;
+    height: 50px;
+  }
+
+  &__place-ads {
+    width: 62px;
+    height: 62px;
+  }
+
+  &__btns-user,
+  &__btns-favorite,
+  &__instagram,
+  &__twitter,
+  &__facebook {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__btns-shopping-cart {
+    width: 18.6px;
+    height: 16.75px;
+  }
+
+  &__logo-typography {
+    width: 43px;
+    height: 46px;
+  }
+
+  &__phone {
+    width: 20px;
+    height: 21px;
+  }
+
+  &__email,
+  &__address {
+    width: 22px;
+    height: 22px;
+  }
+}
+// -------end for svg sprites
