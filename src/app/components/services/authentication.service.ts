@@ -16,7 +16,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class AuthenticationService extends BaseService {
 
   public $currentUser: Observable<IUser | null>;
-  private readonly localStorageKey = 'currentUser';
+  private localStorageKey = 'currentUser';
   private currentUserSubject = new BehaviorSubject<IUser | null>(null);
   private isSignedInSubject = new BehaviorSubject<boolean>(false);
 

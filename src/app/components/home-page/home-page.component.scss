@@ -48,6 +48,8 @@
 
 .product {
 	flex-direction: column;
+	box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.15), 4px 0px 10px rgba(0, 0, 0, 0.15), -4px 0px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 1s;
 
 	&__ticket {
 		position: absolute;
@@ -56,6 +58,11 @@
 
 	&__img {
 		display: flex;
+	}
+	&__details{
+		padding: 12px;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2px;
+		transition: 1s;
 	}
 
 	&__description {
@@ -73,7 +80,22 @@
 		text-overflow: ellipsis;
 		color: #070a0f;
 	}
-}
+	&__subtitle {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 17.6px;
+		text-align: left;
+		margin: 13px 0;
+	  }
+	  &__text{
+		margin-bottom: 4px;
+		&-title{
+		  font-weight: bold;
+		  margin-right: 20px;
+		}
+	  }
+	}
+
 
 .img {
 	display: flex;
@@ -114,6 +136,8 @@
 	margin-bottom: 40px;
 	padding: 15px 20px;
 	gap: 10px;
+	position: relative;
+	margin-top: 50px;
 
 	&-more {
 		font-family: Lato, sans-serif;
@@ -131,9 +155,33 @@
 		color: #FFF;
 		border: 1px solid #fff;
 		background: #00478F;
+		cursor: pointer;
 	}
 
 	&--second {
 		margin-bottom: 40px;
+	}
+}
+
+.pagination {
+	position: absolute;
+	right: 94px;
+	top: 15px;
+
+	&__number {
+		border: 1px solid #000;
+		border-radius: 8px;
+		padding: 10px 30px 10px 5px;
+		margin: 0 6px;
+	}
+
+	&__text, &__quantity {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 15.4px;
+		text-align: left;
+	}
+	&__quantity{
+		margin-left: 6px;
 	}
 }

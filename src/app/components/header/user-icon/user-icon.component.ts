@@ -1,9 +1,8 @@
-import { join } from 'node:path';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IUser } from '../../../../core/interfaces/user.interface';
-import { Subscription } from 'rxjs';
-import { AuthenticationService } from '../../services/authentication.service';
+
 
 @Component({
   selector: 'app-user-icon',

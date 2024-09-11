@@ -1,5 +1,6 @@
 // progress-bar.component.ts
 
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -26,6 +27,8 @@ import { Component, Input } from '@angular/core';
       background-color: #4caf50;
     }
   `],
+  standalone: true,
+  imports: [NgClass]
 })
 export class ProgressBarComponent {
   @Input() progress: number;

@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { GraphArrowRightComponent } from './arrow-right.component';
 
-import { ArrowRightComponent } from './arrow-right.component';
+
 
 describe('ArrowRightComponent', () => {
-  let component: ArrowRightComponent;
-  let fixture: ComponentFixture<ArrowRightComponent>;
+  let component: GraphArrowRightComponent;
+  let fixture: ComponentFixture<GraphArrowRightComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArrowRightComponent]
+      imports: [GraphArrowRightComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ArrowRightComponent);
+    fixture = TestBed.createComponent(GraphArrowRightComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
