@@ -1,3 +1,1 @@
-export type DialogComponentsOptions = 'Auth' | 'Congratulations' | 'ForgotPassword'
-
-
+export type DialogComponentsOptions = 'Auth' | 'Congratulations' | 'ForgotPassword';

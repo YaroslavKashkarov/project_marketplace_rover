@@ -8,10 +8,9 @@ describe('QuantityInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuantityInputComponent]
-    })
-    .compileComponents();
-    
+      imports: [QuantityInputComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(QuantityInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

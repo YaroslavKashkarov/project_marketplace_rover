@@ -4,11 +4,9 @@ import { DollarPrefixDirective } from './dollar-prefix.directive';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  template: `
-    <input type="text" id="testInput" appDollarPrefix value="123" />
-  `,
+  template: ` <input type="text" id="testInput" appDollarPrefix value="123" /> `,
   standalone: true,
-  imports: [DollarPrefixDirective]
+  imports: [DollarPrefixDirective],
 })
 class TestComponent {}
 
@@ -18,7 +16,7 @@ describe('DollarPrefixDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [TestComponent]
+      imports: [TestComponent],
     }).createComponent(TestComponent);
 
     fixture.detectChanges();
@@ -30,11 +28,11 @@ describe('DollarPrefixDirective', () => {
   });
 
   it('should add $ to the input value if not present', () => {
-    inputElement.value = '123'; 
+    inputElement.value = '123';
     inputElement.dispatchEvent(new Event('input'));
     fixture.detectChanges();
 
-    expect(inputElement.value).toBe('$123'); 
+    expect(inputElement.value).toBe('$123');
   });
 
   it('should not add $ if already present', () => {
@@ -42,7 +40,7 @@ describe('DollarPrefixDirective', () => {
     inputElement.dispatchEvent(new Event('input'));
     fixture.detectChanges();
 
-    expect(inputElement.value).toBe('$456'); 
+    expect(inputElement.value).toBe('$456');
   });
 
   it('should handle empty input without adding $', () => {

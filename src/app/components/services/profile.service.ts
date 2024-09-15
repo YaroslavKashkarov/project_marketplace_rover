@@ -6,15 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProfileService {
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getUserProfile(userToken: string): Observable<any> {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${userToken}`,
+      Authorization: `Bearer ${userToken}`,
     });
 
-    return this.http.get<any>('api/auth/current', {headers});
+    return this.http.get<any>('api/auth/current', { headers });
   }
 }

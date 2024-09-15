@@ -1,25 +1,24 @@
 import { HttpClient } from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BaseService } from '../../../core/base.service';
 import { Observable } from 'rxjs';
 import { IProduct } from './product.interface';
 import { IProductsResult } from '../../../core/interfaces/products-result.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProductServiceService extends BaseService{
-
-  constructor( httpClient: HttpClient ) {
-    super(httpClient)
+export class ProductServiceService extends BaseService {
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
 
-  getFilteredProducts(filters: any): Observable<IProductsResult>{
+  getFilteredProducts(filters: any): Observable<IProductsResult> {
     const params = new URLSearchParams(filters).toString();
-    return this.get<IProductsResult>(`api/products?${params}`)
+    return this.get<IProductsResult>(`api/products?${params}`);
   }
 
-  getProductTitlesByKeyword(keyword: string): Observable<string[]>{
-    return this.get<string[]>(`api/products/titles?title=${keyword}`)
+  getProductTitlesByKeyword(keyword: string): Observable<string[]> {
+    return this.get<string[]>(`api/products/titles?title=${keyword}`);
   }
 }

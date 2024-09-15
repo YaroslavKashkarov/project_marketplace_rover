@@ -1,14 +1,30 @@
-<div class="custom-select" [class.open]="isOpen" [class.disabled]="disabled" [class.outlined]="outlined">
-    <div class="label-container" (click)="toggleDropdown()">
-        <span *ngIf="!selectedOption" class="placeholder">{{ placeholder }}</span>
-        <span *ngIf="selectedOption" class="option">{{ selectedOption.key }}</span>
-        <div class="arrow" [class.up]="isOpen">
-            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9208 6C20.5166 6 20.1124 6.15368 19.804 6.46211L12.4997 13.7674L5.19553 6.46211C4.57869 5.84632 3.57869 5.84632 2.96184 6.46211C2.34605 7.07895 2.34605 8.07895 2.96184 8.69579L11.3829 17.1169C11.9997 17.7326 12.9997 17.7326 13.6166 17.1169L22.0377 8.69579C22.6534 8.07895 22.6534 7.07895 22.0377 6.46211C21.7292 6.15368 21.325 6 20.9208 6Z" fill="#00478F"/>
-            </svg>                
-        </div>
+<div
+  class="custom-select"
+  [class.open]="isOpen"
+  [class.disabled]="disabled"
+  [class.outlined]="outlined"
+>
+  <div class="label-container" (click)="toggleDropdown()">
+    <span *ngIf="!selectedOption" class="placeholder">{{ placeholder }}</span>
+    <span *ngIf="selectedOption" class="option">{{ selectedOption.key }}</span>
+    <div class="arrow" [class.up]="isOpen">
+      <svg
+        width="25"
+        height="24"
+        viewBox="0 0 25 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20.9208 6C20.5166 6 20.1124 6.15368 19.804 6.46211L12.4997 13.7674L5.19553 6.46211C4.57869 5.84632 3.57869 5.84632 2.96184 6.46211C2.34605 7.07895 2.34605 8.07895 2.96184 8.69579L11.3829 17.1169C11.9997 17.7326 12.9997 17.7326 13.6166 17.1169L22.0377 8.69579C22.6534 8.07895 22.6534 7.07895 22.0377 6.46211C21.7292 6.15368 21.325 6 20.9208 6Z"
+          fill="#00478F"
+        />
+      </svg>
     </div>
-    <ul *ngIf="isOpen" class="options-list">
-      <li *ngFor="let option of options" (click)="selectOption(option)">{{ option.key }}</li>
-    </ul>
   </div>
+  <ul *ngIf="isOpen" class="options-list">
+    <li *ngFor="let option of options" (click)="selectOption(option)">{{ option.key }}</li>
+  </ul>
+</div>

@@ -8,10 +8,9 @@ describe('SignInFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignInFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [SignInFormComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SignInFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

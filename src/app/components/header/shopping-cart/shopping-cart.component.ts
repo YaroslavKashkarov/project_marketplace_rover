@@ -8,46 +8,41 @@ import { DialogService } from '../../services/dialog.service';
 import { OrderProductComponent } from './order-product/order-product.component';
 import { LoaderComponent } from '../../common-components/loader/loader.component';
 
-
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss',
-  imports: [CommonModule, RouterLink, OrderProductComponent, LoaderComponent]
+  imports: [CommonModule, RouterLink, OrderProductComponent, LoaderComponent],
 })
 export class ShoppingCartComponent implements OnInit {
-
   isLoading: boolean = false;
-  groupedProducts: { sellerId: string, products: any[] }[] = [];
+  groupedProducts: { sellerId: string; products: any[] }[] = [];
   sellers: Map<string, string>;
 
   constructor(
     private basketService: BasketService,
-    private router: Router
-  ) { }
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.processData();
-
   }
 
   processData() {
     this.isLoading = true;
 
-    this.basketService.getBasketProducts().subscribe(
-      res => {
-        this.sellers = this.getSellerNamesBySellerId(res);
-        this.groupedProducts = this.groupBySeller(res);
-        this.isLoading = false;
-      }
-    )
+    this.basketService.getBasketProducts().subscribe((res) => {
+      this.sellers = this.getSellerNamesBySellerId(res);
+      this.groupedProducts = this.groupBySeller(res);
+      this.isLoading = false;
+    });
   }
 
-  groupBySeller(data: any[]): { sellerId: string, products: any[] }[] {
+  groupBySeller(data: any[]): { sellerId: string; products: any[] }[] {
     const map = new Map<string, any[]>();
 
-    data.forEach(product => {
+    data.forEach((product) => {
       const sellerId = product.sellerId;
       if (!map.has(sellerId)) {
         map.set(sellerId, []);
@@ -61,7 +56,7 @@ export class ShoppingCartComponent implements OnInit {
   getSellerNamesBySellerId(data: any[]): Map<string, string> {
     const map = new Map<string, string>();
 
-    data.forEach(product => {
+    data.forEach((product) => {
       const sellerId = product.sellerId;
       map.set(sellerId, product.sellerName);
     });
@@ -70,13 +65,14 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   navigateWithState(sellerId: string) {
-    this.router.navigate(['shopping-cart/checkout'], { state: { sellerId: sellerId, seller: this.sellers.get(sellerId) } });
+    this.router.navigate(['shopping-cart/checkout'], {
+      state: { sellerId: sellerId, seller: this.sellers.get(sellerId) },
+    });
   }
 
-  navigateToSellerOtherItem(sellerId: string): void{
-    this.router.navigate(['shopping-cart/view-seller-item'], { state: { sellerId: sellerId, seller: this.sellers.get(sellerId) } });
+  navigateToSellerOtherItem(sellerId: string): void {
+    this.router.navigate(['shopping-cart/view-seller-item'], {
+      state: { sellerId: sellerId, seller: this.sellers.get(sellerId) },
+    });
   }
-
-
-
 }

@@ -8,10 +8,9 @@ describe('OrderConfirmationDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OrderConfirmationDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [OrderConfirmationDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(OrderConfirmationDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

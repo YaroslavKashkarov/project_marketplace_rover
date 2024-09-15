@@ -7,10 +7,9 @@ import { FormsModule, NgModel } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './quantity-input.component.html',
-  styleUrl: './quantity-input.component.scss'
+  styleUrl: './quantity-input.component.scss',
 })
 export class QuantityInputComponent {
-
   @Input()
   quantity: number;
 
@@ -28,24 +27,24 @@ export class QuantityInputComponent {
 
   constructor() {}
 
-  increaseQuantity():void {
-    this.quantity ++;
+  increaseQuantity(): void {
+    this.quantity++;
     this.input.nativeElement.select();
-    setTimeout(() =>  this.input.nativeElement.select(), 0);
+    setTimeout(() => this.input.nativeElement.select(), 0);
 
     this.quantityChange.emit(this.quantity);
   }
 
-  decreaseQuantity():void {
+  decreaseQuantity(): void {
     this.quantity--;
     this.input.nativeElement.focus();
-    setTimeout(() =>  this.input.nativeElement.select(), 0);
-    
+    setTimeout(() => this.input.nativeElement.select(), 0);
+
     this.quantityChange.emit(this.quantity);
   }
 
   setDefaultValue(ngModel: NgModel): void {
-    if (!this.quantity || this.quantity<=0) {
+    if (!this.quantity || this.quantity <= 0) {
       this.quantity = 1;
       ngModel.control.setValue(1);
     }

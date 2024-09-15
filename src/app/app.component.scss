@@ -1,20 +1,20 @@
 @import '../styles/variables';
 
 :host {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	& > * {
-		padding: $site-1440-padding;
-	}
+  & > * {
+    padding: $site-1440-padding;
+  }
 }
 
 .arrow-up {
-	display: flex;
-	justify-content: end;
-	padding: 0 94px 20px 0;
+  display: flex;
+  justify-content: end;
+  padding: 0 94px 20px 0;
 
-	&__btn {
-		cursor: pointer;
-	}
+  &__btn {
+    cursor: pointer;
+  }
 }

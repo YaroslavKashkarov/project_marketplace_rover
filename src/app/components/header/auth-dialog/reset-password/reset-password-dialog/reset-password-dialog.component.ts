@@ -19,53 +19,58 @@ export interface ResetPasswordInfo {
 @Component({
   selector: 'app-reset-password-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ErrorMessagesComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    ErrorMessagesComponent,
+  ],
   templateUrl: './reset-password-dialog.component.html',
-  styleUrl: './reset-password-dialog.component.scss'
+  styleUrl: './reset-password-dialog.component.scss',
 })
-export class ResetPasswordDialogComponent implements OnInit{
-
+export class ResetPasswordDialogComponent implements OnInit {
   resetPasswordForm: FormGroup;
   passwordChanged: boolean = false;
   hide: boolean = true;
 
-
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: ResetPasswordInfo,
-    private authService: AuthenticationService, 
+    private authService: AuthenticationService,
     private dialogRef: MatDialogRef<ResetPasswordDialogComponent>,
-
   ) {}
 
   ngOnInit(): void {
-    this.resetPasswordForm = new FormGroup({
-      password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl('', Validators.required),
-    }, CustomValidators.validateConfirmPassword);
+    this.resetPasswordForm = new FormGroup(
+      {
+        password: new FormControl('', Validators.required),
+        confirmPassword: new FormControl('', Validators.required),
+      },
+      CustomValidators.validateConfirmPassword,
+    );
   }
 
   onResetPasswordFormSubmit() {
-    Object.keys(this.resetPasswordForm.controls).forEach(key => {
+    Object.keys(this.resetPasswordForm.controls).forEach((key) => {
       this.resetPasswordForm.get(key)?.markAsDirty();
     });
 
     if (this.resetPasswordForm.valid) {
-      const newPassword = this.resetPasswordForm.get('password')?.value
-      this.authService.resetPassword(newPassword, this.data.token).subscribe(
-        {
-          next: () => {
-            this.dialogRef.close(true)
-          },
-          error: (errorRes: HttpErrorResponse) =>  {
-            console.log(errorRes)
-          }
-        }
-      )
+      const newPassword = this.resetPasswordForm.get('password')?.value;
+      this.authService.resetPassword(newPassword, this.data.token).subscribe({
+        next: () => {
+          this.dialogRef.close(true);
+        },
+        error: (errorRes: HttpErrorResponse) => {
+          console.log(errorRes);
+        },
+      });
     }
   }
 
-  closeDialog(){
-    this.dialogRef.close()
+  closeDialog() {
+    this.dialogRef.close();
   }
-  
 }

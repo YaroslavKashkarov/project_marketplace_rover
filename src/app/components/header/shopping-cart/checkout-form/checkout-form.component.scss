@@ -1,140 +1,133 @@
 .container {
-    padding: 32px 40px;
+  padding: 32px 40px;
 
-  
-    .header{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  
-      .title{
-        font-size: 24px;
-        font-weight: 700;
-        color: #00478F;
-        margin-bottom: 8px;
-      }
-  
-      svg{
-        cursor: pointer;
-      }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #00478f;
+      margin-bottom: 8px;
     }
 
-    .body{
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      form{
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 328px;
-
-        .subtitle{
-          font-size: 20px;
-          color: #00478F;
-          text-align: center;
-        }
-      }
-
-      .steps{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-
-      }
-
-      .btns{
-        display: flex;
-        gap: 20px;
-        margin-top: 20px;
-
-        .btn {
-          padding: 15px 20px;
-          border-radius: 16px;
-          box-sizing: border-box;
-          font-size: 24px;
-          cursor: pointer;
-          background-color: transparent;
-          border: none;
-          width: 192px;
-    
-          &.cancel {
-            border: 1px solid #00478F;
-            color: #00478F;
-          }
-    
-          &.next {
-            background-color: #00478F;
-            color: #fff;
-    
-            &:hover,
-            &:active {
-              -webkit-text-stroke: 0.65px #fff;
-            }
-          }
-        }
-      }
-
+    svg {
+      cursor: pointer;
     }
+  }
 
-    input[type=number] {
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        display: none;
-      }
-    }
-    
-    .mat-mdc-form-field {
-      display: block;
-      height: 56px;
-      width: 100%;
-      font-family: Lato, sans-serif;
-    }
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .mat-horizontal-stepper-header {
-      padding: 0 60px;
-    }
-
-    .custom-step-circle {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background-color: #3f51b5; /* Circle color */
-      border-radius: 50%;
-    }
-    
-    .mat-step-icon {
-      display: none; /* Hide the default icon */
-    }
-    
-    .mat-horizontal-stepper-header .mat-step-label {
-      display: none; /* Hide the step label text */
-    }
-    
-    .mat-horizontal-stepper-header .mat-step-header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .mat-horizontal-stepper-header .mat-step-header .mat-step-number {
-      display: none; /* Hide step numbers */
-    }
-
-    mat-radio-group{
+    form {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 328px;
+
+      .subtitle {
+        font-size: 20px;
+        color: #00478f;
+        text-align: center;
+      }
     }
-    
-    mat-radio-button{
-      border-bottom: 0.5px solid #070A0F80;
-      padding: 8px 8px;
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
 
+    .btns {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
 
+      .btn {
+        padding: 15px 20px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 192px;
 
+        &.cancel {
+          border: 1px solid #00478f;
+          color: #00478f;
+        }
+
+        &.next {
+          background-color: #00478f;
+          color: #fff;
+
+          &:hover,
+          &:active {
+            -webkit-text-stroke: 0.65px #fff;
+          }
+        }
+      }
+    }
+  }
+
+  input[type='number'] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
+  .mat-mdc-form-field {
+    display: block;
+    height: 56px;
+    width: 100%;
+    font-family: Lato, sans-serif;
+  }
+
+  .mat-horizontal-stepper-header {
+    padding: 0 60px;
+  }
+
+  .custom-step-circle {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #3f51b5; /* Circle color */
+    border-radius: 50%;
+  }
+
+  .mat-step-icon {
+    display: none; /* Hide the default icon */
+  }
+
+  .mat-horizontal-stepper-header .mat-step-label {
+    display: none; /* Hide the step label text */
+  }
+
+  .mat-horizontal-stepper-header .mat-step-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-horizontal-stepper-header .mat-step-header .mat-step-number {
+    display: none; /* Hide step numbers */
+  }
+
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  mat-radio-button {
+    border-bottom: 0.5px solid #070a0f80;
+    padding: 8px 8px;
+  }
 }

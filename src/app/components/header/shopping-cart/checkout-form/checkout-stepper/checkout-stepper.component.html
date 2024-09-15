@@ -1,11 +1,16 @@
 <div class="container">
-    <ng-container *ngFor="let step of steps; let i = index;">
-        <div class="step-btn" [class.previous]="selectedIndex > i" [class.next]="selectedIndex < i" (click)="selectStepByIndex(i)"  >
-            <div class="item" >
-                <div class="inner"></div>
-            </div>
-            
-            <!-- <div class="passed" *ngIf="selectedIndex > i">
+  <ng-container *ngFor="let step of steps; let i = index">
+    <div
+      class="step-btn"
+      [class.previous]="selectedIndex > i"
+      [class.next]="selectedIndex < i"
+      (click)="selectStepByIndex(i)"
+    >
+      <div class="item">
+        <div class="inner"></div>
+      </div>
+
+      <!-- <div class="passed" *ngIf="selectedIndex > i">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_5447_5359)">
                         <rect width="20" height="20" rx="10" fill="#FFD640" fill-opacity="0.5"/>
@@ -26,11 +31,10 @@
                     <div class="inner"></div>
                 </div>
             </div> -->
-        </div>
-    
-        <hr class="connect-line" *ngIf="i != steps.length -1">
-    </ng-container>
-    
+    </div>
+
+    <hr class="connect-line" *ngIf="i !== steps.length - 1" />
+  </ng-container>
 </div>
 
 <!-- {{steps | json}} -->

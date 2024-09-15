@@ -11,9 +11,9 @@ import { ResetPasswordDialogComponent } from '../reset-password-dialog/reset-pas
   standalone: true,
   imports: [CommonModule, RouterLink, MatDialogModule],
   templateUrl: './reset-password-page.component.html',
-  styleUrl: './reset-password-page.component.scss'
+  styleUrl: './reset-password-page.component.scss',
 })
-export class ResetPasswordPageComponent implements OnInit{
+export class ResetPasswordPageComponent implements OnInit {
   dialogRef: DialogRef<any, any>;
 
   constructor(
@@ -21,27 +21,25 @@ export class ResetPasswordPageComponent implements OnInit{
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    this.router.events.pipe(
-      filter(event=> event instanceof NavigationEnd)
-    ).subscribe(() => {
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
       this.dialogRef.close();
-    });    
+    });
   }
 
   ngOnInit(): void {
     const token = this.route.snapshot.queryParamMap.get('token');
-    
+
     const dialogRef = this.dialog.open(ResetPasswordDialogComponent, {
       height: '530px',
       width: '530px',
       disableClose: true,
       data: {
         token: token,
-      }
+      },
     });
 
     dialogRef.afterClosed().subscribe(() => {
       this.router.navigate(['/']);
-    })  
+    });
   }
 }

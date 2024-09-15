@@ -13,11 +13,9 @@ import { ToggleProfileEditing } from '../../../servises/toggle-profile';
 export class ProfileEditingComponent {
   label = FORM_LABEL;
 
-  constructor(public toggleProfileEditing: ToggleProfileEditing) {
-  }
+  constructor(public toggleProfileEditing: ToggleProfileEditing) {}
 
   closeEditing(): void {
     this.toggleProfileEditing.isProfileEditingVisible = false;
-
   }
 }

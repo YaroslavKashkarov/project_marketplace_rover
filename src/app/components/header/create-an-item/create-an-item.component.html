@@ -1,11 +1,13 @@
 <div class="item__navigate-container">
   <div class="item__navigate-container-breadcrumbs">
     <a class="item__navigate-container-link" href="">Home</a>
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-         viewBox="0 0 12 12" fill="none">
-      <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M3 1.78959C3 1.9917 3.07684 2.1938 3.23105 2.34802L6.88369 6.00013L3.23105 9.65224C2.92316 9.96066 2.92316 10.4607 3.23105 10.7691C3.53947 11.077 4.03947 11.077 4.3479 10.7691L8.55843 6.55855C8.86632 6.25013 8.86632 5.75013 8.55843 5.4417L4.3479 1.23117C4.03947 0.923278 3.53947 0.923278 3.23105 1.23117C3.07684 1.38538 3 1.58749 3 1.78959Z"
-            fill="#042C54"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M3 1.78959C3 1.9917 3.07684 2.1938 3.23105 2.34802L6.88369 6.00013L3.23105 9.65224C2.92316 9.96066 2.92316 10.4607 3.23105 10.7691C3.53947 11.077 4.03947 11.077 4.3479 10.7691L8.55843 6.55855C8.86632 6.25013 8.86632 5.75013 8.55843 5.4417L4.3479 1.23117C4.03947 0.923278 3.53947 0.923278 3.23105 1.23117C3.07684 1.38538 3 1.58749 3 1.78959Z"
+        fill="#042C54"
+      />
     </svg>
     <a class="item__navigate-container-link" href="">Create an item</a>
   </div>
@@ -14,11 +16,10 @@
     <div class="item__navigate-container-product-describe">
       <h4 class="item__navigate-container-product-describe-title">Describe the product</h4>
       <div class="item__navigate-container-product-describe-textarea">
-        <label class="item__navigate-container-product-describe-label"
-               for="input">Briefly describe your
-          product</label>
-        <input class="item__navigate-container-product-describe-input"
-               id="input" type="text">
+        <label class="item__navigate-container-product-describe-label" for="input"
+          >Briefly describe your product</label
+        >
+        <input class="item__navigate-container-product-describe-input" id="input" type="text" />
       </div>
     </div>
   </div>
@@ -27,88 +28,123 @@
     <h4 class="item__navigate-container-category-title">Category</h4>
   </div>
   <div class="item__navigate-container-category-select">
-    <select autocomplete="on"
-            class="item__navigate-container-category-select-options"
-            name="category" id="category">
-      <option class="item__navigate-container-category-select-options-input"
-              value="bicycle">Bicycle</option>
-      <option class="item__navigate-container-category-select-options-input"
-              value="parts">Parts</option>
-      <option class="item__navigate-container-category-select-options-input"
-              value="accessories">Accessories</option>
-      <option class="item__navigate-container-category-select-options-input"
-              value="service">Service</option>
-      <option class="item__navigate-container-category-select-options-input"
-              value="clothes">Clothes</option>
+    <select
+      autocomplete="on"
+      class="item__navigate-container-category-select-options"
+      name="category"
+      id="category"
+    >
+      <option class="item__navigate-container-category-select-options-input" value="bicycle">
+        Bicycle
+      </option>
+      <option class="item__navigate-container-category-select-options-input" value="parts">
+        Parts
+      </option>
+      <option class="item__navigate-container-category-select-options-input" value="accessories">
+        Accessories
+      </option>
+      <option class="item__navigate-container-category-select-options-input" value="service">
+        Service
+      </option>
+      <option class="item__navigate-container-category-select-options-input" value="clothes">
+        Clothes
+      </option>
     </select>
   </div>
 
   <div class="item__navigate-container-section">
     <div class="item__navigate-container-section-title">
       <h4 class="item__navigate-container-section-text">Photo</h4>
-      <p class="item__navigate-container-section-description">Drag and drop photos to change their order The first
-        photo will be displayed on the cover</p>
+      <p class="item__navigate-container-section-description">
+        Drag and drop photos to change their order The first photo will be displayed on the cover
+      </p>
     </div>
-    <div (click)="onFileInputClick()"
-         class="item__navigate-container-section-details-add-photo">
-      <div style="cursor: pointer;"
-           class="item__navigate-container-section-details-add-title">Add photo</div>
-      <input type="file" id="photo-input" (change)="onFileSelected($event)"
-             accept="image/*" style="display: none;"
-             multiple>
-      <div style="cursor: pointer;"
-           class="item__navigate-container-section-details-item-photo">
-        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg"
-             width="118" height="106" viewBox="0 0 118 106"
-             fill="none">
+    <div (click)="onFileInputClick()" class="item__navigate-container-section-details-add-photo">
+      <div style="cursor: pointer" class="item__navigate-container-section-details-add-title">
+        Add photo
+      </div>
+      <input
+        type="file"
+        id="photo-input"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+        style="display: none"
+        multiple
+      />
+      <div style="cursor: pointer" class="item__navigate-container-section-details-item-photo">
+        <svg
+          style="cursor: pointer"
+          xmlns="http://www.w3.org/2000/svg"
+          width="118"
+          height="106"
+          viewBox="0 0 118 106"
+          fill="none"
+        >
           <path
-		          d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
-		          fill="#FFD640"/>
+            d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
+            fill="#FFD640"
+          />
           <path
-		          d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
-		          fill="#FFD640"/>
+            d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
+            fill="#FFD640"
+          />
         </svg>
       </div>
-      <div style="cursor: pointer;"
-           class="item__navigate-container-section-details-item-photo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="118" height="106"
-             viewBox="0 0 118 106" fill="none">
+      <div style="cursor: pointer" class="item__navigate-container-section-details-item-photo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="118"
+          height="106"
+          viewBox="0 0 118 106"
+          fill="none"
+        >
           <path
-		          d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
-		          fill="#FFD640"/>
+            d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
+            fill="#FFD640"
+          />
           <path
-		          d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
-		          fill="#FFD640"/>
+            d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
+            fill="#FFD640"
+          />
         </svg>
       </div>
-      <div style="cursor: pointer;"
-           class="item__navigate-container-section-details-item-photo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="118" height="106"
-             viewBox="0 0 118 106" fill="none">
+      <div style="cursor: pointer" class="item__navigate-container-section-details-item-photo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="118"
+          height="106"
+          viewBox="0 0 118 106"
+          fill="none"
+        >
           <path
-		          d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
-		          fill="#FFD640"/>
+            d="M101.752 17.5453H80.2382L74.6259 3.59037C73.8823 1.73132 72.0835 0.5 70.0928 0.5H47.9551C45.9644 0.5 44.1656 1.70717 43.4221 3.59037L37.8097 17.5453H16.2716C7.42136 17.5453 0.25 24.7883 0.25 33.6731V89.3722C0.25 98.2811 7.44534 105.5 16.2716 105.5H101.728C110.579 105.5 117.75 98.257 117.75 89.3722V33.6731C117.774 24.7883 110.579 17.5453 101.752 17.5453ZM51.241 10.3505H66.7829L69.6611 17.5212H48.3389L51.241 10.3505ZM107.988 89.3722C107.988 92.8247 105.182 95.6495 101.752 95.6495H16.2716C12.8419 95.6495 10.0357 92.8247 10.0357 89.3722V33.6731C10.0357 30.2206 12.8419 27.3958 16.2716 27.3958H101.728C105.158 27.3958 107.964 30.2206 107.964 33.6731V89.3722H107.988Z"
+            fill="#FFD640"
+          />
           <path
-		          d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
-		          fill="#FFD640"/>
+            d="M59.0108 34.5918C44.2604 34.5918 32.2441 46.6877 32.2441 61.5359C32.2441 76.4083 44.2604 88.48 59.0108 88.48C73.7613 88.48 85.7775 76.3842 85.7775 61.5359C85.7775 46.6635 73.7613 34.5918 59.0108 34.5918ZM59.0108 78.6295C49.6569 78.6295 42.0298 70.9519 42.0298 61.5359C42.0298 52.12 49.6569 44.4423 59.0108 44.4423C68.3648 44.4423 75.9918 52.12 75.9918 61.5359C75.9918 70.9519 68.3648 78.6295 59.0108 78.6295Z"
+            fill="#FFD640"
+          />
         </svg>
       </div>
     </div>
 
     <div class="item__navigate-container-more">
       <div class="item__navigate-container-more-details">
-        <p class="item__navigate-container-more-details-title">Describe the product in more detail</p>
+        <p class="item__navigate-container-more-details-title">
+          Describe the product in more detail
+        </p>
       </div>
       <div class="item__navigate-container-more-details">
-        <input (input)="countWords()" [(ngModel)]="inputText"
-               class="item__navigate-container-more-details-input"
-               type="text">
+        <input
+          (input)="countWords()"
+          [(ngModel)]="inputText"
+          class="item__navigate-container-more-details-input"
+          type="text"
+        />
       </div>
       <div class="item__navigate-container-more-text">
         <p class="item__navigate-container-more-text-holder">Write another 100 characters</p>
-        <p class="item__navigate-container-more-text-holder">{{wordCount}}/{{
-		        maxWords
-	        }}</p>
+        <p class="item__navigate-container-more-text-holder">{{ wordCount }}/{{ maxWords }}</p>
       </div>
     </div>
     <div class="item__navigate-container-section-form">
@@ -118,119 +154,149 @@
       <div class="item__navigate-container-section-form-textarea">
         <section class="item__navigate-container-section-form-item">
           <div class="item__navigate-container-section-form-inputs">
-            <label class="item__navigate-container-section-form-label"
-                   for="input">Price</label>
-            <input class="item__navigate-container-section-form-input"
-                   type="text" appDollarPrefix>
+            <label class="item__navigate-container-section-form-label" for="input">Price</label>
+            <input
+              class="item__navigate-container-section-form-input"
+              type="text"
+              appDollarPrefix
+            />
           </div>
           <div class="item__navigate-container-section-form-inputs">
-            <label class="item__navigate-container-section-form-label"
-                   for="input">Available quantity</label>
-            <input class="item__navigate-container-section-form-input"
-                   type="number">
+            <label class="item__navigate-container-section-form-label" for="input"
+              >Available quantity</label
+            >
+            <input class="item__navigate-container-section-form-input" type="number" />
           </div>
-          <div class=" item__navigate-container-section-form-product">
+          <div class="item__navigate-container-section-form-product">
             <p class="item__navigate-container-section-form-product-title">Product state</p>
-            <select class="item__navigate-container-section-form-product-state"
-                    name="product-state" id="state">
-              <option
-		              class="item__navigate-container-section-form-product-state"
-		              value="new">New</option>
-              <option
-		              class="item__navigate-container-section-form-product-state"
-		              value="used">Used</option>
+            <select
+              class="item__navigate-container-section-form-product-state"
+              name="product-state"
+              id="state"
+            >
+              <option class="item__navigate-container-section-form-product-state" value="new">
+                New
+              </option>
+              <option class="item__navigate-container-section-form-product-state" value="used">
+                Used
+              </option>
             </select>
           </div>
 
           <div class="item__navigate-container-section-form-product-bicycle">
             <p class="item__navigate-container-section-form-product-bicycle-title">Bicycle brand</p>
             <select
-		            class="item__navigate-container-section-form-product-bicycle-category"
-		            name="bicycle-brand"
-		            id="brand">
+              class="item__navigate-container-section-form-product-bicycle-category"
+              name="bicycle-brand"
+              id="brand"
+            >
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="discovery">Discovery
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="discovery"
+              >
+                Discovery
               </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="dorozhnik">Dorozhnik
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="dorozhnik"
+              >
+                Dorozhnik
               </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="formula">Formula
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="formula"
+              >
+                Formula
               </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="head">Head</option>
-              <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="lapierre">Lapierre
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="head"
+              >
+                Head
               </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="leon">Leon</option>
-              <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="optima">Optima</option>
-              <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="orbea">Orbea</option>
-              <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="primier">Premier
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="lapierre"
+              >
+                Lapierre
               </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="rock-machine">Rock
-                Machine</option>
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="leon"
+              >
+                Leon
+              </option>
               <option
-		              class="item__navigate-container-section-form-product-bicycle-brand"
-		              value="other-btrand">Other
-                Brands</option>
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="optima"
+              >
+                Optima
+              </option>
+              <option
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="orbea"
+              >
+                Orbea
+              </option>
+              <option
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="primier"
+              >
+                Premier
+              </option>
+              <option
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="rock-machine"
+              >
+                Rock Machine
+              </option>
+              <option
+                class="item__navigate-container-section-form-product-bicycle-brand"
+                value="other-btrand"
+              >
+                Other Brands
+              </option>
             </select>
           </div>
         </section>
 
         <div class="item__navigate-container-options">
           <div class="item__navigate-container-options-other">
-            <label class="item__navigate-container-options-other-label"
-                   for="input">Special features</label>
-            <input class="item__navigate-container-options-other-input"
-                   id="label" type="text">
+            <label class="item__navigate-container-options-other-label" for="input"
+              >Special features</label
+            >
+            <input class="item__navigate-container-options-other-input" id="label" type="text" />
           </div>
           <div class="item__navigate-container-options-other">
-            <label class="item__navigate-container-options-other-label"
-                   for="input">Location of the
-              product</label>
-            <input class="item__navigate-container-options-other-location"
-                   type="text">
+            <label class="item__navigate-container-options-other-label" for="input"
+              >Location of the product</label
+            >
+            <input class="item__navigate-container-options-other-location" type="text" />
           </div>
         </div>
 
         <div class="item__navigate-container-optional">
           <div class="item__navigate-container-optional-more-details">
             <input
-		            class="item__navigate-container-optional-more-details-checkbox"
-		            type="checkbox">
-            <label class="item__navigate-container-optional-more-details-label"
-                   for="input">Negotiable price</label>
+              class="item__navigate-container-optional-more-details-checkbox"
+              type="checkbox"
+            />
+            <label class="item__navigate-container-optional-more-details-label" for="input"
+              >Negotiable price</label
+            >
           </div>
-	        <!--	        TODO At the moment this part is not needed in the connection, in-->
-	        <!--	        the future will be implemented.-->
+          <!--	        TODO At the moment this part is not needed in the connection, in-->
+          <!--	        the future will be implemented.-->
 
-	        <!--          <div class="item__navigate-container-optional-more-details">-->
-	        <!--            <input-->
-	        <!--		            class="item__navigate-container-optional-more-details-checkbox"-->
-	        <!--		            type="checkbox">-->
-	        <!--            <label class="item__navigate-container-optional-more-details-label"-->
-	        <!--                   for="input">Exchange-->
-	        <!--              available</label>-->
-	        <!--          </div>-->
-
+          <!--          <div class="item__navigate-container-optional-more-details">-->
+          <!--            <input-->
+          <!--		            class="item__navigate-container-optional-more-details-checkbox"-->
+          <!--		            type="checkbox">-->
+          <!--            <label class="item__navigate-container-optional-more-details-label"-->
+          <!--                   for="input">Exchange-->
+          <!--              available</label>-->
+          <!--          </div>-->
         </div>
-
-
       </div>
       <div class="item__navigate-container-btns">
         <button class="item__navigate-container-btns-btn">Preview</button>

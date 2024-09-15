@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../components/services/authentication.service';
 import { authenticatedUserGuard } from './authenticated-user.guard';
 
-
 describe('authenticatedUserGuard', () => {
   let guard: authenticatedUserGuard;
   let authServiceMock: jasmine.SpyObj<AuthenticationService>;
@@ -17,8 +16,8 @@ describe('authenticatedUserGuard', () => {
       providers: [
         authenticatedUserGuard,
         { provide: AuthenticationService, useValue: authServiceMock },
-        { provide: Router, useValue: routerMock }
-      ]
+        { provide: Router, useValue: routerMock },
+      ],
     });
 
     guard = TestBed.inject(authenticatedUserGuard);
@@ -29,7 +28,14 @@ describe('authenticatedUserGuard', () => {
   });
 
   it('should return true if user is authenticated', () => {
-    spyOnProperty(authServiceMock, 'currentUserValue', 'get').and.returnValue({ id: '1', firstName: 'Test User', lastName: 'sczs', email: 'zvz', role:'sxv', token: 'zv' });
+    spyOnProperty(authServiceMock, 'currentUserValue', 'get').and.returnValue({
+      id: '1',
+      firstName: 'Test User',
+      lastName: 'sczs',
+      email: 'zvz',
+      role: 'sxv',
+      token: 'zv',
+    });
 
     const result = guard.canActivate({} as any, {} as any); // Викликаємо canActivate
     expect(result).toBe(true); // Очікуємо true, оскільки користувач залогінений

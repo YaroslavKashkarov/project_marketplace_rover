@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './no-search-result-page.component.html',
-  styleUrl: './no-search-result-page.component.scss'
+  styleUrl: './no-search-result-page.component.scss',
 })
-export class NoSearchResultPageComponent {
-
-}
+export class NoSearchResultPageComponent {}

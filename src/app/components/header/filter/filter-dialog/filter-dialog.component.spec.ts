@@ -8,10 +8,9 @@ describe('FilterDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FilterDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [FilterDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FilterDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

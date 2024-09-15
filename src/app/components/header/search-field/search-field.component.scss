@@ -1,87 +1,86 @@
 :host {
-	width: 100%;
+  width: 100%;
 }
 
 .container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 480px;
-	cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  cursor: pointer;
 
-	.control {
-		display: flex;
-		flex-direction: row;
+  .control {
+    display: flex;
+    flex-direction: row;
 
-		&.open {
-			z-index: 3000;
-		}
+    &.open {
+      z-index: 3000;
+    }
 
-		.search {
-			display: flex;
-			align-items: center;
-			flex: 1;
-			max-width: 432px;
-			padding: 15px 12px;
-			border: 1px solid #00478F;
-			border-radius: 8px 0 0 8px;
-			background: #fff;
-			gap: 12px;
+    .search {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      max-width: 432px;
+      padding: 15px 12px;
+      border: 1px solid #00478f;
+      border-radius: 8px 0 0 8px;
+      background: #fff;
+      gap: 12px;
 
-			input {
-				font-size: 20px;
-				font-weight: 500;
-				width: 100%;
-				color: #00478F;
-				border: none;
-				outline: none;
+      input {
+        font-size: 20px;
+        font-weight: 500;
+        width: 100%;
+        color: #00478f;
+        border: none;
+        outline: none;
 
-				&::placeholder {
-					font-weight: 500;
-					color: #070A0F80;
-				}
-			}
-		}
+        &::placeholder {
+          font-weight: 500;
+          color: #070a0f80;
+        }
+      }
+    }
 
-		.filter, .close {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 48px;
-			border: 1px solid #00478F;
-			border-left: none;
-			border-radius: 0 8px 8px 0;
-			background: #fff;
-		}
-	}
+    .filter,
+    .close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      border: 1px solid #00478f;
+      border-left: none;
+      border-radius: 0 8px 8px 0;
+      background: #fff;
+    }
+  }
 }
 
 .options-list {
-	box-sizing: border-box;
-	width: 480px;
-	margin-top: -15px;
-	padding: 16px;
-	padding-top: 23px;
-	border-radius: 8px;
-	background-color: #fff;
+  box-sizing: border-box;
+  width: 480px;
+  margin-top: -15px;
+  padding: 16px;
+  padding-top: 23px;
+  border-radius: 8px;
+  background-color: #fff;
 
+  .option {
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #070a0f80;
 
-	.option {
-		font-weight: 500;
-		padding: 8px 16px;
-		cursor: pointer;
-		color: #070A0F80;
-
-		&:hover {
-			background-color: #A5CDEB59;
-		}
-	}
-
+    &:hover {
+      background-color: #a5cdeb59;
+    }
+  }
 }
 
 ::ng-deep {
-	.highlight {
-		color: #00478F;
-	}
+  .highlight {
+    color: #00478f;
+  }
 }

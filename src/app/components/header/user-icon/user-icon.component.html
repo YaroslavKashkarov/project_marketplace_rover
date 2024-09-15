@@ -1,10 +1,9 @@
 <div class="container">
-    <div class="photo" *ngIf="user.photo">
-        <img [src]="user.photo">
-   </div>
-    
-    <div *ngIf="!user.photo" class="initials">
-        {{initials}}
-    </div>
+  <div class="photo" *ngIf="user.photo">
+    <img [src]="user.photo" />
+  </div>
 
+  <div *ngIf="!user.photo" class="initials">
+    {{ initials }}
+  </div>
 </div>

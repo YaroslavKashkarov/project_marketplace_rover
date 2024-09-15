@@ -19,8 +19,10 @@ export class PasswordEditingComponent implements OnInit {
   invisibleIconDisplay = 'none';
   passForm!: FormGroup;
 
-  constructor(public togglePasswordEditing: TogglePasswordEditing, private fb: FormBuilder) {
-  }
+  constructor(
+    public togglePasswordEditing: TogglePasswordEditing,
+    private fb: FormBuilder,
+  ) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -45,7 +47,7 @@ export class PasswordEditingComponent implements OnInit {
       const confirmPassword = control.value;
 
       if (password !== confirmPassword) {
-        return {mismatch: true};
+        return { mismatch: true };
       } else {
         return null;
       }
@@ -60,9 +62,14 @@ export class PasswordEditingComponent implements OnInit {
 
   private initializeForm(): void {
     this.passForm = this.fb.group({
-      password: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(25), passwordValidator]],
-      confirmPassword: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
+      password: [
+        null,
+        [Validators.required, Validators.minLength(8), Validators.maxLength(25), passwordValidator],
+      ],
+      confirmPassword: [
+        null,
+        [Validators.required, Validators.minLength(8), Validators.maxLength(25)],
+      ],
     });
   }
-
 }

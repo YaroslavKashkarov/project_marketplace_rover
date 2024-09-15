@@ -8,10 +8,9 @@ describe('CheckoutStepperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckoutStepperComponent]
-    })
-    .compileComponents();
-    
+      imports: [CheckoutStepperComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CheckoutStepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

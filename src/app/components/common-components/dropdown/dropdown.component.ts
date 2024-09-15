@@ -12,14 +12,13 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DropdownComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class DropdownComponent {
-
   @Input() options: any[];
-  @Input() placeholder: string = 'Select an option'; 
+  @Input() placeholder: string = 'Select an option';
   @Input() outlined: boolean = true;
 
   selectedOption: any;
@@ -29,17 +28,20 @@ export class DropdownComponent {
   onChange: any = () => {};
   onTouch: any = () => {};
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {
     this.renderer.listen('document', 'click', (event: Event) => {
       if (!this.el.nativeElement.contains(event.target)) {
         this.isOpen = false;
       }
     });
-   }
+  }
 
   writeValue(value: any) {
     if (value !== undefined) {
-      const selectedOption = this.options.find(x=> x.value === value);
+      const selectedOption = this.options.find((x) => x.value === value);
       this.selectedOption = selectedOption;
     }
   }
@@ -62,7 +64,7 @@ export class DropdownComponent {
       this.selectedOption = option;
       this.onChange(option.value);
       this.onTouch();
-      this.isOpen = false; 
+      this.isOpen = false;
     }
   }
 

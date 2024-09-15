@@ -14,27 +14,25 @@ export interface ICongratulationsInfo {
   standalone: true,
   imports: [CommonModule, MatDialogModule],
   templateUrl: './congratulations.component.html',
-  styleUrl: './congratulations.component.scss'
+  styleUrl: './congratulations.component.scss',
 })
-export class CongratulationsComponent implements OnInit{
-
-  title: string
+export class CongratulationsComponent implements OnInit {
+  title: string;
   openComponent?: DialogComponentsOptions;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: ICongratulationsInfo,
-    private dialogRef: MatDialogRef<CongratulationsComponent>
-    
-  ){}
+    private dialogRef: MatDialogRef<CongratulationsComponent>,
+  ) {}
 
   ngOnInit(): void {
     this.title = this.data.title;
-    this.openComponent = this.data.openComponent
+    this.openComponent = this.data.openComponent;
   }
 
-  closeDialog(){
+  closeDialog() {
     this.dialogRef.close({
-      openComponent: this.openComponent
-    })
+      openComponent: this.openComponent,
+    });
   }
 }

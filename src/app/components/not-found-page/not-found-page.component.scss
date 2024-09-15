@@ -2,102 +2,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .product_image {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .msg {
-    display: flex;
-    text-align: left;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column ;
-    position: absolute;
-    margin-right: 450px;
-    margin-bottom: 80px;
-    margin-top: 100px;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  margin-right: 450px;
+  margin-bottom: 80px;
+  margin-top: 100px;
 }
 
 .product-image {
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .msg__error-title {
-    font-size: 260px;
-    margin: 0;
-    font-family: Philosopher, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 60px;
-    color: var(--Primary-Blue, #00478F);
-    -webkit-text-stroke-color: var(--Primary-Blue, #00478F);
-    -webkit-text-stroke-width: 5;
+  font-size: 260px;
+  margin: 0;
+  font-family: Philosopher, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 60px;
+  color: var(--Primary-Blue, #00478f);
+  -webkit-text-stroke-color: var(--Primary-Blue, #00478f);
+  -webkit-text-stroke-width: 5;
 }
 
 .msg__error-text {
-    margin: 0 auto;
-    position: relative;
-    bottom: 100px;
-    width: 460px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 100px;
+  width: 460px;
 }
 
 .msg__error-text-title {
-    color: var(--Primary2, #042C54);
-    font-family: Lato, sans-serif;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  color: var(--Primary2, #042c54);
+  font-family: Lato, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .msg__error-text__container {
-    width: 460px;
+  width: 460px;
 }
 
-
 .msg__error-text-subtitle {
-    color: var(--Primary2, #042C54);
-    font-family: Lato;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  color: var(--Primary2, #042c54);
+  font-family: Lato;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .button-container {
-    display: flex;
-    height: 54px;
-    position: relative;
-    justify-content: center;
-    bottom: 100px;
+  display: flex;
+  height: 54px;
+  position: relative;
+  justify-content: center;
+  bottom: 100px;
 }
 
 .button-container__button {
-    border-radius: 4px;
-    border: 1px solid var(--Primary2, #042C54);
-    color: var(--Primary2, #042C54);
-    text-align: center;
-    padding: 14px 70px;
-    font-family: Lato;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  border-radius: 4px;
+  border: 1px solid var(--Primary2, #042c54);
+  color: var(--Primary2, #042c54);
+  text-align: center;
+  padding: 14px 70px;
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .button-container__button:hover {
-    border: 2px solid var(--Primary2, #042C54);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+  border: 2px solid var(--Primary2, #042c54);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }

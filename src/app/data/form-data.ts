@@ -24,4 +24,3 @@ export const PASS_ERRORS = {
     notSame: 'Your password does not match',
   },
 };
-

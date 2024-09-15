@@ -8,10 +8,9 @@ describe('CheckoutPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckoutPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [CheckoutPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CheckoutPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

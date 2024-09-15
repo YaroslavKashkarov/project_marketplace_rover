@@ -1,13 +1,12 @@
 @import '../../../styles/variables';
 
-:host{
-  background-color: #F9F9F9;
+:host {
+  background-color: #f9f9f9;
 }
 
 .container {
   margin-top: 40px;
   padding: $site-1440-padding;
-
 
   .content {
     .header {
@@ -22,7 +21,7 @@
         font-weight: 700;
       }
 
-      .sorting{
+      .sorting {
         width: 180px;
       }
     }
@@ -46,7 +45,7 @@
         align-items: center;
         gap: 10px;
         margin-bottom: 40px;
-      
+
         &.load-more {
           text-align: center;
           width: 404px;
@@ -60,7 +59,7 @@
           line-height: normal;
           color: #00478f;
         }
-      
+
         &.load-more:hover {
           border: 3px solid #00478f;
           font-size: 26px;
@@ -68,7 +67,7 @@
           transform: scale(1);
           transition: 0.12s;
         }
-      
+
         &--second {
           margin-bottom: 40px;
         }

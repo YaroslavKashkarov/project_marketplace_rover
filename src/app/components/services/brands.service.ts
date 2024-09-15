@@ -4,15 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class BrandsService extends BaseService{
-
-  constructor( httpClient: HttpClient,) {
+export class BrandsService extends BaseService {
+  constructor(httpClient: HttpClient) {
     super(httpClient);
   }
 
-  getBrandsByCategory(category: string) :Observable<any[]> {
-    return this.get<any[]>(`api/brands/${category}`)
+  getBrandsByCategory(category: string): Observable<any[]> {
+    return this.get<any[]>(`api/brands/${category}`);
   }
 }

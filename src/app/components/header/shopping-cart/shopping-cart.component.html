@@ -3,33 +3,36 @@
     <app-loader></app-loader>
   </div>
 
-  <div class="empty" *ngIf="!isLoading && groupedProducts.length == 0">
-    <img src="/assets/img/Basket.png">
+  <div class="empty" *ngIf="!isLoading && groupedProducts.length === 0">
+    <img src="/assets/img/Basket.png" />
     <div class="title">Your cart is empty</div>
     <div class="subtitle">Visit the marketplace to add items</div>
     <button class="shopping">Go to shopping</button>
   </div>
 
-  <div class="content"  *ngIf="!isLoading && groupedProducts.length">
+  <div class="content" *ngIf="!isLoading && groupedProducts.length">
     <div class="order" *ngFor="let sellerOrder of groupedProducts">
       <div class="header">
-          <div class="seller">Seller: {{sellers.get(sellerOrder.sellerId)}}</div>
+        <div class="seller">Seller: {{ sellers.get(sellerOrder.sellerId) }}</div>
       </div>
       <div class="products">
-          <app-order-product 
-            *ngFor="let product of sellerOrder.products" 
-            [product]="product"
-            (productChanged)="processData()"
-          ></app-order-product>
+        <app-order-product
+          *ngFor="let product of sellerOrder.products"
+          [product]="product"
+          (productChanged)="processData()"
+        ></app-order-product>
       </div>
       <div class="footer">
-          <div class="btns">
-              <button class="btn other" (click)="navigateToSellerOtherItem(sellerOrder.sellerId)">View seller's other items</button>
-              <button class="btn checkout" (click)="navigateWithState(sellerOrder.sellerId)">Checkout</button>
-          </div>)
+        <div class="btns">
+          <button class="btn other" (click)="navigateToSellerOtherItem(sellerOrder.sellerId)">
+            View seller's other items
+          </button>
+          <button class="btn checkout" (click)="navigateWithState(sellerOrder.sellerId)">
+            Checkout
+          </button>
+        </div>
+        )
       </div>
     </div>
   </div>
-  
 </div>
-

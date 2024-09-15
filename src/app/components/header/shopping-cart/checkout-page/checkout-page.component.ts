@@ -11,15 +11,14 @@ import { LoaderComponent } from '../../../common-components/loader/loader.compon
 
 type TransformedProducts = { [key: string]: number };
 
-
 @Component({
   selector: 'app-checkout-page',
   standalone: true,
   imports: [CommonModule, OrderProductComponent, LoaderComponent, RouterLink],
   templateUrl: './checkout-page.component.html',
-  styleUrl: './checkout-page.component.scss'
+  styleUrl: './checkout-page.component.scss',
 })
-export class CheckoutPageComponent implements OnInit{
+export class CheckoutPageComponent implements OnInit {
   isLoading: boolean = false;
 
   private sellerId: string = '';
@@ -31,13 +30,12 @@ export class CheckoutPageComponent implements OnInit{
   orderDetails: any;
 
   paymentInfo: any;
-  
 
   constructor(
-    private basketService: BasketService, 
-    private router: Router, 
+    private basketService: BasketService,
+    private router: Router,
     private dialogService: DialogService,
-    private paymentService: PaymentService
+    private paymentService: PaymentService,
   ) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if (state && state['seller']) {
@@ -50,68 +48,62 @@ export class CheckoutPageComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.processData()
+    this.processData();
   }
 
-  processData(){
+  processData() {
     this.isLoading = true;
-    this.basketService.getBasketProductsBySeller(this.sellerId).subscribe(
-      res => {
-        this.products = res;
-        this.calculateTotal();
-        this.isLoading = false;
-      }
-    )
+    this.basketService.getBasketProductsBySeller(this.sellerId).subscribe((res) => {
+      this.products = res;
+      this.calculateTotal();
+      this.isLoading = false;
+    });
   }
 
-  tranformProducts(products: IOrderProduct[]){
+  tranformProducts(products: IOrderProduct[]) {
     return products.reduce((acc, product) => {
       acc[product._id] = product.basketQuantity;
       return acc;
-    }, {} as TransformedProducts)
+    }, {} as TransformedProducts);
   }
 
-  calculateTotal(){
+  calculateTotal() {
     this.totalSum = 0;
-    console.log(this.products)
-    this.products.forEach((item)=> this.totalSum += item.basketQuantity * item.price);
+    console.log(this.products);
+    this.products.forEach((item) => (this.totalSum += item.basketQuantity * item.price));
   }
 
   openDialog() {
-    this.dialogService.openCheckoutDialog().subscribe(
-      res => {
-        if (res) {
-          console.log(res);
-          const order: IOrder = {
-            sellerId: this.sellerId,
-            products: this.tranformProducts(this.products),
-            paymentMethod: res.paymentMethod.value,
-            deliveryMethod: res.deliveryMethod.value,
-            userPhone: res.contacts.phoneNumber,
+    this.dialogService.openCheckoutDialog().subscribe((res) => {
+      if (res) {
+        console.log(res);
+        const order: IOrder = {
+          sellerId: this.sellerId,
+          products: this.tranformProducts(this.products),
+          paymentMethod: res.paymentMethod.value,
+          deliveryMethod: res.deliveryMethod.value,
+          userPhone: res.contacts.phoneNumber,
+        };
+
+        this.paymentMethod = res.paymentMethod.value;
+
+        this.basketService.placeOrder(order).subscribe((res) => {
+          this.orderDetails = res;
+
+          if (this.paymentMethod == 'online') {
+            this.paymentService
+              .getPaymentInfo(this.orderDetails.orderReference)
+              .subscribe((res) => {
+                this.paymentInfo = res;
+                console.log(res);
+                this.createAndSubmitPaymentForm();
+              });
+          } else {
+            this.openConfirmDialog(this.orderDetails.orderReference);
           }
-  
-          this.paymentMethod = res.paymentMethod.value;
-  
-          this.basketService.placeOrder(order).subscribe(
-            res => {
-              this.orderDetails = res;
-  
-              if (this.paymentMethod == 'online'){
-                this.paymentService.getPaymentInfo(this.orderDetails.orderReference).subscribe(
-                  res => {
-                    this.paymentInfo = res;
-                    console.log(res);
-                    this.createAndSubmitPaymentForm()
-                  }
-                )
-              } else {
-                this.openConfirmDialog(this.orderDetails.orderReference)
-              }
-            }
-          )
-        }
+        });
       }
-    )
+    });
   }
 
   createAndSubmitPaymentForm(): void {
@@ -120,21 +112,21 @@ export class CheckoutPageComponent implements OnInit{
     form.action = 'https://secure.wayforpay.com/pay';
     form.acceptCharset = 'utf-8';
 
-    Object.keys(this.paymentInfo).forEach(key => {
+    Object.keys(this.paymentInfo).forEach((key) => {
       const value = this.paymentInfo[key];
       if (Array.isArray(value)) {
-        value.forEach(val => this.addFormField(form, key + '[]', val));
+        value.forEach((val) => this.addFormField(form, key + '[]', val));
       } else {
         this.addFormField(form, key, value);
       }
     });
-    
+
     this.addFormField(form, 'returnLink', 'http://localhost:4200/shopping-cart/checkout');
 
     document.body.appendChild(form);
     form.submit();
   }
-  
+
   addFormField(form: HTMLFormElement, name: string, value: string): void {
     const input = document.createElement('input');
     input.type = 'hidden';
@@ -143,12 +135,9 @@ export class CheckoutPageComponent implements OnInit{
     form.appendChild(input);
   }
 
-  openConfirmDialog(orderNumber: string){
+  openConfirmDialog(orderNumber: string) {
     this.dialogService.openOrderConfirmationDialog(orderNumber);
   }
 
-  checkPaymentStatus(orderReference: string){
-    
-  }
-
-}  
+  checkPaymentStatus(orderReference: string) {}
+}
