@@ -6,7 +6,7 @@
   .title {
     font-size: 24px;
     font-weight: 700;
-    color: #070A0F;
+    color: #070a0f;
     margin-bottom: 8px;
   }
 
@@ -17,13 +17,13 @@
 
     .option {
       padding: 8px 16px;
-      border: 1px solid #00478F;
+      border: 1px solid #00478f;
       border-radius: 16px;
       cursor: pointer;
 
       &.selected,
       &:hover {
-        background-color: #00478F;
+        background-color: #00478f;
         color: #fff;
       }
     }

@@ -8,10 +8,9 @@ describe('MinusComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GraphMinusComponent]
-    })
-    .compileComponents();
-    
+      imports: [GraphMinusComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GraphMinusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

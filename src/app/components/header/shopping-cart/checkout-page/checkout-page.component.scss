@@ -1,66 +1,65 @@
 @import '../../../../../styles/variables';
 
-:host{
-    background-color: #F9F9F9;  
-    display: block;
+:host {
+  background-color: #f9f9f9;
+  display: block;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 120px;
-    margin-top: 100px;
-    gap: 4px;
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
+  margin-top: 100px;
+  gap: 4px;
 
-    .title{
-        font-size: 22px;
-        font-weight: 700;
-        padding: $site-1440-padding;
-        margin-bottom: 8px;
+  .title {
+    font-size: 22px;
+    font-weight: 700;
+    padding: $site-1440-padding;
+    margin-bottom: 8px;
+  }
+
+  .order {
+    background-color: #ffffff;
+    padding: $site-1440-padding;
+
+    .header {
+      font-size: 24px;
+      font-weight: 700;
+      padding: 12px 0;
     }
 
-    .order{
-      background-color: #ffffff;
-      padding: $site-1440-padding;
-  
-      .header{ 
-        font-size: 24px;
-        font-weight: 700;
-        padding: 12px 0;
-      }
-  
-      .footer{
+    .footer {
+      display: flex;
+      justify-content: end;
+      padding: 12px 0;
+
+      .btns {
         display: flex;
-        justify-content: end;
-        padding: 12px 0;
-  
-        .btns{
-          display: flex;
-          gap: 10px;
-  
-          .btn{
-            width: 336px;
-            padding: 15px 20px;
-            font-size: 24px;
-            font-weight: 700;
-            text-align: center;
-            border-radius: 16px;
-            cursor: pointer;
-  
-            &.other{
-              border: 1px solid $primary;
-              background-color: #ffffff;
-              color: $primary;
-            }
-  
-            &.checkout{
-              background-color: $primary;
-              color: white;
-              border: none;
-            }
+        gap: 10px;
+
+        .btn {
+          width: 336px;
+          padding: 15px 20px;
+          font-size: 24px;
+          font-weight: 700;
+          text-align: center;
+          border-radius: 16px;
+          cursor: pointer;
+
+          &.other {
+            border: 1px solid $primary;
+            background-color: #ffffff;
+            color: $primary;
           }
-  
+
+          &.checkout {
+            background-color: $primary;
+            color: white;
+            border: none;
+          }
         }
       }
     }
   }
+}

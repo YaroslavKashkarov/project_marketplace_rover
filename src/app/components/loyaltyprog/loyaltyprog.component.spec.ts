@@ -8,10 +8,9 @@ describe('LoyaltyprogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoyaltyprogComponent]
-    })
-    .compileComponents();
-    
+      imports: [LoyaltyprogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LoyaltyprogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

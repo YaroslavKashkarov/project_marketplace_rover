@@ -11,7 +11,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   templateUrl: './social-login.component.html',
 })
 export class SocialLoginComponent implements OnInit {
-
   // private accessToken = '';
   //
   // constructor(private authService: SocialAuthService, private httpClient: HttpClient) {
@@ -48,13 +47,12 @@ export class SocialLoginComponent implements OnInit {
   constructor(
     private authService: SocialAuthService,
     private httpClient: HttpClient,
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
       // console.log(user);
-      const {idToken} = user;
+      const { idToken } = user;
       // console.log({ idToken });
       this.authenticateWithBackend(idToken);
     });

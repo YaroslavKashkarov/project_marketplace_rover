@@ -8,10 +8,9 @@ describe('ViewSellerItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewSellerItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [ViewSellerItemComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ViewSellerItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

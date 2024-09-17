@@ -1,20 +1,14 @@
 <div class="quantity">
-    <button 
-        class="decrease" 
-        (click)="decreaseQuantity()"
-    >-</button>
-    <input 
-        (blur)="setDefaultValue(inputTest)" 
-        type="number" min="1"
-        #input
-        #inputTest="ngModel"
-        (keyup.enter)="enterClick.emit()"
-        [(ngModel)]="quantity" 
-        (ngModelChange)="quantityChanged(inputTest)">
-    <button 
-        class="increase" 
-        (click)="increaseQuantity()"
-    >+</button>
+  <button class="decrease" (click)="decreaseQuantity()">-</button>
+  <input
+    (blur)="setDefaultValue(inputTest)"
+    type="number"
+    min="1"
+    #input
+    #inputTest="ngModel"
+    (keyup.enter)="enterClick.emit()"
+    [(ngModel)]="quantity"
+    (ngModelChange)="quantityChanged(inputTest)"
+  />
+  <button class="increase" (click)="increaseQuantity()">+</button>
 </div>
-
-

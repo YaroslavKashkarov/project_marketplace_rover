@@ -2,15 +2,20 @@
   <div class="content">
     <div class="header">
       <div class="title">
-        {{filters.category| uppercase}}
+        {{ filters.category | uppercase }}
       </div>
-      <div class="sorting" >
-        <app-dropdown (ngModelChange)="sortProducts($event)" [(ngModel)]="filters.sort" [options]="sortingOptions" [placeholder]="'Sort by'" [outlined]="false"></app-dropdown>
+      <div class="sorting">
+        <app-dropdown
+          (ngModelChange)="sortProducts($event)"
+          [(ngModel)]="filters.sort"
+          [options]="sortingOptions"
+          [placeholder]="'Sort by'"
+          [outlined]="false"
+        ></app-dropdown>
       </div>
     </div>
     <div class="items" #itemsContainer *ngIf="!isLoading">
-      <app-product
-        *ngFor="let product of products" [product]="product" [isShowDetail]="false">
+      <app-product *ngFor="let product of products" [product]="product" [isShowDetail]="false">
       </app-product>
     </div>
 
@@ -21,6 +26,3 @@
     </div>
   </div>
 </div>
-
-
-  

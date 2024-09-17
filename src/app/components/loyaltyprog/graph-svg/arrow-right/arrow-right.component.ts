@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,9 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './arrow-right.component.html',
-  styleUrl: './arrow-right.component.scss'
+  styleUrl: './arrow-right.component.scss',
 })
-export class GraphArrowRightComponent  {
-  
-
-}
+export class GraphArrowRightComponent {}

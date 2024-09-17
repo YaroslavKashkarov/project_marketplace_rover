@@ -8,10 +8,9 @@ describe('NoSearchResultPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NoSearchResultPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [NoSearchResultPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(NoSearchResultPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

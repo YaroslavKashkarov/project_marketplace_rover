@@ -7,28 +7,30 @@ import { Component, Input } from '@angular/core';
   selector: 'app-progressbar',
   template: `
     <div class="progress-bar">
-      <div *ngFor="let block of blocks" [ngClass]="{'filled': block <= progress}"></div>
+      <div *ngFor="let block of blocks" [ngClass]="{ filled: block <= progress }"></div>
     </div>
   `,
-  styles: [`
-    .progress-bar {
-      display: flex;
-      width: 100%;
-    }
-    
-    .progress-bar div {
-      flex: 1;
-      height: 20px;
-      margin: 0 2px;
-      background-color: #ccc;
-    }
+  styles: [
+    `
+      .progress-bar {
+        display: flex;
+        width: 100%;
+      }
 
-    .progress-bar .filled {
-      background-color: #4caf50;
-    }
-  `],
+      .progress-bar div {
+        flex: 1;
+        height: 20px;
+        margin: 0 2px;
+        background-color: #ccc;
+      }
+
+      .progress-bar .filled {
+        background-color: #4caf50;
+      }
+    `,
+  ],
   standalone: true,
-  imports: [NgClass]
+  imports: [NgClass],
 })
 export class ProgressBarComponent {
   @Input() progress: number;

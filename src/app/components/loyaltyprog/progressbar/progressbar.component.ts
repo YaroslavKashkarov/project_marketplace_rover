@@ -11,6 +11,4 @@ import { CommonModule } from '@angular/common';
 })
 export class ProgressbarComponent {
   yourPercentageValue: number = 10; // значення відсотка тут
-
 }
-

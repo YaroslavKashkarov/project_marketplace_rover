@@ -11,7 +11,7 @@ import { Renderer2 } from '@angular/core';
     </div>
   `,
   standalone: true,
-  imports: [HoverDetailDirective]
+  imports: [HoverDetailDirective],
 })
 class TestComponent {}
 
@@ -23,7 +23,7 @@ describe('HoverDetailDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [TestComponent]
+      imports: [TestComponent],
     }).createComponent(TestComponent);
 
     fixture.detectChanges();

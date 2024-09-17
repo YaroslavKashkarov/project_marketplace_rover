@@ -16,36 +16,49 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FilterComponent, CreateAnItemComponent, ShoppingCartComponent, RouterLink, MatDialogModule, UserIconComponent, SearchFieldComponent],
+  imports: [
+    CommonModule,
+    FilterComponent,
+    CreateAnItemComponent,
+    ShoppingCartComponent,
+    RouterLink,
+    MatDialogModule,
+    UserIconComponent,
+    SearchFieldComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit, OnDestroy{
-  
+export class HeaderComponent implements OnInit, OnDestroy {
   currentUser: IUser | null;
   userSubscription: Subscription;
 
-  filters: any = {}
-  
-//   isFilterVisible: boolean = false;
+  filters: any = {};
+
+  //   isFilterVisible: boolean = false;
   isCreateItemVisible: boolean = false;
 
-  constructor(public dialog: MatDialog, private dialogService: DialogService, private authService: AuthenticationService, private route: ActivatedRoute) {
-    this.userSubscription = this.authService.$currentUser.subscribe(user => {
+  constructor(
+    public dialog: MatDialog,
+    private dialogService: DialogService,
+    private authService: AuthenticationService,
+    private route: ActivatedRoute,
+  ) {
+    this.userSubscription = this.authService.$currentUser.subscribe((user) => {
       this.currentUser = user;
     });
   }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params => {
+    this.route.queryParamMap.subscribe((params) => {
       this.filters = {};
 
-      if (params.keys){
-        params.keys.forEach(key => {
+      if (params.keys) {
+        params.keys.forEach((key) => {
           this.filters[key] = key === 'negotiable' ? Boolean(params.get(key)) : params.get(key);
         });
       }
-    })
+    });
   }
 
   isCreateItem(): void {
@@ -53,7 +66,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
   }
 
   openFilter(event: Event): void {
-	  this.dialogService.openFilterDialog(this.filters);
+    this.dialogService.openFilterDialog(this.filters);
   }
 
   openAuthDialog(): void {

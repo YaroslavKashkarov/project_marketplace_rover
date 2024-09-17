@@ -1,31 +1,27 @@
 <div class="container">
-    <div class="loading" *ngIf="isLoading">
-        <app-loader></app-loader>
-    </div>
+  <div class="loading" *ngIf="isLoading">
+    <app-loader></app-loader>
+  </div>
 
-    <div class="content" *ngIf="!isLoading">
-        <div class="title">YOU HAVE {{products.length}} ITEMS IN YOUR CART</div>
-        <div class="order">
-            <div class="header">
-                <div class="seller">Seller: {{seller}}</div>
-            </div>
-            <div class="products">
-                <app-order-product 
-                    *ngFor="let product of products" 
-                    [product]="product"
-                    (productChanged)="processData()"
-                ></app-order-product>
-            </div>  
-            <div class="footer">
-                <div class="btns">
-                    <button class="btn other" routerLink="/shopping-cart">Back to shopping</button>
-                    <button class="btn checkout" (click)="openDialog()">Checkout: ${{totalSum}}</button>
-                </div>
-            </div>  
+  <div class="content" *ngIf="!isLoading">
+    <div class="title">YOU HAVE {{ products.length }} ITEMS IN YOUR CART</div>
+    <div class="order">
+      <div class="header">
+        <div class="seller">Seller: {{ seller }}</div>
+      </div>
+      <div class="products">
+        <app-order-product
+          *ngFor="let product of products"
+          [product]="product"
+          (productChanged)="processData()"
+        ></app-order-product>
+      </div>
+      <div class="footer">
+        <div class="btns">
+          <button class="btn other" routerLink="/shopping-cart">Back to shopping</button>
+          <button class="btn checkout" (click)="openDialog()">Checkout: ${{ totalSum }}</button>
         </div>
-
+      </div>
     </div>
-
-
+  </div>
 </div>
- 

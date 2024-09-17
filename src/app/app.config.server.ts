@@ -13,7 +13,7 @@ const serverConfig: ApplicationConfig = {
         animations: ['data.json'],
       },
     }),
-  ]
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

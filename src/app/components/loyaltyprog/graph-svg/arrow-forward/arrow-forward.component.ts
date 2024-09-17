@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './arrow-forward.component.html',
-  styleUrl: './arrow-forward.component.scss'
+  styleUrl: './arrow-forward.component.scss',
 })
-export class GraphArrowForwardComponent {
-
-}
+export class GraphArrowForwardComponent {}
