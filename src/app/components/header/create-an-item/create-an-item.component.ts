@@ -11,29 +11,38 @@ import {DollarPrefixDirective} from './directive/dollar-prefix.directive';
 	styleUrl: './create-an-item.component.scss',
 })
 export class CreateAnItemComponent {
-	photos: string[] = [];
+	isPhotoContented = false;
+	photos: (string | null)[] = [null, null, null];
 	inputText: string = '';
 	maxWords: number = 1000;
 	wordCount: number = 1;
 
 	onFileInputClick(): void {
 		const fileInput = document.getElementById('photo-input') as HTMLInputElement;
+		console.log(fileInput, 'input file click')
 		fileInput.click();
 	}
 
-	onFileSelected(event: Event): void {
+	onFileSelected(event: Event, index?:number): void {
+		console.log(event, index,'file selected woks')
 		const input = event.target as HTMLInputElement;
 		if (input.files) {
 			Array.from(input.files).forEach(file => {
 				const reader = new FileReader();
 				reader.onload = () => {
 					if (typeof reader.result === 'string') {
-						this.photos.push(reader.result);
+						const emptyIndex = this.photos.indexOf(null);
+						if (emptyIndex !== -1) {
+						  this.photos[emptyIndex] = reader.result; 
+						}
+						this.isPhotoContented = this.photos.every(item => item !== null);
+						console.log(this.isPhotoContented)
 					}
 				};
 				reader.readAsDataURL(file);
 			});
 		}
+		input.value = ''; 
 	}
 
 	deleteFoto(index: number): void {

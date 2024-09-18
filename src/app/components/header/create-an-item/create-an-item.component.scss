@@ -124,6 +124,11 @@
           border: 4px solid #ffd640;
           border-radius: 16px;
           background: #ffd640;
+
+          &:disabled{
+            background:  #a3935f;
+            border: 4px solid #a3935f;
+          }
         }
 
         &-details-item-photo {
@@ -135,6 +140,12 @@
           border: 4px solid #ffd640;
           border-radius: 16px;
           background: #f9f9f9;
+
+          img{
+            width: 258px; 
+            height: 258px; 
+            border-radius: 16px;
+          }
         }
       }
 
