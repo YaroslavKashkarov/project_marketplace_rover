@@ -1,7 +1,7 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {DollarPrefixDirective} from './directive/dollar-prefix.directive';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { DollarPrefixDirective } from './directive/dollar-prefix.directive';
 
 @Component({
 	selector: 'app-create-an-item',
@@ -21,8 +21,8 @@ export class CreateAnItemComponent {
 	wordCount: number = 1;
 
 	onFileInputClick(index: number | null): void {
-		if(index === null){
-			this.addInput.nativeElement.click();	
+		if (index === null) {
+			this.addInput.nativeElement.click();
 		} else {
 			this.setIndex = index;
 			this.photoInput.nativeElement.click();
@@ -32,37 +32,32 @@ export class CreateAnItemComponent {
 	onFileSelected(event: Event): void {
 		const input = event.target as HTMLInputElement;
 		if (input.files) {
-			Array.from(input.files).forEach(file =>this.readFile(file));
+			Array.from(input.files).forEach(file => this.readFile(file));
 		}
-		input.value = ''; 
+		input.value = '';
 	}
 
 	private readFile(file: File): void {
 		const reader = new FileReader();
 		reader.onload = () => {
-		  if (typeof reader.result === 'string') {
-			if (this.setIndex !== null && this.setIndex !== undefined) {
-			  this.photos[this.setIndex] = reader.result; 
-			  this.setIndex = null;
-			} else {
-			  this.photos.unshift(reader.result);
+			if (typeof reader.result === 'string') {
+				if (this.setIndex !== null && this.setIndex !== undefined) {
+					this.photos[this.setIndex] = reader.result;
+					this.setIndex = null;
+				} else {
+					this.photos.unshift(reader.result);
+				}
 			}
-		  }
 		};
 		reader.readAsDataURL(file);
-	  }
+	}
 
 	deletePhoto(index: number | null): void {
-		console.log(index)
-		if(index !== null && index !== undefined){
+		if (index === 0 && this.photos.length > 3) {
+			this.photos.shift();
+		} else if (index !== null && index !== undefined) {
 			this.photos[index] = null;
-		} else {
-			if (this.photos.length > 3 && this.photos[0] === null) {
-				this.photos.splice(0, 1);  
-			  } else {
-				this.photos.shift();  
-			  }
-		}
+		  }
 	}
 
 	countWords(): void {
