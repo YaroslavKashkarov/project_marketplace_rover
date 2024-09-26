@@ -38,7 +38,6 @@ export const routes: Routes = [
     path: '', runGuardsAndResolvers: 'always',
     canActivate: [],
     children: [
-
       {path: 'create-an-item', component: CreateAnItemComponent},
       {path: 'navbar/category-product', component: NavbarComponent},
       {path: 'profile', canActivate: [authenticatedUserGuard], component: ProfileComponent},

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FavoritesService } from '../services/favorite.service';
+import {Component, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FavoritesService} from '../services/favorite.service';
 
 @Component({
   selector: 'app-favorite',
@@ -11,8 +11,7 @@ import { FavoritesService } from '../services/favorite.service';
 })
 export class FavoriteComponent implements OnInit {
 
-  constructor(private favoriteService: FavoritesService) { }
-
+  constructor (private favoriteService: FavoritesService) {}
   isFavorite: boolean = true;
   roverInfo: any;
   roverPhotos: any;
@@ -25,14 +24,14 @@ export class FavoriteComponent implements OnInit {
     this.favoriteService.getFavorite().subscribe((response: any) => {
       this.roverInfo = response;
       this.roverPhotos = response[0].photos;
-    })
+    });
   }
 
   removeFavorite(productId: number) {
     this.favoriteService.removeFavorite(productId).subscribe((response: any) => {
       console.log(response);
       // I'll leave this cause remove method on backend work incorrectly
-    })
+    });
   }
 
 }
