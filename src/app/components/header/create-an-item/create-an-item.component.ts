@@ -10,42 +10,15 @@ import {DollarPrefixDirective} from './directive/dollar-prefix.directive';
   styleUrl: './create-an-item.component.scss',
 })
 export class CreateAnItemComponent {
-  photos: string[] = [];
-  inputText: string = '';
-  maxWords: number = 1000;
-  wordCount: number = 1;
-
-  onFileInputClick(): void {
-    const fileInput = document.getElementById('photo-input') as HTMLInputElement;
-    fileInput.click();
-  }
-
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files) {
-      Array.from(input.files).forEach((file) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (typeof reader.result === 'string') {
-            this.photos.push(reader.result);
-          }
-        };
-        reader.readAsDataURL(file);
-      });
-    }
-  }
-
-  deleteFoto(index: number): void {
-    this.photos.splice(index, 1);
-  }
-  @ViewChild('addInput', {static: false}) addInput: ElementRef;
-  @ViewChild('photoInput', {static: false}) photoInput: ElementRef;
-
+  isPhotoContented = false;
   photos: (string | null)[] = [null, null, null];
   setIndex: number | null;
   inputText: string = '';
   maxWords: number = 1000;
   wordCount: number = 1;
+
+  @ViewChild('addInput', {static: false}) addInput: ElementRef;
+  @ViewChild('photoInput', {static: false}) photoInput: ElementRef;
 
   onFileInputClick(index: number | null): void {
     if (index === null) {
@@ -56,6 +29,9 @@ export class CreateAnItemComponent {
     }
   }
 
+  deleteFoto(index: number): void {
+    this.photos.splice(index, 1);
+  }
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files) {
@@ -63,6 +39,7 @@ export class CreateAnItemComponent {
     }
     input.value = '';
   }
+
 
   private readFile(file: File): void {
     const reader = new FileReader();
