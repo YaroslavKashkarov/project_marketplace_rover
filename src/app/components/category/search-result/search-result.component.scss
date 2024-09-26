@@ -1,7 +1,7 @@
 @import '../../../../styles/variables';
 
-:host{
-  background-color: #F9F9F9;
+:host {
+  background-color: #f9f9f9;
 }
 
 .container {
@@ -14,12 +14,11 @@
     width: 300px;
 
     .title {
-      color: #00478F;
+      color: #00478f;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 45px;
     }
-
   }
 
   .content {
@@ -37,7 +36,7 @@
         font-weight: 700;
       }
 
-      .sorting{
+      .sorting {
         width: 180px;
       }
     }
@@ -46,7 +45,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-
     }
   }
 }

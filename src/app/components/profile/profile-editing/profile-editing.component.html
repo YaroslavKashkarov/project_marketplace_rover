@@ -1,19 +1,18 @@
 <div class="modal">
-
   <div class="editing__container">
     <div class="editing__title-container">
-      <img (click)="closeEditing()" alt="arrow" src="assets/img/editing/Arrow.svg">
+      <img (click)="closeEditing()" alt="arrow" src="assets/img/editing/Arrow.svg" />
 
       <h3 class="editing__title">Profile editing</h3>
 
-      <img (click)="closeEditing()" alt="closes" src="assets/img/editing/Closes.svg">
+      <img (click)="closeEditing()" alt="closes" src="assets/img/editing/Closes.svg" />
     </div>
 
     <div class="editing__photo-container">
-      <img alt="photo" class="editing__photo" src="assets/img/profile/profile-img.png">
+      <img alt="photo" class="editing__photo" src="assets/img/profile/profile-img.png" />
 
       <div class="editing__photo-change">
-        <img alt="camera" class="editing__photo-change-icon" src="assets/img/editing/Camera.svg">
+        <img alt="camera" class="editing__photo-change-icon" src="assets/img/editing/Camera.svg" />
 
         <p class="editing__photo-change-text">Сhange photo</p>
       </div>
@@ -26,30 +25,29 @@
             lastName: min 3 max 15 symbols
             password: min 8; at least 1 upperCase & 1 lowerCase letters, 1 symbol, 1 number-->
       <div class="form__item">
-        <input class="form__input" placeholder="Jessica" type="text">
-        <label class="form__label">{{label.name}}</label>
+        <input class="form__input" placeholder="Jessica" type="text" />
+        <label class="form__label">{{ label.name }}</label>
       </div>
 
       <div class="form__item">
-        <input class="form__input" placeholder="Hanson" type="text">
-        <label class="form__label">{{label.lastName}}</label>
+        <input class="form__input" placeholder="Hanson" type="text" />
+        <label class="form__label">{{ label.lastName }}</label>
       </div>
 
       <div class="form__item">
-        <input class="form__input" placeholder="example@gmail.com" type="text">
-        <label class="form__label">{{label.email}}</label>
+        <input class="form__input" placeholder="example@gmail.com" type="text" />
+        <label class="form__label">{{ label.email }}</label>
       </div>
 
       <div class="form__item">
-        <input class="form__input" placeholder="Ternopil city" type="text">
-        <label class="form__label">{{label.city}}</label>
+        <input class="form__input" placeholder="Ternopil city" type="text" />
+        <label class="form__label">{{ label.city }}</label>
       </div>
 
       <div class="form__item">
-        <input class="form__input" placeholder="+380 406 555 120" type="text">
-        <label class="form__label">{{label.phone}}</label>
+        <input class="form__input" placeholder="+380 406 555 120" type="text" />
+        <label class="form__label">{{ label.phone }}</label>
       </div>
-
     </form>
 
     <div class="btn__container">

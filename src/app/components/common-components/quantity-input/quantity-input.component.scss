@@ -1,0 +1,39 @@
+.quantity {
+  display: flex;
+  width: 128px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 13px;
+
+  button {
+    flex: 1;
+    padding: 0;
+    border: 0px;
+    background-color: transparent;
+    color: #00478f;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: 0;
+    text-align: center;
+    background-color: transparent;
+    width: 33%;
+    display: inline;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

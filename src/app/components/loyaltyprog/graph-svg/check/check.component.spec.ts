@@ -1,18 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CheckComponent } from './check.component';
+import { GraphCheckComponent } from './check.component';
 
 describe('CheckComponent', () => {
-  let component: CheckComponent;
-  let fixture: ComponentFixture<CheckComponent>;
+  let component: GraphCheckComponent;
+  let fixture: ComponentFixture<GraphCheckComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CheckComponent);
+      imports: [GraphCheckComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(GraphCheckComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

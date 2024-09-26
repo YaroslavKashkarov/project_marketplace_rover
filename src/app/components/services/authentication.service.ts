@@ -9,14 +9,12 @@ import { ILoginRequest } from '../../../core/interfaces/login-request.interface'
 import { IUser } from '../../../core/interfaces/user.interface';
 import { isPlatformBrowser } from '@angular/common';
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService extends BaseService {
-
   public $currentUser: Observable<IUser | null>;
-  private readonly localStorageKey = 'currentUser';
+  private localStorageKey = 'currentUser';
   private currentUserSubject = new BehaviorSubject<IUser | null>(null);
   private isSignedInSubject = new BehaviorSubject<boolean>(false);
 
@@ -32,12 +30,11 @@ export class AuthenticationService extends BaseService {
       const userDataJson = localStorage.getItem(this.localStorageKey);
 
       if (userDataJson != null) {
-        this.currentUserSubject.next(JSON.parse(userDataJson))
+        this.currentUserSubject.next(JSON.parse(userDataJson));
       } else {
         this.currentUserSubject.next(null);
       }
     }
-    
   }
 
   public get currentUserValue(): IUser | null {
@@ -49,77 +46,73 @@ export class AuthenticationService extends BaseService {
   }
 
   registerUser(registrationRequest: ISignInRequest): Observable<IAuthResult> {
-    return this.post<IAuthResult>('api/auth/signup', registrationRequest)
-      .pipe(
-        tap((res) => {
-          const user: IUser = {
-            id: res.id,
-            email: res.email,
-            firstName: res.firstName,
-            lastName: res.lastName,
-            photo: res.photo,
-            city: res.city,
-            role: res.role,
-            token: res.token,
-          }
-          localStorage.setItem(this.localStorageKey, JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        }),
-      );
+    return this.post<IAuthResult>('api/auth/signup', registrationRequest).pipe(
+      tap((res) => {
+        const user: IUser = {
+          id: res.id,
+          email: res.email,
+          firstName: res.firstName,
+          lastName: res.lastName,
+          photo: res.photo,
+          city: res.city,
+          role: res.role,
+          token: res.token,
+        };
+        localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+        this.currentUserSubject.next(user);
+      }),
+    );
   }
 
   manualLoginUser(loginRequest: ILoginRequest): Observable<IAuthResult> {
-    return this.post<IAuthResult>('api/auth/login', loginRequest)
-      .pipe(
-        tap((res) => {
-          const user: IUser = {
-            id: res.id,
-            email: res.email,
-            firstName: res.firstName,
-            lastName: res.lastName,
-            photo: res.photo,
-            city: res.city,
-            role: res.role,
-            token: res.token,
-          }
-          localStorage.setItem(this.localStorageKey, JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        }),
-      );
+    return this.post<IAuthResult>('api/auth/login', loginRequest).pipe(
+      tap((res) => {
+        const user: IUser = {
+          id: res.id,
+          email: res.email,
+          firstName: res.firstName,
+          lastName: res.lastName,
+          photo: res.photo,
+          city: res.city,
+          role: res.role,
+          token: res.token,
+        };
+        localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+        this.currentUserSubject.next(user);
+      }),
+    );
   }
 
   loginWithGoogle(googleToken: string): Observable<IAuthResult> {
-      const body = {
-        credential: googleToken,
-      };
+    const body = {
+      credential: googleToken,
+    };
 
-      return this.post<IAuthResult>('api/auth/google', body)
-        .pipe(
-          tap((res) => {
-            const user: IUser = {
-              id: res.id,
-              email: res.email,
-              firstName: res.firstName,
-              lastName: res.lastName,
-              photo: res.photo,
-              city: res.city,
-              role: res.role,
-              token: res.token,
-            }
-            localStorage.setItem(this.localStorageKey, JSON.stringify(user));
-            this.currentUserSubject.next(user);
-          }),
-        );
+    return this.post<IAuthResult>('api/auth/google', body).pipe(
+      tap((res) => {
+        const user: IUser = {
+          id: res.id,
+          email: res.email,
+          firstName: res.firstName,
+          lastName: res.lastName,
+          photo: res.photo,
+          city: res.city,
+          role: res.role,
+          token: res.token,
+        };
+        localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+        this.currentUserSubject.next(user);
+      }),
+    );
   }
 
   logOutUser(): Observable<string> {
-    return this.post<string>('api/auth/logout', {})
-      .pipe(
-        tap(() => {
-          localStorage.removeItem(this.localStorageKey);
-          this.currentUserSubject.next(null);
-        }),
-      );
+    return this.post<string>('api/auth/logout', {}).pipe(
+      tap(() => {
+        localStorage.removeItem(this.localStorageKey);
+        this.currentUserSubject.next(null);
+      }),
+    );
   }
 
   getUserInfo(): Observable<IUser> {
@@ -128,20 +121,19 @@ export class AuthenticationService extends BaseService {
 
   sendRecoveryToken(userEmail: string): Observable<string> {
     const body = {
-      email: userEmail
-    }
-    return this.post<string>('api/auth/send-recovery-token', body)
+      email: userEmail,
+    };
+    return this.post<string>('api/auth/send-recovery-token', body);
   }
 
   resetPassword(token: string, password: string): Observable<string> {
     const body = {
-      password: password
-    }
+      password: password,
+    };
 
     const headers = {
-      "Authorization": `Bearer ${token}`
-    }
-    return this.postWithHeaders<string>('api/auth/reset-password', body, headers)
+      Authorization: `Bearer ${token}`,
+    };
+    return this.postWithHeaders<string>('api/auth/reset-password', body, headers);
   }
-
 }

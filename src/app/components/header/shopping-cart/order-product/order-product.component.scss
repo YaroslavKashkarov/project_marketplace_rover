@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .photo {
+    img {
+      width: 144px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+
+  .right {
+    .price,
+    .total {
+      width: 100px;
+      text-align: end;
+    }
+
+    .delete {
+      cursor: pointer;
+    }
+  }
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 30px;
+}

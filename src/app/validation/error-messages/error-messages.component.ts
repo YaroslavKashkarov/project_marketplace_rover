@@ -7,11 +7,9 @@ import { AbstractControl } from '@angular/forms';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './error-messages.component.html',
-  styleUrl: './error-messages.component.scss'
+  styleUrl: './error-messages.component.scss',
 })
 export class ErrorMessagesComponent {
-
   @Input()
-  control: AbstractControl | null
-
+  control: AbstractControl | null;
 }

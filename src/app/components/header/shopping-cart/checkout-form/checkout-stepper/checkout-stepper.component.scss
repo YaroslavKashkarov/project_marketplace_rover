@@ -1,0 +1,102 @@
+.container {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0;
+
+  .connect-line {
+    background: #00478f;
+    height: 1px;
+    width: 100%;
+  }
+}
+
+.step-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #a5cdeb40;
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+
+    .inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #00478f;
+    }
+  }
+
+  &.next {
+    background-color: transparent;
+
+    .item {
+      .inner {
+        background-color: #a5cdeb80;
+      }
+    }
+  }
+
+  &.previous {
+    background-color: transparent;
+
+    .item {
+      background: url('/assets/img/Step.svg') no-repeat;
+
+      .inner {
+        display: none;
+      }
+    }
+  }
+
+  // border: none;
+  // background-color: transparent;
+
+  // .basic{
+  //     background-color: #F9F9F9;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+
+  //     .inner{
+  //         width: 8px;
+  //         height: 8px;
+  //         border-radius: 50%;
+  //         background-color: #A5CDEB80;
+  //     }
+  // }
+
+  // .current{
+  //     border-radius: 50%;
+  //     background-color: #A5CDEB40;
+
+  //     .outer{
+  //         width: 20px;
+  //         height: 20px;
+  //         border-radius: 50%;
+  //         display: flex;
+  //         justify-content: center;
+  //         align-items: center;
+  //         background-color: #F9F9F9;
+
+  //         .inner{
+  //             width: 8px;
+  //             height: 8px;
+  //             border-radius: 50%;
+  //             background-color: #00478F;
+
+  //         }
+  //     }
+  // }
+}

@@ -2,16 +2,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export interface IRadiobuttonsInputOptions{
-  title: string,
-  filterName: string,
-  options: IOption[],
+export interface IRadiobuttonsInputOptions {
+  title: string;
+  filterName: string;
+  options: IOption[];
 }
 
-export interface IOption{
-  key: string,
-  value: string,
-  selected: boolean,
+export interface IOption {
+  key: string;
+  value: string;
+  selected: boolean;
 }
 
 @Component({
@@ -29,10 +29,8 @@ export interface IOption{
   ],
 })
 export class RadiobuttonsInputGroupComponent implements ControlValueAccessor {
-
   @Input()
-  setting: IRadiobuttonsInputOptions
-
+  setting: IRadiobuttonsInputOptions;
 
   onChange = (value: string) => {};
   onTouched = () => {};
@@ -40,7 +38,7 @@ export class RadiobuttonsInputGroupComponent implements ControlValueAccessor {
   selectedOption: IOption | null = null;
 
   writeValue(value: string): void {
-    const option = this.setting.options.find(x => x.value == value);
+    const option = this.setting.options.find((x) => x.value == value);
     if (option) {
       this.selectOption(option);
     }
@@ -54,10 +52,8 @@ export class RadiobuttonsInputGroupComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  
-
-  selectOption(option: IOption){
-    this.setting.options.forEach(x=> x.selected = false);
+  selectOption(option: IOption) {
+    this.setting.options.forEach((x) => (x.selected = false));
     option.selected = true;
     this.selectedOption = option;
     this.onChange(option.value);

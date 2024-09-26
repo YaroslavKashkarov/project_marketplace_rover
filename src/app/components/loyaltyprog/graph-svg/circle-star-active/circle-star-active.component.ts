@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './circle-star-active.component.html',
-  styleUrl: './circle-star-active.component.scss'
+  styleUrl: './circle-star-active.component.scss',
 })
-export class GraphCircleStarComponentActive {
-
-}
+export class GraphCircleStarActiveComponent {}

@@ -8,10 +8,9 @@ describe('RadiobuttonsInputGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadiobuttonsInputGroupComponent]
-    })
-    .compileComponents();
-    
+      imports: [RadiobuttonsInputGroupComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RadiobuttonsInputGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,4 +1,4 @@
-import { filter } from 'rxjs';
+import { Observable, filter } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthDialogComponent } from '../header/auth-dialog/auth-dialog.component';
@@ -9,13 +9,18 @@ import { FilterComponent } from '../header/filter/filter.component';
 import { Router } from '@angular/router';
 import { IFilters } from '../../../core/interfaces/filters.interface';
 import { FilterDialogComponent } from '../header/filter/filter-dialog/filter-dialog.component';
+import { CheckoutFormComponent } from '../header/shopping-cart/checkout-form/checkout-form.component';
+import { IOrder } from '../../../core/interfaces/order.interface';
+import { OrderConfirmationDialogComponent } from '../header/shopping-cart/order-confirmation-dialog/order-confirmation-dialog.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
-
-  constructor(public dialog: MatDialog, private router: Router) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+  ) {}
 
   openAuthDialog(): void {
     const authDialogRef = this.dialog.open(AuthDialogComponent, {
@@ -23,15 +28,13 @@ export class DialogService {
       width: '530px',
     });
 
-    authDialogRef.afterClosed().subscribe(res => {
+    authDialogRef.afterClosed().subscribe((res) => {
       switch (res?.openComponent) {
         case 'ForgotPassword':
           this.openForgotPasswordDialog();
           break;
         case 'Congratulations':
-          this.openCongratulationsDialog(
-            'You have successfully sign up.'
-          );
+          this.openCongratulationsDialog('You have successfully sign up.');
           break;
         default:
           break;
@@ -45,11 +48,11 @@ export class DialogService {
       width: '530px',
     });
 
-    forgotDialogRef.afterClosed().subscribe(res => {
+    forgotDialogRef.afterClosed().subscribe((res) => {
       if (res?.openComponent == 'Congratulations') {
-        this.openCongratulationsDialog('You have successfully applied new password.', 'Auth')
+        this.openCongratulationsDialog('You have successfully applied new password.', 'Auth');
       }
-    })
+    });
   }
 
   openCongratulationsDialog(title: string, componentAfterClosed?: DialogComponentsOptions): void {
@@ -59,18 +62,18 @@ export class DialogService {
       data: {
         title: title,
         openComponent: componentAfterClosed,
-      }
+      },
     });
 
-    congratDialogRef.afterClosed().subscribe(res => {
+    congratDialogRef.afterClosed().subscribe((res) => {
       switch (res?.openComponent) {
         case 'Auth':
           this.openAuthDialog();
           break;
-        default: 
-          break;  
+        default:
+          break;
       }
-    })
+    });
   }
 
   openFilterDialog(filters: IFilters | null): void {
@@ -78,14 +81,36 @@ export class DialogService {
       // minHeight: '768px',
       width: '868px',
       data: {
-        filters: filters
-      }
+        filters: filters,
+      },
     });
 
-    filterDialogRef.afterClosed().subscribe(res => {
-      if (res?.filters){
-        this.router.navigate(['home/search-result'], {queryParams: res.filters})
+    filterDialogRef.afterClosed().subscribe((res) => {
+      if (res?.filters) {
+        this.router.navigate(['home/search-result'], { queryParams: res.filters });
       }
-    })
+    });
+  }
+
+  openCheckoutDialog(): Observable<any> {
+    const checkoutDialogRef = this.dialog.open(CheckoutFormComponent, {
+      width: '868px',
+      height: '523px',
+    });
+
+    return checkoutDialogRef.afterClosed();
+  }
+
+  openOrderConfirmationDialog(orderNumber: string): void {
+    const orderConfirmDialogRef = this.dialog.open(OrderConfirmationDialogComponent, {
+      width: '868px',
+      data: {
+        orderNumber: orderNumber,
+      },
+    });
+
+    orderConfirmDialogRef.afterClosed().subscribe(() => {
+      this.router.navigate(['']);
+    });
   }
 }

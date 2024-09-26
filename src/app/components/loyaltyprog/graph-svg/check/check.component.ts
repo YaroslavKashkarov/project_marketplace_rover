@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './check.component.html',
-  styleUrl: './check.component.scss'
+  styleUrl: './check.component.scss',
 })
-export class GraphCheckComponent {
-
-}
+export class GraphCheckComponent {}

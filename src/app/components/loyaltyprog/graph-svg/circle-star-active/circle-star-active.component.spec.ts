@@ -1,18 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CircleStartActiveComponent } from './circle-star-active.component';
+import { GraphCircleStarActiveComponent } from './circle-star-active.component';
 
 describe('CircleStartActiveComponent', () => {
-  let component: CircleStartActiveComponent;
-  let fixture: ComponentFixture<CircleStartActiveComponent>;
+  let component: GraphCircleStarActiveComponent;
+  let fixture: ComponentFixture<GraphCircleStarActiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CircleStartActiveComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CircleStartActiveComponent);
+      imports: [GraphCircleStarActiveComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(GraphCircleStarActiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

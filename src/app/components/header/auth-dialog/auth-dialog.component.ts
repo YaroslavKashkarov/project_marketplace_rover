@@ -6,10 +6,9 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponentsOptions } from '../../../../core/interfaces/dialog-components-options';
 
-
-export enum DialogContentEnum{
+export enum DialogContentEnum {
   SignIn,
-  Login
+  Login,
 }
 
 @Component({
@@ -17,37 +16,36 @@ export enum DialogContentEnum{
   standalone: true,
   imports: [CommonModule, MatDialogModule, SignInFormComponent, LoginFormComponent],
   templateUrl: './auth-dialog.component.html',
-  styleUrl: './auth-dialog.component.scss'
+  styleUrl: './auth-dialog.component.scss',
 })
 export class AuthDialogComponent {
-
   componentToOpen?: DialogComponentsOptions;
 
   dialogContent: DialogContentEnum = DialogContentEnum.SignIn;
-  dialogContentEnum = DialogContentEnum
+  dialogContentEnum = DialogContentEnum;
 
-  constructor(public dialogRef: MatDialogRef<AuthDialogComponent>){}
+  constructor(public dialogRef: MatDialogRef<AuthDialogComponent>) {}
 
-  openLoginTab(){
+  openLoginTab() {
     this.dialogContent = DialogContentEnum.Login;
   }
 
-  openSignInTab(){
+  openSignInTab() {
     this.dialogContent = DialogContentEnum.SignIn;
   }
 
-  closeDialog(){
+  closeDialog() {
     this.dialogRef.close({
-      openComponent: this.componentToOpen
-    })
+      openComponent: this.componentToOpen,
+    });
   }
 
-  openCongratulations(){
+  openCongratulations() {
     this.componentToOpen = 'Congratulations';
     this.closeDialog();
   }
 
-  openForgotPassword(){
+  openForgotPassword() {
     this.componentToOpen = 'ForgotPassword';
     this.closeDialog();
   }

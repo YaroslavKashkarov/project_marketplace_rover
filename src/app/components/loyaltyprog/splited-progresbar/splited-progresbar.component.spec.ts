@@ -8,10 +8,9 @@ describe('SplitedProgresbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SplitedProgresbarComponent]
-    })
-    .compileComponents();
-    
+      imports: [SplitedProgresbarComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SplitedProgresbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

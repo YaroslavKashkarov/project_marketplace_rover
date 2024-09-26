@@ -11,13 +11,13 @@
     &__title {
       font-size: 24px;
       font-weight: 700;
-      color: #070A0F;
+      color: #070a0f;
 
       &__custom {
         margin-bottom: 8px;
         font-size: 24px;
         font-weight: 700;
-        color: #070A0F;
+        color: #070a0f;
       }
     }
 
@@ -31,7 +31,7 @@
         .subtitle {
           margin-bottom: 4px;
           font-size: 20px;
-          color: #070A0F;
+          color: #070a0f;
         }
 
         .price-input {
@@ -48,8 +48,8 @@
           font-family: Lato, sans-serif;
         }
 
-        input[type=number] {
-          border-right: 1px solid #00478F !important;
+        input[type='number'] {
+          border-right: 1px solid #00478f !important;
           padding-right: 7px;
           text-align: right;
           box-sizing: border-box;
@@ -61,8 +61,6 @@
         }
       }
     }
-
-
   }
 
   &__btn__container {
@@ -79,19 +77,18 @@
       cursor: pointer;
 
       &.cancel {
-        border: 1px solid #00478F;
-        color: #00478F;
-
+        border: 1px solid #00478f;
+        color: #00478f;
 
         &:hover,
         &:active {
-          border: 2px solid #00478F;
-          -webkit-text-stroke: 0.65px #00478F;
+          border: 2px solid #00478f;
+          -webkit-text-stroke: 0.65px #00478f;
         }
       }
 
       &.save {
-        background-color: #00478F;
+        background-color: #00478f;
         color: #fff;
 
         &:hover,
@@ -109,7 +106,7 @@
 
   &.left-panel {
     .mat-mdc-form-field {
-      width: 128px!important;
+      width: 128px !important;
     }
 
     app-dropdown {
@@ -134,8 +131,12 @@
   }
 }
 
-.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
-  border-color: #00478F;
+.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
+    [data-indeterminate='true']
+  )
+  ~ .mdc-checkbox__background {
+  border-color: #00478f;
 }
 
 ::ng-deep {

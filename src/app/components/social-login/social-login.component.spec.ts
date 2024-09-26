@@ -8,10 +8,9 @@ describe('SocialLoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SocialLoginComponent]
-    })
-    .compileComponents();
-    
+      imports: [SocialLoginComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SocialLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

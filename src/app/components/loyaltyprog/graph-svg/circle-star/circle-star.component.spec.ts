@@ -1,18 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CircleStarComponent } from './circle-star.component';
+import { GraphCircleStarComponent } from './circle-star.component';
 
 describe('CircleStarComponent', () => {
-  let component: CircleStarComponent;
-  let fixture: ComponentFixture<CircleStarComponent>;
+  let component: GraphCircleStarComponent;
+  let fixture: ComponentFixture<GraphCircleStarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CircleStarComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CircleStarComponent);
+      imports: [GraphCircleStarComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(GraphCircleStarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
