@@ -105,9 +105,16 @@
           font-size: 24px;
         }
 
-        &-details-add-photo {
+        &-details-photo {
           padding-top: 20px;
           padding-bottom: 80px;
+        }
+        &-details-add-photo {
+          display: grid;
+          justify-content: space-around;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          display: flex;
         }
 
         &-details-add-title {

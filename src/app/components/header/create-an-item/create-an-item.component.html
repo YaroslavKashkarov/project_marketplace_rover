@@ -40,8 +40,8 @@
         photo will be displayed on the cover</p>
     </div>
 
-    <div class="item__navigate-container-section-details-add-photo">
-      <div class=".item__navigate-container-section-details-item-photo">
+    <div class="item__navigate-container-section-details-photo">
+      <div class="item__navigate-container-section-details-add-photo">
         <button *ngIf="photos.length <=3" style="cursor: pointer;"
           class="item__navigate-container-section-details-add-title" (click)="onFileInputClick(null)">Add photo</button>
         <input type="file" #addInput id="photo-add-input" (change)="onFileSelected($event)" accept="image/*" multiple
